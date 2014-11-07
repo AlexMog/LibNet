@@ -1,11 +1,11 @@
 //
 // Socket.hh for Network in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun  5 19:07:37 2014 Moghrabi Alexandre
-// Last update Fri Oct 10 15:53:48 2014 Moghrabi Alexandre
+// Started on  Thu Jun  5 19:07:37 2014 mognetworkhrabi Alexandre
+// Last update Fri Oct 10 15:53:48 2014 mognetworkhrabi Alexandre
 //
 
 #ifndef SOCKET_HH
@@ -13,7 +13,7 @@
 
 #include "SocketFD.hh"
 
-namespace Mog
+namespace mognetwork
 {
 class Socket
 {
@@ -46,6 +46,6 @@ private:
   Type m_type;
   SocketFD m_socket;
 };
-} // namespace Mog
+} // namespace mognetwork
 
 #endif /* !SOCKET_HH */

@@ -1,18 +1,18 @@
 //
 // WinSocket.cpp for Winsocket in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun  5 19:54:04 2014 Moghrabi Alexandre
-// Last update Wed Oct  8 09:09:36 2014 Moghrabi Alexandre
+// Started on  Thu Jun  5 19:54:04 2014 mognetworkhrabi Alexandre
+// Last update Wed Oct  8 09:09:36 2014 mognetworkhrabi Alexandre
 //
 
 #include "OsSocket.hh"
 #include <cstring>
 
 #ifdef OS_WINDOWS
-namespace Mog
+namespace mognetwork
 {
   sockaddr_in OsSocket::createAddress(uint32_t address, unsigned short port)
   {
@@ -49,5 +49,5 @@ namespace Mog
       default :              return (Socket::Error);
       }
   }
-} // namespace Mog
+} // namespace mognetwork
 #endif /* OS_WINDOWS */

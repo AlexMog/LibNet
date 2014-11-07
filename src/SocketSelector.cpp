@@ -1,11 +1,11 @@
 //
 // SocketSelector.cpp for SocketSelector in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun 12 18:06:35 2014 Moghrabi Alexandre
-// Last update Fri Oct 10 15:59:30 2014 Moghrabi Alexandre
+// Started on  Thu Jun 12 18:06:35 2014 mognetworkhrabi Alexandre
+// Last update Fri Oct 10 15:59:30 2014 mognetworkhrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -16,7 +16,7 @@
 #include <iostream>
 #include "SocketSelector.hh"
 
-namespace Mog
+namespace mognetwork
 {
   SocketSelector::SocketSelector(TcpSocket& serverSocket,
 				 SocketSelectorListener& socketSelectorListener) :
@@ -102,4 +102,4 @@ namespace Mog
     else
       handleClients();
   }
-} // namespace Mog
+} // namespace mognetwork

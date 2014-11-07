@@ -1,11 +1,11 @@
 //
 // TcpSocket.hh for TCPSOCKET in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun  5 19:59:35 2014 Moghrabi Alexandre
-// Last update Fri Oct 10 15:55:58 2014 Moghrabi Alexandre
+// Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
+// Last update Fri Oct 10 15:55:58 2014 mognetworkhrabi Alexandre
 //
 
 #ifndef TCPSOCKET_HH
@@ -17,7 +17,7 @@
 # include "IpAddress.hh"
 # include "Socket.hh"
 
-namespace Mog
+namespace mognetwork
 {
   class TcpSocket : public Socket
   {
@@ -56,6 +56,6 @@ namespace Mog
     void* m_userData;
     ReadFunction m_readFunction;
   };
-} // namespace Mog
+} // namespace mognetwork
 
 #endif // !TCPSOCKET_HH

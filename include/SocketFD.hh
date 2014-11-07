@@ -1,11 +1,11 @@
 //
 // SocketFD.hh for SocketFD in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun  5 19:12:47 2014 Moghrabi Alexandre
-// Last update Thu Jun  5 19:35:34 2014 Moghrabi Alexandre
+// Started on  Thu Jun  5 19:12:47 2014 mognetworkhrabi Alexandre
+// Last update Thu Jun  5 19:35:34 2014 mognetworkhrabi Alexandre
 //
 
 #include "OS.hh"

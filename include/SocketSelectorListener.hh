@@ -1,11 +1,11 @@
 //
 // SocketSelectorListener.hh for SocketSelectorListener in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
-// Started on  Fri Oct 10 15:31:21 2014 Moghrabi Alexandre
-// Last update Fri Oct 10 15:53:01 2014 Moghrabi Alexandre
+// Started on  Fri Oct 10 15:31:21 2014 mognetworkhrabi Alexandre
+// Last update Fri Oct 10 15:53:01 2014 mognetworkhrabi Alexandre
 //
 
 #ifndef SOCKETSELECTORLISTENER_HH_
@@ -13,7 +13,7 @@
 
 # include "TcpSocket.hh"
 
-namespace Mog
+namespace mognetwork
 {
 class SocketSelectorListener
 {

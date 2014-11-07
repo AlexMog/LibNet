@@ -1,11 +1,11 @@
 //
 // UnixSocket.hh for UnixSocket.hh in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun  5 19:36:40 2014 Moghrabi Alexandre
-// Last update Wed Oct  8 08:11:47 2014 Moghrabi Alexandre
+// Started on  Thu Jun  5 19:36:40 2014 mognetworkhrabi Alexandre
+// Last update Wed Oct  8 08:11:47 2014 mognetworkhrabi Alexandre
 //
 
 #ifndef UNIXSOCKET_HH
@@ -21,7 +21,7 @@
 # include "SocketFD.hh"
 # include "Socket.hh"
 
-namespace Mog
+namespace mognetwork
 {
 class OsSocket
 {
@@ -32,6 +32,6 @@ public:
   static void close(SocketFD socket);
   static Socket::Status getErrorStatus();
 };
-} // namespace Mog
+} // namespace mognetwork
 
 #endif // !UNIXSOCKET_HH

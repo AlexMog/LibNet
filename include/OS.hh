@@ -1,11 +1,11 @@
 //
 // OS.hh for OS in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun  5 18:44:24 2014 Moghrabi Alexandre
-// Last update Thu Jun  5 19:12:39 2014 Moghrabi Alexandre
+// Started on  Thu Jun  5 18:44:24 2014 mognetworkhrabi Alexandre
+// Last update Thu Jun  5 19:12:39 2014 mognetworkhrabi Alexandre
 //
 
 #ifndef OS_HH

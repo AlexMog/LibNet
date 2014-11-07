@@ -1,11 +1,11 @@
 //
 // OsSocket.hh for OsSocket in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun  5 19:34:20 2014 Moghrabi Alexandre
-// Last update Wed Oct  8 08:05:50 2014 Moghrabi Alexandre
+// Started on  Thu Jun  5 19:34:20 2014 mognetworkhrabi Alexandre
+// Last update Wed Oct  8 08:05:50 2014 mognetworkhrabi Alexandre
 //
 
 #if defined(OS_WINDOWS)

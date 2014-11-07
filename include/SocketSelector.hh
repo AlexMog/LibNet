@@ -1,11 +1,11 @@
 //
-// SocketSelector.hh for Mog in 
+// SocketSelector.hh for mognetwork in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Wed Jun 11 15:43:12 2014 Moghrabi Alexandre
-// Last update Fri Oct 10 15:52:21 2014 Moghrabi Alexandre
+// Started on  Wed Jun 11 15:43:12 2014 mognetworkhrabi Alexandre
+// Last update Fri Oct 10 15:52:21 2014 mognetworkhrabi Alexandre
 //
 
 #ifndef SOCKETSELECTOR_HH
@@ -21,7 +21,7 @@
 
 typedef timeval Time;
 
-namespace Mog
+namespace mognetwork
 {
 class SocketSelector
 {
@@ -67,6 +67,6 @@ private:
   TcpSocket& m_serverSocket;
   SocketSelectorListener& m_socketSelectorListener;
 };
-} // namespace Mog
+} // namespace mognetwork
 
 #endif // !SOCKETSELECTOR_HH

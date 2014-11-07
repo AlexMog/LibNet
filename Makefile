@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Fri Oct 10 15:36:29 2014 Moghrabi Alexandre
+## Last update Fri Nov  7 21:56:32 2014 Moghrabi Alexandre
 ##
 
 NAME=	libnetwork.a
@@ -17,7 +17,8 @@ SRC=	$(SRCDIR)IpAddress.cpp		\
 	$(SRCDIR)Socket.cpp		\
 	$(SRCDIR)TcpSocket.cpp		\
 	$(SRCDIR)WinSocket.cpp		\
-	$(SRCDIR)SocketSelector.cpp
+	$(SRCDIR)SocketSelector.cpp	\
+	$(SRCDIR)Selector.cpp
 
 OBJS=	$(SRC:.cpp=.o)
 

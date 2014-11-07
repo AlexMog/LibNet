@@ -1,11 +1,11 @@
 //
 // WinSocket.hh for WinSocket in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun  5 19:43:05 2014 Moghrabi Alexandre
-// Last update Fri Jun  6 11:16:04 2014 Moghrabi Alexandre
+// Started on  Thu Jun  5 19:43:05 2014 mognetworkhrabi Alexandre
+// Last update Fri Jun  6 11:16:04 2014 mognetworkhrabi Alexandre
 //
 
 #ifndef WINSOCKET_HH
@@ -24,7 +24,7 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 
-namespace Mog
+namespace mognetwork
 {
 class OsSocket
 {
@@ -35,6 +35,6 @@ public:
   static void close(SocketFD socket);
   static Socket::Status getErrorStatus();
 };
-} // namespace Mog
+} // namespace mognetwork
 
 #endif // !WINSOCKET_HH

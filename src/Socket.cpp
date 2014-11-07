@@ -1,11 +1,11 @@
 //
 // Socket.cpp for socket in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun  5 19:22:18 2014 Moghrabi Alexandre
-// Last update Wed Oct  8 08:25:17 2014 Moghrabi Alexandre
+// Started on  Thu Jun  5 19:22:18 2014 mognetworkhrabi Alexandre
+// Last update Wed Oct  8 08:25:17 2014 mognetworkhrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -16,11 +16,11 @@
 #include "OsSocket.hh"
 #include "Socket.hh"
 
-namespace Mog
+namespace mognetwork
 {
   Socket::Socket(Type type) :
     m_type(type),
-    m_socket(Mog::OsSocket::notValid())
+    m_socket(mognetwork::OsSocket::notValid())
   {}
 
   Socket::~Socket()
@@ -35,7 +35,7 @@ namespace Mog
 
   void Socket::create()
   {
-    if (m_socket == Mog::OsSocket::notValid())
+    if (m_socket == mognetwork::OsSocket::notValid())
       {
 	SocketFD fd = socket(PF_INET, m_type == Tcp ? SOCK_STREAM : SOCK_DGRAM, 0);
 	create(fd);
@@ -44,7 +44,7 @@ namespace Mog
 
   void Socket::create(SocketFD fd)
   {
-    if (m_socket == Mog::OsSocket::notValid())
+    if (m_socket == mognetwork::OsSocket::notValid())
       {
 	m_socket = fd;
 	if (m_type == Tcp)
@@ -75,10 +75,10 @@ namespace Mog
 
   void Socket::close()
   {
-    if (m_socket != Mog::OsSocket::notValid())
+    if (m_socket != mognetwork::OsSocket::notValid())
       {
-	Mog::OsSocket::close(m_socket);
-	m_socket = Mog::OsSocket::notValid();
+	mognetwork::OsSocket::close(m_socket);
+	m_socket = mognetwork::OsSocket::notValid();
       }
   }
-} // namespace Mog
+} // namespace mognetwork

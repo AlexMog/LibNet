@@ -1,11 +1,11 @@
 //
 // IpAddress.hh for  in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Mon Jun  9 16:06:02 2014 Moghrabi Alexandre
-// Last update Wed Oct  8 07:56:15 2014 Moghrabi Alexandre
+// Started on  Mon Jun  9 16:06:02 2014 mognetworkhrabi Alexandre
+// Last update Wed Oct  8 07:56:15 2014 mognetworkhrabi Alexandre
 //
 
 #include <stdint.h>
@@ -15,7 +15,7 @@
 
 # include <string>
 
-namespace Mog
+namespace mognetwork
 {
 class IpAddress
 {
@@ -33,6 +33,6 @@ private:
   std::string m_sAddress;
   uint32_t m_address;
 };
-} // namespace Mog
+} // namespace mognetwork
 
 #endif // !IPADDRESS_HH

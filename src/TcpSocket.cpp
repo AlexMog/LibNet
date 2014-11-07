@@ -1,11 +1,11 @@
 //
 // TcpSocket.cpp for TcpSocket in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Thu Jun  5 20:09:34 2014 Moghrabi Alexandre
-// Last update Fri Oct 10 15:57:03 2014 Moghrabi Alexandre
+// Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
+// Last update Fri Oct 10 15:57:03 2014 mognetworkhrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -27,7 +27,7 @@ namespace
 }
 
 // ! Every packets sends a header (who contains the size of the packet) BEFORE its content.
-namespace Mog
+namespace mognetwork
 {
   TcpSocket::TcpSocket() :
     Socket(Tcp), m_userData(NULL), m_readFunction(NULL)
@@ -217,4 +217,4 @@ namespace Mog
     totalSize(0),
     datas()
   {}
-} // namespace Mog
+} // namespace mognetwork

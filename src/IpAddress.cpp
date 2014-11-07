@@ -1,11 +1,11 @@
 //
 // IpAddress.cpp for  in 
 // 
-// Made by Moghrabi Alexandre
+// Made by mognetworkhrabi Alexandre
 // Login   <alexmog@epitech.net>
 // 
-// Started on  Mon Jun  9 16:05:21 2014 Moghrabi Alexandre
-// Last update Wed Oct  8 07:58:40 2014 Moghrabi Alexandre
+// Started on  Mon Jun  9 16:05:21 2014 mognetworkhrabi Alexandre
+// Last update Wed Oct  8 07:58:40 2014 mognetworkhrabi Alexandre
 //
 
 #include <sys/socket.h>
@@ -16,7 +16,7 @@
 #include <string.h>
 #include "IpAddress.hh"
 
-namespace Mog
+namespace mognetwork
 {
   IpAddress::IpAddress(const std::string& address) : m_sAddress(address), m_address(0) {}
   
@@ -55,4 +55,4 @@ namespace Mog
   {
     return (ntohl(m_address));
   }
-} // namespace Mog
+} // namespace mognetwork
