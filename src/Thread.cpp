@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:37:30 2014 Moghrabi Alexandre
-// Last update Tue Nov 11 19:21:19 2014 Moghrabi Alexandre
+// Last update Tue Nov 11 19:29:51 2014 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -19,9 +19,9 @@ namespace mognetwork
   {
     if (pthread_attr_init(&m_attr) != 0)
       throw ThreadException("pthread_attr_init() error", __LINE__, __FILE__);
-    if (detach)
-      if (pthread_attr_setdetachstate(&m_attr, PTHREAD_CREATE_DETACHED) != 0)
-	throw ThreadException("pthread_attr_setdetachstate error", __LINE__, __FILE__);
+    if (detach && pthread_attr_setdetachstate(&m_attr, PTHREAD_CREATE_DETACHED) != 0)
+      throw ThreadException("pthread_attr_setdetachstate error", __LINE__, __FILE__);
+    m_started = false;
   }
   
   Thread::~Thread()
@@ -32,20 +32,24 @@ namespace mognetwork
   
   void Thread::start()
   {
-    if (pthread_create(&m_thread, &m_attr, &Thread::exec, &m_runnable) != 0)
-      throw ThreadException("Thread creation error", __LINE__, __FILE__);
+    if (!m_started)
+      if (pthread_create(&m_thread, &m_attr, &Thread::exec, &m_runnable) != 0)
+	throw ThreadException("Thread creation error", __LINE__, __FILE__);
+    m_started = true;
   }
   
   void Thread::cancel()
   {
     if (pthread_cancel(m_thread) != 0)
       throw ThreadException("Thread cancel error", __LINE__, __FILE__);
+    m_started = false;
   }
   
   void Thread::join()
   {
     if (pthread_join(m_thread, NULL) != 0)
       throw ThreadException("Thread cannot be joined", __LINE__, __FILE__);
+    m_started = false;
   }
 
   void* Thread::exec(void *thr)

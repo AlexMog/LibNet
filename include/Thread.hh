@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:31:29 2014 Moghrabi Alexandre
-// Last update Tue Nov 11 19:20:30 2014 Moghrabi Alexandre
+// Last update Tue Nov 11 19:49:59 2014 Moghrabi Alexandre
 //
 
 #ifndef THREAD_HH_
@@ -34,6 +34,7 @@ namespace mognetwork
     IRunnable& m_runnable;
     pthread_t m_thread;
     pthread_attr_t m_attr;
+    bool m_started;
   };
 }; // namespace mognetwork
 
