@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Fri Oct 10 15:57:03 2014 mognetworkhrabi Alexandre
+// Last update Tue Nov 11 14:21:36 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -186,18 +186,18 @@ namespace mognetwork
 	    char* begin = &m_pendingRDatas.datas[0] + m_pendingRDatas.datas.size() - readed;
 	    std::memcpy(begin, buffer, readed);
 	  }
-      }
-    if (m_pendingRDatas.readed == m_pendingRDatas.totalSize)
-      {
-	m_allDataReaded.datas = m_pendingRDatas.datas;
-	m_allDataReaded.readed = m_pendingRDatas.readed;
-	m_allDataReaded.totalSize = m_pendingRDatas.totalSize;
-	m_pendingRDatas = ReadedDatas();
-	/*	if (m_readFunction != NULL)
-	  m_readFunction(this);
-	else
-	std::cout << "No readFunction set. Cannot handle datas." << std::endl;*/
-	return (Ok);
+	if (m_pendingRDatas.readed == m_pendingRDatas.totalSize)
+	  {
+	    m_allDataReaded.datas = m_pendingRDatas.datas;
+	    m_allDataReaded.readed = m_pendingRDatas.readed;
+	    m_allDataReaded.totalSize = m_pendingRDatas.totalSize;
+	    m_pendingRDatas = ReadedDatas();
+	    /*	if (m_readFunction != NULL)
+		m_readFunction(this);
+		else
+		std::cout << "No readFunction set. Cannot handle datas." << std::endl;*/
+	    return (Ok);
+	  }
       }
     return (Waiting);
   }
