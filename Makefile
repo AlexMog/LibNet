@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Wed Nov 12 16:29:12 2014 Moghrabi Alexandre
+## Last update Wed Nov 12 16:29:53 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -14,7 +14,7 @@ LIBNAME=lib$(NAME).so
 
 INCLIB=	$(NAME)
 
-ALIBNAME=$(NAME).a
+ALIBNAME=lib$(NAME).a
 
 SRCDIR=	./src/
 
