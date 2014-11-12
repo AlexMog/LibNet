@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:30:25 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 14:49:33 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 17:15:57 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -46,8 +46,9 @@ namespace mognetwork
     void unlock();
     /*!
      * \brief trylock un mutex
+     * \return the trylock response
      */
-    void trylock();
+    int trylock();
 
   protected:
     pthread_mutex_t m_mutex; /*!< données de la mutex */

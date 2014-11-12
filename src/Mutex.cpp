@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:36:19 2014 Moghrabi Alexandre
-// Last update Tue Nov 11 19:42:12 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 17:18:53 2014 Moghrabi Alexandre
 //
 
 #include "ThreadException.hh"
@@ -37,9 +37,8 @@ namespace mognetwork
       throw ThreadException("pthread_mutex_unlock error", __LINE__, __FILE__);
   }
 
-  void Mutex::trylock()
+  int Mutex::trylock()
   {
-    if (pthread_mutex_trylock(&m_mutex) != 0)
-      throw ThreadException("pthread_mutex_trylock error", __LINE__, __FILE__);
+    return pthread_mutex_trylock(&m_mutex);
   }
 }; // namepsace mognetwork

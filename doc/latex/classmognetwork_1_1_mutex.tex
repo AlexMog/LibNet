@@ -28,8 +28,7 @@ Inheritance diagram for mognetwork\-:\-:Mutex\-:\begin{figure}[H]
 \hypertarget{classmognetwork_1_1_mutex_a9f3e0b542f8e9953eca9df6ae408083e}{void \hyperlink{classmognetwork_1_1_mutex_a9f3e0b542f8e9953eca9df6ae408083e}{unlock} ()}\label{classmognetwork_1_1_mutex_a9f3e0b542f8e9953eca9df6ae408083e}
 
 \begin{DoxyCompactList}\small\item\em délock un mutex \end{DoxyCompactList}\item 
-\hypertarget{classmognetwork_1_1_mutex_a80d976553316b396cb74cc335fcca31a}{void \hyperlink{classmognetwork_1_1_mutex_a80d976553316b396cb74cc335fcca31a}{trylock} ()}\label{classmognetwork_1_1_mutex_a80d976553316b396cb74cc335fcca31a}
-
+int \hyperlink{classmognetwork_1_1_mutex_ae4896f5c96a2088d6de667002c046dee}{trylock} ()
 \begin{DoxyCompactList}\small\item\em trylock un mutex \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -40,6 +39,23 @@ pthread\-\_\-mutex\-\_\-t \hyperlink{classmognetwork_1_1_mutex_a571d9d0b9b2be3da
 
 \subsection{Detailed Description}
 Encapsulation des \hyperlink{classmognetwork_1_1_mutex}{Mutex}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmognetwork_1_1_mutex_ae4896f5c96a2088d6de667002c046dee}{\index{mognetwork\-::\-Mutex@{mognetwork\-::\-Mutex}!trylock@{trylock}}
+\index{trylock@{trylock}!mognetwork::Mutex@{mognetwork\-::\-Mutex}}
+\subsubsection[{trylock}]{\setlength{\rightskip}{0pt plus 5cm}int mognetwork\-::\-Mutex\-::trylock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_mutex_ae4896f5c96a2088d6de667002c046dee}
+
+
+trylock un mutex 
+
+\begin{DoxyReturn}{Returns}
+the trylock response 
+\end{DoxyReturn}
+
 
 \subsection{Member Data Documentation}
 \hypertarget{classmognetwork_1_1_mutex_a571d9d0b9b2be3da94192f34b6157ea9}{\index{mognetwork\-::\-Mutex@{mognetwork\-::\-Mutex}!m\-\_\-mutex@{m\-\_\-mutex}}
