@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Wed Nov 12 10:33:51 2014 Moghrabi Alexandre
+## Last update Wed Nov 12 16:29:12 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -13,6 +13,8 @@ NAME=	mognetwork
 LIBNAME=lib$(NAME).so
 
 INCLIB=	$(NAME)
+
+ALIBNAME=$(NAME).a
 
 SRCDIR=	./src/
 
@@ -40,7 +42,7 @@ LDFLAGS=
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-		$(AR) $(NAME) $(LDFLAGS) $(OBJS)
+		$(AR) $(ALIBNAME) $(LDFLAGS) $(OBJS)
 
 debug:		CXXFLAGS += -g3
 debug:		$(NAME)
