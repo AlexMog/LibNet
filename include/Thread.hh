@@ -5,8 +5,15 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:31:29 2014 Moghrabi Alexandre
-// Last update Tue Nov 11 19:49:59 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 14:06:26 2014 Moghrabi Alexandre
 //
+
+/*!
+ * \file Thread.hh
+ * \brief Encapsulation des threads
+ * \author AlexMog
+ * \version 1.0
+ */
 
 #ifndef THREAD_HH_
 # define THREAD_HH_
@@ -16,25 +23,53 @@
 
 namespace mognetwork
 {
+  /*!
+   * \class Thread
+   * \brief Classe d'encapsulation des threads
+   */
   class Thread
   {
   public:
+    /*!
+     * \brief Constructeur
+     * \param runnable Un runnable pour le lancement du thread
+     * \param detach Le thread est il attaché?
+     */
     Thread(IRunnable& runnable, bool detach);
     ~Thread();
 
   public:
+    /*!
+     * \brief Lance le thread
+     */
     virtual void start();
+    /*!
+     * \brief Annule le thread
+     */
     virtual void cancel();
+    /*!
+     * \brief Attend que le thread se termine
+     */
     virtual void join();
 
   protected:
+    /*!
+     * \brief Utilisée pour passer un pointeur sur fonction au thread
+     */
     static void* exec(void *);
 
+  public:
+    /*!
+     * \brief permet de savoir si le thread est actuellement lancé
+     * \return true si lancé, sinon false
+     */
+    bool isStarted() const {return m_started;}
+
   private:
-    IRunnable& m_runnable;
-    pthread_t m_thread;
-    pthread_attr_t m_attr;
-    bool m_started;
+    IRunnable& m_runnable; /*!< Système de lancement du thread */
+    pthread_t m_thread; /*!< identifiant du thread */
+    pthread_attr_t m_attr; /*!< configurations du thread */
+    bool m_started; /*!< permet de savoir si le thread est actuellement lancé ou non */
   };
 }; // namespace mognetwork
 

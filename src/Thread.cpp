@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:37:30 2014 Moghrabi Alexandre
-// Last update Tue Nov 11 19:29:51 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 10:24:55 2014 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -32,9 +32,8 @@ namespace mognetwork
   
   void Thread::start()
   {
-    if (!m_started)
-      if (pthread_create(&m_thread, &m_attr, &Thread::exec, &m_runnable) != 0)
-	throw ThreadException("Thread creation error", __LINE__, __FILE__);
+    if (!m_started && pthread_create(&m_thread, &m_attr, &Thread::exec, &m_runnable) != 0)
+      throw ThreadException("Thread creation error", __LINE__, __FILE__);
     m_started = true;
   }
   

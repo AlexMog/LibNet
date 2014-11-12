@@ -1,0 +1,127 @@
+\hypertarget{classmognetwork_1_1_os_socket}{\section{mognetwork\-:\-:Os\-Socket Class Reference}
+\label{classmognetwork_1_1_os_socket}\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}}
+}
+
+
+Outils de socket générique de Windows.  
+
+
+
+
+{\ttfamily \#include $<$Win\-Socket.\-hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmognetwork_1_1_os_socket_a10e453b27c0954f12f5dbf74bf9853c0}{typedef socklen\-\_\-t {\bfseries Addr\-Length}}\label{classmognetwork_1_1_os_socket_a10e453b27c0954f12f5dbf74bf9853c0}
+
+\item 
+typedef int \hyperlink{classmognetwork_1_1_os_socket_a53fd4fa9dc6b02cafdb4b7a2b6d94778}{Addre\-Length}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmognetwork_1_1_os_socket_aec3ee68397d04abab9003ddd68e86793}{static sockaddr\-\_\-in {\bfseries create\-Address} (uint32\-\_\-t address, unsigned short port)}\label{classmognetwork_1_1_os_socket_aec3ee68397d04abab9003ddd68e86793}
+
+\item 
+\hypertarget{classmognetwork_1_1_os_socket_a5b2cf6583d7bc3a640a162a6ae3dead7}{static Socket\-F\-D {\bfseries not\-Valid} ()}\label{classmognetwork_1_1_os_socket_a5b2cf6583d7bc3a640a162a6ae3dead7}
+
+\item 
+\hypertarget{classmognetwork_1_1_os_socket_afc41f453da34be5cce9fa5470ca3697a}{static void {\bfseries close} (Socket\-F\-D socket)}\label{classmognetwork_1_1_os_socket_afc41f453da34be5cce9fa5470ca3697a}
+
+\item 
+\hypertarget{classmognetwork_1_1_os_socket_a331f63335ee89ae3eaa24a59cbada192}{static \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} {\bfseries get\-Error\-Status} ()}\label{classmognetwork_1_1_os_socket_a331f63335ee89ae3eaa24a59cbada192}
+
+\item 
+static sockaddr\-\_\-in \hyperlink{classmognetwork_1_1_os_socket_ae012b09d94070d07925a03cdc3a8a6ae}{create\-Address} (Uint32 address, unsigned short port)
+\begin{DoxyCompactList}\small\item\em Crée un sockaddr\-\_\-in. \end{DoxyCompactList}\item 
+static Socket\-F\-D \hyperlink{classmognetwork_1_1_os_socket_a5b2cf6583d7bc3a640a162a6ae3dead7}{not\-Valid} ()
+\begin{DoxyCompactList}\small\item\em Vérifie si la socket est valide. \end{DoxyCompactList}\item 
+static void \hyperlink{classmognetwork_1_1_os_socket_afc41f453da34be5cce9fa5470ca3697a}{close} (Socket\-F\-D socket)
+\begin{DoxyCompactList}\small\item\em Ferme la socket. \end{DoxyCompactList}\item 
+static \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1_os_socket_a331f63335ee89ae3eaa24a59cbada192}{get\-Error\-Status} ()
+\begin{DoxyCompactList}\small\item\em Vérifie le status de la socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Outils de socket générique de Windows. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classmognetwork_1_1_os_socket_a53fd4fa9dc6b02cafdb4b7a2b6d94778}{\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}!Addre\-Length@{Addre\-Length}}
+\index{Addre\-Length@{Addre\-Length}!mognetwork::OsSocket@{mognetwork\-::\-Os\-Socket}}
+\subsubsection[{Addre\-Length}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf mognetwork\-::\-Os\-Socket\-::\-Addre\-Length}}}\label{classmognetwork_1_1_os_socket_a53fd4fa9dc6b02cafdb4b7a2b6d94778}
+Typedef pour la longueur d'une adresse 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmognetwork_1_1_os_socket_afc41f453da34be5cce9fa5470ca3697a}{\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}!close@{close}}
+\index{close@{close}!mognetwork::OsSocket@{mognetwork\-::\-Os\-Socket}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}static void mognetwork\-::\-Os\-Socket\-::close (
+\begin{DoxyParamCaption}
+\item[{Socket\-F\-D}]{socket}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmognetwork_1_1_os_socket_afc41f453da34be5cce9fa5470ca3697a}
+
+
+Ferme la socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & le socket\-F\-D à partir duquel on crée la socket \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmognetwork_1_1_os_socket_ae012b09d94070d07925a03cdc3a8a6ae}{\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}!create\-Address@{create\-Address}}
+\index{create\-Address@{create\-Address}!mognetwork::OsSocket@{mognetwork\-::\-Os\-Socket}}
+\subsubsection[{create\-Address}]{\setlength{\rightskip}{0pt plus 5cm}static sockaddr\-\_\-in mognetwork\-::\-Os\-Socket\-::create\-Address (
+\begin{DoxyParamCaption}
+\item[{Uint32}]{address, }
+\item[{unsigned short}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmognetwork_1_1_os_socket_ae012b09d94070d07925a03cdc3a8a6ae}
+
+
+Crée un sockaddr\-\_\-in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & \-: adresse en Uint32 \\
+\hline
+{\em port} & \-: le port à utiliser \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sockaddr\-\_\-in la structure initialisée 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_os_socket_a331f63335ee89ae3eaa24a59cbada192}{\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}!get\-Error\-Status@{get\-Error\-Status}}
+\index{get\-Error\-Status@{get\-Error\-Status}!mognetwork::OsSocket@{mognetwork\-::\-Os\-Socket}}
+\subsubsection[{get\-Error\-Status}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Socket\-::\-Status} mognetwork\-::\-Os\-Socket\-::get\-Error\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmognetwork_1_1_os_socket_a331f63335ee89ae3eaa24a59cbada192}
+
+
+Vérifie le status de la socket. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} le status de la socket 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_os_socket_a5b2cf6583d7bc3a640a162a6ae3dead7}{\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}!not\-Valid@{not\-Valid}}
+\index{not\-Valid@{not\-Valid}!mognetwork::OsSocket@{mognetwork\-::\-Os\-Socket}}
+\subsubsection[{not\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}static Socket\-F\-D mognetwork\-::\-Os\-Socket\-::not\-Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmognetwork_1_1_os_socket_a5b2cf6583d7bc3a640a162a6ae3dead7}
+
+
+Vérifie si la socket est valide. 
+
+\begin{DoxyReturn}{Returns}
+Socket\-F\-D un fd valide 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/Unix\-Socket.\-hh\item 
+include/\hyperlink{_win_socket_8hh}{Win\-Socket.\-hh}\end{DoxyCompactItemize}

@@ -5,8 +5,16 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Wed Jun 11 15:43:12 2014 mognetworkhrabi Alexandre
-// Last update Fri Nov  7 21:54:41 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 14:46:33 2014 Moghrabi Alexandre
 //
+
+/*!
+ * \file Selector.hh
+ * \brief Encapsulation du Select
+ * \author AlexMog
+ * \version 0.1
+ * \depreciated Untested
+ */
 
 #ifndef SELECTOR_HH
 # define SELECTOR_HH
@@ -18,62 +26,108 @@
 #include <list>
 #include "SocketFD.hh"
 
-typedef timeval Time;
+typedef timeval Time; /*!< Time val typedef (yup, i like it) */
 
 namespace mognetwork
 {
-class Selector
-{
-public:
-  enum TriggerType
-    {
-      None,
-      Read,
-      Write
-    };
-  enum State
-    {
-      Waiting,
-      Error
-    };
-  Selector();
-  ~Selector();
-
-public:
-  void waitForTrigger();
-
-public:
-  Time* getTimeout() const {return m_timeout;}
-  State getState() const {return m_state;}
-  const std::list<SocketFD>& getWrintingTriggeredSockets() const {return m_writeUpdated;}
-  const std::list<SocketFD>& getReadingTriggeredSockets() const {return m_readUpdated;}
-
-public:
-  void setTimeout(Time* timeout) {m_timeout = timeout;}
-  void addFdToWrite(SocketFD fd);
-  void addFdToRead(SocketFD fd);
-  void remFdToWrite(SocketFD fd) {m_writeSockets.remove(fd);}
-  void remFdToRead(SocketFD fd) {m_readSockets.remove(fd);}
-
-private:
-  void setFds();
-  void updateFds();
-
-private:
-  // Timeout of the select
-  Time* m_timeout;
-  // List of socketFds to monitor
-  std::list<SocketFD> m_readSockets;
-  std::list<SocketFD> m_writeSockets;
-  // List of sockets who got modified
-  std::list<SocketFD> m_readUpdated;
-  std::list<SocketFD> m_writeUpdated;
-  // The state of the selector
-  State m_state;
-  fd_set m_rdfs;
-  fd_set m_wdfs;
-  int m_maxFds;
-};
-} // namespace mognetwork
+  /*!
+   * \class Selector
+   * \brief Encapsulation du select
+   */
+  class Selector
+  {
+  public:
+    /*!
+     * \enum State
+     * \brief Enum définissant les différents états du select
+     */
+    enum State
+      {
+	Waiting,
+	Error
+      };
+    /*!
+     * \brief Constructeur du select
+     */
+    Selector();
+    ~Selector();
+    
+  public:
+    /*!
+     * \brief Attends que le select saute
+     */
+    void waitForTrigger();
+    
+  public:
+    /*!
+     * \brief Récupère le timeout
+     * \return Le timeout via une structure timeval
+     */
+    Time* getTimeout() const {return m_timeout;}
+    /*!
+     * \brief Récupère l'état actuel du select
+     * \return L'état du select
+     */
+    State getState() const {return m_state;}
+    /*!
+     * \brief Récupère les sockets qui sont modifiables en écriture
+     * \reutn Liste contenant les sockets modifiables
+     */
+    const std::list<SocketFD>& getWrintingTriggeredSockets() const {return m_writeUpdated;}
+    /*!
+     * \brief Récupère les sockets qui ont été modifiées en lecture
+     * \return Liste contenant les sockets modifiées
+     */
+    const std::list<SocketFD>& getReadingTriggeredSockets() const {return m_readUpdated;}
+    
+  public:
+    /*!
+     * \brief Définit une valeur pour le timeout
+     * \param timeout le timeout en question
+     */
+    void setTimeout(Time* timeout) {m_timeout = timeout;}
+    /*!
+     * \brief Ajoute un fd à la surveillance sur l'écriture
+     * \param fd le FD à ajouter
+     */
+    void addFdToWrite(SocketFD fd);
+    /*!
+     * \brief Ajoute un fd à la surveillance en lecture
+     * \param fd le FD à ajouter
+     */
+    void addFdToRead(SocketFD fd);
+    /*!
+     * \brief Supprime un fd à la surveillance en écriture
+     * \param fd le socket à supprimer
+     */
+    void remFdToWrite(SocketFD fd) {m_writeSockets.remove(fd);}
+    /*!
+     * \brief supprime un fd à la surveillance en écriture
+     * \param fd le socket à supprimer
+     */
+    void remFdToRead(SocketFD fd) {m_readSockets.remove(fd);}
+    
+  private:
+    /*!
+     * \brief Définit l'état des fd
+     */
+    void setFds();
+    /*!
+     * \brief Modifie l'état des fd
+     */
+    void updateFds();
+    
+  private:
+    Time* m_timeout; /*!< Timeout du select */
+    std::list<SocketFD> m_readSockets; /*!< Liste des fd à monitorer en lecture */
+    std::list<SocketFD> m_writeSockets; /*!< Liste des fd à monitorer en écriture */
+    std::list<SocketFD> m_readUpdated; /*!< Liste des fd modifiés en lecture */
+    std::list<SocketFD> m_writeUpdated; /*!< Liste des fd pouvant être modifiés en écriture */
+    State m_state; /*!< Etat du select */
+    fd_set m_rdfs; /*!< Liste des fd en lecture */
+    fd_set m_wdfs; /*!< Liste des fd en écriture */
+    int m_maxFds; /*!< FD max pour le select */
+  };
+}; // namespace mognetwork
 
 #endif // !SELECTOR_HH

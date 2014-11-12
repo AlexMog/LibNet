@@ -5,8 +5,15 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Fri Oct 10 15:55:58 2014 mognetworkhrabi Alexandre
+// Last update Wed Nov 12 14:23:45 2014 Moghrabi Alexandre
 //
+
+/*!
+ * \file TcpSocket.hh
+ * \brief Gestion des sockets en TCP
+ * \author AlexMog
+ * \version 0.1
+ */
 
 #ifndef TCPSOCKET_HH
 # define TCPSOCKET_HH
@@ -19,42 +26,100 @@
 
 namespace mognetwork
 {
+  /*!
+   * \class TcpSocket
+   * \brief Classe de création d'une socket TCP
+   */
   class TcpSocket : public Socket
   {
   public:
-    typedef void (*ReadFunction)(TcpSocket* client);
-    typedef std::vector<char> Data;
-    typedef std::list<Data> DataList;
+    typedef std::vector<char> Data; /*!< Typedef pour définit le typpage d'une Data */
+    typedef std::list<Data> DataList; /*!< Typedef pour définit une dataList */
 
   public:
+    /*!
+     * \brief Contient toutes les données relatives à la lecture d'une donnée en réseau
+     */
     struct ReadedDatas
     {
-      ReadedDatas();
-      std::size_t readed;
-      std::size_t totalSize;
-      Data datas;
+      ReadedDatas(); /*!< Constructeur pour réinitialiser la structure */
+      std::size_t readed; /*!< Nombre d'octets lus */
+      std::size_t totalSize; /*!< Taille totale à lire */
+      Data datas; /*!< Données lues */
     };
+
+    /*!
+     * \brief Constructeur d'une socket en TCP par défaut
+     */
     TcpSocket();
+    /*!
+     * \brief Constructeur d'une socket TCP à partir d'une socket déjà ouverte
+     * \param fd le FD de la socket déjà ouverte
+     */
     TcpSocket(SocketFD fd);
+    /*!
+     * \brief Connecte la socket à une adresse
+     * \param address l'adresse où la socket doit se connecter
+     * \param port le port où la socket doit se connecter
+     */
     Socket::Status connect(const IpAddress& address, unsigned short port);
+    /*!
+     * \brief Déconnecte la socket
+     */
     void disconnect();
+    /*!
+     * \brief Envois des données de manière synchrone (blockante)
+     * \return Socket::Status permettant de savoir l'état de l'envois
+     */
     Socket::Status send(const char* data, std::size_t size);
+    /*!
+     * \brief Reçoit des données de manière synchrone (blockante)
+     * \return Socket::Status permettant de savoir l'état de la réception
+     */
     Socket::Status receive(char* data, std::size_t size, std::size_t& received, int _flags);
+    /*!
+     * \brief Ajoute des données à la liste d'envois des données de la socket en Asynchrone
+     * \param data Les données à envoyer
+     * \param size la taille totale des données
+     * \return Socket::Status permettant de savoir l'état de l'envois
+     */
     Socket::Status asyncSend(const char* data, std::size_t size);
+    /*!
+     * \brief Envois les données en attente ajoutées par asyncSend
+     * \return Socket::Status permettant de savoir l'état de l'envois
+     */
     Socket::Status sendPendingDatas();
+    /*!
+     * \brief Permet de savoir si il reste des données à envoyer via sendPendingDatas
+     * \return true si il en reste, false sinon
+     */
     bool havingPendingDatas() const;
+    /*!
+     * \brief Définit des données pouvant être récupérées via la socket
+     * \param userData les données en question
+     */
     void setUserData(void* userData);
+    /*!
+     * \brief Récupère des données enregistrées sur la socket
+     * \return pointeur contenant les données
+     */
     void* getUserData() const;
+    /*!
+     * \brief Lis les données en attente en Asynchrone
+     * \return Socket::Status permettant de savoir l'état de la lecture
+     */
     Socket::Status readPendingDatas();
-    void setReadFunc(ReadFunction);
+    /*!
+     * \brief Récupère les données lues via readPendingDatas
+     * \return Les données lues en temps que TcpSocket::ReadedDatas
+     */
     const TcpSocket::ReadedDatas& getDatasReaded() const;
 
   private:
-    DataList m_pendingDatas;
-    ReadedDatas m_pendingRDatas;
-    ReadedDatas m_allDataReaded;
-    void* m_userData;
-    ReadFunction m_readFunction;
+    DataList m_pendingDatas; /*!< Données en attente */
+    ReadedDatas m_pendingRDatas; /*!< Données en attente de lecture */
+    ReadedDatas m_allDataReaded; /*!< Données lues */
+    void* m_userData; /*!< Données supplémentaires optionnelles */
   };
 } // namespace mognetwork
 

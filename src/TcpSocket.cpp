@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 11 14:21:36 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 15:04:14 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -30,11 +30,11 @@ namespace
 namespace mognetwork
 {
   TcpSocket::TcpSocket() :
-    Socket(Tcp), m_userData(NULL), m_readFunction(NULL)
+    Socket(Tcp), m_userData(NULL)
   {}
 
   TcpSocket::TcpSocket(SocketFD fd) :
-    Socket(Tcp), m_userData(NULL), m_readFunction(NULL)
+    Socket(Tcp), m_userData(NULL)
   {
     create(fd);
   }
@@ -200,11 +200,6 @@ namespace mognetwork
 	  }
       }
     return (Waiting);
-  }
-
-  void TcpSocket::setReadFunc(ReadFunction readFunction)
-  {
-    m_readFunction = readFunction;
   }
 
   const TcpSocket::ReadedDatas& TcpSocket::getDatasReaded() const

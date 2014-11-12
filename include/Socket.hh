@@ -5,8 +5,15 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:07:37 2014 mognetworkhrabi Alexandre
-// Last update Fri Oct 10 15:53:48 2014 mognetworkhrabi Alexandre
+// Last update Wed Nov 12 14:34:05 2014 Moghrabi Alexandre
 //
+
+/*!
+ * \file Socket.hh
+ * \brief Définit la base d'une socket
+ * \author AlexMog
+ * \version 1.0
+ */
 
 #ifndef SOCKET_HH
 #define SOCKET_HH
@@ -15,37 +22,66 @@
 
 namespace mognetwork
 {
-class Socket
-{
-public:
-  enum Status
-    {
-      Ok, // Socket ready to read / send datas
-      Nok, // Socket not ready to read / send datas
-      Disconnected, // Socket disconnected
-      Waiting, // Waiting for datas
-      Error // Unexpected error
-    };
-
-public:
-  virtual ~Socket();
-  SocketFD getSocketFD() const;
-
-protected:
-  enum Type
-    {
-      Tcp,
-      Udp
-    };
-  Socket(Type type);
-  void create();
-  void create(SocketFD fd);
-  void close();
-
-private:
-  Type m_type;
-  SocketFD m_socket;
-};
+  /*!
+   * \class Socket
+   * \brief Définit la base d'une socket
+   */
+  class Socket
+  {
+  public:
+    /*!
+     * \enum Status
+     * \brief Définit les status possibles d'une socket
+     */
+    enum Status
+      {
+	Ok, /*!< Socket prête à la lecture/écriture */
+	Nok, /*!< Socket non prête à la lecture/écriture */
+	Disconnected, /*!< Socket déconnectée */
+	Waiting, /*!< Attente de données */
+	Error /*!< Erreur inconnue */
+      };
+    
+  public:
+    virtual ~Socket();
+    /*!
+     * \brief récupère le FD de la socket
+     * \return le FD de la socket
+     */
+    SocketFD getSocketFD() const;
+    
+  protected:
+    /*!
+     * \enum Type
+     * \brief Définit le type de socket
+     */
+    enum Type
+      {
+	Tcp, /*!< Socket TCP */
+	Udp /*!< Socket UDP */
+      };
+    /*!
+     * \brief Constructeur de la socket
+     * \param type Le type de socket
+     */
+    Socket(Type type);
+    /*!
+     * \brief crée la socket et crée un FD
+     */
+    void create();
+    /*!
+     * \brief crée la socket via un FD déjà ouvert
+     */
+    void create(SocketFD fd);
+    /*!
+     * \brief ferme la socket
+     */
+    void close();
+    
+  private:
+    Type m_type; /*!< Le type de socket */
+    SocketFD m_socket; /*!< FD de la socket */
+  };
 } // namespace mognetwork
 
 #endif /* !SOCKET_HH */

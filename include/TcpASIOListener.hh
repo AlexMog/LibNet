@@ -5,8 +5,16 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Tue Nov 11 17:30:39 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 14:25:09 2014 Moghrabi Alexandre
 //
+
+/*!
+ * \file TcpASIOListener.hh
+ * \brief Permet la gestion de la lecture de données en ASIO
+ * \author AlexMog
+ * \version 0.1
+ * \depreciated non terminé
+ */
 
 #ifndef TCPASIOLISTENER_HH_
 # define TCPASIOLISTENER_HH_

@@ -5,10 +5,14 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Tue Nov 11 19:56:23 2014 Moghrabi Alexandre
+## Last update Wed Nov 12 10:33:51 2014 Moghrabi Alexandre
 ##
 
-NAME=	libnetwork.a
+NAME=	mognetwork
+
+LIBNAME=lib$(NAME).so
+
+INCLIB=	$(NAME)
 
 SRCDIR=	./src/
 

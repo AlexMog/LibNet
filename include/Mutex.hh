@@ -5,8 +5,15 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:30:25 2014 Moghrabi Alexandre
-// Last update Tue Nov 11 19:47:25 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 14:49:33 2014 Moghrabi Alexandre
 //
+
+/*!
+ * \file Mutex.hh
+ * \brief Encapsulation des mutex
+ * \author AlexMog
+ * \version 1.0
+ */
 
 #ifndef MUTEX_HH_
 # define MUTEX_HH_
@@ -15,19 +22,35 @@
 
 namespace mognetwork
 {
+  /*!
+   * \class Mutex
+   * \brief Encapsulation des Mutex
+   */
   class Mutex
   {
   public:
+    /*!
+     * \brief Constructeur par défaut
+     */
     Mutex();
     virtual ~Mutex();
 
   public:
+    /*!
+     * \brief block un mutex
+     */
     void lock();
+    /*!
+     * \brief délock un mutex
+     */
     void unlock();
+    /*!
+     * \brief trylock un mutex
+     */
     void trylock();
 
   protected:
-    pthread_mutex_t m_mutex;
+    pthread_mutex_t m_mutex; /*!< données de la mutex */
   };
 }; // namespace mognetwork
 

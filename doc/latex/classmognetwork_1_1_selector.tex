@@ -1,0 +1,180 @@
+\hypertarget{classmognetwork_1_1_selector}{\section{mognetwork\-:\-:Selector Class Reference}
+\label{classmognetwork_1_1_selector}\index{mognetwork\-::\-Selector@{mognetwork\-::\-Selector}}
+}
+
+
+Encapsulation du select.  
+
+
+
+
+{\ttfamily \#include $<$Selector.\-hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classmognetwork_1_1_selector_a51d709c3579bf32265d68d4313df5794}{State} \{ {\bfseries Waiting}, 
+{\bfseries Error}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum définissant les différents états du select. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmognetwork_1_1_selector_ac2dc59256b3b676a6c04102f5ea5515a}{\hyperlink{classmognetwork_1_1_selector_ac2dc59256b3b676a6c04102f5ea5515a}{Selector} ()}\label{classmognetwork_1_1_selector_ac2dc59256b3b676a6c04102f5ea5515a}
+
+\begin{DoxyCompactList}\small\item\em Constructeur du select. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_selector_aba14d0165c8b6408e75a8a7db3cbffb7}{void \hyperlink{classmognetwork_1_1_selector_aba14d0165c8b6408e75a8a7db3cbffb7}{wait\-For\-Trigger} ()}\label{classmognetwork_1_1_selector_aba14d0165c8b6408e75a8a7db3cbffb7}
+
+\begin{DoxyCompactList}\small\item\em Attends que le select saute. \end{DoxyCompactList}\item 
+\hyperlink{_selector_8hh_af47ac292ef7224cf549b944d138ba4ae}{Time} $\ast$ \hyperlink{classmognetwork_1_1_selector_ae1cb38fe53e4313751062277b39fbfd5}{get\-Timeout} () const 
+\begin{DoxyCompactList}\small\item\em Récupère le timeout. \end{DoxyCompactList}\item 
+\hyperlink{classmognetwork_1_1_selector_a51d709c3579bf32265d68d4313df5794}{State} \hyperlink{classmognetwork_1_1_selector_aab8261de074ef927dfe62bb9ddaafb93}{get\-State} () const 
+\begin{DoxyCompactList}\small\item\em Récupère l'état actuel du select. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_selector_a4facfad643b0880b63a8060c8fa17fda}{const std\-::list$<$ Socket\-F\-D $>$ \& \hyperlink{classmognetwork_1_1_selector_a4facfad643b0880b63a8060c8fa17fda}{get\-Wrinting\-Triggered\-Sockets} () const }\label{classmognetwork_1_1_selector_a4facfad643b0880b63a8060c8fa17fda}
+
+\begin{DoxyCompactList}\small\item\em Récupère les sockets qui sont modifiables en écriture  Liste contenant les sockets modifiables. \end{DoxyCompactList}\item 
+const std\-::list$<$ Socket\-F\-D $>$ \& \hyperlink{classmognetwork_1_1_selector_ae41a4ff4e9281cdd03880f69c0c71a35}{get\-Reading\-Triggered\-Sockets} () const 
+\begin{DoxyCompactList}\small\item\em Récupère les sockets qui ont été modifiées en lecture. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_selector_ac03b53749206d8ba80dec22bad55e0a8}{set\-Timeout} (\hyperlink{_selector_8hh_af47ac292ef7224cf549b944d138ba4ae}{Time} $\ast$timeout)
+\begin{DoxyCompactList}\small\item\em Définit une valeur pour le timeout. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_selector_a6f22d28dc38b5d252c0590de857d67f7}{add\-Fd\-To\-Write} (Socket\-F\-D fd)
+\begin{DoxyCompactList}\small\item\em Ajoute un fd à la surveillance sur l'écriture. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_selector_aacc48e5256e3b5150f80acad84b82de3}{add\-Fd\-To\-Read} (Socket\-F\-D fd)
+\begin{DoxyCompactList}\small\item\em Ajoute un fd à la surveillance en lecture. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_selector_ad03d2d3e016838b38fb865a7924915e5}{rem\-Fd\-To\-Write} (Socket\-F\-D fd)
+\begin{DoxyCompactList}\small\item\em Supprime un fd à la surveillance en écriture. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_selector_a1ae5d9e72ca6950f82d76e439ce9f74d}{rem\-Fd\-To\-Read} (Socket\-F\-D fd)
+\begin{DoxyCompactList}\small\item\em supprime un fd à la surveillance en écriture \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encapsulation du select. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmognetwork_1_1_selector_aacc48e5256e3b5150f80acad84b82de3}{\index{mognetwork\-::\-Selector@{mognetwork\-::\-Selector}!add\-Fd\-To\-Read@{add\-Fd\-To\-Read}}
+\index{add\-Fd\-To\-Read@{add\-Fd\-To\-Read}!mognetwork::Selector@{mognetwork\-::\-Selector}}
+\subsubsection[{add\-Fd\-To\-Read}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Selector\-::add\-Fd\-To\-Read (
+\begin{DoxyParamCaption}
+\item[{Socket\-F\-D}]{fd}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_selector_aacc48e5256e3b5150f80acad84b82de3}
+
+
+Ajoute un fd à la surveillance en lecture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & le F\-D à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmognetwork_1_1_selector_a6f22d28dc38b5d252c0590de857d67f7}{\index{mognetwork\-::\-Selector@{mognetwork\-::\-Selector}!add\-Fd\-To\-Write@{add\-Fd\-To\-Write}}
+\index{add\-Fd\-To\-Write@{add\-Fd\-To\-Write}!mognetwork::Selector@{mognetwork\-::\-Selector}}
+\subsubsection[{add\-Fd\-To\-Write}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Selector\-::add\-Fd\-To\-Write (
+\begin{DoxyParamCaption}
+\item[{Socket\-F\-D}]{fd}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_selector_a6f22d28dc38b5d252c0590de857d67f7}
+
+
+Ajoute un fd à la surveillance sur l'écriture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & le F\-D à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmognetwork_1_1_selector_ae41a4ff4e9281cdd03880f69c0c71a35}{\index{mognetwork\-::\-Selector@{mognetwork\-::\-Selector}!get\-Reading\-Triggered\-Sockets@{get\-Reading\-Triggered\-Sockets}}
+\index{get\-Reading\-Triggered\-Sockets@{get\-Reading\-Triggered\-Sockets}!mognetwork::Selector@{mognetwork\-::\-Selector}}
+\subsubsection[{get\-Reading\-Triggered\-Sockets}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::list$<$Socket\-F\-D$>$\& mognetwork\-::\-Selector\-::get\-Reading\-Triggered\-Sockets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_selector_ae41a4ff4e9281cdd03880f69c0c71a35}
+
+
+Récupère les sockets qui ont été modifiées en lecture. 
+
+\begin{DoxyReturn}{Returns}
+Liste contenant les sockets modifiées 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_selector_aab8261de074ef927dfe62bb9ddaafb93}{\index{mognetwork\-::\-Selector@{mognetwork\-::\-Selector}!get\-State@{get\-State}}
+\index{get\-State@{get\-State}!mognetwork::Selector@{mognetwork\-::\-Selector}}
+\subsubsection[{get\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State} mognetwork\-::\-Selector\-::get\-State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_selector_aab8261de074ef927dfe62bb9ddaafb93}
+
+
+Récupère l'état actuel du select. 
+
+\begin{DoxyReturn}{Returns}
+L'état du select 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_selector_ae1cb38fe53e4313751062277b39fbfd5}{\index{mognetwork\-::\-Selector@{mognetwork\-::\-Selector}!get\-Timeout@{get\-Timeout}}
+\index{get\-Timeout@{get\-Timeout}!mognetwork::Selector@{mognetwork\-::\-Selector}}
+\subsubsection[{get\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time}$\ast$ mognetwork\-::\-Selector\-::get\-Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_selector_ae1cb38fe53e4313751062277b39fbfd5}
+
+
+Récupère le timeout. 
+
+\begin{DoxyReturn}{Returns}
+Le timeout via une structure timeval 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_selector_a1ae5d9e72ca6950f82d76e439ce9f74d}{\index{mognetwork\-::\-Selector@{mognetwork\-::\-Selector}!rem\-Fd\-To\-Read@{rem\-Fd\-To\-Read}}
+\index{rem\-Fd\-To\-Read@{rem\-Fd\-To\-Read}!mognetwork::Selector@{mognetwork\-::\-Selector}}
+\subsubsection[{rem\-Fd\-To\-Read}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Selector\-::rem\-Fd\-To\-Read (
+\begin{DoxyParamCaption}
+\item[{Socket\-F\-D}]{fd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_selector_a1ae5d9e72ca6950f82d76e439ce9f74d}
+
+
+supprime un fd à la surveillance en écriture 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & le socket à supprimer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmognetwork_1_1_selector_ad03d2d3e016838b38fb865a7924915e5}{\index{mognetwork\-::\-Selector@{mognetwork\-::\-Selector}!rem\-Fd\-To\-Write@{rem\-Fd\-To\-Write}}
+\index{rem\-Fd\-To\-Write@{rem\-Fd\-To\-Write}!mognetwork::Selector@{mognetwork\-::\-Selector}}
+\subsubsection[{rem\-Fd\-To\-Write}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Selector\-::rem\-Fd\-To\-Write (
+\begin{DoxyParamCaption}
+\item[{Socket\-F\-D}]{fd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_selector_ad03d2d3e016838b38fb865a7924915e5}
+
+
+Supprime un fd à la surveillance en écriture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & le socket à supprimer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmognetwork_1_1_selector_ac03b53749206d8ba80dec22bad55e0a8}{\index{mognetwork\-::\-Selector@{mognetwork\-::\-Selector}!set\-Timeout@{set\-Timeout}}
+\index{set\-Timeout@{set\-Timeout}!mognetwork::Selector@{mognetwork\-::\-Selector}}
+\subsubsection[{set\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Selector\-::set\-Timeout (
+\begin{DoxyParamCaption}
+\item[{{\bf Time} $\ast$}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_selector_ac03b53749206d8ba80dec22bad55e0a8}
+
+
+Définit une valeur pour le timeout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & le timeout en question \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_selector_8hh}{Selector.\-hh}\end{DoxyCompactItemize}

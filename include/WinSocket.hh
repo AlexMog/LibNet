@@ -5,8 +5,15 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:43:05 2014 mognetworkhrabi Alexandre
-// Last update Fri Jun  6 11:16:04 2014 mognetworkhrabi Alexandre
+// Last update Wed Nov 12 13:53:07 2014 Moghrabi Alexandre
 //
+
+/*!
+ * \file WinSocket.hh
+ * \brief Socket windows
+ * \author AlexMog
+ * \version 1.0
+ */
 
 #ifndef WINSOCKET_HH
 # define WINSOCKET_HH
@@ -24,15 +31,41 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 
+/*!
+ * \namespace mognetwork
+ * espace de nommage des différents outils de la lib
+ */
 namespace mognetwork
 {
+  /*!
+   * \class OsSocket
+   * \brief Outils de socket générique de Windows
+   */
 class OsSocket
 {
 public:
-  typedef int AddreLength;
+  typedef int AddreLength; /*!< Typedef pour la longueur d'une adresse */
+  /*!
+   * \brief Crée un sockaddr_in
+   * \param address : adresse en Uint32
+   * \param port : le port à utiliser
+   * \return sockaddr_in la structure initialisée
+   */
   static sockaddr_in createAddress(Uint32 address, unsigned short port);
+  /*!
+   * \brief Vérifie si la socket est valide
+   * \return SocketFD un fd valide
+   */
   static SocketFD notValid();
+  /*!
+   * \brief Ferme la socket
+   * \param socket le socketFD à partir duquel on crée la socket
+   */
   static void close(SocketFD socket);
+  /*!
+   * \brief Vérifie le status de la socket
+   * \return Socket::Status le status de la socket
+   */
   static Socket::Status getErrorStatus();
 };
 } // namespace mognetwork

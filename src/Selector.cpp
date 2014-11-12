@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun 12 18:06:35 2014 mognetworkhrabi Alexandre
-// Last update Fri Nov  7 21:57:31 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 14:43:55 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -29,7 +29,7 @@ namespace mognetwork
 
   void Selector::addFdToRead(SocketFD fd)
   {
-    m_writeSockets.push_front(fd);
+    m_readSockets.push_front(fd);
     m_maxFds = std::max(m_maxFds, fd);
   }
 

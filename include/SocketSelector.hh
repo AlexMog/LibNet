@@ -5,8 +5,14 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Wed Jun 11 15:43:12 2014 mognetworkhrabi Alexandre
-// Last update Fri Oct 10 15:52:21 2014 mognetworkhrabi Alexandre
+// Last update Wed Nov 12 14:26:21 2014 Moghrabi Alexandre
 //
+
+/*!
+ * \file SocketSelector.hh
+ * \brief Doit être supprimé
+ * \depreciated Va être supprimé
+ */
 
 #ifndef SOCKETSELECTOR_HH
 # define SOCKETSELECTOR_HH

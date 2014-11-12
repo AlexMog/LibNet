@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:36:40 2014 mognetworkhrabi Alexandre
-// Last update Wed Oct  8 08:11:47 2014 mognetworkhrabi Alexandre
+// Last update Wed Nov 12 14:00:58 2014 Moghrabi Alexandre
 //
 
 #ifndef UNIXSOCKET_HH

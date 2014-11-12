@@ -1,0 +1,141 @@
+\hypertarget{classmognetwork_1_1_socket}{\section{mognetwork\-:\-:Socket Class Reference}
+\label{classmognetwork_1_1_socket}\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}}
+}
+
+
+Définit la base d'une socket.  
+
+
+
+
+{\ttfamily \#include $<$Socket.\-hh$>$}
+
+Inheritance diagram for mognetwork\-:\-:Socket\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmognetwork_1_1_socket}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Status} \{ \\*
+\hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa1a76bb652d4c1fdb64829e97b7062a7b}{Ok}, 
+\hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa088ded708dfc87053ea73283b18929b5}{Nok}, 
+\hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa76cee46670ca9c26209aaf48ba12a6ea}{Disconnected}, 
+\hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa73f0c13cec39a68a4896b33c916d551c}{Waiting}, 
+\\*
+\hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fae82858abe36f6f41dde52bea32212238}{Error}
+ \}
+\begin{DoxyCompactList}\small\item\em Définit les status possibles d'une socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Socket\-F\-D \hyperlink{classmognetwork_1_1_socket_a6fc34e842d4efbd526697a12e826806a}{get\-Socket\-F\-D} () const 
+\begin{DoxyCompactList}\small\item\em récupère le F\-D de la socket \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classmognetwork_1_1_socket_a70fb1fd697cfe89987e81bbe9db8ea4d}{Type} \{ \hyperlink{classmognetwork_1_1_socket_a70fb1fd697cfe89987e81bbe9db8ea4dad6adab633c51e7fd9780763f821bea67}{Tcp}, 
+\hyperlink{classmognetwork_1_1_socket_a70fb1fd697cfe89987e81bbe9db8ea4dac91debddee39f30455177839f94bdde6}{Udp}
+ \}
+\begin{DoxyCompactList}\small\item\em Définit le type de socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmognetwork_1_1_socket_a27ed1b1c76de76da577ccbf5b0b687ef}{Socket} (\hyperlink{classmognetwork_1_1_socket_a70fb1fd697cfe89987e81bbe9db8ea4d}{Type} type)
+\begin{DoxyCompactList}\small\item\em Constructeur de la socket. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_socket_a442e315822bc0fbeeb7c5669a0dceacc}{void \hyperlink{classmognetwork_1_1_socket_a442e315822bc0fbeeb7c5669a0dceacc}{create} ()}\label{classmognetwork_1_1_socket_a442e315822bc0fbeeb7c5669a0dceacc}
+
+\begin{DoxyCompactList}\small\item\em crée la socket et crée un F\-D \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_socket_a60e3f8b01b89ba0ce03c24ac92e4be0d}{void \hyperlink{classmognetwork_1_1_socket_a60e3f8b01b89ba0ce03c24ac92e4be0d}{create} (Socket\-F\-D fd)}\label{classmognetwork_1_1_socket_a60e3f8b01b89ba0ce03c24ac92e4be0d}
+
+\begin{DoxyCompactList}\small\item\em crée la socket via un F\-D déjà ouvert \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_socket_a7e8f6bc7f729be6cf1d8c1d5dd638a0b}{void \hyperlink{classmognetwork_1_1_socket_a7e8f6bc7f729be6cf1d8c1d5dd638a0b}{close} ()}\label{classmognetwork_1_1_socket_a7e8f6bc7f729be6cf1d8c1d5dd638a0b}
+
+\begin{DoxyCompactList}\small\item\em ferme la socket \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Définit la base d'une socket. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!Status@{Status}}
+\index{Status@{Status}!mognetwork::Socket@{mognetwork\-::\-Socket}}
+\subsubsection[{Status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf mognetwork\-::\-Socket\-::\-Status}}}\label{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}
+
+
+Définit les status possibles d'une socket. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Ok@{Ok}!mognetwork\-::\-Socket@{mognetwork\-::\-Socket}}\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!Ok@{Ok}}\item[{\em 
+\hypertarget{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa1a76bb652d4c1fdb64829e97b7062a7b}{Ok}\label{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa1a76bb652d4c1fdb64829e97b7062a7b}
+}]\hyperlink{classmognetwork_1_1_socket}{Socket} prête à la lecture/écriture \index{Nok@{Nok}!mognetwork\-::\-Socket@{mognetwork\-::\-Socket}}\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!Nok@{Nok}}\item[{\em 
+\hypertarget{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa088ded708dfc87053ea73283b18929b5}{Nok}\label{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa088ded708dfc87053ea73283b18929b5}
+}]\hyperlink{classmognetwork_1_1_socket}{Socket} non prête à la lecture/écriture \index{Disconnected@{Disconnected}!mognetwork\-::\-Socket@{mognetwork\-::\-Socket}}\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!Disconnected@{Disconnected}}\item[{\em 
+\hypertarget{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa76cee46670ca9c26209aaf48ba12a6ea}{Disconnected}\label{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa76cee46670ca9c26209aaf48ba12a6ea}
+}]\hyperlink{classmognetwork_1_1_socket}{Socket} déconnectée \index{Waiting@{Waiting}!mognetwork\-::\-Socket@{mognetwork\-::\-Socket}}\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!Waiting@{Waiting}}\item[{\em 
+\hypertarget{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa73f0c13cec39a68a4896b33c916d551c}{Waiting}\label{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fa73f0c13cec39a68a4896b33c916d551c}
+}]Attente de données \index{Error@{Error}!mognetwork\-::\-Socket@{mognetwork\-::\-Socket}}\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!Error@{Error}}\item[{\em 
+\hypertarget{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fae82858abe36f6f41dde52bea32212238}{Error}\label{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15fae82858abe36f6f41dde52bea32212238}
+}]Erreur inconnue \end{description}
+\end{Desc}
+\hypertarget{classmognetwork_1_1_socket_a70fb1fd697cfe89987e81bbe9db8ea4d}{\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!Type@{Type}}
+\index{Type@{Type}!mognetwork::Socket@{mognetwork\-::\-Socket}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf mognetwork\-::\-Socket\-::\-Type}\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmognetwork_1_1_socket_a70fb1fd697cfe89987e81bbe9db8ea4d}
+
+
+Définit le type de socket. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Tcp@{Tcp}!mognetwork\-::\-Socket@{mognetwork\-::\-Socket}}\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!Tcp@{Tcp}}\item[{\em 
+\hypertarget{classmognetwork_1_1_socket_a70fb1fd697cfe89987e81bbe9db8ea4dad6adab633c51e7fd9780763f821bea67}{Tcp}\label{classmognetwork_1_1_socket_a70fb1fd697cfe89987e81bbe9db8ea4dad6adab633c51e7fd9780763f821bea67}
+}]\hyperlink{classmognetwork_1_1_socket}{Socket} T\-C\-P \index{Udp@{Udp}!mognetwork\-::\-Socket@{mognetwork\-::\-Socket}}\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!Udp@{Udp}}\item[{\em 
+\hypertarget{classmognetwork_1_1_socket_a70fb1fd697cfe89987e81bbe9db8ea4dac91debddee39f30455177839f94bdde6}{Udp}\label{classmognetwork_1_1_socket_a70fb1fd697cfe89987e81bbe9db8ea4dac91debddee39f30455177839f94bdde6}
+}]\hyperlink{classmognetwork_1_1_socket}{Socket} U\-D\-P \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmognetwork_1_1_socket_a27ed1b1c76de76da577ccbf5b0b687ef}{\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!mognetwork::Socket@{mognetwork\-::\-Socket}}
+\subsubsection[{Socket}]{\setlength{\rightskip}{0pt plus 5cm}mognetwork\-::\-Socket\-::\-Socket (
+\begin{DoxyParamCaption}
+\item[{{\bf Type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmognetwork_1_1_socket_a27ed1b1c76de76da577ccbf5b0b687ef}
+
+
+Constructeur de la socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Le type de socket \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmognetwork_1_1_socket_a6fc34e842d4efbd526697a12e826806a}{\index{mognetwork\-::\-Socket@{mognetwork\-::\-Socket}!get\-Socket\-F\-D@{get\-Socket\-F\-D}}
+\index{get\-Socket\-F\-D@{get\-Socket\-F\-D}!mognetwork::Socket@{mognetwork\-::\-Socket}}
+\subsubsection[{get\-Socket\-F\-D}]{\setlength{\rightskip}{0pt plus 5cm}Socket\-F\-D mognetwork\-::\-Socket\-::get\-Socket\-F\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classmognetwork_1_1_socket_a6fc34e842d4efbd526697a12e826806a}
+
+
+récupère le F\-D de la socket 
+
+\begin{DoxyReturn}{Returns}
+le F\-D de la socket 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_socket_8hh}{Socket.\-hh}\end{DoxyCompactItemize}
