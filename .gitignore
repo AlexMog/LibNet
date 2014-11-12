@@ -26,3 +26,6 @@
 *.exe
 *.out
 *.app
+
+# Special
+generate_doc.sh
