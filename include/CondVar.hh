@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:43:06 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 15:02:58 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 17:33:49 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -46,7 +46,7 @@ namespace mognetwork
      */
     void signal();
     /*!
-     * \brief redémarre le thread de la condVar
+     * \brief signal tous les threads contenant cette condVar
      */
     void broadcast();
     /*

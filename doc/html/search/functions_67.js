@@ -8,5 +8,5 @@ var searchData=
   ['getstate',['getState',['../classmognetwork_1_1_selector.html#aab8261de074ef927dfe62bb9ddaafb93',1,'mognetwork::Selector']]],
   ['gettimeout',['getTimeout',['../classmognetwork_1_1_selector.html#ae1cb38fe53e4313751062277b39fbfd5',1,'mognetwork::Selector']]],
   ['getuserdata',['getUserData',['../classmognetwork_1_1_tcp_socket.html#adef63a929423324fd75888e2195176e0',1,'mognetwork::TcpSocket']]],
-  ['getwrintingtriggeredsockets',['getWrintingTriggeredSockets',['../classmognetwork_1_1_selector.html#a4facfad643b0880b63a8060c8fa17fda',1,'mognetwork::Selector']]]
+  ['getwritingtriggeredsockets',['getWritingTriggeredSockets',['../classmognetwork_1_1_selector.html#ab35641925422b2082de069f745e0034e',1,'mognetwork::Selector']]]
 ];

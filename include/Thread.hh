@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:31:29 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 14:06:26 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 19:14:23 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -36,7 +36,7 @@ namespace mognetwork
      * \param detach Le thread est il attaché?
      */
     Thread(IRunnable& runnable, bool detach);
-    ~Thread();
+    virtual ~Thread();
 
   public:
     /*!

@@ -124,10 +124,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aab8261de074ef927dfe62bb9ddaafb93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_selector.html#a51d709c3579bf32265d68d4313df5794">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_selector.html#aab8261de074ef927dfe62bb9ddaafb93">getState</a> () const </td></tr>
 <tr class="memdesc:aab8261de074ef927dfe62bb9ddaafb93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère l'état actuel du select.  <a href="#aab8261de074ef927dfe62bb9ddaafb93">More...</a><br/></td></tr>
 <tr class="separator:aab8261de074ef927dfe62bb9ddaafb93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4facfad643b0880b63a8060c8fa17fda"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4facfad643b0880b63a8060c8fa17fda"></a>
-const std::list&lt; SocketFD &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_selector.html#a4facfad643b0880b63a8060c8fa17fda">getWrintingTriggeredSockets</a> () const </td></tr>
-<tr class="memdesc:a4facfad643b0880b63a8060c8fa17fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les sockets qui sont modifiables en écriture  Liste contenant les sockets modifiables. <br/></td></tr>
-<tr class="separator:a4facfad643b0880b63a8060c8fa17fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab35641925422b2082de069f745e0034e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab35641925422b2082de069f745e0034e"></a>
+const std::list&lt; SocketFD &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_selector.html#ab35641925422b2082de069f745e0034e">getWritingTriggeredSockets</a> () const </td></tr>
+<tr class="memdesc:ab35641925422b2082de069f745e0034e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les sockets qui sont modifiables en écriture  Liste contenant les sockets modifiables. <br/></td></tr>
+<tr class="separator:ab35641925422b2082de069f745e0034e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae41a4ff4e9281cdd03880f69c0c71a35"><td class="memItemLeft" align="right" valign="top">const std::list&lt; SocketFD &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_selector.html#ae41a4ff4e9281cdd03880f69c0c71a35">getReadingTriggeredSockets</a> () const </td></tr>
 <tr class="memdesc:ae41a4ff4e9281cdd03880f69c0c71a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les sockets qui ont été modifiées en lecture.  <a href="#ae41a4ff4e9281cdd03880f69c0c71a35">More...</a><br/></td></tr>
 <tr class="separator:ae41a4ff4e9281cdd03880f69c0c71a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,6 +146,12 @@ const std::list&lt; SocketFD &gt; &amp;&#160;</td><td class="memItemRight" valig
 <tr class="memitem:a1ae5d9e72ca6950f82d76e439ce9f74d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_selector.html#a1ae5d9e72ca6950f82d76e439ce9f74d">remFdToRead</a> (SocketFD fd)</td></tr>
 <tr class="memdesc:a1ae5d9e72ca6950f82d76e439ce9f74d"><td class="mdescLeft">&#160;</td><td class="mdescRight">supprime un fd à la surveillance en écriture  <a href="#a1ae5d9e72ca6950f82d76e439ce9f74d">More...</a><br/></td></tr>
 <tr class="separator:a1ae5d9e72ca6950f82d76e439ce9f74d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20320a6ffd2d9c920093f192e1cf444a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20320a6ffd2d9c920093f192e1cf444a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearFdToWrite</b> ()</td></tr>
+<tr class="separator:a20320a6ffd2d9c920093f192e1cf444a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88e19f9d3cd6c52ff2461fdd92371940"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88e19f9d3cd6c52ff2461fdd92371940"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearFdToRead</b> ()</td></tr>
+<tr class="separator:a88e19f9d3cd6c52ff2461fdd92371940"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Encapsulation du select. </p>
@@ -378,7 +384,7 @@ const std::list&lt; SocketFD &gt; &amp;&#160;</td><td class="memItemRight" valig
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 12 2014 17:19:14 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Nov 12 2014 19:32:35 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

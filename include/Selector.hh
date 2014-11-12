@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Wed Jun 11 15:43:12 2014 mognetworkhrabi Alexandre
-// Last update Wed Nov 12 14:46:33 2014 Moghrabi Alexandre
+// Last update Wed Nov 12 19:28:11 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -73,7 +73,7 @@ namespace mognetwork
      * \brief Récupère les sockets qui sont modifiables en écriture
      * \reutn Liste contenant les sockets modifiables
      */
-    const std::list<SocketFD>& getWrintingTriggeredSockets() const {return m_writeUpdated;}
+    const std::list<SocketFD>& getWritingTriggeredSockets() const {return m_writeUpdated;}
     /*!
      * \brief Récupère les sockets qui ont été modifiées en lecture
      * \return Liste contenant les sockets modifiées
@@ -106,6 +106,8 @@ namespace mognetwork
      * \param fd le socket à supprimer
      */
     void remFdToRead(SocketFD fd) {m_readSockets.remove(fd);}
+    void clearFdToWrite() {m_writeSockets.clear();}
+    void clearFdToRead() {m_readSockets.clear();}
     
   private:
     /*!

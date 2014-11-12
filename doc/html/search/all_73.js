@@ -8,6 +8,7 @@ var searchData=
   ['settimeout',['setTimeout',['../classmognetwork_1_1_selector.html#ac03b53749206d8ba80dec22bad55e0a8',1,'mognetwork::Selector']]],
   ['setuserdata',['setUserData',['../classmognetwork_1_1_tcp_socket.html#a2d7327be349e705c74bdc6b40c1b2520',1,'mognetwork::TcpSocket']]],
   ['signal',['signal',['../classmognetwork_1_1_cond_var.html#aeb5e8e751376a09f36c115e342778d3f',1,'mognetwork::CondVar']]],
+  ['singleton',['Singleton',['../classmognetwork_1_1_singleton.html',1,'mognetwork']]],
   ['socket',['Socket',['../classmognetwork_1_1_socket.html#a27ed1b1c76de76da577ccbf5b0b687ef',1,'mognetwork::Socket']]],
   ['socket',['Socket',['../classmognetwork_1_1_socket.html',1,'mognetwork']]],
   ['socket_2ehh',['Socket.hh',['../_socket_8hh.html',1,'']]],

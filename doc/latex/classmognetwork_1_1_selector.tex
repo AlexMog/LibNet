@@ -30,7 +30,7 @@ enum \hyperlink{classmognetwork_1_1_selector_a51d709c3579bf32265d68d4313df5794}{
 \begin{DoxyCompactList}\small\item\em Récupère le timeout. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_selector_a51d709c3579bf32265d68d4313df5794}{State} \hyperlink{classmognetwork_1_1_selector_aab8261de074ef927dfe62bb9ddaafb93}{get\-State} () const 
 \begin{DoxyCompactList}\small\item\em Récupère l'état actuel du select. \end{DoxyCompactList}\item 
-\hypertarget{classmognetwork_1_1_selector_a4facfad643b0880b63a8060c8fa17fda}{const std\-::list$<$ Socket\-F\-D $>$ \& \hyperlink{classmognetwork_1_1_selector_a4facfad643b0880b63a8060c8fa17fda}{get\-Wrinting\-Triggered\-Sockets} () const }\label{classmognetwork_1_1_selector_a4facfad643b0880b63a8060c8fa17fda}
+\hypertarget{classmognetwork_1_1_selector_ab35641925422b2082de069f745e0034e}{const std\-::list$<$ Socket\-F\-D $>$ \& \hyperlink{classmognetwork_1_1_selector_ab35641925422b2082de069f745e0034e}{get\-Writing\-Triggered\-Sockets} () const }\label{classmognetwork_1_1_selector_ab35641925422b2082de069f745e0034e}
 
 \begin{DoxyCompactList}\small\item\em Récupère les sockets qui sont modifiables en écriture  Liste contenant les sockets modifiables. \end{DoxyCompactList}\item 
 const std\-::list$<$ Socket\-F\-D $>$ \& \hyperlink{classmognetwork_1_1_selector_ae41a4ff4e9281cdd03880f69c0c71a35}{get\-Reading\-Triggered\-Sockets} () const 
@@ -44,7 +44,13 @@ void \hyperlink{classmognetwork_1_1_selector_aacc48e5256e3b5150f80acad84b82de3}{
 void \hyperlink{classmognetwork_1_1_selector_ad03d2d3e016838b38fb865a7924915e5}{rem\-Fd\-To\-Write} (Socket\-F\-D fd)
 \begin{DoxyCompactList}\small\item\em Supprime un fd à la surveillance en écriture. \end{DoxyCompactList}\item 
 void \hyperlink{classmognetwork_1_1_selector_a1ae5d9e72ca6950f82d76e439ce9f74d}{rem\-Fd\-To\-Read} (Socket\-F\-D fd)
-\begin{DoxyCompactList}\small\item\em supprime un fd à la surveillance en écriture \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em supprime un fd à la surveillance en écriture \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_selector_a20320a6ffd2d9c920093f192e1cf444a}{void {\bfseries clear\-Fd\-To\-Write} ()}\label{classmognetwork_1_1_selector_a20320a6ffd2d9c920093f192e1cf444a}
+
+\item 
+\hypertarget{classmognetwork_1_1_selector_a88e19f9d3cd6c52ff2461fdd92371940}{void {\bfseries clear\-Fd\-To\-Read} ()}\label{classmognetwork_1_1_selector_a88e19f9d3cd6c52ff2461fdd92371940}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
