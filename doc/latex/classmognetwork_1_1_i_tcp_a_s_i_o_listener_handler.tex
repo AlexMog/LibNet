@@ -4,6 +4,8 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+virtual void \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_aa1d6b507fc5adc689698c6bd7f0a8ca0}{on\-Connect} (\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} \&client)=0
+\begin{DoxyCompactList}\small\item\em Appelé lors de la connexion d'un nouveau client. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_a8cc4a40b4addfc1abdf94ba66a545674}{on\-Received\-Data} (\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} \&client)=0
 \begin{DoxyCompactList}\small\item\em Appelé lors de la réception totale d'une donnée. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_afeb615cb2f1e1f543a6282e21e66c543}{on\-Disconnect} (\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} \&client)=0
@@ -11,6 +13,22 @@ virtual void \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_afeb6
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_aa1d6b507fc5adc689698c6bd7f0a8ca0}{\index{mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler@{mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler}!on\-Connect@{on\-Connect}}
+\index{on\-Connect@{on\-Connect}!mognetwork::ITcpASIOListenerHandler@{mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler}}
+\subsubsection[{on\-Connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual void mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler\-::on\-Connect (
+\begin{DoxyParamCaption}
+\item[{{\bf Tcp\-Socket} \&}]{client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_aa1d6b507fc5adc689698c6bd7f0a8ca0}
+
+
+Appelé lors de la connexion d'un nouveau client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & le client qui c'est connecté \\
+\hline
+\end{DoxyParams}
 \hypertarget{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_afeb615cb2f1e1f543a6282e21e66c543}{\index{mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler@{mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler}!on\-Disconnect@{on\-Disconnect}}
 \index{on\-Disconnect@{on\-Disconnect}!mognetwork::ITcpASIOListenerHandler@{mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler}}
 \subsubsection[{on\-Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual void mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler\-::on\-Disconnect (

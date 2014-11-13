@@ -96,6 +96,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa1d6b507fc5adc689698c6bd7f0a8ca0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html#aa1d6b507fc5adc689698c6bd7f0a8ca0">onConnect</a> (<a class="el" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a> &amp;client)=0</td></tr>
+<tr class="memdesc:aa1d6b507fc5adc689698c6bd7f0a8ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelé lors de la connexion d'un nouveau client.  <a href="#aa1d6b507fc5adc689698c6bd7f0a8ca0">More...</a><br/></td></tr>
+<tr class="separator:aa1d6b507fc5adc689698c6bd7f0a8ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cc4a40b4addfc1abdf94ba66a545674"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html#a8cc4a40b4addfc1abdf94ba66a545674">onReceivedData</a> (<a class="el" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a> &amp;client)=0</td></tr>
 <tr class="memdesc:a8cc4a40b4addfc1abdf94ba66a545674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelé lors de la réception totale d'une donnée.  <a href="#a8cc4a40b4addfc1abdf94ba66a545674">More...</a><br/></td></tr>
 <tr class="separator:a8cc4a40b4addfc1abdf94ba66a545674"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,6 +107,38 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afeb615cb2f1e1f543a6282e21e66c543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aa1d6b507fc5adc689698c6bd7f0a8ca0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mognetwork::ITcpASIOListenerHandler::onConnect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a> &amp;&#160;</td>
+          <td class="paramname"><em>client</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appelé lors de la connexion d'un nouveau client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client</td><td>le client qui c'est connecté </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="afeb615cb2f1e1f543a6282e21e66c543"></a>
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +209,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 12 2014 19:32:35 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 13 2014 17:12:55 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

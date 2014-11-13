@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Wed Nov 12 18:24:17 2014 Moghrabi Alexandre
+## Last update Thu Nov 13 13:46:03 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -27,7 +27,8 @@ SRC=	$(SRCDIR)IpAddress.cpp		\
 	$(SRCDIR)Thread.cpp		\
 	$(SRCDIR)Mutex.cpp		\
 	$(SRCDIR)CondVar.cpp		\
-	$(SRCDIR)TcpASIOWriter.cpp
+	$(SRCDIR)TcpASIOWriter.cpp	\
+	$(SRCDIR)TcpASIOListener.cpp
 
 OBJS=	$(SRC:.cpp=.o)
 
@@ -52,7 +53,7 @@ clean:
 		$(RM) $(OBJS)
 
 fclean:		clean
-		$(RM) $(NAME)
+		$(RM) $(ALIBNAME)
 
 re:		fclean all
 

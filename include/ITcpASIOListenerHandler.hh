@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 00:44:56 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 14:54:42 2014 Moghrabi Alexandre
+// Last update Thu Nov 13 12:45:34 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -29,6 +29,11 @@ namespace mognetwork
   class ITcpASIOListenerHandler
   {
   public:
+    /*!
+     * \brief Appelé lors de la connexion d'un nouveau client
+     * \param client le client qui c'est connecté
+     */
+    virtual void onConnect(TcpSocket& client) = 0;
     /*!
      * \brief Appelé lors de la réception totale d'une donnée
      * \param client le client qui a trigger les données

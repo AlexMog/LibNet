@@ -5,31 +5,30 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:45:50 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 19:31:11 2014 Moghrabi Alexandre
+// Last update Thu Nov 13 13:04:52 2014 Moghrabi Alexandre
 //
 
+#include <iostream>
 #include "TcpASIODatas.hh"
 #include "TcpASIOWriter.hh"
 
 namespace mognetwork
 {
-  TcpASIOWriter::TcpASIOWriter(const TcpSocket& serverSocket) :
-    m_serverSocket(serverSocket)
+  TcpASIOWriter::TcpASIOWriter() :
+    m_running(true)
   {
-    m_thread = new Thread(*m_runner, false);
-    m_runner = new Runner(*this);
-    m_socketList = static_cast<TcpASIODatas*>(TcpASIODatas::getInstance())->getSocketList();
+    m_thread = new Thread(*this, false);
+    m_socketList = TcpASIODatas::getInstance()->getSocketList();
   }
 
   TcpASIOWriter::~TcpASIOWriter()
   {
-    delete (m_runner);
     delete (m_thread);
   }
 
   void TcpASIOWriter::stop()
   {
-    m_runner->m_running = false;
+    m_running = false;
     m_condVar.signal();
   }
 
@@ -51,7 +50,7 @@ namespace mognetwork
 	m_selector.addFdToRead((*it)->getSocketFD());
   }
 
-  void TcpASIOWriter::Runner::run()
+  void TcpASIOWriter::run()
   {
     bool hasMoreDatasToSend = false;
 
@@ -59,22 +58,27 @@ namespace mognetwork
       {
 	if (hasMoreDatasToSend)
 	  {
-	    m_parent.setFds();
-	    m_parent.getSelector().waitForTrigger();
-	    std::list<SocketFD> triggeredList = m_parent.getSelector().getWritingTriggeredSockets();
+	    setFds();
+	    m_selector.waitForTrigger();
+	    if (m_selector.getState() != Selector::Error)
+	      {
+		std::cerr << "Select error on reading thread." << std::endl;
+		return ;
+	      }
+	    std::list<SocketFD> triggeredList = m_selector.getWritingTriggeredSockets();
 	    hasMoreDatasToSend = false;
 	    for (std::list<SocketFD>::iterator it = triggeredList.begin(); it != triggeredList.end(); ++it)
 	      {
-		TcpSocket* socket = static_cast<TcpASIODatas*>(TcpASIODatas::getInstance())->getSocketByFd(*it);
+		TcpSocket* socket = TcpASIODatas::getInstance()->getSocketByFd(*it);
 		if (socket->havingPendingDatas())
-		  socket->sendPendingDatas(); // TODO need to verify the return.
+		  socket->sendPendingDatas(); // TODO need to verify the return. needed?
 		if (socket->havingPendingDatas())
 		  hasMoreDatasToSend = true;
 	      }
 	  }
 	else
 	  {
-	    m_parent.getCondVar().wait();
+	    m_condVar.wait();
 	    hasMoreDatasToSend = true;
 	  }
       }

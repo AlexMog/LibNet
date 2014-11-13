@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 17:45:10 2014 Moghrabi Alexandre
+// Last update Thu Nov 13 17:10:44 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -19,25 +19,46 @@
 #ifndef TCPASIOLISTENER_HH_
 # define TCPASIOLISTENER_HH_
 
+# include <unistd.h>
+# include "IRunnable.hh"
+# include "Thread.hh"
 # include "TcpSocket.hh"
+# include "Selector.hh"
 # include "ITcpASIOListenerHandler.hh"
 
 namespace mognetwork
 {
-  class TcpASIOListener
+  class TcpASIOListener : private IRunnable
   {
   public:
-    TcpASIOListener(const TcpSocket& serverSocket, const ITcpASIOListenerHandler& handler);
+    TcpASIOListener(TcpSocket& serverSocket, ITcpASIOListenerHandler& handler);
     virtual ~TcpASIOListener();
 
   public:
-    void init();
     void start();
     void stop();
+    void wait();
+
+  public:
+    bool isRunning() const {return m_running;}
+
+  public:
+    void run();
 
   private:
-    const TcpSocket& m_serverSocket;
-    const ITcpASIOListenerHandler& m_handler;
+    void acceptClient();
+
+  public:
+    Selector& getSelector() {return m_selector;}
+
+  private:
+    bool m_running;
+    ITcpASIOListenerHandler& m_handler;
+    Selector m_selector;
+    Thread* m_thread;
+    std::list<TcpSocket*>* m_socketList;
+    int m_pipefd[2];
+    TcpSocket& m_serverSocket;
   };
 }; // namespace mognetwork
 

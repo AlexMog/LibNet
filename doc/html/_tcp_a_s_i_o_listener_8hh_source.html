@@ -95,44 +95,72 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Wed Nov 12 17:45:10 2014 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Thu Nov 13 17:10:44 2014 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef TCPASIOLISTENER_HH_</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define TCPASIOLISTENER_HH_</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_tcp_socket_8hh.html">TcpSocket.hh</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_i_tcp_a_s_i_o_listener_handler_8hh.html">ITcpASIOListenerHandler.hh</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">   27</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a>(<span class="keyword">const</span> <a class="code" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a>&amp; serverSocket, <span class="keyword">const</span> <a class="code" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a>&amp; handler);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_i_runnable_8hh.html">IRunnable.hh</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_thread_8hh.html">Thread.hh</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_tcp_socket_8hh.html">TcpSocket.hh</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_selector_8hh.html">Selector.hh</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_i_tcp_a_s_i_o_listener_handler_8hh.html">ITcpASIOListenerHandler.hh</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">   31</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a> : <span class="keyword">private</span> <a class="code" href="classmognetwork_1_1_i_runnable.html">IRunnable</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> init();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> start();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> stop();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a>&amp; m_serverSocket;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> <a class="code" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a>&amp; m_handler;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  };</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}; <span class="comment">// namespace mognetwork</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // !TCPASIOLISTENER_HH_</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a>(<a class="code" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a>&amp; serverSocket, <a class="code" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a>&amp; handler);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> start();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> stop();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> wait();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> isRunning()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_running;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#a445dcd4bf6dfe75c7715af0fecf9494d">run</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> acceptClient();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classmognetwork_1_1_selector.html">Selector</a>&amp; getSelector() {<span class="keywordflow">return</span> m_selector;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">bool</span> m_running;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a>&amp; m_handler;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classmognetwork_1_1_selector.html">Selector</a> m_selector;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classmognetwork_1_1_thread.html">Thread</a>* m_thread;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::list&lt;TcpSocket*&gt;* m_socketList;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> m_pipefd[2];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a>&amp; m_serverSocket;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}; <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif // !TCPASIOLISTENER_HH_</span></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_listener_html_a445dcd4bf6dfe75c7715af0fecf9494d"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#a445dcd4bf6dfe75c7715af0fecf9494d">mognetwork::TcpASIOListener::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">fonction utilisée par les threads en temps que pointeur sur fonction </div></div>
 <div class="ttc" id="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_html"><div class="ttname"><a href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">mognetwork::ITcpASIOListenerHandler</a></div><div class="ttdef"><b>Definition:</b> ITcpASIOListenerHandler.hh:29</div></div>
+<div class="ttc" id="classmognetwork_1_1_i_runnable_html"><div class="ttname"><a href="classmognetwork_1_1_i_runnable.html">mognetwork::IRunnable</a></div><div class="ttdoc">Interface permettant de créer une fonction d&amp;#39;exécution pour les Threads (java style) ...</div><div class="ttdef"><b>Definition:</b> IRunnable.hh:27</div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_socket_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_socket.html">mognetwork::TcpSocket</a></div><div class="ttdoc">Classe de création d&amp;#39;une socket TCP. </div><div class="ttdef"><b>Definition:</b> TcpSocket.hh:33</div></div>
 <div class="ttc" id="_tcp_socket_8hh_html"><div class="ttname"><a href="_tcp_socket_8hh.html">TcpSocket.hh</a></div><div class="ttdoc">Gestion des sockets en TCP. </div></div>
-<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_listener_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">mognetwork::TcpASIOListener</a></div><div class="ttdef"><b>Definition:</b> TcpASIOListener.hh:27</div></div>
+<div class="ttc" id="classmognetwork_1_1_selector_html"><div class="ttname"><a href="classmognetwork_1_1_selector.html">mognetwork::Selector</a></div><div class="ttdoc">Encapsulation du select. </div><div class="ttdef"><b>Definition:</b> Selector.hh:37</div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_listener_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">mognetwork::TcpASIOListener</a></div><div class="ttdef"><b>Definition:</b> TcpASIOListener.hh:31</div></div>
 <div class="ttc" id="_i_tcp_a_s_i_o_listener_handler_8hh_html"><div class="ttname"><a href="_i_tcp_a_s_i_o_listener_handler_8hh.html">ITcpASIOListenerHandler.hh</a></div><div class="ttdoc">Handler pour le TcpASIOListener. </div></div>
+<div class="ttc" id="classmognetwork_1_1_thread_html"><div class="ttname"><a href="classmognetwork_1_1_thread.html">mognetwork::Thread</a></div><div class="ttdoc">Classe d&amp;#39;encapsulation des threads. </div><div class="ttdef"><b>Definition:</b> Thread.hh:30</div></div>
+<div class="ttc" id="_thread_8hh_html"><div class="ttname"><a href="_thread_8hh.html">Thread.hh</a></div><div class="ttdoc">Encapsulation des threads. </div></div>
+<div class="ttc" id="_selector_8hh_html"><div class="ttname"><a href="_selector_8hh.html">Selector.hh</a></div><div class="ttdoc">Encapsulation du Select. </div></div>
+<div class="ttc" id="_i_runnable_8hh_html"><div class="ttname"><a href="_i_runnable_8hh.html">IRunnable.hh</a></div><div class="ttdoc">Interface permettant de créer une fonction d&amp;#39;exécution pour les Threads (java style) ...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 12 2014 19:32:35 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 13 2014 17:12:55 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
