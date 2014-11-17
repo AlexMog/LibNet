@@ -1,6 +1,15 @@
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer}{\section{mognetwork\-:\-:Tcp\-A\-S\-I\-O\-Writer Class Reference}
 \label{classmognetwork_1_1_tcp_a_s_i_o_writer}\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer}}
 }
+
+
+\hyperlink{classmognetwork_1_1_thread}{Thread} d'écriture des sockets en A\-S\-I\-O.  
+
+
+
+
+{\ttfamily \#include $<$Tcp\-A\-S\-I\-O\-Writer.\-hh$>$}
+
 Inheritance diagram for mognetwork\-:\-:Tcp\-A\-S\-I\-O\-Writer\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,23 +19,80 @@ Inheritance diagram for mognetwork\-:\-:Tcp\-A\-S\-I\-O\-Writer\-:\begin{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_ac7adf2ec565c463b28f7b584be565863}{void {\bfseries start} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_ac7adf2ec565c463b28f7b584be565863}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_ad9ccc4046f754b839e79263c54baa3d6}{\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer_ad9ccc4046f754b839e79263c54baa3d6}{Tcp\-A\-S\-I\-O\-Writer} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_ad9ccc4046f754b839e79263c54baa3d6}
 
-\item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_a72d4c74cb2fb05c23f6245de796a0928}{void {\bfseries stop} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_a72d4c74cb2fb05c23f6245de796a0928}
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_ac7adf2ec565c463b28f7b584be565863}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer_ac7adf2ec565c463b28f7b584be565863}{start} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_ac7adf2ec565c463b28f7b584be565863}
 
-\item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_ad3bd21b81839315d4409914f30de8652}{void {\bfseries wait} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_ad3bd21b81839315d4409914f30de8652}
+\begin{DoxyCompactList}\small\item\em démarre le thread d'écriture. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_a72d4c74cb2fb05c23f6245de796a0928}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer_a72d4c74cb2fb05c23f6245de796a0928}{stop} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_a72d4c74cb2fb05c23f6245de796a0928}
 
-\item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_a0117301d2bb36f3d2b44039e16dd286d}{bool {\bfseries is\-Running} () const }\label{classmognetwork_1_1_tcp_a_s_i_o_writer_a0117301d2bb36f3d2b44039e16dd286d}
+\begin{DoxyCompactList}\small\item\em arrête le thread d'écriture. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_ad3bd21b81839315d4409914f30de8652}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer_ad3bd21b81839315d4409914f30de8652}{wait} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_ad3bd21b81839315d4409914f30de8652}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Attends que le thread termine son exécution. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_a69906d01efaf03f6a2d5987e2f54ba87}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer_a69906d01efaf03f6a2d5987e2f54ba87}{trigger\-Data} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_a69906d01efaf03f6a2d5987e2f54ba87}
+
+\begin{DoxyCompactList}\small\item\em A utiliser lors de l'envois de données sur une ou plusieurs sockets. \end{DoxyCompactList}\item 
+bool \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer_a0117301d2bb36f3d2b44039e16dd286d}{is\-Running} () const 
+\begin{DoxyCompactList}\small\item\em Permet de connaitre l'état du thread. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_ab3d1361bd19d8d09b278f9a361b058ea}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer_ab3d1361bd19d8d09b278f9a361b058ea}{run} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_ab3d1361bd19d8d09b278f9a361b058ea}
 
-\begin{DoxyCompactList}\small\item\em fonction utilisée par les threads en temps que pointeur sur fonction \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Utilisé pour le thread. \end{DoxyCompactList}\item 
+\hyperlink{classmognetwork_1_1_selector}{Selector} \& \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer_ab7f6474ccd1082d2fc9f8acd2be87d3c}{get\-Selector} ()
+\begin{DoxyCompactList}\small\item\em Permet de récupérer le selector utilisé. \end{DoxyCompactList}\item 
+\hyperlink{classmognetwork_1_1_cond_var}{Cond\-Var} \& \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer_ad312e3f3f5bd50ca728fec3e1c4476e6}{get\-Cond\-Var} ()
+\begin{DoxyCompactList}\small\item\em Permet de récupérer la cond\-Var utilisée par le thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classmognetwork_1_1_thread}{Thread} d'écriture des sockets en A\-S\-I\-O. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_ad312e3f3f5bd50ca728fec3e1c4476e6}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer}!get\-Cond\-Var@{get\-Cond\-Var}}
+\index{get\-Cond\-Var@{get\-Cond\-Var}!mognetwork::TcpASIOWriter@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer}}
+\subsubsection[{get\-Cond\-Var}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cond\-Var}\& mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer\-::get\-Cond\-Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_ad312e3f3f5bd50ca728fec3e1c4476e6}
+
+
+Permet de récupérer la cond\-Var utilisée par le thread. 
+
+\begin{DoxyReturn}{Returns}
+une référence sur le \hyperlink{classmognetwork_1_1_cond_var}{Cond\-Var} utilisé par le thread. 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_ab7f6474ccd1082d2fc9f8acd2be87d3c}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer}!get\-Selector@{get\-Selector}}
+\index{get\-Selector@{get\-Selector}!mognetwork::TcpASIOWriter@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer}}
+\subsubsection[{get\-Selector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Selector}\& mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer\-::get\-Selector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_ab7f6474ccd1082d2fc9f8acd2be87d3c}
+
+
+Permet de récupérer le selector utilisé. 
+
+\begin{DoxyReturn}{Returns}
+une référence sur le \hyperlink{classmognetwork_1_1_selector}{Selector} utilisé par le thread. 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_writer_a0117301d2bb36f3d2b44039e16dd286d}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer}!is\-Running@{is\-Running}}
+\index{is\-Running@{is\-Running}!mognetwork::TcpASIOWriter@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer}}
+\subsubsection[{is\-Running}]{\setlength{\rightskip}{0pt plus 5cm}bool mognetwork\-::\-Tcp\-A\-S\-I\-O\-Writer\-::is\-Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_writer_a0117301d2bb36f3d2b44039e16dd286d}
+
+
+Permet de connaitre l'état du thread. 
+
+\begin{DoxyReturn}{Returns}
+true si le thread d'écriture est lancé 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-include/Tcp\-A\-S\-I\-O\-Writer.\-hh\end{DoxyCompactItemize}
+include/\hyperlink{_tcp_a_s_i_o_writer_8hh}{Tcp\-A\-S\-I\-O\-Writer.\-hh}\end{DoxyCompactItemize}

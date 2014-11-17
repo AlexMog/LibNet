@@ -5,22 +5,16 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Mon Nov 17 14:32:07 2014 Moghrabi Alexandre
+// Last update Mon Nov 17 18:10:01 2014 Moghrabi Alexandre
 //
 
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdio.h>
 #include "TcpASIODatas.hh"
 #include "LibNetworkException.hh"
 #include "TcpASIOListener.hh"
 
 namespace mognetwork
 {
-  TcpASIOListener::TcpASIOListener(TcpSocket& serverSocket) :
+  TcpASIOListener::TcpASIOListener(TcpServerSocket& serverSocket) :
     m_serverSocket(serverSocket)
   {
     m_thread = new Thread(*this, false);
@@ -54,21 +48,16 @@ namespace mognetwork
 
   void TcpASIOListener::acceptClient()
   {
-    sockaddr_in csin;
-    memset(&csin, 0, sizeof(csin));
-    socklen_t sinsize = sizeof(csin);
-    SocketFD cSocket;
-    if ((cSocket = ::accept(m_serverSocket.getSocketFD(), (sockaddr*)&csin,
-			    &sinsize)) == -1)
+    TcpSocket* cSocket;
+    if ((cSocket = m_serverSocket.accept()) == NULL)
       {
 	std::cerr << "A client cannot be accepted." << std::endl;
 	return ;
       }
-    TcpSocket* socket = new TcpSocket(cSocket);
-    m_selector.addFdToRead(cSocket);
-    TcpASIODatas::getInstance()->addSocket(socket);
+    m_selector.addFdToRead(cSocket->getSocketFD());
+    TcpASIODatas::getInstance()->addSocket(cSocket);
     for (std::list<ITcpASIOListenerHandler*>::iterator it = m_listeners.begin(); it != m_listeners.end(); ++it)
-      (*it)->onConnect(*socket);
+      (*it)->onConnect(*cSocket);
   }
 
   void TcpASIOListener::run()

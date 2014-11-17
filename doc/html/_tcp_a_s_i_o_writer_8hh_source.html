@@ -88,70 +88,80 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">TcpASIOWriter.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<a href="_tcp_a_s_i_o_writer_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// TcpASIOWriter.hh for LibNet in /home/alexmog/projets/LibNet/include</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Made by Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Wed Nov 12 17:35:53 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Thu Nov 13 10:52:20 2014 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Mon Nov 17 18:37:24 2014 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef TCPASIOWRITER_HH_</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define TCPASIOWRITER_HH_</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_tcp_socket_8hh.html">TcpSocket.hh</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"># include &quot;SocketFD.hh&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_selector_8hh.html">Selector.hh</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_cond_var_8hh.html">CondVar.hh</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_thread_8hh.html">Thread.hh</a>&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_i_runnable_8hh.html">IRunnable.hh</a>&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"># include &lt;list&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">   24</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">TcpASIOWriter</a> : <span class="keyword">private</span> <a class="code" href="classmognetwork_1_1_i_runnable.html">IRunnable</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">TcpASIOWriter</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">TcpASIOWriter</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> start();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> stop();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> wait();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> setFds();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> isRunning()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_running;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ab3d1361bd19d8d09b278f9a361b058ea">run</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef TCPASIOWRITER_HH_</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define TCPASIOWRITER_HH_</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_tcp_socket_8hh.html">TcpSocket.hh</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># include &quot;SocketFD.hh&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_selector_8hh.html">Selector.hh</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_cond_var_8hh.html">CondVar.hh</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_thread_8hh.html">Thread.hh</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_i_runnable_8hh.html">IRunnable.hh</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor"># include &lt;list&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">   35</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">TcpASIOWriter</a> : <span class="keyword">private</span> <a class="code" href="classmognetwork_1_1_i_runnable.html">IRunnable</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ad9ccc4046f754b839e79263c54baa3d6">TcpASIOWriter</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">TcpASIOWriter</a>();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classmognetwork_1_1_selector.html">Selector</a>&amp; getSelector() {<span class="keywordflow">return</span> m_selector;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classmognetwork_1_1_cond_var.html">CondVar</a>&amp; getCondVar() {<span class="keywordflow">return</span> m_condVar;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classmognetwork_1_1_selector.html">Selector</a> m_selector;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classmognetwork_1_1_cond_var.html">CondVar</a> m_condVar;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classmognetwork_1_1_thread.html">Thread</a>* m_thread;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">bool</span> m_running;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::list&lt;TcpSocket*&gt;* m_socketList;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  };  </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}; <span class="comment">// namespace mognetwork</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif // !TCPASIOWRITER_HH_</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ac7adf2ec565c463b28f7b584be565863">start</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#a72d4c74cb2fb05c23f6245de796a0928">stop</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ad3bd21b81839315d4409914f30de8652">wait</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#a69906d01efaf03f6a2d5987e2f54ba87">   60</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#a69906d01efaf03f6a2d5987e2f54ba87">triggerData</a>() {m_condVar.<a class="code" href="classmognetwork_1_1_cond_var.html#aeb5e8e751376a09f36c115e342778d3f">signal</a>();}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> setFds();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#a0117301d2bb36f3d2b44039e16dd286d">   70</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#a0117301d2bb36f3d2b44039e16dd286d">isRunning</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_running;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ab3d1361bd19d8d09b278f9a361b058ea">run</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ab7f6474ccd1082d2fc9f8acd2be87d3c">   83</a></span>&#160;    <a class="code" href="classmognetwork_1_1_selector.html">Selector</a>&amp; <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ab7f6474ccd1082d2fc9f8acd2be87d3c">getSelector</a>() {<span class="keywordflow">return</span> m_selector;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ad312e3f3f5bd50ca728fec3e1c4476e6">   88</a></span>&#160;    <a class="code" href="classmognetwork_1_1_cond_var.html">CondVar</a>&amp; <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ad312e3f3f5bd50ca728fec3e1c4476e6">getCondVar</a>() {<span class="keywordflow">return</span> m_condVar;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classmognetwork_1_1_selector.html">Selector</a> m_selector; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classmognetwork_1_1_cond_var.html">CondVar</a> m_condVar; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classmognetwork_1_1_thread.html">Thread</a>* m_thread; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> m_running; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::list&lt;TcpSocket*&gt;* m_socketList; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  };  </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}; <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif // !TCPASIOWRITER_HH_</span></div>
 <div class="ttc" id="_cond_var_8hh_html"><div class="ttname"><a href="_cond_var_8hh.html">CondVar.hh</a></div><div class="ttdoc">Encapsulation des variables conditionnelles. </div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html_ad3bd21b81839315d4409914f30de8652"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ad3bd21b81839315d4409914f30de8652">mognetwork::TcpASIOWriter::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdoc">Attends que le thread termine son exécution. </div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html_a69906d01efaf03f6a2d5987e2f54ba87"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#a69906d01efaf03f6a2d5987e2f54ba87">mognetwork::TcpASIOWriter::triggerData</a></div><div class="ttdeci">void triggerData()</div><div class="ttdoc">A utiliser lors de l&amp;#39;envois de données sur une ou plusieurs sockets. </div><div class="ttdef"><b>Definition:</b> TcpASIOWriter.hh:60</div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html_ad9ccc4046f754b839e79263c54baa3d6"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ad9ccc4046f754b839e79263c54baa3d6">mognetwork::TcpASIOWriter::TcpASIOWriter</a></div><div class="ttdeci">TcpASIOWriter()</div><div class="ttdoc">Constructeur par défaut. </div></div>
 <div class="ttc" id="classmognetwork_1_1_i_runnable_html"><div class="ttname"><a href="classmognetwork_1_1_i_runnable.html">mognetwork::IRunnable</a></div><div class="ttdoc">Interface permettant de créer une fonction d&amp;#39;exécution pour les Threads (java style) ...</div><div class="ttdef"><b>Definition:</b> IRunnable.hh:27</div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html_a72d4c74cb2fb05c23f6245de796a0928"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#a72d4c74cb2fb05c23f6245de796a0928">mognetwork::TcpASIOWriter::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">arrête le thread d&amp;#39;écriture. </div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html_ab7f6474ccd1082d2fc9f8acd2be87d3c"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ab7f6474ccd1082d2fc9f8acd2be87d3c">mognetwork::TcpASIOWriter::getSelector</a></div><div class="ttdeci">Selector &amp; getSelector()</div><div class="ttdoc">Permet de récupérer le selector utilisé. </div><div class="ttdef"><b>Definition:</b> TcpASIOWriter.hh:83</div></div>
 <div class="ttc" id="_tcp_socket_8hh_html"><div class="ttname"><a href="_tcp_socket_8hh.html">TcpSocket.hh</a></div><div class="ttdoc">Gestion des sockets en TCP. </div></div>
-<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html_ab3d1361bd19d8d09b278f9a361b058ea"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ab3d1361bd19d8d09b278f9a361b058ea">mognetwork::TcpASIOWriter::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">fonction utilisée par les threads en temps que pointeur sur fonction </div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html_ab3d1361bd19d8d09b278f9a361b058ea"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ab3d1361bd19d8d09b278f9a361b058ea">mognetwork::TcpASIOWriter::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Utilisé pour le thread. </div></div>
+<div class="ttc" id="classmognetwork_1_1_cond_var_html_aeb5e8e751376a09f36c115e342778d3f"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#aeb5e8e751376a09f36c115e342778d3f">mognetwork::CondVar::signal</a></div><div class="ttdeci">void signal()</div><div class="ttdoc">notifie la condVar </div></div>
 <div class="ttc" id="classmognetwork_1_1_selector_html"><div class="ttname"><a href="classmognetwork_1_1_selector.html">mognetwork::Selector</a></div><div class="ttdoc">Encapsulation du select. </div><div class="ttdef"><b>Definition:</b> Selector.hh:37</div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html_ad312e3f3f5bd50ca728fec3e1c4476e6"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ad312e3f3f5bd50ca728fec3e1c4476e6">mognetwork::TcpASIOWriter::getCondVar</a></div><div class="ttdeci">CondVar &amp; getCondVar()</div><div class="ttdoc">Permet de récupérer la condVar utilisée par le thread. </div><div class="ttdef"><b>Definition:</b> TcpASIOWriter.hh:88</div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html_a0117301d2bb36f3d2b44039e16dd286d"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#a0117301d2bb36f3d2b44039e16dd286d">mognetwork::TcpASIOWriter::isRunning</a></div><div class="ttdeci">bool isRunning() const </div><div class="ttdoc">Permet de connaitre l&amp;#39;état du thread. </div><div class="ttdef"><b>Definition:</b> TcpASIOWriter.hh:70</div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html_ac7adf2ec565c463b28f7b584be565863"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#ac7adf2ec565c463b28f7b584be565863">mognetwork::TcpASIOWriter::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">démarre le thread d&amp;#39;écriture. </div></div>
 <div class="ttc" id="classmognetwork_1_1_thread_html"><div class="ttname"><a href="classmognetwork_1_1_thread.html">mognetwork::Thread</a></div><div class="ttdoc">Classe d&amp;#39;encapsulation des threads. </div><div class="ttdef"><b>Definition:</b> Thread.hh:30</div></div>
-<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">mognetwork::TcpASIOWriter</a></div><div class="ttdef"><b>Definition:</b> TcpASIOWriter.hh:24</div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">mognetwork::TcpASIOWriter</a></div><div class="ttdoc">Thread d&amp;#39;écriture des sockets en ASIO. </div><div class="ttdef"><b>Definition:</b> TcpASIOWriter.hh:35</div></div>
 <div class="ttc" id="_thread_8hh_html"><div class="ttname"><a href="_thread_8hh.html">Thread.hh</a></div><div class="ttdoc">Encapsulation des threads. </div></div>
 <div class="ttc" id="classmognetwork_1_1_cond_var_html"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html">mognetwork::CondVar</a></div><div class="ttdoc">Encapsulation des variables conditionnelles. </div><div class="ttdef"><b>Definition:</b> CondVar.hh:30</div></div>
 <div class="ttc" id="_selector_8hh_html"><div class="ttname"><a href="_selector_8hh.html">Selector.hh</a></div><div class="ttdoc">Encapsulation du Select. </div></div>
@@ -159,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 14 2014 17:49:14 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 17 2014 18:58:05 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -1,6 +1,15 @@
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener}{\section{mognetwork\-:\-:Tcp\-A\-S\-I\-O\-Listener Class Reference}
 \label{classmognetwork_1_1_tcp_a_s_i_o_listener}\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}}
 }
+
+
+Permet la gestion de la lecture de données en A\-S\-I\-O.  
+
+
+
+
+{\ttfamily \#include $<$Tcp\-A\-S\-I\-O\-Listener.\-hh$>$}
+
 Inheritance diagram for mognetwork\-:\-:Tcp\-A\-S\-I\-O\-Listener\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,27 +19,95 @@ Inheritance diagram for mognetwork\-:\-:Tcp\-A\-S\-I\-O\-Listener\-:\begin{figur
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_ac5eb8883634b44147094fcdb3d4a95c0}{{\bfseries Tcp\-A\-S\-I\-O\-Listener} (\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} \&server\-Socket, \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler}{I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} \&handler)}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_ac5eb8883634b44147094fcdb3d4a95c0}
+\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_aae7628471fda37905fab2dc03db11f77}{Tcp\-A\-S\-I\-O\-Listener} (\hyperlink{classmognetwork_1_1_tcp_server_socket}{Tcp\-Server\-Socket} \&server\-Socket)
+\begin{DoxyCompactList}\small\item\em constructeur par défaut \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_afd805699dfe27ceb0541feeefacc13dc}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_afd805699dfe27ceb0541feeefacc13dc}{start} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_afd805699dfe27ceb0541feeefacc13dc}
 
-\item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_afd805699dfe27ceb0541feeefacc13dc}{void {\bfseries start} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_afd805699dfe27ceb0541feeefacc13dc}
+\begin{DoxyCompactList}\small\item\em Démarre le thread d'écoute. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_ac9952961dce0f44bc720485a4e4e620d}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_ac9952961dce0f44bc720485a4e4e620d}{stop} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_ac9952961dce0f44bc720485a4e4e620d}
 
-\item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_ac9952961dce0f44bc720485a4e4e620d}{void {\bfseries stop} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_ac9952961dce0f44bc720485a4e4e620d}
+\begin{DoxyCompactList}\small\item\em Arrête le thread d'écoute. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_ae6327f6471291ba5107c0a9c3362b929}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_ae6327f6471291ba5107c0a9c3362b929}{wait} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_ae6327f6471291ba5107c0a9c3362b929}
 
-\item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_ae6327f6471291ba5107c0a9c3362b929}{void {\bfseries wait} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_ae6327f6471291ba5107c0a9c3362b929}
-
-\item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_a431eb0fb3fab8042a9ef0b79d706fffc}{bool {\bfseries is\-Running} () const }\label{classmognetwork_1_1_tcp_a_s_i_o_listener_a431eb0fb3fab8042a9ef0b79d706fffc}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Permet d'attendre la fin de l'exécution du thread d'écoute. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_a0d0b24852fdd94ad5096a87a40bc7712}{add\-Listener} (\hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler}{I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} $\ast$listener)
+\begin{DoxyCompactList}\small\item\em Ajoute un listener au thread d'écoute. \end{DoxyCompactList}\item 
+bool \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_a431eb0fb3fab8042a9ef0b79d706fffc}{is\-Running} () const 
+\begin{DoxyCompactList}\small\item\em Permet de savoir si le thread est démarré \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_a445dcd4bf6dfe75c7715af0fecf9494d}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_a445dcd4bf6dfe75c7715af0fecf9494d}{run} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_a445dcd4bf6dfe75c7715af0fecf9494d}
 
-\begin{DoxyCompactList}\small\item\em fonction utilisée par les threads en temps que pointeur sur fonction \end{DoxyCompactList}\item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_aed4473511088d8bc91ce118334eed24d}{\hyperlink{classmognetwork_1_1_selector}{Selector} \& {\bfseries get\-Selector} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_aed4473511088d8bc91ce118334eed24d}
+\begin{DoxyCompactList}\small\item\em Utilisé par le thread. \hyperlink{classmognetwork_1_1_i_runnable}{I\-Runnable}. \end{DoxyCompactList}\item 
+\hyperlink{classmognetwork_1_1_selector}{Selector} \& \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_aed4473511088d8bc91ce118334eed24d}{get\-Selector} ()
+\begin{DoxyCompactList}\small\item\em Permet de récupérer une référence sur le selector du thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\end{DoxyCompactItemize}
+
+\subsection{Detailed Description}
+Permet la gestion de la lecture de données en A\-S\-I\-O. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_aae7628471fda37905fab2dc03db11f77}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}!Tcp\-A\-S\-I\-O\-Listener@{Tcp\-A\-S\-I\-O\-Listener}}
+\index{Tcp\-A\-S\-I\-O\-Listener@{Tcp\-A\-S\-I\-O\-Listener}!mognetwork::TcpASIOListener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}}
+\subsubsection[{Tcp\-A\-S\-I\-O\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener\-::\-Tcp\-A\-S\-I\-O\-Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf Tcp\-Server\-Socket} \&}]{server\-Socket}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_aae7628471fda37905fab2dc03db11f77}
+
+
+constructeur par défaut 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\-Socket} & la socket serveur \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_a0d0b24852fdd94ad5096a87a40bc7712}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}!add\-Listener@{add\-Listener}}
+\index{add\-Listener@{add\-Listener}!mognetwork::TcpASIOListener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}}
+\subsubsection[{add\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener\-::add\-Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} $\ast$}]{listener}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_a0d0b24852fdd94ad5096a87a40bc7712}
+
+
+Ajoute un listener au thread d'écoute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em listener} & le listener à ajouter, instance de I\-T\-Cp\-A\-S\-I\-O\-Listener\-Handler \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_aed4473511088d8bc91ce118334eed24d}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}!get\-Selector@{get\-Selector}}
+\index{get\-Selector@{get\-Selector}!mognetwork::TcpASIOListener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}}
+\subsubsection[{get\-Selector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Selector}\& mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener\-::get\-Selector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_aed4473511088d8bc91ce118334eed24d}
+
+
+Permet de récupérer une référence sur le selector du thread. 
+
+\begin{DoxyReturn}{Returns}
+la référence sur le \hyperlink{classmognetwork_1_1_selector}{Selector} 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_a431eb0fb3fab8042a9ef0b79d706fffc}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}!is\-Running@{is\-Running}}
+\index{is\-Running@{is\-Running}!mognetwork::TcpASIOListener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}}
+\subsubsection[{is\-Running}]{\setlength{\rightskip}{0pt plus 5cm}bool mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener\-::is\-Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_a431eb0fb3fab8042a9ef0b79d706fffc}
+
+
+Permet de savoir si le thread est démarré 
+
+\begin{DoxyReturn}{Returns}
+true si démarré, false sinon 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

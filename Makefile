@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Mon Nov 17 14:33:30 2014 Moghrabi Alexandre
+## Last update Mon Nov 17 18:26:33 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -29,7 +29,9 @@ SRC=	$(SRCDIR)CondVar.cpp		\
 	$(SRCDIR)TcpSocket.cpp		\
 	$(SRCDIR)Thread.cpp		\
 	$(SRCDIR)UnixSocket.cpp		\
-	$(SRCDIR)WinSocket.cpp
+	$(SRCDIR)WinSocket.cpp		\
+	$(SRCDIR)TcpServerSocket.cpp	\
+	$(SRCDIR)TcpASIOServer.cpp
 
 
 OBJS=	$(SRC:.cpp=.o)

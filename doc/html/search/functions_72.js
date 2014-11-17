@@ -5,5 +5,6 @@ var searchData=
   ['receive',['receive',['../classmognetwork_1_1_tcp_socket.html#a44fd93d5f7bcf3d155a93e4db6d5f2e9',1,'mognetwork::TcpSocket']]],
   ['remfdtoread',['remFdToRead',['../classmognetwork_1_1_selector.html#a1ae5d9e72ca6950f82d76e439ce9f74d',1,'mognetwork::Selector']]],
   ['remfdtowrite',['remFdToWrite',['../classmognetwork_1_1_selector.html#ad03d2d3e016838b38fb865a7924915e5',1,'mognetwork::Selector']]],
+  ['remsocket',['remSocket',['../classmognetwork_1_1_tcp_a_s_i_o_datas.html#a49a15b15392fadb168ae376c72b7f9e0',1,'mognetwork::TcpASIODatas::remSocket(TcpSocket *socket)'],['../classmognetwork_1_1_tcp_a_s_i_o_datas.html#a4699eb56dd2868e62babcea3d2b6da00',1,'mognetwork::TcpASIODatas::remSocket(SocketFD socket)']]],
   ['run',['run',['../classmognetwork_1_1_i_runnable.html#ac53515c8ecf2b2c79cb9c161fdd600d1',1,'mognetwork::IRunnable::run()'],['../classmognetwork_1_1_tcp_a_s_i_o_listener.html#a445dcd4bf6dfe75c7715af0fecf9494d',1,'mognetwork::TcpASIOListener::run()'],['../classmognetwork_1_1_tcp_a_s_i_o_writer.html#ab3d1361bd19d8d09b278f9a361b058ea',1,'mognetwork::TcpASIOWriter::run()']]]
 ];

@@ -93,6 +93,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">mognetwork::TcpASIOListener Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Permet la gestion de la lecture de données en ASIO.  
+ <a href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_tcp_a_s_i_o_listener_8hh_source.html">TcpASIOListener.hh</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for mognetwork::TcpASIOListener:</div>
 <div class="dyncontent">
@@ -105,36 +110,154 @@ Inheritance diagram for mognetwork::TcpASIOListener:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac5eb8883634b44147094fcdb3d4a95c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5eb8883634b44147094fcdb3d4a95c0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TcpASIOListener</b> (<a class="el" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a> &amp;serverSocket, <a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a> &amp;handler)</td></tr>
-<tr class="separator:ac5eb8883634b44147094fcdb3d4a95c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae7628471fda37905fab2dc03db11f77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#aae7628471fda37905fab2dc03db11f77">TcpASIOListener</a> (<a class="el" href="classmognetwork_1_1_tcp_server_socket.html">TcpServerSocket</a> &amp;serverSocket)</td></tr>
+<tr class="memdesc:aae7628471fda37905fab2dc03db11f77"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructeur par défaut  <a href="#aae7628471fda37905fab2dc03db11f77">More...</a><br/></td></tr>
+<tr class="separator:aae7628471fda37905fab2dc03db11f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd805699dfe27ceb0541feeefacc13dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd805699dfe27ceb0541feeefacc13dc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#afd805699dfe27ceb0541feeefacc13dc">start</a> ()</td></tr>
+<tr class="memdesc:afd805699dfe27ceb0541feeefacc13dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Démarre le thread d'écoute. <br/></td></tr>
 <tr class="separator:afd805699dfe27ceb0541feeefacc13dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9952961dce0f44bc720485a4e4e620d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9952961dce0f44bc720485a4e4e620d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#ac9952961dce0f44bc720485a4e4e620d">stop</a> ()</td></tr>
+<tr class="memdesc:ac9952961dce0f44bc720485a4e4e620d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrête le thread d'écoute. <br/></td></tr>
 <tr class="separator:ac9952961dce0f44bc720485a4e4e620d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6327f6471291ba5107c0a9c3362b929"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6327f6471291ba5107c0a9c3362b929"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>wait</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#ae6327f6471291ba5107c0a9c3362b929">wait</a> ()</td></tr>
+<tr class="memdesc:ae6327f6471291ba5107c0a9c3362b929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'attendre la fin de l'exécution du thread d'écoute. <br/></td></tr>
 <tr class="separator:ae6327f6471291ba5107c0a9c3362b929"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a431eb0fb3fab8042a9ef0b79d706fffc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a431eb0fb3fab8042a9ef0b79d706fffc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isRunning</b> () const </td></tr>
+<tr class="memitem:a0d0b24852fdd94ad5096a87a40bc7712"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#a0d0b24852fdd94ad5096a87a40bc7712">addListener</a> (<a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a> *listener)</td></tr>
+<tr class="memdesc:a0d0b24852fdd94ad5096a87a40bc7712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un listener au thread d'écoute.  <a href="#a0d0b24852fdd94ad5096a87a40bc7712">More...</a><br/></td></tr>
+<tr class="separator:a0d0b24852fdd94ad5096a87a40bc7712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431eb0fb3fab8042a9ef0b79d706fffc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#a431eb0fb3fab8042a9ef0b79d706fffc">isRunning</a> () const </td></tr>
+<tr class="memdesc:a431eb0fb3fab8042a9ef0b79d706fffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de savoir si le thread est démarré  <a href="#a431eb0fb3fab8042a9ef0b79d706fffc">More...</a><br/></td></tr>
 <tr class="separator:a431eb0fb3fab8042a9ef0b79d706fffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a445dcd4bf6dfe75c7715af0fecf9494d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a445dcd4bf6dfe75c7715af0fecf9494d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#a445dcd4bf6dfe75c7715af0fecf9494d">run</a> ()</td></tr>
-<tr class="memdesc:a445dcd4bf6dfe75c7715af0fecf9494d"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction utilisée par les threads en temps que pointeur sur fonction <br/></td></tr>
+<tr class="memdesc:a445dcd4bf6dfe75c7715af0fecf9494d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilisé par le thread. <a class="el" href="classmognetwork_1_1_i_runnable.html" title="Interface permettant de créer une fonction d&#39;exécution pour les Threads (java style) ...">IRunnable</a>. <br/></td></tr>
 <tr class="separator:a445dcd4bf6dfe75c7715af0fecf9494d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed4473511088d8bc91ce118334eed24d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed4473511088d8bc91ce118334eed24d"></a>
-<a class="el" href="classmognetwork_1_1_selector.html">Selector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getSelector</b> ()</td></tr>
+<tr class="memitem:aed4473511088d8bc91ce118334eed24d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_selector.html">Selector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#aed4473511088d8bc91ce118334eed24d">getSelector</a> ()</td></tr>
+<tr class="memdesc:aed4473511088d8bc91ce118334eed24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de récupérer une référence sur le selector du thread.  <a href="#aed4473511088d8bc91ce118334eed24d">More...</a><br/></td></tr>
 <tr class="separator:aed4473511088d8bc91ce118334eed24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Permet la gestion de la lecture de données en ASIO. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aae7628471fda37905fab2dc03db11f77"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mognetwork::TcpASIOListener::TcpASIOListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmognetwork_1_1_tcp_server_socket.html">TcpServerSocket</a> &amp;&#160;</td>
+          <td class="paramname"><em>serverSocket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>constructeur par défaut </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverSocket</td><td>la socket serveur </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0d0b24852fdd94ad5096a87a40bc7712"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mognetwork::TcpASIOListener::addListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a> *&#160;</td>
+          <td class="paramname"><em>listener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ajoute un listener au thread d'écoute. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listener</td><td>le listener à ajouter, instance de ITCpASIOListenerHandler </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aed4473511088d8bc91ce118334eed24d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmognetwork_1_1_selector.html">Selector</a>&amp; mognetwork::TcpASIOListener::getSelector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Permet de récupérer une référence sur le selector du thread. </p>
+<dl class="section return"><dt>Returns</dt><dd>la référence sur le <a class="el" href="classmognetwork_1_1_selector.html" title="Encapsulation du select. ">Selector</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a431eb0fb3fab8042a9ef0b79d706fffc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mognetwork::TcpASIOListener::isRunning </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Permet de savoir si le thread est démarré </p>
+<dl class="section return"><dt>Returns</dt><dd>true si démarré, false sinon </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="_tcp_a_s_i_o_listener_8hh_source.html">TcpASIOListener.hh</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 14 2014 17:49:14 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 17 2014 18:58:05 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -1,0 +1,107 @@
+\hypertarget{classmognetwork_1_1_tcp_server_socket}{\section{mognetwork\-:\-:Tcp\-Server\-Socket Class Reference}
+\label{classmognetwork_1_1_tcp_server_socket}\index{mognetwork\-::\-Tcp\-Server\-Socket@{mognetwork\-::\-Tcp\-Server\-Socket}}
+}
+
+
+\hyperlink{classmognetwork_1_1_socket}{Socket} pour la gestion simplifiée du serveur.  
+
+
+
+
+{\ttfamily \#include $<$Tcp\-Server\-Socket.\-hh$>$}
+
+Inheritance diagram for mognetwork\-:\-:Tcp\-Server\-Socket\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classmognetwork_1_1_tcp_server_socket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmognetwork_1_1_tcp_server_socket_a152822e1e60c7085578bc83cdfd00bbf}{\hyperlink{classmognetwork_1_1_tcp_server_socket_a152822e1e60c7085578bc83cdfd00bbf}{Tcp\-Server\-Socket} ()}\label{classmognetwork_1_1_tcp_server_socket_a152822e1e60c7085578bc83cdfd00bbf}
+
+\begin{DoxyCompactList}\small\item\em constructeur par défaut \end{DoxyCompactList}\item 
+\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} $\ast$ \hyperlink{classmognetwork_1_1_tcp_server_socket_a53a7e104d2024c5d8742d8dc34e7f3a1}{accept} ()
+\begin{DoxyCompactList}\small\item\em Accepte une connexion client. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_tcp_server_socket_a4b105d5de7327704053aa1a8cd63867c}{bind} (int port)
+\begin{DoxyCompactList}\small\item\em Bind la socket sur un port. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_tcp_server_socket_ae7be66e332d204dcec82e252e86231eb}{listen} (int max\-Waiting\-List)
+\begin{DoxyCompactList}\small\item\em écoute sur la socket. \end{DoxyCompactList}\item 
+bool \hyperlink{classmognetwork_1_1_tcp_server_socket_a982378d2a52f5b0c0935887c30dc1304}{is\-Bound} () const 
+\begin{DoxyCompactList}\small\item\em permet de savoir si la socket a bien bind sur le port. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_server_socket_a38a7a113a0d5a541304ac4011229e091}{bool \hyperlink{classmognetwork_1_1_tcp_server_socket_a38a7a113a0d5a541304ac4011229e091}{is\-Listening} () const }\label{classmognetwork_1_1_tcp_server_socket_a38a7a113a0d5a541304ac4011229e091}
+
+\begin{DoxyCompactList}\small\item\em permet de savoir si la socket écoute sur le port. \textbackslash{} return true si oui, false sinon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classmognetwork_1_1_socket}{Socket} pour la gestion simplifiée du serveur. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmognetwork_1_1_tcp_server_socket_a53a7e104d2024c5d8742d8dc34e7f3a1}{\index{mognetwork\-::\-Tcp\-Server\-Socket@{mognetwork\-::\-Tcp\-Server\-Socket}!accept@{accept}}
+\index{accept@{accept}!mognetwork::TcpServerSocket@{mognetwork\-::\-Tcp\-Server\-Socket}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tcp\-Socket}$\ast$ mognetwork\-::\-Tcp\-Server\-Socket\-::accept (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_tcp_server_socket_a53a7e104d2024c5d8742d8dc34e7f3a1}
+
+
+Accepte une connexion client. 
+
+\begin{DoxyReturn}{Returns}
+un pointeur sur le nouveau client en T\-C\-P 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_server_socket_a4b105d5de7327704053aa1a8cd63867c}{\index{mognetwork\-::\-Tcp\-Server\-Socket@{mognetwork\-::\-Tcp\-Server\-Socket}!bind@{bind}}
+\index{bind@{bind}!mognetwork::TcpServerSocket@{mognetwork\-::\-Tcp\-Server\-Socket}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Tcp\-Server\-Socket\-::bind (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_tcp_server_socket_a4b105d5de7327704053aa1a8cd63867c}
+
+
+Bind la socket sur un port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & le port à binder \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmognetwork_1_1_tcp_server_socket_a982378d2a52f5b0c0935887c30dc1304}{\index{mognetwork\-::\-Tcp\-Server\-Socket@{mognetwork\-::\-Tcp\-Server\-Socket}!is\-Bound@{is\-Bound}}
+\index{is\-Bound@{is\-Bound}!mognetwork::TcpServerSocket@{mognetwork\-::\-Tcp\-Server\-Socket}}
+\subsubsection[{is\-Bound}]{\setlength{\rightskip}{0pt plus 5cm}bool mognetwork\-::\-Tcp\-Server\-Socket\-::is\-Bound (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_server_socket_a982378d2a52f5b0c0935887c30dc1304}
+
+
+permet de savoir si la socket a bien bind sur le port. 
+
+\begin{DoxyReturn}{Returns}
+true si elle est bind, false sinon 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_server_socket_ae7be66e332d204dcec82e252e86231eb}{\index{mognetwork\-::\-Tcp\-Server\-Socket@{mognetwork\-::\-Tcp\-Server\-Socket}!listen@{listen}}
+\index{listen@{listen}!mognetwork::TcpServerSocket@{mognetwork\-::\-Tcp\-Server\-Socket}}
+\subsubsection[{listen}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Tcp\-Server\-Socket\-::listen (
+\begin{DoxyParamCaption}
+\item[{int}]{max\-Waiting\-List}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_tcp_server_socket_ae7be66e332d204dcec82e252e86231eb}
+
+
+écoute sur la socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\-Waiting\-List} & liste d'attente d'écoute maximale \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_tcp_server_socket_8hh}{Tcp\-Server\-Socket.\-hh}\end{DoxyCompactItemize}
