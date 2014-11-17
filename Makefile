@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Fri Nov 14 17:48:57 2014 Moghrabi Alexandre
+## Last update Mon Nov 17 14:33:30 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -18,17 +18,17 @@ ALIBNAME=lib$(NAME).a
 
 SRCDIR=	./src/
 
-SRC=	$(SRCDIR)CondVar.cpp
-	$(SRCDIR)IpAddress.cpp
-	$(SRCDIR)Mutex.cpp
-	$(SRCDIR)Selector.cpp
-	$(SRCDIR)Socket.cpp
-	$(SRCDIR)TcpASIODatas.cpp
-	$(SRCDIR)TcpASIOListener.cpp
-	$(SRCDIR)TcpASIOWriter.cpp
-	$(SRCDIR)TcpSocket.cpp
-	$(SRCDIR)Thread.cpp
-	$(SRCDIR)UnixSocket.cpp
+SRC=	$(SRCDIR)CondVar.cpp		\
+	$(SRCDIR)IpAddress.cpp		\
+	$(SRCDIR)Mutex.cpp		\
+	$(SRCDIR)Selector.cpp		\
+	$(SRCDIR)Socket.cpp		\
+	$(SRCDIR)TcpASIODatas.cpp	\
+	$(SRCDIR)TcpASIOListener.cpp	\
+	$(SRCDIR)TcpASIOWriter.cpp	\
+	$(SRCDIR)TcpSocket.cpp		\
+	$(SRCDIR)Thread.cpp		\
+	$(SRCDIR)UnixSocket.cpp		\
 	$(SRCDIR)WinSocket.cpp
 
 

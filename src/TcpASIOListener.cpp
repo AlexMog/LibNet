@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Thu Nov 13 17:12:40 2014 Moghrabi Alexandre
+// Last update Mon Nov 17 14:32:07 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -20,8 +20,8 @@
 
 namespace mognetwork
 {
-  TcpASIOListener::TcpASIOListener(TcpSocket& serverSocket, ITcpASIOListenerHandler& handler) :
-    m_handler(handler), m_serverSocket(serverSocket)
+  TcpASIOListener::TcpASIOListener(TcpSocket& serverSocket) :
+    m_serverSocket(serverSocket)
   {
     m_thread = new Thread(*this, false);
     if (pipe(m_pipefd) != 0)
@@ -67,7 +67,8 @@ namespace mognetwork
     TcpSocket* socket = new TcpSocket(cSocket);
     m_selector.addFdToRead(cSocket);
     TcpASIODatas::getInstance()->addSocket(socket);
-    m_handler.onConnect(*socket);
+    for (std::list<ITcpASIOListenerHandler*>::iterator it = m_listeners.begin(); it != m_listeners.end(); ++it)
+      (*it)->onConnect(*socket);
   }
 
   void TcpASIOListener::run()
@@ -100,13 +101,17 @@ namespace mognetwork
 		if (status == Socket::Ok)
 		  {
 		    // DATAS FULLY RECEIVED.
-		    m_handler.onReceivedData(*socket);
+		    for (std::list<ITcpASIOListenerHandler*>::iterator it2 = m_listeners.begin();
+			 it2 != m_listeners.end(); ++it2)
+		      (*it2)->onReceivedData(*socket);
 		  }
 		else if (status != Socket::Waiting)
 		  {
 		    // DISCONNECTED
 		    socket->disconnect();
-		    m_handler.onDisconnect(*socket);
+		    for (std::list<ITcpASIOListenerHandler*>::iterator it2 = m_listeners.begin();
+			 it2 != m_listeners.end(); ++it2)
+		      (*it2)->onDisconnect(*socket);
 		    m_selector.remFdToRead(*it);
 		    TcpASIODatas::getInstance()->remSocket(*it);
 		  }

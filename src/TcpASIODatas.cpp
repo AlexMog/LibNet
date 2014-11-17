@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 18:39:26 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 19:16:26 2014 Moghrabi Alexandre
+// Last update Mon Nov 17 14:29:26 2014 Moghrabi Alexandre
 //
 
 #include "TcpASIODatas.hh"
@@ -22,12 +22,12 @@ namespace mognetwork
     delete m_socketList;
   }
 
-  TcpASIODatas::remSocket(SocketFD socket)
+  void TcpASIODatas::remSocket(SocketFD fd)
   {
-    for (std::list<TcpSocket*>::iterator it = m_socketList.begin(); it != m_socketList.end();)
+    for (std::list<TcpSocket*>::iterator it = m_socketList->begin(); it != m_socketList->end();)
       {
-	if ((*it)->getSocketFD == socket)
-	  it = m_socketList.remove(it);
+	if ((*it)->getSocketFD() == fd)
+	  it = m_socketList->erase(it);
 	else
 	  ++it;
       }
@@ -35,8 +35,8 @@ namespace mognetwork
 
   TcpSocket* TcpASIODatas::getSocketByFd(SocketFD fd)
   {
-    for (std::list<TcpSocket*>::iterator it = m_socketList.begin(); it != m_socketList.end();)
-      if ((*it)->getSocketFD == socket)
+    for (std::list<TcpSocket*>::iterator it = m_socketList->begin(); it != m_socketList->end();)
+      if ((*it)->getSocketFD() == fd)
 	return *it;
     return NULL;
   }
