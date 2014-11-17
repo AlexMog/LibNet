@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Sat Nov 15 12:10:38 2014 Moghrabi Alexandre
+// Last update Mon Nov 17 19:18:28 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -31,7 +31,10 @@ namespace mognetwork
 {
   TcpSocket::TcpSocket() :
     Socket(Tcp), m_userData(NULL)
-  {}
+  {
+    // Create the socket, and init it
+    create();
+  }
 
   TcpSocket::TcpSocket(SocketFD fd) :
     Socket(Tcp), m_userData(NULL)
@@ -41,9 +44,6 @@ namespace mognetwork
 
   Socket::Status TcpSocket::connect(const IpAddress& rAddress, unsigned short port)
   {
-    // Create the socket, and init it
-    create();
-
     // Create the sockaddr by the OS
     sockaddr_in address = OsSocket::createAddress(rAddress.getInt(), port);
 
