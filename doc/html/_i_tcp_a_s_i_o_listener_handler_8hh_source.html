@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Tue Nov 11 00:44:56 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Thu Nov 13 12:45:34 2014 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef ITCPASIOLISTENERHANDLER_HH_</span></div>
@@ -112,19 +112,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html#a8cc4a40b4addfc1abdf94ba66a545674">onReceivedData</a>(<a class="code" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a>&amp; client) = 0;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html#afeb615cb2f1e1f543a6282e21e66c543">onDisconnect</a>(<a class="code" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a>&amp; client) = 0;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  };</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}; <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif // !ITCPASIOLISTENERHANDLER_HH_</span></div>
 <div class="ttc" id="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_html"><div class="ttname"><a href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">mognetwork::ITcpASIOListenerHandler</a></div><div class="ttdef"><b>Definition:</b> ITcpASIOListenerHandler.hh:29</div></div>
 <div class="ttc" id="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_html_afeb615cb2f1e1f543a6282e21e66c543"><div class="ttname"><a href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html#afeb615cb2f1e1f543a6282e21e66c543">mognetwork::ITcpASIOListenerHandler::onDisconnect</a></div><div class="ttdeci">virtual void onDisconnect(TcpSocket &amp;client)=0</div><div class="ttdoc">Appelé lors de la déconnexion d&amp;#39;un client. </div></div>
 <div class="ttc" id="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_html_a8cc4a40b4addfc1abdf94ba66a545674"><div class="ttname"><a href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html#a8cc4a40b4addfc1abdf94ba66a545674">mognetwork::ITcpASIOListenerHandler::onReceivedData</a></div><div class="ttdeci">virtual void onReceivedData(TcpSocket &amp;client)=0</div><div class="ttdoc">Appelé lors de la réception totale d&amp;#39;une donnée. </div></div>
-<div class="ttc" id="classmognetwork_1_1_tcp_socket_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_socket.html">mognetwork::TcpSocket</a></div><div class="ttdoc">Classe de création d&amp;#39;une socket TCP. </div><div class="ttdef"><b>Definition:</b> TcpSocket.hh:33</div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_socket_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_socket.html">mognetwork::TcpSocket</a></div><div class="ttdoc">Classe de création d&amp;#39;une socket TCP. </div><div class="ttdef"><b>Definition:</b> TcpSocket.hh:35</div></div>
 <div class="ttc" id="_tcp_socket_8hh_html"><div class="ttname"><a href="_tcp_socket_8hh.html">TcpSocket.hh</a></div><div class="ttdoc">Gestion des sockets en TCP. </div></div>
 <div class="ttc" id="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_html_aa1d6b507fc5adc689698c6bd7f0a8ca0"><div class="ttname"><a href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html#aa1d6b507fc5adc689698c6bd7f0a8ca0">mognetwork::ITcpASIOListenerHandler::onConnect</a></div><div class="ttdeci">virtual void onConnect(TcpSocket &amp;client)=0</div><div class="ttdoc">Appelé lors de la connexion d&amp;#39;un nouveau client. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 17 2014 18:58:05 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 18 2014 11:01:12 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

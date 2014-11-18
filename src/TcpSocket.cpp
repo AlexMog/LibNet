@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Mon Nov 17 19:18:28 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 10:50:14 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -16,6 +16,7 @@
 #include <iostream>
 #include "TcpSocket.hh"
 #include "OsSocket.hh"
+#include "Packet.hh"
 
 namespace
 {
@@ -188,9 +189,10 @@ namespace mognetwork
 	  }
 	if (m_pendingRDatas.readed == m_pendingRDatas.totalSize)
 	  {
-	    m_allDataReaded.datas = m_pendingRDatas.datas;
-	    m_allDataReaded.readed = m_pendingRDatas.readed;
-	    m_allDataReaded.totalSize = m_pendingRDatas.totalSize;
+	    m_allDataReaded = new ReadedDatas();
+	    m_allDataReaded->datas = m_pendingRDatas.datas;
+	    m_allDataReaded->readed = m_pendingRDatas.readed;
+	    m_allDataReaded->totalSize = m_pendingRDatas.totalSize;
 	    m_pendingRDatas = ReadedDatas();
 	    return (Ok);
 	  }
@@ -198,9 +200,14 @@ namespace mognetwork
     return (Waiting);
   }
 
-  const TcpSocket::ReadedDatas& TcpSocket::getDatasReaded() const
+  const TcpSocket::ReadedDatas* TcpSocket::getDatasReaded() const
   {
     return (m_allDataReaded);
+  }
+
+  const Packet* TcpSocket::getPacketReaded()
+  {
+    return new Packet(m_allDataReaded);
   }
 
   TcpSocket::ReadedDatas::ReadedDatas() :

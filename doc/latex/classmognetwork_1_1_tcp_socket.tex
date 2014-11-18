@@ -57,8 +57,10 @@ void $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_adef63a929423324fd75888e21
 \begin{DoxyCompactList}\small\item\em Récupère des données enregistrées sur la socket. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1_tcp_socket_af3918374ee41223b77f669367d4b0e22}{read\-Pending\-Datas} ()
 \begin{DoxyCompactList}\small\item\em Lis les données en attente en Asynchrone. \end{DoxyCompactList}\item 
-const \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} \& \hyperlink{classmognetwork_1_1_tcp_socket_ab4bdcfa0a9fa23643307200ad7379510}{get\-Datas\-Readed} () const 
-\begin{DoxyCompactList}\small\item\em Récupère les données lues via read\-Pending\-Datas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+const \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_ab9e99c5f8bc2099de32670ff1b7bcaf3}{get\-Datas\-Readed} () const 
+\begin{DoxyCompactList}\small\item\em Récupère les données lues via read\-Pending\-Datas. \end{DoxyCompactList}\item 
+const \hyperlink{classmognetwork_1_1_packet}{Packet} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_a9256f406b68101bee2735f7ecfe104e8}{get\-Packet\-Readed} ()
+\begin{DoxyCompactList}\small\item\em Récupère les données lues via read\-Pending\-Datas en temps que \hyperlink{classmognetwork_1_1_packet}{Packet}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -135,19 +137,33 @@ Connecte la socket à une adresse.
 {\em port} & le port où la socket doit se connecter \\
 \hline
 \end{DoxyParams}
-\hypertarget{classmognetwork_1_1_tcp_socket_ab4bdcfa0a9fa23643307200ad7379510}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-Datas\-Readed@{get\-Datas\-Readed}}
+\hypertarget{classmognetwork_1_1_tcp_socket_ab9e99c5f8bc2099de32670ff1b7bcaf3}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-Datas\-Readed@{get\-Datas\-Readed}}
 \index{get\-Datas\-Readed@{get\-Datas\-Readed}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
-\subsubsection[{get\-Datas\-Readed}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Tcp\-Socket\-::\-Readed\-Datas}\& mognetwork\-::\-Tcp\-Socket\-::get\-Datas\-Readed (
+\subsubsection[{get\-Datas\-Readed}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Tcp\-Socket\-::\-Readed\-Datas}$\ast$ mognetwork\-::\-Tcp\-Socket\-::get\-Datas\-Readed (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{classmognetwork_1_1_tcp_socket_ab4bdcfa0a9fa23643307200ad7379510}
+) const}}\label{classmognetwork_1_1_tcp_socket_ab9e99c5f8bc2099de32670ff1b7bcaf3}
 
 
 Récupère les données lues via read\-Pending\-Datas. 
 
 \begin{DoxyReturn}{Returns}
 Les données lues en temps que \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_socket_a9256f406b68101bee2735f7ecfe104e8}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-Packet\-Readed@{get\-Packet\-Readed}}
+\index{get\-Packet\-Readed@{get\-Packet\-Readed}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
+\subsubsection[{get\-Packet\-Readed}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Packet}$\ast$ mognetwork\-::\-Tcp\-Socket\-::get\-Packet\-Readed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_tcp_socket_a9256f406b68101bee2735f7ecfe104e8}
+
+
+Récupère les données lues via read\-Pending\-Datas en temps que \hyperlink{classmognetwork_1_1_packet}{Packet}. 
+
+\begin{DoxyReturn}{Returns}
+Les données en format \hyperlink{classmognetwork_1_1_packet}{Packet} 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_tcp_socket_adef63a929423324fd75888e2195176e0}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-User\-Data@{get\-User\-Data}}
 \index{get\-User\-Data@{get\-User\-Data}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}

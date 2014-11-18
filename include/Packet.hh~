@@ -1,0 +1,66 @@
+//
+// Packet.hh for LibNet in /home/alexmog/projets/LibNet/include
+// 
+// Made by Moghrabi Alexandre
+// Login   <alexandre.moghrabi@epitech.eu>
+// 
+// Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 10:51:52 2014 Moghrabi Alexandre
+//
+
+/*!
+ * \file Packet.hh
+ * \brief Used to simplify data manadgement
+ * \author AlexMog
+ * \version 0.1
+ */
+
+#include <vector>
+#include <string.h>
+#include <arpa/inet.h>
+#include "TcpSocket.hh"
+
+namespace mognetwork
+{
+  /*!
+   * \class Packet
+   * \brief used to simplify the interpretation of received datas
+   */
+  class Packet
+  {
+  public:
+    Packet();
+    Packet(std::vector<char>* data);
+    Packet(TcpSocket::ReadedDatas* data);
+    virtual ~Packet();
+
+    Packet& operator>>(uint32_t& data);
+
+    Packet& operator<<(uint32_t data);
+
+    Packet& operator<<(const char* data);
+
+    Packet& operator>>(char *data);
+
+    template <typename T>
+    Packet& operator>>(T& data);
+
+    template <typename T>
+    Packet& operator<<(const T& data);
+
+    bool verifySize(unsigned int size) {return (m_readerPos + size <= m_data->size());}
+
+    void clear() {m_data->clear();m_readerPos = 0;}
+
+    const void* getData() const {return (!m_data->empty() ? &((*m_data)[0]) : NULL);}
+
+    unsigned int getDataSize() const {return m_data->size();}
+
+    void push(const void* data, unsigned int size);
+
+  private:
+    std::vector<char>* m_data;
+    unsigned int m_readerPos;
+    TcpSocket::ReadedDatas* m_dataPack;
+  };
+} // namespace mognetwork

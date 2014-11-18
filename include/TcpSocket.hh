@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Wed Nov 12 14:23:45 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 10:51:22 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -24,8 +24,10 @@
 # include "IpAddress.hh"
 # include "Socket.hh"
 
+
 namespace mognetwork
 {
+  class Packet;
   /*!
    * \class TcpSocket
    * \brief Classe de création d'une socket TCP
@@ -113,12 +115,17 @@ namespace mognetwork
      * \brief Récupère les données lues via readPendingDatas
      * \return Les données lues en temps que TcpSocket::ReadedDatas
      */
-    const TcpSocket::ReadedDatas& getDatasReaded() const;
+    const TcpSocket::ReadedDatas* getDatasReaded() const;
+    /*!
+     * \brief Récupère les données lues via readPendingDatas en temps que Packet
+     * \return Les données en format Packet
+     */
+    const Packet* getPacketReaded();
 
   private:
     DataList m_pendingDatas; /*!< Données en attente */
     ReadedDatas m_pendingRDatas; /*!< Données en attente de lecture */
-    ReadedDatas m_allDataReaded; /*!< Données lues */
+    ReadedDatas *m_allDataReaded; /*!< Données lues */
     void* m_userData; /*!< Données supplémentaires optionnelles */
   };
 } // namespace mognetwork
