@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:31:00 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 12:53:30 2014 Moghrabi Alexandre
 //
 
 #include "TcpASIODatas.hh"
@@ -15,7 +15,7 @@
 namespace mognetwork
 {
   TcpASIOListener::TcpASIOListener(TcpServerSocket& serverSocket) :
-    m_serverSocket(serverSocket)
+    m_running(true), m_serverSocket(serverSocket)
   {
     m_thread = new Thread(*this, false);
     if (pipe(m_pipefd) != 0)

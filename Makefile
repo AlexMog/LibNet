@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Tue Nov 18 12:34:21 2014 Moghrabi Alexandre
+## Last update Tue Nov 18 12:54:26 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -52,7 +52,7 @@ CP=	cp -rf
 CXXFLAGS=	-Wall -Werror -Wextra -I $(INCDIR) -ansi -pedantic -fPIC
 LDFLAGS=	
 
-all:		$(BINDIR)$(LIBNAME) $(BINDIR)$(ALIBNAME)
+all:		shared static
 
 $(BINDIR)$(LIBNAME):	$(OBJS)
 		mkdir -p bin
@@ -63,13 +63,13 @@ $(BINDIR)$(ALIBNAME):	$(OBJS)
 		$(AR) $(BINDIR)$(ALIBNAME) $(LDFLAGS) $(OBJS)
 
 debug-shared:	CXXFLAGS += -g3
-debug-shared:	$(LIBNAME)
+debug-shared:	shared
 debug-static:	CXXFLAGS += -g3
-debug-static:	$(ALIBNAME)
+debug-static:	static
 
-static:		$(ALIBNAME)
+static:		$(BINDIR)$(ALIBNAME)
 
-shared:		$(ALIBNAME)
+shared:		$(BINDIR)$(ALIBNAME)
 
 clean:
 		$(RM) $(OBJS)
