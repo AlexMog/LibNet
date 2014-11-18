@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 12:53:30 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 14:06:38 2014 Moghrabi Alexandre
 //
 
 #include "TcpASIODatas.hh"
@@ -21,8 +21,6 @@ namespace mognetwork
     if (pipe(m_pipefd) != 0)
       throw LibNetworkException("Pipe creation failed.", __LINE__, __FILE__);
     m_socketList = TcpASIODatas::getInstance()->getSocketList();
-    m_selector.addFdToRead(m_serverSocket.getSocketFD());
-    m_selector.addFdToRead(m_pipefd[0]);
   }
 
   TcpASIOListener::~TcpASIOListener()
@@ -32,6 +30,8 @@ namespace mognetwork
 
   void TcpASIOListener::start()
   {
+    m_selector.addFdToRead(m_serverSocket.getSocketFD());
+    m_selector.addFdToRead(m_pipefd[0]);
     m_thread->start();
   }
 

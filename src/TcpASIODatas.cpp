@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 18:39:26 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:31:01 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:58:24 2014 Moghrabi Alexandre
 //
 
 #include "TcpASIODatas.hh"
@@ -35,7 +35,7 @@ namespace mognetwork
 
   TcpSocket* TcpASIODatas::getSocketByFd(SocketFD fd)
   {
-    for (std::list<TcpSocket*>::iterator it = m_socketList->begin(); it != m_socketList->end();)
+    for (std::list<TcpSocket*>::iterator it = m_socketList->begin(); it != m_socketList->end(); ++it)
       if ((*it)->getSocketFD() == fd)
 	return *it;
     return NULL;
