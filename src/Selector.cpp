@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun 12 18:06:35 2014 mognetworkhrabi Alexandre
-// Last update Wed Nov 12 14:43:55 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:01:45 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -18,7 +18,7 @@
 
 namespace mognetwork
 {
-  Selector::Selector() {}
+  Selector::Selector() : m_timeout(NULL), m_maxFds(0) {}
   Selector::~Selector() {}
 
   void Selector::addFdToWrite(SocketFD fd)

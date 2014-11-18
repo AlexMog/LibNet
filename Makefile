@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Tue Nov 18 12:54:26 2014 Moghrabi Alexandre
+## Last update Tue Nov 18 12:58:19 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -69,7 +69,7 @@ debug-static:	static
 
 static:		$(BINDIR)$(ALIBNAME)
 
-shared:		$(BINDIR)$(ALIBNAME)
+shared:		$(BINDIR)$(LIBNAME)
 
 clean:
 		$(RM) $(OBJS)
