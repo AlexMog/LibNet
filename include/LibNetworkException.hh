@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:51:02 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:10:52 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 14:30:00 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -18,6 +18,8 @@
 #ifndef MOGNETWORK_LIBNETWORKEXCEPTION_HH
 # define MOGNETWORK_LIBNETWORKEXCEPTION_HH
 
+# include <errno.h>
+# include <string.h>
 # include <exception>
 # include <iostream>
 # include <sstream>
@@ -41,7 +43,8 @@ namespace mognetwork
     {
       std::ostringstream oss;
 
-      oss << "Error on line " << line << " in file '" << file << "' : " << msg << std::endl;
+      oss << "Error on line " << line << " in file '" << file << "' : " << msg << std::endl
+	  << "\tErrno status: " << strerror(errno) << std::endl;
       this->msg = oss.str();
     }
     virtual ~LibNetworkException() throw() {}

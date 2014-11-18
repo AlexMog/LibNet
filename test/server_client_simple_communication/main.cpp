@@ -22,7 +22,7 @@ public:
 
 int main(int ac, char **av)
 {
-  mognetwork::TcpASIOServer server(42420);
+  mognetwork::TcpASIOServer server(42);
   Listener l;
 
   std::cout << "Starting server..." << std::endl;
@@ -31,7 +31,6 @@ int main(int ac, char **av)
     server.start();
   } catch (const std::exception& e) {
     std::cerr << e.what() << std::endl;
-    perror("WUUT?");
   }
   std::cout << "Finish." <<std::endl;
   return (0);
