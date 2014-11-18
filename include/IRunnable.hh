@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 18:05:43 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 14:56:31 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -32,6 +32,6 @@ namespace mognetwork
      */
     virtual void run() = 0;
   };
-}; // namesapce mognetwork
+} // namesapce mognetwork
 
 #endif // !IRUNNABLE_HH_

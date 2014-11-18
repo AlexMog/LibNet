@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:41:35 2014 Moghrabi Alexandre
-// Last update Mon Nov 17 18:38:22 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -71,6 +71,6 @@ namespace mognetwork
     bool m_listening; /*!< Stocke l'état du listen. */
     int m_port; /*!< Stocke le port d'écoute */
   };
-}; // namespace mognetwork
+} // namespace mognetwork
 
 #endif // !TCPSERVERSOCKET_HH_

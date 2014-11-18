@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Mon Nov 17 18:26:33 2014 Moghrabi Alexandre
+## Last update Tue Nov 18 09:29:49 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -42,7 +42,7 @@ CXX=	g++
 
 AR=	ar rs
 
-CXXFLAGS=	-Wall -Werror -Wextra -I include
+CXXFLAGS=	-Wall -Werror -Wextra -I include -ansi -pedantic
 LDFLAGS=	
 
 all:		$(NAME)

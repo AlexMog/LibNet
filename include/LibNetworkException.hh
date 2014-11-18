@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:51:02 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 14:52:13 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -58,5 +58,5 @@ namespace mognetwork
   private:
     std::string msg; /*!< Message d'erreur de l'exception */
   };
-}; // namespace mognetwork
+} // namespace mognetwork
 #endif // !LIBNETWORKEXCEPTION_HH_

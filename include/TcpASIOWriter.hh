@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:35:53 2014 Moghrabi Alexandre
-// Last update Mon Nov 17 18:37:24 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -94,6 +94,6 @@ namespace mognetwork
     bool m_running; /*!< etat du thread */
     std::list<TcpSocket*>* m_socketList; /*!< Liste des sockets pour éviter un surplus d'appel au singleton */
   };  
-}; // namespace mognetwork
+} // namespace mognetwork
 
 #endif // !TCPASIOWRITER_HH_

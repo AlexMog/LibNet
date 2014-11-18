@@ -10,11 +10,10 @@ int main(int ac, char **av)
   std::cout << "Starting server..." << std::endl;
   try {
     server.start();
-  } catch (const std::exception& e)
-    {
-      std::cout << e.what() << std::endl;
-      perror("WUUT?");
-    }
+  } catch (const std::exception& e) {
+    std::cerr << e.what() << std::endl;
+    perror("WUUT?");
+  }
   std::cout << "Finish." <<std::endl;
   return (0);
 }

@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:37:30 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 10:24:55 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:31:00 2014 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -56,4 +56,4 @@ namespace mognetwork
     reinterpret_cast<IRunnable*>(thr)->run();
     return (NULL);
   }
-}; // namespace mognetwork
+} // namespace mognetwork

@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Sat Nov 15 18:00:03 2014 Moghrabi Alexandre
-// Last update Mon Nov 17 18:41:45 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -64,6 +64,6 @@ namespace mognetwork
     TcpASIOWriter* m_serverWriter; /*!< instance du thread d'écriture */
     int m_port; /*!< port d'écoute du serveur */
   };
-}; // namespace mognetwork
+} // namespace mognetwork
 
 #endif // !TCPASIOSERVER_HH_

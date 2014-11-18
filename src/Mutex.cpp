@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:36:19 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 17:18:53 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:31:01 2014 Moghrabi Alexandre
 //
 
 #include "ThreadException.hh"
@@ -41,4 +41,4 @@ namespace mognetwork
   {
     return pthread_mutex_trylock(&m_mutex);
   }
-}; // namepsace mognetwork
+} // namepsace mognetwork

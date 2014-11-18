@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:43:06 2014 Moghrabi Alexandre
-// Last update Wed Nov 12 17:33:49 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -58,6 +58,6 @@ namespace mognetwork
   protected:
     pthread_cond_t m_cond; /*!< Variable conditionnelle */
   };
-}; // namespace mognetwork
+} // namespace mognetwork
 
 #endif // !CONDVAR_HH_

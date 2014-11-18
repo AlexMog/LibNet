@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Mon Nov 17 18:48:31 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -96,6 +96,6 @@ namespace mognetwork
     int m_pipefd[2]; /*!< un pipe pour déclancher le Selector en cas de besoins */
     TcpServerSocket& m_serverSocket; /*!< une référence sur la socket serveur */
   };
-}; // namespace mognetwork
+} // namespace mognetwork
 
 #endif // !TCPASIOLISTENER_HH_

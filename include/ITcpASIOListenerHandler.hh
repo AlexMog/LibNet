@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 00:44:56 2014 Moghrabi Alexandre
-// Last update Thu Nov 13 12:45:34 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -45,6 +45,6 @@ namespace mognetwork
      */
     virtual void onDisconnect(TcpSocket& client) = 0;
   };
-}; // namespace mognetwork
+} // namespace mognetwork
 
 #endif // !ITCPASIOLISTENERHANDLER_HH_

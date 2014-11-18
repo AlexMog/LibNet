@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 18:30:59 2014 Moghrabi Alexandre
-// Last update Mon Nov 17 18:57:40 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -41,6 +41,6 @@ namespace mognetwork
     Singleton(const Singleton&);
     Singleton& operator=(const Singleton&);
   };
-}; // namepsace mognetwork
+} // namepsace mognetwork
 
 #endif // !SINGLETON_HH_

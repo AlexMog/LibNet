@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Wed Jun 11 15:43:12 2014 mognetworkhrabi Alexandre
-// Last update Wed Nov 12 19:28:11 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -130,6 +130,6 @@ namespace mognetwork
     fd_set m_wdfs; /*!< Liste des fd en écriture */
     int m_maxFds; /*!< FD max pour le select */
   };
-}; // namespace mognetwork
+} // namespace mognetwork
 
 #endif // !SELECTOR_HH

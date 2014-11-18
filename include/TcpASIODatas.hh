@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 18:28:09 2014 Moghrabi Alexandre
-// Last update Mon Nov 17 18:55:57 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -78,6 +78,6 @@ namespace mognetwork
   private:
     std::list<TcpSocket*>* m_socketList; /*!< Liste des sockets partagées entre les threads ASIO */
   };
-}; // namespace mognetwork
+} // namespace mognetwork
 
 #endif // !TCPASIODATAS_HH_

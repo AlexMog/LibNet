@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 18:39:26 2014 Moghrabi Alexandre
-// Last update Mon Nov 17 14:29:26 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 09:31:01 2014 Moghrabi Alexandre
 //
 
 #include "TcpASIODatas.hh"
@@ -40,4 +40,4 @@ namespace mognetwork
 	return *it;
     return NULL;
   }
-}; // namespace mognetwork
+} // namespace mognetwork
