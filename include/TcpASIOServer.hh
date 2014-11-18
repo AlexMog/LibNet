@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Sat Nov 15 18:00:03 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 12:45:22 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -57,6 +57,18 @@ namespace mognetwork
      * \brief Dans le cas ou une socket client contient des données à envoyer, met à jour le thread d'écriture
      */
     void sendPendingDatas() {m_serverWriter->triggerData();}
+
+  public:
+    /*!
+     * \brief Récupère le writer TcpASIOWriter
+     * \return un pointeur sur le TcpASIOWriter
+     */
+    TcpASIOWriter* getServerWriter() const {return m_serverWriter;}
+    /*!
+     * \brief Récupère le listener TcpASIOListener
+     * \return un pointeur sur le TcpASIOWriter
+     */
+    TcpASIOListener* getServerListener() const {return m_serverListener;}
 
   private:
     TcpASIOListener* m_serverListener; /*!< instance du thread d'écoute */
