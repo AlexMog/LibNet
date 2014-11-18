@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 13:33:43 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 15:44:20 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -115,7 +115,7 @@ namespace mognetwork
      * \brief Récupère les données lues via readPendingDatas
      * \return Les données lues en temps que TcpSocket::ReadedDatas
      */
-    const TcpSocket::ReadedDatas* getDatasReaded() const;
+    TcpSocket::ReadedDatas* getDatasReaded() const;
     /*!
      * \brief Récupère les données lues via readPendingDatas en temps que Packet
      * \return Les données en format Packet

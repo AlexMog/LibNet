@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 11:47:38 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 15:44:53 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -177,6 +177,7 @@ namespace mognetwork
     if (m_pendingRDatas.readed >= sizeof(std::size_t))
       {
 	std::size_t toGet = std::min(static_cast<std::size_t>(m_pendingRDatas.totalSize - m_pendingRDatas.datas.size()), sizeof(buffer));
+	
 	Socket::Status status = receive(buffer, toGet, readed, MSG_DONTWAIT);
 	if (status != Ok)
 	  return (status);
@@ -187,7 +188,7 @@ namespace mognetwork
 	    char* begin = &m_pendingRDatas.datas[0] + m_pendingRDatas.datas.size() - readed;
 	    std::memcpy(begin, buffer, readed);
 	  }
-	if (m_pendingRDatas.readed == m_pendingRDatas.totalSize)
+	if (m_pendingRDatas.readed >= m_pendingRDatas.totalSize)
 	  {
 	    m_allDataReaded = new ReadedDatas();
 	    m_allDataReaded->datas = m_pendingRDatas.datas;
@@ -200,7 +201,7 @@ namespace mognetwork
     return (Waiting);
   }
 
-  const TcpSocket::ReadedDatas* TcpSocket::getDatasReaded() const
+  TcpSocket::ReadedDatas* TcpSocket::getDatasReaded() const
   {
     return (m_allDataReaded);
   }
