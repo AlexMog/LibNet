@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 15:44:53 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 19:03:25 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -67,10 +67,7 @@ namespace mognetwork
 	std::cerr << "Cannot receive datas if the buffer is null." << std::endl;
 	return (Error);
       }
-    int readed = recv(getSocketFD(), 
-		      data,
-		      static_cast<int>(size),
-		      flags | _flags);
+    int readed = recv(getSocketFD(), data, static_cast<int>(size), flags | _flags);
     if (readed > 0)
       {
 	received = static_cast<std::size_t>(readed);
@@ -80,6 +77,44 @@ namespace mognetwork
       return (Disconnected);
     else
       return (OsSocket::getErrorStatus());
+  }
+
+  Socket::Status TcpSocket::receiveAll(Data& data)
+  {
+    std::size_t readed = 0;
+    char buffer[1024]; // Buffer to get the datas
+    std::size_t totalSize;
+    std::size_t allreaded = 0;
+
+    // Read the size of the pending packet
+    while (readed < sizeof(std::size_t))
+      {
+	char* data = reinterpret_cast<char*>(&totalSize) + readed;
+	Socket::Status status = receive(data, sizeof(std::size_t) - m_pendingRDatas.readed, readed, 0);
+	if (status != Ok)
+	  return (status);
+      }
+    // Size is set, let's read the content!
+    if (m_pendingRDatas.readed >= sizeof(std::size_t))
+      {
+	while (allreaded < totalSize)
+	  {
+	    std::size_t toGet = std::min(static_cast<std::size_t>(totalSize - allreaded), sizeof(buffer));
+	    Socket::Status status = receive(buffer, toGet, readed, 0);
+	    if (status != Ok)
+	      return (status);
+	    allreaded += readed;
+	    if (readed > 0)
+	      {
+		data.resize(data.size() + readed);
+		char* begin = &data[0] + data.size() - readed;
+		std::memcpy(begin, buffer, readed);
+	      }
+	    if (m_pendingRDatas.readed >= m_pendingRDatas.totalSize)
+	      return (Ok);
+	  }
+      }
+    return (Error);
   }
 
   Socket::Status TcpSocket::asyncSend(const char* data, std::size_t size)
@@ -113,6 +148,7 @@ namespace mognetwork
 	  return (OsSocket::getErrorStatus());
 	if (sended == 0)
 	  return (Disconnected);
+	std::cout << "test" << std::endl;
 	if ((std::size_t)sended == (*it).size())
 	  {
 	    m_pendingDatas.pop_front();

@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:45:50 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:31:00 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 18:56:47 2014 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -47,7 +47,7 @@ namespace mognetwork
     m_selector.clearFdToWrite();
     for (std::list<TcpSocket*>::iterator it = m_socketList->begin(); it != m_socketList->end(); ++it)
       if ((*it)->havingPendingDatas())
-	m_selector.addFdToRead((*it)->getSocketFD());
+	m_selector.addFdToWrite((*it)->getSocketFD());
   }
 
   void TcpASIOWriter::run()
@@ -60,9 +60,9 @@ namespace mognetwork
 	  {
 	    setFds();
 	    m_selector.waitForTrigger();
-	    if (m_selector.getState() != Selector::Error)
+	    if (m_selector.getState() == Selector::Error)
 	      {
-		std::cerr << "Select error on reading thread." << std::endl;
+		std::cerr << "Select error on writing thread." << std::endl;
 		return ;
 	      }
 	    std::list<SocketFD> triggeredList = m_selector.getWritingTriggeredSockets();

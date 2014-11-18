@@ -11,16 +11,27 @@ int main(int ac, char **av)
   mognetwork::TcpSocket socket;
   mognetwork::IpAddress ip("127.0.0.1");
   std::string str = "LOL ITS A TEST\0";
+  int i = 10;
 
   std::cout << "Connecting to server..." << std::endl;
   try {
-    socket.connect(ip, 4242);
     packet << str.c_str();
-    socket.send(reinterpret_cast<const char*>(packet.getData()), packet.getDataSize());
-    sleep(5);
+    socket.connect(ip, 4242);
+    while (i > 0)
+      {
+	std::vector<char>* datas = new std::vector<char>;
+	char buffer[1024];
+
+	socket.send(reinterpret_cast<const char*>(packet.getData()), packet.getDataSize());
+	socket.receiveAll(*datas);
+	mognetwork::Packet p(datas);
+	p >> buffer;
+	std::cout << "RECEIVED: '" << buffer << "'" << std::endl;
+	std::cout << "Finished." << std::endl;
+	i--;
+	sleep(1);
+      }
     socket.disconnect();
-    sleep(5);
-    std::cout << "Finished." << std::endl;
   } catch (const std::exception& e) {
     std::cerr << e.what() << std::endl;
   }

@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 15:44:20 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 18:33:48 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -79,6 +79,11 @@ namespace mognetwork
      * \return Socket::Status permettant de savoir l'état de la réception
      */
     Socket::Status receive(char* data, std::size_t size, std::size_t& received, int _flags);
+    /*!
+     * \brief Reçoit des données de manière synchrone (blockante)
+     * \return Socket::Status permettant de savoir l'état de la réception
+     */
+    Socket::Status receiveAll(Data& data);
     /*!
      * \brief Ajoute des données à la liste d'envois des données de la socket en Asynchrone
      * \param data Les données à envoyer
