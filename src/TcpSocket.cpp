@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 10:50:14 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 11:47:38 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -205,7 +205,7 @@ namespace mognetwork
     return (m_allDataReaded);
   }
 
-  const Packet* TcpSocket::getPacketReaded()
+  Packet* TcpSocket::getPacketReaded()
   {
     return new Packet(m_allDataReaded);
   }
