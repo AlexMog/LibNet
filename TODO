@@ -1,3 +1,2 @@
-Test the TcpASIOReader
-Test the TcpASIOWriter
+Debug the TcpASIOWriter
 Add mutex to the Singleton (for multi-threading)
