@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Wed Jun 11 15:43:12 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 13:09:49 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:38:35 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -50,7 +50,7 @@ namespace mognetwork
      * \brief Constructeur du select
      */
     Selector();
-    ~Selector();
+    virtual ~Selector();
     
   public:
     /*!

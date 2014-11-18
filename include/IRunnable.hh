@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 18:05:43 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:11:14 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:37:41 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -27,6 +27,7 @@ namespace mognetwork
   class IRunnable
   {
   public:
+    virtual ~IRunnable() {}
     /*!
      * \brief fonction utilisée par les threads en temps que pointeur sur fonction
      */

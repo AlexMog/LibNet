@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 00:44:56 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:11:03 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:37:29 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -29,6 +29,7 @@ namespace mognetwork
   class ITcpASIOListenerHandler
   {
   public:
+    virtual ~ITcpASIOListenerHandler() {}
     /*!
      * \brief Appelé lors de la connexion d'un nouveau client
      * \param client le client qui c'est connecté

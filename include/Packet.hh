@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:10:05 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:33:01 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -67,7 +67,7 @@ namespace mognetwork
      * \brief extrait un char* du packet
      * \param data le char* dans lequel il sera extrait. Doit être alloué à la bonne taille.
      */
-    Packet& operator>>(char *data);
+    Packet& operator>>(char* data);
     /*!
      * \brief extrait des données (natives de préférence) du packet
      * \param data la donnée sera ecrite dedans.
