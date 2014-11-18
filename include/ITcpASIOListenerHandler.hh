@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 00:44:56 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:11:03 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 0.1
  */
 
-#ifndef ITCPASIOLISTENERHANDLER_HH_
-# define ITCPASIOLISTENERHANDLER_HH_
+#ifndef MOGNETWORK_ITCPASIOLISTENERHANDLER_HH
+# define MOGNETWORK_ITCPASIOLISTENERHANDLER_HH
 
 # include "TcpSocket.hh"
 
@@ -47,4 +47,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif // !ITCPASIOLISTENERHANDLER_HH_
+#endif // !MOGNETWORK_ITCPASIOLISTENERHANDLER_HH

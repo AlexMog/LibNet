@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 12:30:52 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:10:05 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 0.1
  */
 
-#ifndef PACKET_HH_
-# define PACKET_HH_
+#ifndef MOGNETWORK_PACKET_HH
+# define MOGNETWORK_PACKET_HH
 
 # include <vector>
 # include <string.h>
@@ -111,4 +111,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif // !PACKET_HH_
+#endif // !MOGNETWORK_PACKET_HH

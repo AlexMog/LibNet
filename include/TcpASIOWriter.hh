@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:35:53 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:12:20 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 0.1
  */
 
-#ifndef TCPASIOWRITER_HH_
-# define TCPASIOWRITER_HH_
+#ifndef MOGNETWORK_TCPASIOWRITER_HH
+# define MOGNETWORK_TCPASIOWRITER_HH
 
 # include "TcpSocket.hh"
 # include "SocketFD.hh"
@@ -96,4 +96,4 @@ namespace mognetwork
   };  
 } // namespace mognetwork
 
-#endif // !TCPASIOWRITER_HH_
+#endif // !MOGNETWORK_TCPASIOWRITER_HH

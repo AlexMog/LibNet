@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:51:02 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:10:52 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 1.0
  */
 
-#ifndef LIBNETWORKEXCEPTION_HH_
-# define LIBNETWORKEXCEPTION_HH_
+#ifndef MOGNETWORK_LIBNETWORKEXCEPTION_HH
+# define MOGNETWORK_LIBNETWORKEXCEPTION_HH
 
 # include <exception>
 # include <iostream>
@@ -59,4 +59,4 @@ namespace mognetwork
     std::string msg; /*!< Message d'erreur de l'exception */
   };
 } // namespace mognetwork
-#endif // !LIBNETWORKEXCEPTION_HH_
+#endif // !MOGNETWORK_LIBNETWORKEXCEPTION_HH

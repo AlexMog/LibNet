@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:30:25 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:28:25 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:10:38 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 1.0
  */
 
-#ifndef MUTEX_HH_
-# define MUTEX_HH_
+#ifndef MOGNETWORK_MUTEX_HH
+# define MOGNETWORK_MUTEX_HH
 
 # include <pthread.h>
 
@@ -55,4 +55,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif // !MUTEX_HH_
+#endif // !MOGNETWORK_MUTEX_HH

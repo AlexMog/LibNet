@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Mon Jun  9 16:06:02 2014 mognetworkhrabi Alexandre
-// Last update Wed Nov 12 15:03:24 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:11:23 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -17,8 +17,8 @@
 
 #include <stdint.h>
 
-#ifndef IPADDRESS_HH
-# define IPADDRESS_HH
+#ifndef MOGNETWORK_IPADDRESS_HH
+# define MOGNETWORK_IPADDRESS_HH
 
 # include <string>
 
@@ -57,4 +57,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif // !IPADDRESS_HH
+#endif // !MOGNETWORK_IPADDRESS_HH

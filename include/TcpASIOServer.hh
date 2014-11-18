@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Sat Nov 15 18:00:03 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 12:45:22 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:12:27 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 0.1
  */
 
-#ifndef TCPASIOSERVER_HH_
-# define TCPASIOSERVER_HH_
+#ifndef MOGNETWORK_TCPASIOSERVER_HH
+# define MOGNETWORK_TCPASIOSERVER_HH
 
 # include <list>
 # include "TcpServerSocket.hh"
@@ -78,4 +78,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif // !TCPASIOSERVER_HH_
+#endif // !MOGNETWORK_TCPASIOSERVER_HH

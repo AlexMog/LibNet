@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Wed Jun 11 15:43:12 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:09:49 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -16,8 +16,8 @@
  * \depreciated Untested
  */
 
-#ifndef SELECTOR_HH
-# define SELECTOR_HH
+#ifndef MOGNETWORK_SELECTOR_HH
+# define MOGNETWORK_SELECTOR_HH
 
 #include <sys/select.h>
 #include <sys/time.h>
@@ -132,4 +132,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif // !SELECTOR_HH
+#endif // !MOGNETWORK_SELECTOR_HH

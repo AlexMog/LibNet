@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:43:05 2014 mognetworkhrabi Alexandre
-// Last update Wed Nov 12 13:53:07 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:07:29 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 1.0
  */
 
-#ifndef WINSOCKET_HH
-# define WINSOCKET_HH
+#ifndef MOGNETWORK_WINSOCKET_HH
+# define MOGNETWORK_WINSOCKET_HH
 
 #ifdef _WIN32_WINDOWS
   #undef _WIN32_WINDOWS
@@ -70,4 +70,4 @@ public:
 };
 } // namespace mognetwork
 
-#endif // !WINSOCKET_HH
+#endif // !MOGNETWORK_WINSOCKET_HH

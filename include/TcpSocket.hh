@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 11:47:24 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:08:11 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 0.1
  */
 
-#ifndef TCPSOCKET_HH
-# define TCPSOCKET_HH
+#ifndef MOGNETWORK_TCPSOCKET_HH
+# define MOGNETWORK_TCPSOCKET_HH
 
 # include <list>
 # include <vector>
@@ -130,4 +130,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif // !TCPSOCKET_HH
+#endif // !MOGNETWORK_TCPSOCKET_HH

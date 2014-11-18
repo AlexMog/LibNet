@@ -5,13 +5,13 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:12:47 2014 mognetworkhrabi Alexandre
-// Last update Thu Jun  5 19:35:34 2014 mognetworkhrabi Alexandre
+// Last update Tue Nov 18 13:09:27 2014 Moghrabi Alexandre
 //
 
 #include "OS.hh"
 
-#ifndef SOCKETFD_HH
-# define SOCKETFD_HH
+#ifndef MOGNETWORK_SOCKETFD_HH
+# define MOGNETWORK_SOCKETFD_HH
 
 #if defined(OS_WINDOWS)
 typedef UINT_PTR SocketFD;
@@ -19,4 +19,4 @@ typedef UINT_PTR SocketFD;
 typedef int SocketFD;
 #endif
 
-#endif // !SOCKETFD_HH
+#endif // !MOGNETWORK_SOCKETFD_HH

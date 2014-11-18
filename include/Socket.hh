@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:07:37 2014 mognetworkhrabi Alexandre
-// Last update Wed Nov 12 14:34:05 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:09:13 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 1.0
  */
 
-#ifndef SOCKET_HH
-#define SOCKET_HH
+#ifndef MOGNETWORK_SOCKET_HH
+#define MOGNETWORK_SOCKET_HH
 
 #include "SocketFD.hh"
 
@@ -84,4 +84,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif /* !SOCKET_HH */
+#endif // !MOGNETWORK_SOCKET_HH

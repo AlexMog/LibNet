@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:41:35 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:12:12 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 0.1
  */
 
-#ifndef TCPSERVERSOCKET_HH_
-# define TCPSERVERSOCKET_HH_
+#ifndef MOGNETWORK_TCPSERVERSOCKET_HH
+# define MOGNETWORK_TCPSERVERSOCKET_HH
 
 # include "IpAddress.hh"
 # include "TcpSocket.hh"
@@ -73,4 +73,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif // !TCPSERVERSOCKET_HH_
+#endif // !MOGNETWORK_TCPSERVERSOCKET_HH

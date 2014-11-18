@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 18:05:43 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:11:14 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 1.0
  */
 
-#ifndef IRUNNABLE_HH_
-# define IRUNNABLE_HH_
+#ifndef MOGNETWORK_IRUNNABLE_HH
+# define MOGNETWORK_IRUNNABLE_HH
 
 namespace mognetwork
 {
@@ -34,4 +34,4 @@ namespace mognetwork
   };
 } // namesapce mognetwork
 
-#endif // !IRUNNABLE_HH_
+#endif // !MOGNETWORK_IRUNNABLE_HH

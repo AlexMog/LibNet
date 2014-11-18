@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:31:29 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:28:50 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:11:53 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 1.0
  */
 
-#ifndef THREAD_HH_
-# define THREAD_HH_
+#ifndef MOGNETWORK_THREAD_HH
+# define MOGNETWORK_THREAD_HH
 
 # include <pthread.h>
 # include "IRunnable.hh"
@@ -73,4 +73,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif // !THREAD_HH_
+#endif // !MOGNETWORK_THREAD_HH

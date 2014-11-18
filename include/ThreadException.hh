@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:48:39 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:28:52 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:12:01 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,8 +15,8 @@
  * \version 1.0
  */
 
-#ifndef THREADEXCEPTION_HH_
-# define THREADEXCEPTION_HH_
+#ifndef MOGNETWORK_THREADEXCEPTION_HH
+# define MOGNETWORK_THREADEXCEPTION_HH
 
 # include <iostream>
 # include "LibNetworkException.hh"
@@ -40,4 +40,4 @@ namespace mognetwork
   };
 } // namespace mognetwork 
 
-#endif // !THREADEXCEPTION_HH_
+#endif // !MOGNETWORK_THREADEXCEPTION_HH

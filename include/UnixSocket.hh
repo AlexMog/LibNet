@@ -5,11 +5,11 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:36:40 2014 mognetworkhrabi Alexandre
-// Last update Wed Nov 12 14:00:58 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:07:39 2014 Moghrabi Alexandre
 //
 
-#ifndef UNIXSOCKET_HH
-# define UNIXSOCKET_HH
+#ifndef MOGNETWORK_UNIXSOCKET_HH
+# define MOGNETWORK_UNIXSOCKET_HH
 
 # include <sys/types.h>
 # include <sys/socket.h>
@@ -34,4 +34,4 @@ public:
 };
 } // namespace mognetwork
 
-#endif // !UNIXSOCKET_HH
+#endif // !MOGNETWORK_UNIXSOCKET_HH

@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 13:12:34 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -16,8 +16,8 @@
  * \depreciated non terminé
  */
 
-#ifndef TCPASIOLISTENER_HH_
-# define TCPASIOLISTENER_HH_
+#ifndef MOGNETWORK_TCPASIOLISTENER_HH
+# define MOGNETWORK_TCPASIOLISTENER_HH
 
 # include <list>
 # include <unistd.h>
@@ -98,4 +98,4 @@ namespace mognetwork
   };
 } // namespace mognetwork
 
-#endif // !TCPASIOLISTENER_HH_
+#endif // !MOGNETWORK_TCPASIOLISTENER_HH
