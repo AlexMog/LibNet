@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Tue Nov 18 10:22:47 2014 Moghrabi Alexandre
+## Last update Tue Nov 18 12:34:21 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -16,7 +16,11 @@ INCLIB=	$(NAME)
 
 ALIBNAME=lib$(NAME).a
 
+BINDIR=./bin/
+
 SRCDIR=	./src/
+
+INCDIR= ./include/
 
 SRC=	$(SRCDIR)CondVar.cpp		\
 	$(SRCDIR)IpAddress.cpp		\
@@ -43,23 +47,48 @@ CXX=	g++
 
 AR=	ar rs
 
-CXXFLAGS=	-Wall -Werror -Wextra -I include -ansi -pedantic
+CP=	cp -rf
+
+CXXFLAGS=	-Wall -Werror -Wextra -I $(INCDIR) -ansi -pedantic -fPIC
 LDFLAGS=	
 
-all:		$(NAME)
+all:		$(BINDIR)$(LIBNAME) $(BINDIR)$(ALIBNAME)
 
-$(NAME):	$(OBJS)
-		$(AR) $(ALIBNAME) $(LDFLAGS) $(OBJS)
+$(BINDIR)$(LIBNAME):	$(OBJS)
+		mkdir -p bin
+		$(CXX) --shared -o $(BINDIR)$(LIBNAME) $(LDFLAGS) $(OBJS)
 
-debug:		CXXFLAGS += -g3
-debug:		$(NAME)
+$(BINDIR)$(ALIBNAME):	$(OBJS)
+		mkdir -p bin
+		$(AR) $(BINDIR)$(ALIBNAME) $(LDFLAGS) $(OBJS)
+
+debug-shared:	CXXFLAGS += -g3
+debug-shared:	$(LIBNAME)
+debug-static:	CXXFLAGS += -g3
+debug-static:	$(ALIBNAME)
+
+static:		$(ALIBNAME)
+
+shared:		$(ALIBNAME)
 
 clean:
 		$(RM) $(OBJS)
 
 fclean:		clean
-		$(RM) $(ALIBNAME)
+		$(RM) $(BINDIR)$(LIBNAME)
+		$(RM) $(BINDIR)$(ALIBNAME)
 
 re:		fclean all
 
-.PHONY:		all debug clean fclean re
+install:
+		$(CP) $(BINDIR)$(LIBNAME) /usr/local/lib/
+		mkdir -p /usr/local/include/$(NAME)
+		$(CP) $(INCDIR)/* /usr/local/include/$(NAME)/
+		ldconfig
+
+uninstall:
+		$(RM) /usr/local/lib/$(LIBNAME)
+		$(RM) /usr/local/include/$(NAME)
+		ldconfig
+
+.PHONY:		all debug-static debug-shared clean fclean re static shared install uninstall

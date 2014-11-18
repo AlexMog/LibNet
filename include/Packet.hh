@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 11:00:33 2014 Moghrabi Alexandre
+// Last update Tue Nov 18 12:30:52 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -15,10 +15,13 @@
  * \version 0.1
  */
 
-#include <vector>
-#include <string.h>
-#include <arpa/inet.h>
-#include "TcpSocket.hh"
+#ifndef PACKET_HH_
+# define PACKET_HH_
+
+# include <vector>
+# include <string.h>
+# include <arpa/inet.h>
+# include "TcpSocket.hh"
 
 namespace mognetwork
 {
@@ -107,3 +110,5 @@ namespace mognetwork
     TcpSocket::ReadedDatas* m_dataPack; /*!< Structure de données si elle est utilisée */
   };
 } // namespace mognetwork
+
+#endif // !PACKET_HH_
