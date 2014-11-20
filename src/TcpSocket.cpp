@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Thu Nov 20 15:52:33 2014 Moghrabi Alexandre
+// Last update Thu Nov 20 20:34:15 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -125,7 +125,6 @@ namespace mognetwork
 	return (Error);
       }
     Data _data;
-    std::cout << "Adding datas to send: '" << (data + sizeof(int)) << "' Size: " << size << std::endl;
     _data.resize(size + sizeof(std::size_t));
     std::memcpy(&_data[0], &size, sizeof(std::size_t));
     std::memcpy(&_data[0] + sizeof(std::size_t), data, size);
@@ -144,7 +143,6 @@ namespace mognetwork
       {
 	int sended;
 	DataList::iterator it = m_pendingDatas.begin();
-	std::cout << "Trying to send datas: '" << reinterpret_cast<char*>(&((*it)[0]) + sizeof(size_t)) << "'" << std::endl;
 	sended = ::send(getSocketFD(), &(*it)[0], (*it).size(), flags | MSG_DONTWAIT);
 	if (sended < 0)
 	  return (OsSocket::getErrorStatus());
@@ -158,7 +156,6 @@ namespace mognetwork
 	Data temp = *it;
 	std::size_t waiting = (*it).size() - sended;
 	(*it).resize(waiting);
-	std::cout << "Rest to send: " << reinterpret_cast<char*>(&temp[0]) << std::endl;
 	std::memcpy(&(*it)[0], &temp[0], waiting);
 	return (Ok);
       }

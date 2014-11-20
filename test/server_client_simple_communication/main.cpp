@@ -23,7 +23,6 @@ public:
   {
     char buffer[42];
     mognetwork::Packet* packet = client.getPacketReaded();
-    std::cout << "Sending : '" << ((char*)packet->getData() + sizeof(int)) << "'" << std::endl;
     *packet >> buffer;
     std::cout << "RECEIVED: '" << buffer << "'" << std::endl;
     packet->clear();
