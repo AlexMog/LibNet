@@ -22,6 +22,7 @@ int main(int ac, char **av)
 	std::vector<char>* datas = new std::vector<char>;
 	char buffer[1024];
 
+	memset(buffer, 0, sizeof(buffer));
 	socket.send(reinterpret_cast<const char*>(packet.getData()), packet.getDataSize());
 	socket.receiveAll(*datas);
 	mognetwork::Packet p(datas);

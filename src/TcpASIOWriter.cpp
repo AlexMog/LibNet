@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:45:50 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 18:56:47 2014 Moghrabi Alexandre
+// Last update Thu Nov 20 15:17:19 2014 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -65,6 +65,7 @@ namespace mognetwork
 		std::cerr << "Select error on writing thread." << std::endl;
 		return ;
 	      }
+	    std::cout << "SEND DATAS" << std::endl;
 	    std::list<SocketFD> triggeredList = m_selector.getWritingTriggeredSockets();
 	    hasMoreDatasToSend = false;
 	    for (std::list<SocketFD>::iterator it = triggeredList.begin(); it != triggeredList.end(); ++it)

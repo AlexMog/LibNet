@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 14:06:38 2014 Moghrabi Alexandre
+// Last update Thu Nov 20 15:29:26 2014 Moghrabi Alexandre
 //
 
 #include "TcpASIODatas.hh"
@@ -97,7 +97,6 @@ namespace mognetwork
 		else if (status != Socket::Waiting)
 		  {
 		    // DISCONNECTED
-		    socket->disconnect();
 		    for (std::list<ITcpASIOListenerHandler*>::iterator it2 = m_listeners.begin();
 			 it2 != m_listeners.end(); ++it2)
 		      (*it2)->onDisconnect(*socket);

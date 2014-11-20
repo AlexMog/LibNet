@@ -4,6 +4,15 @@
 #include <stdio.h>
 #include <iostream>
 #include <exception>
+#include <signal.h>
+
+mognetwork::TcpASIOServer server(4242);
+
+void shandler(int)
+{
+  std::cout << "Stopping server..." << std::endl;
+  server.stop();
+}
 
 class Listener : public mognetwork::ITcpASIOListenerHandler
 {
@@ -14,12 +23,16 @@ public:
   {
     char buffer[42];
     mognetwork::Packet* packet = client.getPacketReaded();
+    std::cout << "Sending : '" << ((char*)packet->getData() + sizeof(int)) << "'" << std::endl;
     *packet >> buffer;
     std::cout << "RECEIVED: '" << buffer << "'" << std::endl;
     packet->clear();
     std::string s(buffer);
+    mognetwork::Packet p;
     *packet << s.c_str();
-    client.asyncSend(reinterpret_cast<const char*>(packet->getData()), packet->getDataSize());
+    p << s.c_str();
+    p >> buffer;
+    client.asyncSend((char*)packet->getData(), packet->getDataSize());
     m_writer->triggerData();
     delete packet;
   }
@@ -32,13 +45,14 @@ private:
 
 int main(int ac, char **av)
 {
-  mognetwork::TcpASIOServer server(4242);
   Listener l(server.getServerWriter());
 
+  signal(SIGINT, shandler);
   std::cout << "Starting server..." << std::endl;
   try {
     server.addListener(&l);
     server.start();
+    std::cout << "Server ended." << std::endl;
   } catch (const std::exception& e) {
     std::cerr << e.what() << std::endl;
   }

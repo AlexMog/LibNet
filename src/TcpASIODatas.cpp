@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 18:39:26 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:58:24 2014 Moghrabi Alexandre
+// Last update Thu Nov 20 15:09:38 2014 Moghrabi Alexandre
 //
 
 #include "TcpASIODatas.hh"
@@ -27,7 +27,12 @@ namespace mognetwork
     for (std::list<TcpSocket*>::iterator it = m_socketList->begin(); it != m_socketList->end();)
       {
 	if ((*it)->getSocketFD() == fd)
-	  it = m_socketList->erase(it);
+	  {
+	    TcpSocket* value = *it;
+	    (*it)->disconnect();
+	    it = m_socketList->erase(it);
+	    delete value;
+	  }
 	else
 	  ++it;
       }
