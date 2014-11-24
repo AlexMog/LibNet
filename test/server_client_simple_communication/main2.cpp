@@ -24,11 +24,15 @@ int main(int ac, char **av)
 
 	memset(buffer, 0, sizeof(buffer));
 	socket.send(reinterpret_cast<const char*>(packet.getData()), packet.getDataSize());
-	socket.receiveAll(*datas);
-	mognetwork::Packet p(datas);
-	p >> buffer;
-	std::cout << "RECEIVED: '" << buffer << "'" << std::endl;
-	std::cout << "Finished." << std::endl;
+	if (socket.receiveAll(*datas) != mognetwork::Socket::Ok)
+	  {
+	    std::cout << "ERROR" << std::endl;
+	    perror("WTF?");
+	    return 1;
+	  }
+	//	mognetwork::Packet p(datas);
+	std::cout << "SIZE: " <<  datas->size() << std::endl;
+	std::cout << "RECEIVED: S: '" << datas->size() << "' D: '" << (&datas->front() + sizeof(std::size_t)) << "'" << std::endl;
 	i--;
 	sleep(1);
       }

@@ -18,7 +18,8 @@ class Listener : public mognetwork::ITcpASIOListenerHandler
 {
 public:
   Listener(mognetwork::TcpASIOWriter* writer) : m_writer(writer) {}
-  void onConnect(mognetwork::TcpSocket& client) {std::cout << "New client connected." << std::endl;}
+  void onConnect(mognetwork::TcpSocket& client) {std::cout << "New client connected." << std::endl;client.asyncSend("LOL", 3);
+    m_writer->triggerData();}
   void onReceivedData(mognetwork::TcpSocket& client)
   {
     char buffer[42];
@@ -31,7 +32,7 @@ public:
     *packet << s.c_str();
     p << s.c_str();
     p >> buffer;
-    client.asyncSend((char*)packet->getData(), packet->getDataSize());
+    client.asyncSend("LOL", 3);
     m_writer->triggerData();
     delete packet;
   }

@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Thu Nov 20 15:52:49 2014 Moghrabi Alexandre
+// Last update Mon Nov 24 12:36:00 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -36,7 +36,7 @@ namespace mognetwork
   {
   public:
     typedef std::vector<char> Data; /*!< Typedef pour définit le typpage d'une Data */
-    typedef std::list<Data> DataList; /*!< Typedef pour définit une dataList */
+    typedef std::list<Data*> DataList; /*!< Typedef pour définit une dataList */
 
   public:
     /*!

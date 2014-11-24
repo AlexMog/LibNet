@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Thu Nov 20 20:34:15 2014 Moghrabi Alexandre
+// Last update Mon Nov 24 13:26:16 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -30,6 +30,8 @@ namespace
 // ! Every packets sends a header (who contains the size of the packet) BEFORE its content.
 namespace mognetwork
 {
+  bool deleteAll(TcpSocket::Data* elem) {delete elem; return true;}
+
   TcpSocket::TcpSocket() :
     Socket(Tcp), m_userData(NULL)
   {
@@ -55,7 +57,7 @@ namespace mognetwork
   void TcpSocket::disconnect()
   {
     close();
-    m_pendingDatas.clear();
+    m_pendingDatas.remove_if(deleteAll);
     m_pendingRDatas = ReadedDatas();
   }
 
@@ -86,11 +88,12 @@ namespace mognetwork
     std::size_t totalSize;
     std::size_t allreaded = 0;
 
+    data.clear();
     // Read the size of the pending packet
     while (readed < sizeof(std::size_t))
       {
-	char* data = reinterpret_cast<char*>(&totalSize) + readed;
-	Socket::Status status = receive(data, sizeof(std::size_t) - m_pendingRDatas.readed, readed, 0);
+	char* d = reinterpret_cast<char*>(&totalSize) + readed;
+	Socket::Status status = receive(d, sizeof(std::size_t) - m_pendingRDatas.readed, readed, 0);
 	if (status != Ok)
 	  return (status);
       }
@@ -124,10 +127,10 @@ namespace mognetwork
 	std::cerr << "Cannot send null data" << std::endl;
 	return (Error);
       }
-    Data _data;
-    _data.resize(size + sizeof(std::size_t));
-    std::memcpy(&_data[0], &size, sizeof(std::size_t));
-    std::memcpy(&_data[0] + sizeof(std::size_t), data, size);
+    Data* _data = new Data;
+    _data->resize(size + sizeof(std::size_t));
+    std::memcpy(&_data->front(), &size, sizeof(std::size_t));
+    std::memcpy(&_data->front() + sizeof(std::size_t), data, size);
     m_pendingDatas.push_back(_data);
     return (Ok);
   }
@@ -143,20 +146,23 @@ namespace mognetwork
       {
 	int sended;
 	DataList::iterator it = m_pendingDatas.begin();
-	sended = ::send(getSocketFD(), &(*it)[0], (*it).size(), flags | MSG_DONTWAIT);
+	sended = ::send(getSocketFD(), &(*it)->front(), (*it)->size(), flags | MSG_DONTWAIT);
 	if (sended < 0)
 	  return (OsSocket::getErrorStatus());
 	if (sended == 0)
 	  return (Disconnected);
-	if ((std::size_t)sended == (*it).size())
+	if ((std::size_t)sended == (*it)->size())
 	  {
+	    delete *it;
 	    m_pendingDatas.pop_front();
 	    return (sendPendingDatas());
 	  }
-	Data temp = *it;
-	std::size_t waiting = (*it).size() - sended;
-	(*it).resize(waiting);
-	std::memcpy(&(*it)[0], &temp[0], waiting);
+	Data temp;
+	temp.resize((*it)->size());
+	std::memcpy(&temp[0], &(*it)->front(), (*it)->size());
+	std::size_t waiting = (*it)->size() - sended;
+	(*it)->resize(waiting);
+	std::memcpy(&(*it)->front(), &temp[0], waiting);
 	return (Ok);
       }
     return (Nok);
