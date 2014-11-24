@@ -23,7 +23,7 @@ int main(int ac, char **av)
 	char buffer[1024];
 
 	memset(buffer, 0, sizeof(buffer));
-	socket.send(reinterpret_cast<const char*>(packet.getData()), packet.getDataSize());
+	//	socket.send(reinterpret_cast<const char*>(packet.getData()), packet.getDataSize());
 	if (socket.receiveAll(*datas) != mognetwork::Socket::Ok)
 	  {
 	    std::cout << "ERROR" << std::endl;
@@ -32,9 +32,8 @@ int main(int ac, char **av)
 	  }
 	//	mognetwork::Packet p(datas);
 	std::cout << "SIZE: " <<  datas->size() << std::endl;
-	std::cout << "RECEIVED: S: '" << datas->size() << "' D: '" << (&datas->front() + sizeof(std::size_t)) << "'" << std::endl;
+	std::cout << "RECEIVED: S: '" << datas->size() << "' D: '" << (&(*datas)[0]) << "'" << std::endl;
 	i--;
-	sleep(1);
       }
     socket.disconnect();
   } catch (const std::exception& e) {

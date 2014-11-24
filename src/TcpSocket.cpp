@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Mon Nov 24 13:26:16 2014 Moghrabi Alexandre
+// Last update Mon Nov 24 13:48:36 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -85,35 +85,37 @@ namespace mognetwork
   {
     std::size_t readed = 0;
     char buffer[1024]; // Buffer to get the datas
-    std::size_t totalSize;
-    std::size_t allreaded = 0;
+    std::size_t numReaded = 0;
 
+    ReadedDatas _data = ReadedDatas();
     data.clear();
     // Read the size of the pending packet
     while (readed < sizeof(std::size_t))
       {
-	char* d = reinterpret_cast<char*>(&totalSize) + readed;
-	Socket::Status status = receive(d, sizeof(std::size_t) - m_pendingRDatas.readed, readed, 0);
+	char* d = reinterpret_cast<char*>(&_data.totalSize) + numReaded;
+	Socket::Status status = receive(d, sizeof(std::size_t) - _data.readed, readed, 0);
+	numReaded += readed;
 	if (status != Ok)
 	  return (status);
       }
+    std::cout << "Size: " << _data.totalSize << " READED: " << numReaded << std::endl;
     // Size is set, let's read the content!
-    if (m_pendingRDatas.readed >= sizeof(std::size_t))
+    if (numReaded >= sizeof(std::size_t))
       {
-	while (allreaded < totalSize)
+	while (_data.readed < _data.totalSize)
 	  {
-	    std::size_t toGet = std::min(static_cast<std::size_t>(totalSize - allreaded), sizeof(buffer));
+	    std::size_t toGet = std::min(static_cast<std::size_t>(_data.totalSize - _data.readed), sizeof(buffer));
 	    Socket::Status status = receive(buffer, toGet, readed, 0);
 	    if (status != Ok)
 	      return (status);
-	    allreaded += readed;
+	    _data.readed += readed;
 	    if (readed > 0)
 	      {
 		data.resize(data.size() + readed);
 		char* begin = &data[0] + data.size() - readed;
 		std::memcpy(begin, buffer, readed);
 	      }
-	    if (m_pendingRDatas.readed >= m_pendingRDatas.totalSize)
+	    if (_data.readed >= _data.totalSize)
 	      return (Ok);
 	  }
       }
