@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Mon Jun  9 16:05:21 2014 mognetworkhrabi Alexandre
-// Last update Wed Oct  8 07:58:40 2014 mognetworkhrabi Alexandre
+// Last update Tue Nov 25 16:50:42 2014 Moghrabi Alexandre
 //
 
 #include <sys/socket.h>
@@ -14,7 +14,7 @@
 #include <sys/types.h>
 #include <netdb.h>
 #include <string.h>
-#include "IpAddress.hh"
+#include "mognetwork/IpAddress.hh"
 
 namespace mognetwork
 {

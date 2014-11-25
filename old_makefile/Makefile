@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Tue Nov 18 12:58:19 2014 Moghrabi Alexandre
+## Last update Mon Nov 24 17:58:49 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -50,6 +50,7 @@ AR=	ar rs
 CP=	cp -rf
 
 CXXFLAGS=	-Wall -Werror -Wextra -I $(INCDIR) -ansi -pedantic -fPIC
+
 LDFLAGS=	
 
 all:		shared static

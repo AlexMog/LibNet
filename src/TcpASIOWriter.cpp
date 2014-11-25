@@ -5,12 +5,12 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:45:50 2014 Moghrabi Alexandre
-// Last update Thu Nov 20 15:17:19 2014 Moghrabi Alexandre
+// Last update Tue Nov 25 16:49:26 2014 Moghrabi Alexandre
 //
 
 #include <iostream>
-#include "TcpASIODatas.hh"
-#include "TcpASIOWriter.hh"
+#include "mognetwork/TcpASIODatas.hh"
+#include "mognetwork/TcpASIOWriter.hh"
 
 namespace mognetwork
 {

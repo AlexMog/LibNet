@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Mon Nov 24 13:48:36 2014 Moghrabi Alexandre
+// Last update Tue Nov 25 16:49:07 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -14,9 +14,9 @@
 #include <algorithm>
 #include <cstring>
 #include <iostream>
-#include "TcpSocket.hh"
-#include "OsSocket.hh"
-#include "Packet.hh"
+#include "mognetwork/TcpSocket.hh"
+#include "mognetwork/OsSocket.hh"
+#include "mognetwork/Packet.hh"
 
 namespace
 {

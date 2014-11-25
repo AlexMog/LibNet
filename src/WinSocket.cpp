@@ -5,10 +5,10 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:54:04 2014 mognetworkhrabi Alexandre
-// Last update Wed Oct  8 09:09:36 2014 mognetworkhrabi Alexandre
+// Last update Tue Nov 25 16:48:25 2014 Moghrabi Alexandre
 //
 
-#include "OsSocket.hh"
+#include "mognetwork/OsSocket.hh"
 #include <cstring>
 
 #ifdef OS_WINDOWS

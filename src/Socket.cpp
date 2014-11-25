@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:22:18 2014 mognetworkhrabi Alexandre
-// Last update Thu Nov 20 15:07:38 2014 Moghrabi Alexandre
+// Last update Tue Nov 25 16:49:53 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -13,8 +13,8 @@
 #include <netinet/in.h>
 #include <iostream>
 #include <unistd.h>
-#include "OsSocket.hh"
-#include "Socket.hh"
+#include "mognetwork/OsSocket.hh"
+#include "mognetwork/Socket.hh"
 
 namespace mognetwork
 {

@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun 12 18:06:35 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 14:19:49 2014 Moghrabi Alexandre
+// Last update Tue Nov 25 16:50:00 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <string.h>
 #include <iostream>
-#include "Selector.hh"
+#include "mognetwork/Selector.hh"
 
 namespace mognetwork
 {

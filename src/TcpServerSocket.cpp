@@ -5,15 +5,15 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:51:00 2014 Moghrabi Alexandre
-// Last update Thu Nov 20 15:11:15 2014 Moghrabi Alexandre
+// Last update Tue Nov 25 16:49:20 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <string.h>
-#include "LibNetworkException.hh"
-#include "TcpServerSocket.hh"
+#include "mognetwork/LibNetworkException.hh"
+#include "mognetwork/TcpServerSocket.hh"
 
 namespace mognetwork
 {

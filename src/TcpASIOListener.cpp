@@ -5,12 +5,12 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Thu Nov 20 15:29:26 2014 Moghrabi Alexandre
+// Last update Tue Nov 25 16:49:40 2014 Moghrabi Alexandre
 //
 
-#include "TcpASIODatas.hh"
-#include "LibNetworkException.hh"
-#include "TcpASIOListener.hh"
+#include "mognetwork/TcpASIODatas.hh"
+#include "mognetwork/LibNetworkException.hh"
+#include "mognetwork/TcpASIOListener.hh"
 
 namespace mognetwork
 {

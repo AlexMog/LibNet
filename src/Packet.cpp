@@ -5,10 +5,10 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:52:30 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 11:00:56 2014 Moghrabi Alexandre
+// Last update Tue Nov 25 16:50:10 2014 Moghrabi Alexandre
 //
 
-#include "Packet.hh"
+#include "mognetwork/Packet.hh"
 
 namespace mognetwork
 {
