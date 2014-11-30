@@ -95,56 +95,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Tue Nov 11 17:31:29 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Tue Nov 18 13:11:53 2014 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Sun Nov 30 16:54:50 2014 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef MOGNETWORK_THREAD_HH</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define MOGNETWORK_THREAD_HH</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"># include &lt;pthread.h&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_i_runnable_8hh.html">IRunnable.hh</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_thread.html">   30</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_thread.html">Thread</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classmognetwork_1_1_thread.html#af62df267bb08a768111b98e46b9d8675">Thread</a>(<a class="code" href="classmognetwork_1_1_i_runnable.html">IRunnable</a>&amp; runnable, <span class="keywordtype">bool</span> detach);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_thread.html">Thread</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_thread.html#af50e944ca134178706495a3448a263fc">start</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_thread.html#a62e7929cde1edc54df6e4a32bc6dac15">cancel</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_thread.html#adc557095ab8d062aad0cbd91e5c5e6ea">join</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span>* <a class="code" href="classmognetwork_1_1_thread.html#add55678bd19ffc48896e36b7ab642113">exec</a>(<span class="keywordtype">void</span> *);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_thread.html#ac980f839f427ef11c0ae74ba5bec9c24">   66</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classmognetwork_1_1_thread.html#ac980f839f427ef11c0ae74ba5bec9c24">isStarted</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_started;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classmognetwork_1_1_i_runnable.html">IRunnable</a>&amp; m_runnable; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    pthread_t m_thread; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    pthread_attr_t m_attr; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> m_started; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  };</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef OS_WINDOWS</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># include &lt;windows.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># include &quot;<a class="code" href="_i_runnable_8hh.html">IRunnable.hh</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_thread.html">   34</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_thread.html">Thread</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classmognetwork_1_1_thread.html#af62df267bb08a768111b98e46b9d8675">Thread</a>(<a class="code" href="classmognetwork_1_1_i_runnable.html">IRunnable</a>&amp; runnable, <span class="keywordtype">bool</span> detach);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_thread.html">Thread</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_thread.html#af50e944ca134178706495a3448a263fc">start</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_thread.html#a62e7929cde1edc54df6e4a32bc6dac15">cancel</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_thread.html#adc557095ab8d062aad0cbd91e5c5e6ea">join</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#ifndef OS_WINDOWS</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor"></span>    <span class="keyword">static</span> <span class="keywordtype">void</span>* <a class="code" href="classmognetwork_1_1_thread.html#add55678bd19ffc48896e36b7ab642113">exec</a>(<span class="keywordtype">void</span> *);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span>    <span class="keyword">static</span> DWORD WINAPI <a class="code" href="classmognetwork_1_1_thread.html#add55678bd19ffc48896e36b7ab642113">exec</a>(LPVOID);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif // OS_WINDOWS</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_thread.html#ac980f839f427ef11c0ae74ba5bec9c24">   74</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classmognetwork_1_1_thread.html#ac980f839f427ef11c0ae74ba5bec9c24">isStarted</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_started;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_THREAD_HH</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classmognetwork_1_1_i_runnable.html">IRunnable</a>&amp; m_runnable; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#ifndef OS_WINDOWS</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span>    pthread_t m_thread; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    pthread_attr_t m_attr; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor"></span>    HANDLE m_thread;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif // OS_WINDOWS</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">bool</span> m_started; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  };</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_THREAD_HH</span></div>
 <div class="ttc" id="classmognetwork_1_1_thread_html_af62df267bb08a768111b98e46b9d8675"><div class="ttname"><a href="classmognetwork_1_1_thread.html#af62df267bb08a768111b98e46b9d8675">mognetwork::Thread::Thread</a></div><div class="ttdeci">Thread(IRunnable &amp;runnable, bool detach)</div><div class="ttdoc">Constructeur. </div></div>
 <div class="ttc" id="classmognetwork_1_1_thread_html_af50e944ca134178706495a3448a263fc"><div class="ttname"><a href="classmognetwork_1_1_thread.html#af50e944ca134178706495a3448a263fc">mognetwork::Thread::start</a></div><div class="ttdeci">virtual void start()</div><div class="ttdoc">Lance le thread. </div></div>
 <div class="ttc" id="classmognetwork_1_1_i_runnable_html"><div class="ttname"><a href="classmognetwork_1_1_i_runnable.html">mognetwork::IRunnable</a></div><div class="ttdoc">Interface permettant de créer une fonction d&amp;#39;exécution pour les Threads (java style) ...</div><div class="ttdef"><b>Definition:</b> IRunnable.hh:27</div></div>
 <div class="ttc" id="classmognetwork_1_1_thread_html_add55678bd19ffc48896e36b7ab642113"><div class="ttname"><a href="classmognetwork_1_1_thread.html#add55678bd19ffc48896e36b7ab642113">mognetwork::Thread::exec</a></div><div class="ttdeci">static void * exec(void *)</div><div class="ttdoc">Utilisée pour passer un pointeur sur fonction au thread. </div></div>
-<div class="ttc" id="classmognetwork_1_1_thread_html"><div class="ttname"><a href="classmognetwork_1_1_thread.html">mognetwork::Thread</a></div><div class="ttdoc">Classe d&amp;#39;encapsulation des threads. </div><div class="ttdef"><b>Definition:</b> Thread.hh:30</div></div>
+<div class="ttc" id="classmognetwork_1_1_thread_html"><div class="ttname"><a href="classmognetwork_1_1_thread.html">mognetwork::Thread</a></div><div class="ttdoc">Classe d&amp;#39;encapsulation des threads. </div><div class="ttdef"><b>Definition:</b> Thread.hh:34</div></div>
 <div class="ttc" id="classmognetwork_1_1_thread_html_adc557095ab8d062aad0cbd91e5c5e6ea"><div class="ttname"><a href="classmognetwork_1_1_thread.html#adc557095ab8d062aad0cbd91e5c5e6ea">mognetwork::Thread::join</a></div><div class="ttdeci">virtual void join()</div><div class="ttdoc">Attend que le thread se termine. </div></div>
-<div class="ttc" id="classmognetwork_1_1_thread_html_ac980f839f427ef11c0ae74ba5bec9c24"><div class="ttname"><a href="classmognetwork_1_1_thread.html#ac980f839f427ef11c0ae74ba5bec9c24">mognetwork::Thread::isStarted</a></div><div class="ttdeci">bool isStarted() const </div><div class="ttdoc">permet de savoir si le thread est actuellement lancé </div><div class="ttdef"><b>Definition:</b> Thread.hh:66</div></div>
+<div class="ttc" id="classmognetwork_1_1_thread_html_ac980f839f427ef11c0ae74ba5bec9c24"><div class="ttname"><a href="classmognetwork_1_1_thread.html#ac980f839f427ef11c0ae74ba5bec9c24">mognetwork::Thread::isStarted</a></div><div class="ttdeci">bool isStarted() const </div><div class="ttdoc">permet de savoir si le thread est actuellement lancé </div><div class="ttdef"><b>Definition:</b> Thread.hh:74</div></div>
 <div class="ttc" id="_i_runnable_8hh_html"><div class="ttname"><a href="_i_runnable_8hh.html">IRunnable.hh</a></div><div class="ttdoc">Interface permettant de créer une fonction d&amp;#39;exécution pour les Threads (java style) ...</div></div>
 <div class="ttc" id="classmognetwork_1_1_thread_html_a62e7929cde1edc54df6e4a32bc6dac15"><div class="ttname"><a href="classmognetwork_1_1_thread.html#a62e7929cde1edc54df6e4a32bc6dac15">mognetwork::Thread::cancel</a></div><div class="ttdeci">virtual void cancel()</div><div class="ttdoc">Annule le thread. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2014 16:10:27 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 30 2014 16:58:09 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
