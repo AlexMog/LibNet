@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>LibNetwork: include/TcpASIOServer.hh Source File</title>
+<title>LibNetwork: include/mognetwork/TcpASIOServer.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_80679f7b4e961c2a5c209921f1b6c6ea.html">mognetwork</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -95,11 +95,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Sat Nov 15 18:00:03 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Tue Nov 18 09:28:53 2014 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Tue Nov 18 13:12:27 2014 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef TCPASIOSERVER_HH_</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define TCPASIOSERVER_HH_</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef MOGNETWORK_TCPASIOSERVER_HH</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define MOGNETWORK_TCPASIOSERVER_HH</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"># include &lt;list&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_tcp_server_socket_8hh.html">TcpServerSocket.hh</a>&quot;</span></div>
@@ -120,15 +120,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#ac1feafc63d86a8aa90ef6a78acd7051f">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#ac1feafc63d86a8aa90ef6a78acd7051f">addListener</a>(<a class="code" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a>* listener) {m_serverListener-&gt;<a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#a0d0b24852fdd94ad5096a87a40bc7712">addListener</a>(listener);}</div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a6627fca52b19ead79e8a7134bade9e1f">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a6627fca52b19ead79e8a7134bade9e1f">sendPendingDatas</a>() {m_serverWriter-&gt;<a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html#a69906d01efaf03f6a2d5987e2f54ba87">triggerData</a>();}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a>* m_serverListener; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_server_socket.html">TcpServerSocket</a> m_serverSocket; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">TcpASIOWriter</a>* m_serverWriter; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> m_port; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  };</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif // !TCPASIOSERVER_HH_</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a55e84839aad1572d36a0c7fcbc1fd84d">   66</a></span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">TcpASIOWriter</a>* <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a55e84839aad1572d36a0c7fcbc1fd84d">getServerWriter</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_serverWriter;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#afb30f505e64de27887abec2e8cfd50ff">   71</a></span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a>* <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#afb30f505e64de27887abec2e8cfd50ff">getServerListener</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_serverListener;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a>* m_serverListener; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_server_socket.html">TcpServerSocket</a> m_serverSocket; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">TcpASIOWriter</a>* m_serverWriter; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">int</span> m_port; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  };</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_TCPASIOSERVER_HH</span></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_server_html_a55e84839aad1572d36a0c7fcbc1fd84d"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a55e84839aad1572d36a0c7fcbc1fd84d">mognetwork::TcpASIOServer::getServerWriter</a></div><div class="ttdeci">TcpASIOWriter * getServerWriter() const </div><div class="ttdoc">Récupère le writer TcpASIOWriter. </div><div class="ttdef"><b>Definition:</b> TcpASIOServer.hh:66</div></div>
 <div class="ttc" id="_tcp_a_s_i_o_writer_8hh_html"><div class="ttname"><a href="_tcp_a_s_i_o_writer_8hh.html">TcpASIOWriter.hh</a></div><div class="ttdoc">Thread d&amp;#39;écriture des sockets en ASIO. </div></div>
 <div class="ttc" id="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_html"><div class="ttname"><a href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">mognetwork::ITcpASIOListenerHandler</a></div><div class="ttdef"><b>Definition:</b> ITcpASIOListenerHandler.hh:29</div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_server_html_aa94340baa5fbbfba0f5467c6ddd32b91"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_server.html#aa94340baa5fbbfba0f5467c6ddd32b91">mognetwork::TcpASIOServer::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Arrête le thread de lecture et d&amp;#39;écriture. </div></div>
@@ -140,6 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classmognetwork_1_1_tcp_server_socket_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_server_socket.html">mognetwork::TcpServerSocket</a></div><div class="ttdoc">Socket pour la gestion simplifiée du serveur. </div><div class="ttdef"><b>Definition:</b> TcpServerSocket.hh:30</div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_server_html_ac1feafc63d86a8aa90ef6a78acd7051f"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_server.html#ac1feafc63d86a8aa90ef6a78acd7051f">mognetwork::TcpASIOServer::addListener</a></div><div class="ttdeci">void addListener(ITcpASIOListenerHandler *listener)</div><div class="ttdoc">Ajoute un listener au serveur. </div><div class="ttdef"><b>Definition:</b> TcpASIOServer.hh:55</div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_listener_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">mognetwork::TcpASIOListener</a></div><div class="ttdoc">Permet la gestion de la lecture de données en ASIO. </div><div class="ttdef"><b>Definition:</b> TcpASIOListener.hh:36</div></div>
+<div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_server_html_afb30f505e64de27887abec2e8cfd50ff"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_server.html#afb30f505e64de27887abec2e8cfd50ff">mognetwork::TcpASIOServer::getServerListener</a></div><div class="ttdeci">TcpASIOListener * getServerListener() const </div><div class="ttdoc">Récupère le listener TcpASIOListener. </div><div class="ttdef"><b>Definition:</b> TcpASIOServer.hh:71</div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_writer_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">mognetwork::TcpASIOWriter</a></div><div class="ttdoc">Thread d&amp;#39;écriture des sockets en ASIO. </div><div class="ttdef"><b>Definition:</b> TcpASIOWriter.hh:35</div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_server_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_server.html">mognetwork::TcpASIOServer</a></div><div class="ttdoc">Gère les threads d&amp;#39;écriture et de lecture en ASIO. </div><div class="ttdef"><b>Definition:</b> TcpASIOServer.hh:32</div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_server_html_a6627fca52b19ead79e8a7134bade9e1f"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a6627fca52b19ead79e8a7134bade9e1f">mognetwork::TcpASIOServer::sendPendingDatas</a></div><div class="ttdeci">void sendPendingDatas()</div><div class="ttdoc">Dans le cas ou une socket client contient des données à envoyer, met à jour le thread d&amp;#39;écriture...</div><div class="ttdef"><b>Definition:</b> TcpASIOServer.hh:59</div></div>
@@ -147,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 11:01:12 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 30 2014 16:10:27 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

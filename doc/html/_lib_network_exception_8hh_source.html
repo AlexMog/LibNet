@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>LibNetwork: include/LibNetworkException.hh Source File</title>
+<title>LibNetwork: include/mognetwork/LibNetworkException.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_80679f7b4e961c2a5c209921f1b6c6ea.html">mognetwork</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -95,47 +95,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Tue Nov 11 17:51:02 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Tue Nov 18 14:30:00 2014 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef LIBNETWORKEXCEPTION_HH_</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define LIBNETWORKEXCEPTION_HH_</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef MOGNETWORK_LIBNETWORKEXCEPTION_HH</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define MOGNETWORK_LIBNETWORKEXCEPTION_HH</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"># include &lt;exception&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"># include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_lib_network_exception.html">   31</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_lib_network_exception.html">LibNetworkException</a> : <span class="keyword">public</span> std::exception</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_lib_network_exception.html#af74972d2d7160710b8faaccb01f6455c">   40</a></span>&#160;    <a class="code" href="classmognetwork_1_1_lib_network_exception.html#af74972d2d7160710b8faaccb01f6455c">LibNetworkException</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span> *file)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      std::ostringstream oss;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      oss &lt;&lt; <span class="stringliteral">&quot;Error on line &quot;</span> &lt;&lt; line &lt;&lt; <span class="stringliteral">&quot; in file &#39;&quot;</span> &lt;&lt; file &lt;&lt; <span class="stringliteral">&quot;&#39; : &quot;</span> &lt;&lt; msg &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      this-&gt;msg = oss.str();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_lib_network_exception.html">LibNetworkException</a>() throw() {}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_lib_network_exception.html#a65c5c92d2bf25a9c4cd8a0322c36e54a">   53</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classmognetwork_1_1_lib_network_exception.html#a65c5c92d2bf25a9c4cd8a0322c36e54a">what</a>() <span class="keyword">const</span> throw()</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordflow">return</span> this-&gt;msg.c_str();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::string msg; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  };</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif // !LIBNETWORKEXCEPTION_HH_</span></div>
-<div class="ttc" id="classmognetwork_1_1_lib_network_exception_html_af74972d2d7160710b8faaccb01f6455c"><div class="ttname"><a href="classmognetwork_1_1_lib_network_exception.html#af74972d2d7160710b8faaccb01f6455c">mognetwork::LibNetworkException::LibNetworkException</a></div><div class="ttdeci">LibNetworkException(const char *msg, int line, const char *file)</div><div class="ttdoc">Constructeur par défaut. </div><div class="ttdef"><b>Definition:</b> LibNetworkException.hh:40</div></div>
-<div class="ttc" id="classmognetwork_1_1_lib_network_exception_html_a65c5c92d2bf25a9c4cd8a0322c36e54a"><div class="ttname"><a href="classmognetwork_1_1_lib_network_exception.html#a65c5c92d2bf25a9c4cd8a0322c36e54a">mognetwork::LibNetworkException::what</a></div><div class="ttdeci">virtual const char * what() const </div><div class="ttdoc">Permet de récupérer le message d&amp;#39;erreur de l&amp;#39;exception. </div><div class="ttdef"><b>Definition:</b> LibNetworkException.hh:53</div></div>
-<div class="ttc" id="classmognetwork_1_1_lib_network_exception_html"><div class="ttname"><a href="classmognetwork_1_1_lib_network_exception.html">mognetwork::LibNetworkException</a></div><div class="ttdoc">Exception générique de la lib. </div><div class="ttdef"><b>Definition:</b> LibNetworkException.hh:31</div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"># include &lt;errno.h&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"># include &lt;exception&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"># include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"># include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_lib_network_exception.html">   33</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_lib_network_exception.html">LibNetworkException</a> : <span class="keyword">public</span> std::exception</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_lib_network_exception.html#af74972d2d7160710b8faaccb01f6455c">   42</a></span>&#160;    <a class="code" href="classmognetwork_1_1_lib_network_exception.html#af74972d2d7160710b8faaccb01f6455c">LibNetworkException</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span> *file)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      std::ostringstream oss;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      oss &lt;&lt; <span class="stringliteral">&quot;Error on line &quot;</span> &lt;&lt; line &lt;&lt; <span class="stringliteral">&quot; in file &#39;&quot;</span> &lt;&lt; file &lt;&lt; <span class="stringliteral">&quot;&#39; : &quot;</span> &lt;&lt; msg &lt;&lt; std::endl</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      &lt;&lt; <span class="stringliteral">&quot;\tErrno status: &quot;</span> &lt;&lt; strerror(errno) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      this-&gt;msg = oss.str();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_lib_network_exception.html">LibNetworkException</a>() throw() {}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_lib_network_exception.html#a65c5c92d2bf25a9c4cd8a0322c36e54a">   56</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classmognetwork_1_1_lib_network_exception.html#a65c5c92d2bf25a9c4cd8a0322c36e54a">what</a>() <span class="keyword">const</span> throw()</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">return</span> this-&gt;msg.c_str();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::string msg; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  };</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_LIBNETWORKEXCEPTION_HH</span></div>
+<div class="ttc" id="classmognetwork_1_1_lib_network_exception_html_af74972d2d7160710b8faaccb01f6455c"><div class="ttname"><a href="classmognetwork_1_1_lib_network_exception.html#af74972d2d7160710b8faaccb01f6455c">mognetwork::LibNetworkException::LibNetworkException</a></div><div class="ttdeci">LibNetworkException(const char *msg, int line, const char *file)</div><div class="ttdoc">Constructeur par défaut. </div><div class="ttdef"><b>Definition:</b> LibNetworkException.hh:42</div></div>
+<div class="ttc" id="classmognetwork_1_1_lib_network_exception_html_a65c5c92d2bf25a9c4cd8a0322c36e54a"><div class="ttname"><a href="classmognetwork_1_1_lib_network_exception.html#a65c5c92d2bf25a9c4cd8a0322c36e54a">mognetwork::LibNetworkException::what</a></div><div class="ttdeci">virtual const char * what() const </div><div class="ttdoc">Permet de récupérer le message d&amp;#39;erreur de l&amp;#39;exception. </div><div class="ttdef"><b>Definition:</b> LibNetworkException.hh:56</div></div>
+<div class="ttc" id="classmognetwork_1_1_lib_network_exception_html"><div class="ttname"><a href="classmognetwork_1_1_lib_network_exception.html">mognetwork::LibNetworkException</a></div><div class="ttdoc">Exception générique de la lib. </div><div class="ttdef"><b>Definition:</b> LibNetworkException.hh:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 11:01:12 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 30 2014 16:10:27 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

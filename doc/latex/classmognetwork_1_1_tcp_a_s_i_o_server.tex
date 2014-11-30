@@ -25,7 +25,11 @@ void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_ac1feafc63d86a8aa90ef6a78
 \begin{DoxyCompactList}\small\item\em Ajoute un listener au serveur. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_a6627fca52b19ead79e8a7134bade9e1f}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_a6627fca52b19ead79e8a7134bade9e1f}{send\-Pending\-Datas} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_server_a6627fca52b19ead79e8a7134bade9e1f}
 
-\begin{DoxyCompactList}\small\item\em Dans le cas ou une socket client contient des données à envoyer, met à jour le thread d'écriture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Dans le cas ou une socket client contient des données à envoyer, met à jour le thread d'écriture. \end{DoxyCompactList}\item 
+\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer} $\ast$ \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_a55e84839aad1572d36a0c7fcbc1fd84d}{get\-Server\-Writer} () const 
+\begin{DoxyCompactList}\small\item\em Récupère le writer \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer}. \end{DoxyCompactList}\item 
+\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener}{Tcp\-A\-S\-I\-O\-Listener} $\ast$ \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_afb30f505e64de27887abec2e8cfd50ff}{get\-Server\-Listener} () const 
+\begin{DoxyCompactList}\small\item\em Récupère le listener \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener}{Tcp\-A\-S\-I\-O\-Listener}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -67,8 +71,36 @@ Ajoute un listener au serveur.
 {\em listener} & le listener en question en utilisant \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler}{I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} \\
 \hline
 \end{DoxyParams}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_afb30f505e64de27887abec2e8cfd50ff}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}!get\-Server\-Listener@{get\-Server\-Listener}}
+\index{get\-Server\-Listener@{get\-Server\-Listener}!mognetwork::TcpASIOServer@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}}
+\subsubsection[{get\-Server\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tcp\-A\-S\-I\-O\-Listener}$\ast$ mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server\-::get\-Server\-Listener (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_server_afb30f505e64de27887abec2e8cfd50ff}
+
+
+Récupère le listener \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener}{Tcp\-A\-S\-I\-O\-Listener}. 
+
+\begin{DoxyReturn}{Returns}
+un pointeur sur le \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer} 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_a55e84839aad1572d36a0c7fcbc1fd84d}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}!get\-Server\-Writer@{get\-Server\-Writer}}
+\index{get\-Server\-Writer@{get\-Server\-Writer}!mognetwork::TcpASIOServer@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}}
+\subsubsection[{get\-Server\-Writer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tcp\-A\-S\-I\-O\-Writer}$\ast$ mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server\-::get\-Server\-Writer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_server_a55e84839aad1572d36a0c7fcbc1fd84d}
+
+
+Récupère le writer \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer}. 
+
+\begin{DoxyReturn}{Returns}
+un pointeur sur le \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer} 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{_tcp_a_s_i_o_server_8hh}{Tcp\-A\-S\-I\-O\-Server.\-hh}\end{DoxyCompactItemize}
+include/mognetwork/\hyperlink{_tcp_a_s_i_o_server_8hh}{Tcp\-A\-S\-I\-O\-Server.\-hh}\end{DoxyCompactItemize}

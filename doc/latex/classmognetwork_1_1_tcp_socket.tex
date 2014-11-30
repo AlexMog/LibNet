@@ -26,7 +26,7 @@ struct \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Readed\-Data
 \item 
 typedef std\-::vector$<$ char $>$ \hyperlink{classmognetwork_1_1_tcp_socket_aa80d910649a16cedb6c98297e5893ed1}{Data}
 \item 
-typedef std\-::list$<$ \hyperlink{classmognetwork_1_1_tcp_socket_aa80d910649a16cedb6c98297e5893ed1}{Data} $>$ \hyperlink{classmognetwork_1_1_tcp_socket_ad7bb1f8749cfba5e4b181b035b0659c1}{Data\-List}
+typedef std\-::list$<$ \hyperlink{classmognetwork_1_1_tcp_socket_aa80d910649a16cedb6c98297e5893ed1}{Data} $\ast$ $>$ \hyperlink{classmognetwork_1_1_tcp_socket_acd1726904d918e617c84eaf198196506}{Data\-List}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -45,6 +45,8 @@ typedef std\-::list$<$ \hyperlink{classmognetwork_1_1_tcp_socket_aa80d910649a16c
 \begin{DoxyCompactList}\small\item\em Envois des données de manière synchrone (blockante) \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1_tcp_socket_a44fd93d5f7bcf3d155a93e4db6d5f2e9}{receive} (char $\ast$data, std\-::size\-\_\-t size, std\-::size\-\_\-t \&received, int \-\_\-flags)
 \begin{DoxyCompactList}\small\item\em Reçoit des données de manière synchrone (blockante) \end{DoxyCompactList}\item 
+\hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1_tcp_socket_a1ece90a4a6cf0482da562bae39786d5b}{receive\-All} (\hyperlink{classmognetwork_1_1_tcp_socket_aa80d910649a16cedb6c98297e5893ed1}{Data} \&data)
+\begin{DoxyCompactList}\small\item\em Reçoit des données de manière synchrone (blockante) \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1_tcp_socket_ae136e74283e5e8d0704c52d8110f1896}{async\-Send} (const char $\ast$data, std\-::size\-\_\-t size)
 \begin{DoxyCompactList}\small\item\em Ajoute des données à la liste d'envois des données de la socket en Asynchrone. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1_tcp_socket_afbb854293f7f8e404bb553e5c5ba1277}{send\-Pending\-Datas} ()
@@ -57,9 +59,9 @@ void $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_adef63a929423324fd75888e21
 \begin{DoxyCompactList}\small\item\em Récupère des données enregistrées sur la socket. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1_tcp_socket_af3918374ee41223b77f669367d4b0e22}{read\-Pending\-Datas} ()
 \begin{DoxyCompactList}\small\item\em Lis les données en attente en Asynchrone. \end{DoxyCompactList}\item 
-const \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_ab9e99c5f8bc2099de32670ff1b7bcaf3}{get\-Datas\-Readed} () const 
+\hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_a6dbe149a276fb24203267762fbd1c276}{get\-Datas\-Readed} () const 
 \begin{DoxyCompactList}\small\item\em Récupère les données lues via read\-Pending\-Datas. \end{DoxyCompactList}\item 
-const \hyperlink{classmognetwork_1_1_packet}{Packet} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_a9256f406b68101bee2735f7ecfe104e8}{get\-Packet\-Readed} ()
+\hyperlink{classmognetwork_1_1_packet}{Packet} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_ac8619a5f869abfda7b8c2d32c94870f3}{get\-Packet\-Readed} ()
 \begin{DoxyCompactList}\small\item\em Récupère les données lues via read\-Pending\-Datas en temps que \hyperlink{classmognetwork_1_1_packet}{Packet}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -71,9 +73,9 @@ Classe de création d'une socket T\-C\-P.
 \hypertarget{classmognetwork_1_1_tcp_socket_aa80d910649a16cedb6c98297e5893ed1}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!Data@{Data}}
 \index{Data@{Data}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
 \subsubsection[{Data}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::vector$<$char$>$ {\bf mognetwork\-::\-Tcp\-Socket\-::\-Data}}}\label{classmognetwork_1_1_tcp_socket_aa80d910649a16cedb6c98297e5893ed1}
-Typedef pour définit le typpage d'une Data \hypertarget{classmognetwork_1_1_tcp_socket_ad7bb1f8749cfba5e4b181b035b0659c1}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!Data\-List@{Data\-List}}
+Typedef pour définit le typpage d'une Data \hypertarget{classmognetwork_1_1_tcp_socket_acd1726904d918e617c84eaf198196506}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!Data\-List@{Data\-List}}
 \index{Data\-List@{Data\-List}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
-\subsubsection[{Data\-List}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::list$<${\bf Data}$>$ {\bf mognetwork\-::\-Tcp\-Socket\-::\-Data\-List}}}\label{classmognetwork_1_1_tcp_socket_ad7bb1f8749cfba5e4b181b035b0659c1}
+\subsubsection[{Data\-List}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::list$<${\bf Data}$\ast$$>$ {\bf mognetwork\-::\-Tcp\-Socket\-::\-Data\-List}}}\label{classmognetwork_1_1_tcp_socket_acd1726904d918e617c84eaf198196506}
 Typedef pour définit une data\-List 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -137,13 +139,13 @@ Connecte la socket à une adresse.
 {\em port} & le port où la socket doit se connecter \\
 \hline
 \end{DoxyParams}
-\hypertarget{classmognetwork_1_1_tcp_socket_ab9e99c5f8bc2099de32670ff1b7bcaf3}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-Datas\-Readed@{get\-Datas\-Readed}}
+\hypertarget{classmognetwork_1_1_tcp_socket_a6dbe149a276fb24203267762fbd1c276}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-Datas\-Readed@{get\-Datas\-Readed}}
 \index{get\-Datas\-Readed@{get\-Datas\-Readed}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
-\subsubsection[{get\-Datas\-Readed}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Tcp\-Socket\-::\-Readed\-Datas}$\ast$ mognetwork\-::\-Tcp\-Socket\-::get\-Datas\-Readed (
+\subsubsection[{get\-Datas\-Readed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tcp\-Socket\-::\-Readed\-Datas}$\ast$ mognetwork\-::\-Tcp\-Socket\-::get\-Datas\-Readed (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{classmognetwork_1_1_tcp_socket_ab9e99c5f8bc2099de32670ff1b7bcaf3}
+) const}}\label{classmognetwork_1_1_tcp_socket_a6dbe149a276fb24203267762fbd1c276}
 
 
 Récupère les données lues via read\-Pending\-Datas. 
@@ -151,13 +153,13 @@ Récupère les données lues via read\-Pending\-Datas.
 \begin{DoxyReturn}{Returns}
 Les données lues en temps que \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} 
 \end{DoxyReturn}
-\hypertarget{classmognetwork_1_1_tcp_socket_a9256f406b68101bee2735f7ecfe104e8}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-Packet\-Readed@{get\-Packet\-Readed}}
+\hypertarget{classmognetwork_1_1_tcp_socket_ac8619a5f869abfda7b8c2d32c94870f3}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-Packet\-Readed@{get\-Packet\-Readed}}
 \index{get\-Packet\-Readed@{get\-Packet\-Readed}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
-\subsubsection[{get\-Packet\-Readed}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Packet}$\ast$ mognetwork\-::\-Tcp\-Socket\-::get\-Packet\-Readed (
+\subsubsection[{get\-Packet\-Readed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}$\ast$ mognetwork\-::\-Tcp\-Socket\-::get\-Packet\-Readed (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classmognetwork_1_1_tcp_socket_a9256f406b68101bee2735f7ecfe104e8}
+)}}\label{classmognetwork_1_1_tcp_socket_ac8619a5f869abfda7b8c2d32c94870f3}
 
 
 Récupère les données lues via read\-Pending\-Datas en temps que \hyperlink{classmognetwork_1_1_packet}{Packet}. 
@@ -224,6 +226,20 @@ Reçoit des données de manière synchrone (blockante)
 \begin{DoxyReturn}{Returns}
 \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} permettant de savoir l'état de la réception 
 \end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_socket_a1ece90a4a6cf0482da562bae39786d5b}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!receive\-All@{receive\-All}}
+\index{receive\-All@{receive\-All}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
+\subsubsection[{receive\-All}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Socket\-::\-Status} mognetwork\-::\-Tcp\-Socket\-::receive\-All (
+\begin{DoxyParamCaption}
+\item[{{\bf Data} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_tcp_socket_a1ece90a4a6cf0482da562bae39786d5b}
+
+
+Reçoit des données de manière synchrone (blockante) 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} permettant de savoir l'état de la réception 
+\end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_tcp_socket_a6cd80d53f05a4d91ed1a66e17e9a3d54}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!send@{send}}
 \index{send@{send}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
 \subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Socket\-::\-Status} mognetwork\-::\-Tcp\-Socket\-::send (
@@ -273,4 +289,4 @@ Définit des données pouvant être récupérées via la socket.
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{_tcp_socket_8hh}{Tcp\-Socket.\-hh}\end{DoxyCompactItemize}
+include/mognetwork/\hyperlink{_tcp_socket_8hh}{Tcp\-Socket.\-hh}\end{DoxyCompactItemize}

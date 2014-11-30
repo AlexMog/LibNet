@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>LibNetwork: include/IRunnable.hh Source File</title>
+<title>LibNetwork: include/mognetwork/IRunnable.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_80679f7b4e961c2a5c209921f1b6c6ea.html">mognetwork</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -95,28 +95,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Tue Nov 11 18:05:43 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Tue Nov 18 09:28:54 2014 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Tue Nov 18 13:37:41 2014 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef IRUNNABLE_HH_</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define IRUNNABLE_HH_</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef MOGNETWORK_IRUNNABLE_HH</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define MOGNETWORK_IRUNNABLE_HH</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_i_runnable.html">   27</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_i_runnable.html">IRunnable</a></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_i_runnable.html#ac53515c8ecf2b2c79cb9c161fdd600d1">run</a>() = 0;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  };</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;} <span class="comment">// namesapce mognetwork</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif // !IRUNNABLE_HH_</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_i_runnable.html">IRunnable</a>() {}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_i_runnable.html#ac53515c8ecf2b2c79cb9c161fdd600d1">run</a>() = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  };</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;} <span class="comment">// namesapce mognetwork</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_IRUNNABLE_HH</span></div>
 <div class="ttc" id="classmognetwork_1_1_i_runnable_html"><div class="ttname"><a href="classmognetwork_1_1_i_runnable.html">mognetwork::IRunnable</a></div><div class="ttdoc">Interface permettant de créer une fonction d&amp;#39;exécution pour les Threads (java style) ...</div><div class="ttdef"><b>Definition:</b> IRunnable.hh:27</div></div>
 <div class="ttc" id="classmognetwork_1_1_i_runnable_html_ac53515c8ecf2b2c79cb9c161fdd600d1"><div class="ttname"><a href="classmognetwork_1_1_i_runnable.html#ac53515c8ecf2b2c79cb9c161fdd600d1">mognetwork::IRunnable::run</a></div><div class="ttdeci">virtual void run()=0</div><div class="ttdoc">fonction utilisée par les threads en temps que pointeur sur fonction </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 11:01:12 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 30 2014 16:10:27 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

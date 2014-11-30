@@ -121,8 +121,8 @@ Classes</h2></td></tr>
 Public Types</h2></td></tr>
 <tr class="memitem:aa80d910649a16cedb6c98297e5893ed1"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#aa80d910649a16cedb6c98297e5893ed1">Data</a></td></tr>
 <tr class="separator:aa80d910649a16cedb6c98297e5893ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7bb1f8749cfba5e4b181b035b0659c1"><td class="memItemLeft" align="right" valign="top">typedef std::list&lt; <a class="el" href="classmognetwork_1_1_tcp_socket.html#aa80d910649a16cedb6c98297e5893ed1">Data</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#ad7bb1f8749cfba5e4b181b035b0659c1">DataList</a></td></tr>
-<tr class="separator:ad7bb1f8749cfba5e4b181b035b0659c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd1726904d918e617c84eaf198196506"><td class="memItemLeft" align="right" valign="top">typedef std::list&lt; <a class="el" href="classmognetwork_1_1_tcp_socket.html#aa80d910649a16cedb6c98297e5893ed1">Data</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#acd1726904d918e617c84eaf198196506">DataList</a></td></tr>
+<tr class="separator:acd1726904d918e617c84eaf198196506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classmognetwork_1_1_socket"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classmognetwork_1_1_socket')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classmognetwork_1_1_socket.html">mognetwork::Socket</a></td></tr>
 <tr class="memitem:aa187a8394ac0d6203af0ec7f021ca15f inherit pub_types_classmognetwork_1_1_socket"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Status</a> { <br/>
 &#160;&#160;<a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15fa1a76bb652d4c1fdb64829e97b7062a7b">Ok</a>, 
@@ -158,6 +158,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a44fd93d5f7bcf3d155a93e4db6d5f2e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Socket::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#a44fd93d5f7bcf3d155a93e4db6d5f2e9">receive</a> (char *data, std::size_t size, std::size_t &amp;received, int _flags)</td></tr>
 <tr class="memdesc:a44fd93d5f7bcf3d155a93e4db6d5f2e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reçoit des données de manière synchrone (blockante)  <a href="#a44fd93d5f7bcf3d155a93e4db6d5f2e9">More...</a><br/></td></tr>
 <tr class="separator:a44fd93d5f7bcf3d155a93e4db6d5f2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ece90a4a6cf0482da562bae39786d5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Socket::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#a1ece90a4a6cf0482da562bae39786d5b">receiveAll</a> (<a class="el" href="classmognetwork_1_1_tcp_socket.html#aa80d910649a16cedb6c98297e5893ed1">Data</a> &amp;data)</td></tr>
+<tr class="memdesc:a1ece90a4a6cf0482da562bae39786d5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reçoit des données de manière synchrone (blockante)  <a href="#a1ece90a4a6cf0482da562bae39786d5b">More...</a><br/></td></tr>
+<tr class="separator:a1ece90a4a6cf0482da562bae39786d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae136e74283e5e8d0704c52d8110f1896"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Socket::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#ae136e74283e5e8d0704c52d8110f1896">asyncSend</a> (const char *data, std::size_t size)</td></tr>
 <tr class="memdesc:ae136e74283e5e8d0704c52d8110f1896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute des données à la liste d'envois des données de la socket en Asynchrone.  <a href="#ae136e74283e5e8d0704c52d8110f1896">More...</a><br/></td></tr>
 <tr class="separator:ae136e74283e5e8d0704c52d8110f1896"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,12 +179,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:af3918374ee41223b77f669367d4b0e22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Socket::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#af3918374ee41223b77f669367d4b0e22">readPendingDatas</a> ()</td></tr>
 <tr class="memdesc:af3918374ee41223b77f669367d4b0e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lis les données en attente en Asynchrone.  <a href="#af3918374ee41223b77f669367d4b0e22">More...</a><br/></td></tr>
 <tr class="separator:af3918374ee41223b77f669367d4b0e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9e99c5f8bc2099de32670ff1b7bcaf3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">TcpSocket::ReadedDatas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#ab9e99c5f8bc2099de32670ff1b7bcaf3">getDatasReaded</a> () const </td></tr>
-<tr class="memdesc:ab9e99c5f8bc2099de32670ff1b7bcaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les données lues via readPendingDatas.  <a href="#ab9e99c5f8bc2099de32670ff1b7bcaf3">More...</a><br/></td></tr>
-<tr class="separator:ab9e99c5f8bc2099de32670ff1b7bcaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9256f406b68101bee2735f7ecfe104e8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmognetwork_1_1_packet.html">Packet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#a9256f406b68101bee2735f7ecfe104e8">getPacketReaded</a> ()</td></tr>
-<tr class="memdesc:a9256f406b68101bee2735f7ecfe104e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les données lues via readPendingDatas en temps que <a class="el" href="classmognetwork_1_1_packet.html" title="simplifie la gestion des données reçues ">Packet</a>.  <a href="#a9256f406b68101bee2735f7ecfe104e8">More...</a><br/></td></tr>
-<tr class="separator:a9256f406b68101bee2735f7ecfe104e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dbe149a276fb24203267762fbd1c276"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">TcpSocket::ReadedDatas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#a6dbe149a276fb24203267762fbd1c276">getDatasReaded</a> () const </td></tr>
+<tr class="memdesc:a6dbe149a276fb24203267762fbd1c276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les données lues via readPendingDatas.  <a href="#a6dbe149a276fb24203267762fbd1c276">More...</a><br/></td></tr>
+<tr class="separator:a6dbe149a276fb24203267762fbd1c276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8619a5f869abfda7b8c2d32c94870f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#ac8619a5f869abfda7b8c2d32c94870f3">getPacketReaded</a> ()</td></tr>
+<tr class="memdesc:ac8619a5f869abfda7b8c2d32c94870f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les données lues via readPendingDatas en temps que <a class="el" href="classmognetwork_1_1_packet.html" title="simplifie la gestion des données reçues ">Packet</a>.  <a href="#ac8619a5f869abfda7b8c2d32c94870f3">More...</a><br/></td></tr>
+<tr class="separator:ac8619a5f869abfda7b8c2d32c94870f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmognetwork_1_1_socket"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmognetwork_1_1_socket')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmognetwork_1_1_socket.html">mognetwork::Socket</a></td></tr>
 <tr class="memitem:a6fc34e842d4efbd526697a12e826806a inherit pub_methods_classmognetwork_1_1_socket"><td class="memItemLeft" align="right" valign="top">SocketFD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_socket.html#a6fc34e842d4efbd526697a12e826806a">getSocketFD</a> () const </td></tr>
 <tr class="memdesc:a6fc34e842d4efbd526697a12e826806a inherit pub_methods_classmognetwork_1_1_socket"><td class="mdescLeft">&#160;</td><td class="mdescRight">récupère le FD de la socket  <a href="#a6fc34e842d4efbd526697a12e826806a">More...</a><br/></td></tr>
@@ -228,12 +231,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a class="anchor" id="ad7bb1f8749cfba5e4b181b035b0659c1"></a>
+<a class="anchor" id="acd1726904d918e617c84eaf198196506"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::list&lt;<a class="el" href="classmognetwork_1_1_tcp_socket.html#aa80d910649a16cedb6c98297e5893ed1">Data</a>&gt; <a class="el" href="classmognetwork_1_1_tcp_socket.html#ad7bb1f8749cfba5e4b181b035b0659c1">mognetwork::TcpSocket::DataList</a></td>
+          <td class="memname">typedef std::list&lt;<a class="el" href="classmognetwork_1_1_tcp_socket.html#aa80d910649a16cedb6c98297e5893ed1">Data</a>*&gt; <a class="el" href="classmognetwork_1_1_tcp_socket.html#acd1726904d918e617c84eaf198196506">mognetwork::TcpSocket::DataList</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -338,12 +341,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a class="anchor" id="ab9e99c5f8bc2099de32670ff1b7bcaf3"></a>
+<a class="anchor" id="a6dbe149a276fb24203267762fbd1c276"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">TcpSocket::ReadedDatas</a>* mognetwork::TcpSocket::getDatasReaded </td>
+          <td class="memname"><a class="el" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">TcpSocket::ReadedDatas</a>* mognetwork::TcpSocket::getDatasReaded </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -356,12 +359,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a class="anchor" id="a9256f406b68101bee2735f7ecfe104e8"></a>
+<a class="anchor" id="ac8619a5f869abfda7b8c2d32c94870f3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classmognetwork_1_1_packet.html">Packet</a>* mognetwork::TcpSocket::getPacketReaded </td>
+          <td class="memname"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a>* mognetwork::TcpSocket::getPacketReaded </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -469,6 +472,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a class="anchor" id="a1ece90a4a6cf0482da562bae39786d5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Socket::Status</a> mognetwork::TcpSocket::receiveAll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmognetwork_1_1_tcp_socket.html#aa80d910649a16cedb6c98297e5893ed1">Data</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reçoit des données de manière synchrone (blockante) </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f" title="Définit les status possibles d&#39;une socket. ">Socket::Status</a> permettant de savoir l'état de la réception </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a6cd80d53f05a4d91ed1a66e17e9a3d54"></a>
 <div class="memitem">
 <div class="memproto">
@@ -541,12 +563,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="_tcp_socket_8hh_source.html">TcpSocket.hh</a></li>
+<li>include/mognetwork/<a class="el" href="_tcp_socket_8hh_source.html">TcpSocket.hh</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 11:01:12 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 30 2014 16:10:27 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
