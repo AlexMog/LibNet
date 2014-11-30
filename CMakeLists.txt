@@ -19,7 +19,8 @@ add_library(mognetwork SHARED
   src/TcpASIOWriter.cpp
   src/TcpServerSocket.cpp
   src/TcpSocket.cpp
-  src/Thread.cpp
+  src/UnixThread.cpp
+  src/WinThread.cpp
   src/UnixSocket.cpp
   src/WinSocket.cpp
   )

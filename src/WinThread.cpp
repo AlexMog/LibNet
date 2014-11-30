@@ -5,10 +5,14 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:37:30 2014 Moghrabi Alexandre
-// Last update Tue Nov 25 16:48:53 2014 Moghrabi Alexandre
+// Last update Sun Nov 30 16:57:06 2014 Moghrabi Alexandre
 //
 
-#include <iostream>
+#include "mognetwork/OS.hh"
+
+#if defined(OS_WINDOWS)
+
+#include <windows.h>
 #include "mognetwork/Thread.hh"
 #include "mognetwork/ThreadException.hh"
 
@@ -17,43 +21,41 @@ namespace mognetwork
   Thread::Thread(IRunnable& runnable, bool detach) :
     m_runnable(runnable)
   {
-    if (pthread_attr_init(&m_attr) != 0)
-      throw ThreadException("pthread_attr_init() error", __LINE__, __FILE__);
-    if (detach && pthread_attr_setdetachstate(&m_attr, PTHREAD_CREATE_DETACHED) != 0)
-      throw ThreadException("pthread_attr_setdetachstate error", __LINE__, __FILE__);
+    (void)detach;
     m_started = false;
   }
   
   Thread::~Thread()
   {
-    if (pthread_attr_destroy(&m_attr) != 0)
-      throw ThreadException("pthread_attr_destroy error", __LINE__, __FILE__);
+    CloseHandle(m_thread);
   }
   
   void Thread::start()
   {
-    if (!m_started && pthread_create(&m_thread, &m_attr, &Thread::exec, &m_runnable) != 0)
+    if (!m_started && (m_thread = CreateThread(NULL, 0, Thread::exec, &m_runnable, 0, &m_thread)) == NULL)
       throw ThreadException("Thread creation error", __LINE__, __FILE__);
     m_started = true;
   }
   
   void Thread::cancel()
   {
-    if (pthread_cancel(m_thread) != 0)
+    if (TerminateThread(m_thread, 0) == 0)
       throw ThreadException("Thread cancel error", __LINE__, __FILE__);
     m_started = false;
   }
   
   void Thread::join()
   {
-    if (pthread_join(m_thread, NULL) != 0)
-      throw ThreadException("Thread cannot be joined", __LINE__, __FILE__);
+    if (WaitForSingleObject(m_thread, INFINITE) == WAIT_FAILED)
+      throw ThreadException("Thread cannot be waited", __LINE__, __FILE__);
     m_started = false;
   }
 
-  void* Thread::exec(void *thr)
+  DWORD WINAPI Thread::exec(LPVOID thr)
   {
     reinterpret_cast<IRunnable*>(thr)->run();
     return (NULL);
   }
 } // namespace mognetwork
+
+#endif // OS_WINDOWS
