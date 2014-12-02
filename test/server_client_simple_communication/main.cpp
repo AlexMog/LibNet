@@ -18,23 +18,16 @@ class Listener : public mognetwork::ITcpASIOListenerHandler
 {
 public:
   Listener(mognetwork::TcpASIOWriter* writer) : m_writer(writer) {}
-  void onConnect(mognetwork::TcpSocket& client) {std::cout << "New client connected." << std::endl;client.asyncSend("LOL", 3);
+  void onConnect(mognetwork::TcpSocket& client) {std::cout << "New client connected." << std::endl;client.asyncSend("LOL\0", 4);
     m_writer->triggerData();}
   void onReceivedData(mognetwork::TcpSocket& client)
   {
     char buffer[42];
-    mognetwork::Packet* packet = client.getPacketReaded();
-    *packet >> buffer;
-    std::cout << "RECEIVED: '" << buffer << "'" << std::endl;
-    packet->clear();
-    std::string s(buffer);
-    mognetwork::Packet p;
-    *packet << s.c_str();
-    p << s.c_str();
-    p >> buffer;
-    client.asyncSend("LOL", 3);
+    mognetwork::TcpSocket::ReadedDatas* datas = client.getDatasReaded();
+    std::cout << "RECEIVED: S: '" << datas->datas.size()  << "' D: '" << (&datas->datas[0]) << "'" << std::endl;
+    client.asyncSend("LOL\0", 4);
     m_writer->triggerData();
-    delete packet;
+    delete datas;
   }
 
   void onDisconnect(mognetwork::TcpSocket& client) {std::cout << "Client disconnected." << std::endl;}

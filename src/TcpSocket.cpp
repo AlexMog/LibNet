@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 25 16:49:07 2014 Moghrabi Alexandre
+// Last update Tue Dec  2 16:26:14 2014 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -98,7 +98,6 @@ namespace mognetwork
 	if (status != Ok)
 	  return (status);
       }
-    std::cout << "Size: " << _data.totalSize << " READED: " << numReaded << std::endl;
     // Size is set, let's read the content!
     if (numReaded >= sizeof(std::size_t))
       {
