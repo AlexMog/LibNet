@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:33:01 2014 Moghrabi Alexandre
+// Last update Thu Dec  4 00:34:18 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -73,13 +73,25 @@ namespace mognetwork
      * \param data la donnée sera ecrite dedans.
      */
     template <typename T>
-    Packet& operator>>(T& data);
+    Packet& operator>>(T& data)
+    {
+      if (verifySize(sizeof(data)))
+	{
+	  data = *reinterpret_cast<const T*>(&((*m_data)[m_readerPos]));
+	  m_readerPos += sizeof(data);
+	}
+      return (*this);
+    }
     /*!
      * \brief ajoute des données (natives de préférence) au packet
      * \param data la donnée à ajouter
      */
     template <typename T>
-    Packet& operator<<(const T& data);
+    Packet& operator<<(const T& data)
+    {
+      push(&data, sizeof(data));
+      return (*this);
+    }
     /*!
      * \brief Permet de vider le packet
      */

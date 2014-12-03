@@ -1,2 +1,1 @@
-Verify why there is valgrind errors on first connexion.
 Add mutex to the Singleton (for multi-threading)

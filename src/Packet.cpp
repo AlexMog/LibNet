@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:52:30 2014 Moghrabi Alexandre
-// Last update Tue Nov 25 16:50:10 2014 Moghrabi Alexandre
+// Last update Thu Dec  4 00:34:23 2014 Moghrabi Alexandre
 //
 
 #include "mognetwork/Packet.hh"
@@ -53,17 +53,6 @@ namespace mognetwork
     return (*this);
   }
 
-  template <typename T>
-  Packet& Packet::operator>>(T& data)
-  {
-    if (verifySize(sizeof(data)))
-      {
-	data = *reinterpret_cast<const T*>(&((*m_data)[m_readerPos]));
-	m_readerPos += sizeof(data);
-      }
-    return (*this);
-  }
-
   Packet& Packet::operator>>(char* data)
   {
     uint32_t size = 0;
@@ -75,13 +64,6 @@ namespace mognetwork
 	data[size] = '\0';
 	m_readerPos += size;
       }
-    return (*this);
-  }
-
-  template <typename T>
-  Packet& Packet::operator<<(const T& data)
-  {
-    push(&data, sizeof(data));
     return (*this);
   }
 
