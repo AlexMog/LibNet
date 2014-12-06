@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:31:29 2014 Moghrabi Alexandre
-// Last update Sun Nov 30 16:54:50 2014 Moghrabi Alexandre
+// Last update Sat Dec  6 07:00:49 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -17,6 +17,8 @@
 
 #ifndef MOGNETWORK_THREAD_HH
 # define MOGNETWORK_THREAD_HH
+
+# include "OS.hh"
 
 #ifndef OS_WINDOWS
 # include <pthread.h>

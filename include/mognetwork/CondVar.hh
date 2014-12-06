@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:43:06 2014 Moghrabi Alexandre
-// Last update Sat Dec  6 06:47:20 2014 Moghrabi Alexandre
+// Last update Sat Dec  6 07:00:23 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -17,6 +17,8 @@
 
 #ifndef MOGNETWORK_CONDVAR_HH
 # define MOGNETWORK_CONDVAR_HH
+
+# include "OS.hh"
 
 #ifndef OS_WINDOWS
 # include <pthread.h>
