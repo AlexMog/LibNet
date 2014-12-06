@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:30:25 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:10:38 2014 Moghrabi Alexandre
+// Last update Sat Dec  6 06:19:34 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -18,7 +18,11 @@
 #ifndef MOGNETWORK_MUTEX_HH
 # define MOGNETWORK_MUTEX_HH
 
+#ifndef OS_WINDOWS
 # include <pthread.h>
+#else
+# include <windows.h>
+#endif
 
 namespace mognetwork
 {
@@ -51,7 +55,11 @@ namespace mognetwork
     int trylock();
 
   protected:
+#ifndef OS_WINDOWS
     pthread_mutex_t m_mutex; /*!< données de la mutex */
+#else
+    HANDLE m_mutex;
+#endif
   };
 } // namespace mognetwork
 

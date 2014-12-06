@@ -5,12 +5,12 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:37:30 2014 Moghrabi Alexandre
-// Last update Sun Nov 30 16:55:36 2014 Moghrabi Alexandre
+// Last update Sat Dec  6 06:17:23 2014 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
 
-#if defined(OS_LINUX)
+#ifndef OS_WINDOWS
 
 #include <iostream>
 #include "mognetwork/Thread.hh"

@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:43:06 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:11:35 2014 Moghrabi Alexandre
+// Last update Sat Dec  6 06:47:20 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -18,7 +18,11 @@
 #ifndef MOGNETWORK_CONDVAR_HH
 # define MOGNETWORK_CONDVAR_HH
 
+#ifndef OS_WINDOWS
 # include <pthread.h>
+#else
+# include <windows.h>
+#endif // !OS_WINDOWS
 # include "Mutex.hh"
 
 namespace mognetwork
@@ -27,7 +31,10 @@ namespace mognetwork
    * \class CondVar
    * \brief Encapsulation des variables conditionnelles
    */
-  class CondVar : public Mutex
+  class CondVar
+#ifndef OS_WINDOWS
+    : public Mutex
+#endif
   {
   public:
     /*!
@@ -56,7 +63,12 @@ namespace mognetwork
     void timedwait(const struct timespec* abstime);
 
   protected:
+#ifndef OS_WINDOWS
     pthread_cond_t m_cond; /*!< Variable conditionnelle */
+#else
+    CONDITION_VARIABLE m_cond;
+    PSRWLOCK m_lock;
+#endif // !OS_WINDOWS
   };
 } // namespace mognetwork
 

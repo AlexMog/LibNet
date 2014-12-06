@@ -7,9 +7,11 @@ set(CMAKE_BUILD_TYPE Release)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 add_library(mognetwork SHARED
-  src/CondVar.cpp
+  src/UnixCondVar.cpp
+  src/WinCondVar.cpp
   src/IpAddress.cpp
-  src/Mutex.cpp
+  src/WinMutex.cpp
+  src/UnixMutex.cpp
   src/Packet.cpp
   src/Selector.cpp
   src/Socket.cpp

@@ -5,11 +5,13 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:48:17 2014 Moghrabi Alexandre
-// Last update Tue Nov 25 16:50:49 2014 Moghrabi Alexandre
+// Last update Sat Dec  6 06:38:54 2014 Moghrabi Alexandre
 //
 
 #include "mognetwork/ThreadException.hh"
 #include "mognetwork/CondVar.hh"
+
+#ifndef OS_WINDOWS
 
 namespace mognetwork
 {
@@ -49,3 +51,5 @@ namespace mognetwork
       throw ThreadException("pthread_cond_timedwait error.", __LINE__, __FILE__);
   }
 } // namespace mognetwork
+
+#endif // OS_WINDOWS

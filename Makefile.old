@@ -5,7 +5,7 @@
 ## Login   <alexmog@epitech.net>
 ## 
 ## Started on  Fri Jun  6 11:16:50 2014 Moghrabi Alexandre
-## Last update Tue Dec  2 16:53:00 2014 Moghrabi Alexandre
+## Last update Sat Dec  6 06:28:18 2014 Moghrabi Alexandre
 ##
 
 NAME=	mognetwork
@@ -24,7 +24,8 @@ INCDIR= ./include/
 
 SRC=	$(SRCDIR)CondVar.cpp		\
 	$(SRCDIR)IpAddress.cpp		\
-	$(SRCDIR)Mutex.cpp		\
+	$(SRCDIR)WinMutex.cpp		\
+	$(SRCDIR)UnixMutex.cpp		\
 	$(SRCDIR)Selector.cpp		\
 	$(SRCDIR)Socket.cpp		\
 	$(SRCDIR)TcpASIODatas.cpp	\
