@@ -18,7 +18,7 @@ namespace mognetwork
   CondVar::CondVar()
   {
     InitializeConditionVariable(&m_cond);
-    InitializeSRWLock(&m_lock);
+    InitializeSRWLock(m_lock);
   }
 
   CondVar::~CondVar()
@@ -28,7 +28,7 @@ namespace mognetwork
 
   void CondVar::wait()
   {
-    if (CONDITION_VARIABLE_LOCKMODE_SHARED(&m_cond, &m_lock, INFINITE, CONDITION_VARIABLE_LOCKMODE_SHARED) == 0)
+	  if (SleepConditionVariableSRW(&m_cond, m_lock, INFINITE, CONDITION_VARIABLE_LOCKMODE_SHARED) == 0)
       throw ThreadException("pthread_cond_wait error.", __LINE__, __FILE__);
   }
 

@@ -19,10 +19,12 @@
 #ifndef MOGNETWORK_SELECTOR_HH
 # define MOGNETWORK_SELECTOR_HH
 
+#ifndef OS_WINDOWS
 #include <sys/select.h>
 #include <sys/time.h>
-#include <sys/types.h>
 #include <unistd.h>
+#endif // !OS_WINDOWS
+#include <sys/types.h>
 #include <list>
 #include "SocketFD.hh"
 

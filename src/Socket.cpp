@@ -9,10 +9,16 @@
 //
 
 #include <sys/types.h>
+#include "mognetwork/OS.hh"
+#ifndef OS_WINDOWS
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include <iostream>
 #include <unistd.h>
+#else
+#include <winsock2.h>
+#include <Ws2tcpip.h>
+#endif // !OS_WINDOWS
+#include <iostream>
 #include "mognetwork/OsSocket.hh"
 #include "mognetwork/Socket.hh"
 

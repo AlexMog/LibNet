@@ -8,11 +8,17 @@
 // Last update Tue Nov 25 16:50:42 2014 Moghrabi Alexandre
 //
 
+#include "mognetwork/OS.hh"
+#ifndef OS_WINDOWS
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <sys/types.h>
 #include <netdb.h>
+#else
+#include <winsock2.h>
+#include <Ws2tcpip.h>
+#endif // !OS_WINDOWS
+#include <sys/types.h>
 #include <string.h>
 #include "mognetwork/IpAddress.hh"
 

@@ -9,8 +9,14 @@
 //
 
 #include <sys/types.h>
+#include "mognetwork/OS.hh"
+#ifndef OS_WINDOWS
 #include <sys/socket.h>
 #include <netinet/in.h>
+#else
+#include <winsock2.h>
+#include <Ws2tcpip.h>
+#endif // !OS_WINDOWS
 #include <string.h>
 #include "mognetwork/LibNetworkException.hh"
 #include "mognetwork/TcpServerSocket.hh"

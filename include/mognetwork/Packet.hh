@@ -20,7 +20,10 @@
 
 # include <vector>
 # include <string.h>
+# include "OS.hh"
+#ifndef OS_WINDOWS
 # include <arpa/inet.h>
+#endif // !OS_WINDOWS
 # include "TcpSocket.hh"
 
 namespace mognetwork

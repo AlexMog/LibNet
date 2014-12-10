@@ -14,6 +14,7 @@
 # define MOGNETWORK_SOCKETFD_HH
 
 #if defined(OS_WINDOWS)
+# include <windows.h>
 typedef UINT_PTR SocketFD;
 #else
 typedef int SocketFD;

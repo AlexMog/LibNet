@@ -9,8 +9,11 @@
 //
 
 #include <sys/types.h>
+#include "mognetwork/OS.hh"
+#ifndef OS_WINDOWS
 #include <sys/socket.h>
 #include <netinet/in.h>
+#endif // !OS_WINDOWS
 #include <algorithm>
 #include <string.h>
 #include <iostream>
@@ -24,7 +27,11 @@ namespace mognetwork
   void Selector::addFdToWrite(SocketFD fd)
   {
     m_writeSockets.push_front(fd);
+#ifndef OS_WINDOWS
     m_maxFds = std::max(m_maxFds, fd);
+#else
+	m_maxFds = max(m_maxFds, fd);
+#endif // !OS_WINDOWS
   }
 
   void Selector::addFdToRead(SocketFD fd)
@@ -42,14 +49,22 @@ namespace mognetwork
 	 it != m_readSockets.end(); ++it)
       {
 	FD_SET(*it, &m_rdfs);
+#ifndef OS_WINDOWS
 	m_maxFds = std::max(m_maxFds, *it);
+#else
+	m_maxFds = max(m_maxFds, *it);
+#endif // !OS_WINDOWS
       }
 
     for (std::list<SocketFD>::iterator it = m_writeSockets.begin();
 	 it != m_writeSockets.end(); ++it)
       {
 	FD_SET(*it, &m_wdfs);
+#ifndef OS_WINDOWS
 	m_maxFds = std::max(m_maxFds, *it);
+#else
+	m_maxFds = max(m_maxFds, *it);
+#endif // !OS_WINDOWS
       }
   }
 

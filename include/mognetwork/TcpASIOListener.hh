@@ -20,7 +20,10 @@
 # define MOGNETWORK_TCPASIOLISTENER_HH
 
 # include <list>
+# include "mognetwork/OS.hh"
+#ifndef OS_WINDOWS
 # include <unistd.h>
+#endif // !OS_WINDOWS
 # include "IRunnable.hh"
 # include "Thread.hh"
 # include "TcpServerSocket.hh"
