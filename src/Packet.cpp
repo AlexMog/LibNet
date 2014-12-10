@@ -5,9 +5,10 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:52:30 2014 Moghrabi Alexandre
-// Last update Thu Dec  4 00:34:23 2014 Moghrabi Alexandre
+// Last update Wed Dec 10 19:05:46 2014 Moghrabi Alexandre
 //
 
+#include <iostream>
 #include "mognetwork/Packet.hh"
 
 namespace mognetwork
@@ -55,7 +56,7 @@ namespace mognetwork
 
   Packet& Packet::operator>>(char* data)
   {
-    uint32_t size = 0;
+    int32_t size = 0;
     *this >> size;
 
     if (size > 0 && verifySize(size))
@@ -69,7 +70,7 @@ namespace mognetwork
 
   Packet& Packet::operator<<(const char* data)
   {
-    uint32_t size = strlen(data) * sizeof(char);
+    int32_t size = strlen(data) * sizeof(char);
     *this << size;
     push(data, size);
     return (*this);
