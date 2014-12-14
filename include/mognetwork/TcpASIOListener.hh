@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:12:34 2014 Moghrabi Alexandre
+// Last update Sun Dec 14 17:45:44 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -98,6 +98,7 @@ namespace mognetwork
     std::list<TcpSocket*>* m_socketList; /*!< un pointeur sur la liste des sockets stockée par TcpASIODatas */
     int m_pipefd[2]; /*!< un pipe pour déclancher le Selector en cas de besoins */
     TcpServerSocket& m_serverSocket; /*!< une référence sur la socket serveur */
+    Time m_timeout;
   };
 } // namespace mognetwork
 

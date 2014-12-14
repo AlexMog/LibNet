@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:38:14 2014 Moghrabi Alexandre
-// Last update Tue Nov 25 16:49:31 2014 Moghrabi Alexandre
+// Last update Sun Dec 14 17:52:24 2014 Moghrabi Alexandre
 //
 
 #include "mognetwork/TcpASIOServer.hh"
@@ -31,14 +31,14 @@ namespace mognetwork
     m_serverSocket.listen(42);
     m_serverListener->start();
     m_serverWriter->start();
-    m_serverListener->wait();
     m_serverWriter->wait();
+    m_serverListener->wait();
+    m_serverSocket.disconnect();
   }
 
   void TcpASIOServer::stop()
   {
     m_serverWriter->stop();
     m_serverListener->stop();
-    m_serverSocket.disconnect();
   }
 } // namespace mognetwork

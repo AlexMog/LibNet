@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:45:50 2014 Moghrabi Alexandre
-// Last update Tue Dec  2 16:28:14 2014 Moghrabi Alexandre
+// Last update Sat Dec 13 05:14:08 2014 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -19,6 +19,9 @@ namespace mognetwork
   {
     m_thread = new Thread(*this, false);
     m_socketList = TcpASIODatas::getInstance()->getSocketList();
+    m_timeout.tv_sec = 0;
+    m_timeout.tv_usec = 1000;
+    m_selector.setTimeout(&m_timeout);
   }
 
   TcpASIOWriter::~TcpASIOWriter()
@@ -82,5 +85,6 @@ namespace mognetwork
 	    hasMoreDatasToSend = true;
 	  }
       }
+    std::cout << "Writer thread stopped." << std::endl;
   }
 } // namespace mognetwork

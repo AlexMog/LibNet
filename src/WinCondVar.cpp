@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:48:17 2014 Moghrabi Alexandre
-// Last update Sat Dec  6 06:53:09 2014 Moghrabi Alexandre
+// Last update Thu Dec 11 17:22:56 2014 Moghrabi Alexandre
 //
 
 #include "mognetwork/ThreadException.hh"
@@ -28,7 +28,7 @@ namespace mognetwork
 
   void CondVar::wait()
   {
-	  if (SleepConditionVariableSRW(&m_cond, m_lock, INFINITE, CONDITION_VARIABLE_LOCKMODE_SHARED) == 0)
+    if (SleepConditionVariableSRW(&m_cond, m_lock, INFINITE, CONDITION_VARIABLE_LOCKMODE_SHARED) == 0)
       throw ThreadException("pthread_cond_wait error.", __LINE__, __FILE__);
   }
 

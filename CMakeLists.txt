@@ -4,6 +4,8 @@ project(MogNetwork)
 
 set(CMAKE_BUILD_TYPE Release)
 
+set(CMAKE_CXX_FLAGS "-g3 -W -Wall -pedantic -ansi")
+
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 add_library(mognetwork SHARED

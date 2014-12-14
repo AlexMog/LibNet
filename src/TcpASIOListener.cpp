@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Tue Nov 25 16:49:40 2014 Moghrabi Alexandre
+// Last update Sun Dec 14 17:57:24 2014 Moghrabi Alexandre
 //
 
 #include "mognetwork/TcpASIODatas.hh"
@@ -21,6 +21,9 @@ namespace mognetwork
     if (pipe(m_pipefd) != 0)
       throw LibNetworkException("Pipe creation failed.", __LINE__, __FILE__);
     m_socketList = TcpASIODatas::getInstance()->getSocketList();
+    m_timeout.tv_sec = 0;
+    m_timeout.tv_usec = 100000;
+    m_selector.setTimeout(NULL);
   }
 
   TcpASIOListener::~TcpASIOListener()
@@ -80,8 +83,8 @@ namespace mognetwork
 	      }
 	    else if (*it == m_pipefd[0])
 	      {
-		char buffer[2];
-		read(m_pipefd[0], buffer, 1);
+		char buffer[42];
+		while (read(m_pipefd[0], buffer, 42) > 0);
 	      }
 	    else
 	      {
@@ -106,5 +109,6 @@ namespace mognetwork
 	      }
 	  }
       }
+    std::cout << "Listener Thread stopped." << std::endl;
   }
 } // namespace mognetwork
