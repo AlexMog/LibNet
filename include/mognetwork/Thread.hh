@@ -5,12 +5,12 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:31:29 2014 Moghrabi Alexandre
-// Last update Sat Dec  6 07:00:49 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:06:03 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file Thread.hh
- * \brief Encapsulation des threads
+ * \brief thread encapsulation
  * \author AlexMog
  * \version 1.0
  */
@@ -31,36 +31,36 @@ namespace mognetwork
 {
   /*!
    * \class Thread
-   * \brief Classe d'encapsulation des threads
+   * \brief Encapsulation of thread
    */
   class Thread
   {
   public:
     /*!
-     * \brief Constructeur
-     * \param runnable Un runnable pour le lancement du thread
-     * \param detach Le thread est il attaché?
+     * \brief Constructor
+     * \param runnable The runnable to use with the thread
+     * \param detach True if you want to detach the thread
      */
     Thread(IRunnable& runnable, bool detach);
     virtual ~Thread();
 
   public:
     /*!
-     * \brief Lance le thread
+     * \brief Launch the thread
      */
     virtual void start();
     /*!
-     * \brief Annule le thread
+     * \brief Cancel the thread
      */
     virtual void cancel();
     /*!
-     * \brief Attend que le thread se termine
+     * \brief Wait to the end of the thread
      */
     virtual void join();
 
   protected:
     /*!
-     * \brief Utilisée pour passer un pointeur sur fonction au thread
+     * \brief Used to set a function-pointer to threads
      */
 #ifndef OS_WINDOWS
     static void* exec(void *);
@@ -70,20 +70,20 @@ namespace mognetwork
 
   public:
     /*!
-     * \brief permet de savoir si le thread est actuellement lancé
-     * \return true si lancé, sinon false
+     * \brief Used to know if the thread is launched
+     * \return true if launched, false if stopped
      */
     bool isStarted() const {return m_started;}
 
   private:
-    IRunnable& m_runnable; /*!< Système de lancement du thread */
+    IRunnable& m_runnable; /*!< The runnable used to the thread execution */
 #ifndef OS_WINDOWS
-    pthread_t m_thread; /*!< identifiant du thread */
-    pthread_attr_t m_attr; /*!< configurations du thread */
+    pthread_t m_thread; /*!< Thread identification */
+    pthread_attr_t m_attr; /*!< thread configuration */
 #else
     HANDLE m_thread;
 #endif // OS_WINDOWS
-    bool m_started; /*!< permet de savoir si le thread est actuellement lancé ou non */
+    bool m_started; /*!< used to know if the thread is launched */
   };
 } // namespace mognetwork
 

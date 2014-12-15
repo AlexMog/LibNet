@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Gère les threads d'écriture et de lecture en ASIO.  
+<p>Used to create a ASIO Server simply.  
  <a href="classmognetwork_1_1_tcp_a_s_i_o_server.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_tcp_a_s_i_o_server_8hh_source.html">TcpASIOServer.hh</a>&gt;</code></p>
@@ -102,32 +102,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8a201f84e02e478de1de4e0e4d3c029f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a8a201f84e02e478de1de4e0e4d3c029f">TcpASIOServer</a> (int port)</td></tr>
-<tr class="memdesc:a8a201f84e02e478de1de4e0e4d3c029f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par défaut.  <a href="#a8a201f84e02e478de1de4e0e4d3c029f">More...</a><br/></td></tr>
+<tr class="memdesc:a8a201f84e02e478de1de4e0e4d3c029f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a8a201f84e02e478de1de4e0e4d3c029f">More...</a><br/></td></tr>
 <tr class="separator:a8a201f84e02e478de1de4e0e4d3c029f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6c804597aafd577c41310cdc986c7ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6c804597aafd577c41310cdc986c7ff"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#ad6c804597aafd577c41310cdc986c7ff">start</a> ()</td></tr>
-<tr class="memdesc:ad6c804597aafd577c41310cdc986c7ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Démarre les différents threads, et attends qu'ils se terminent. <br/></td></tr>
+<tr class="memdesc:ad6c804597aafd577c41310cdc986c7ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the threads and wait until they are stopped. <br/></td></tr>
 <tr class="separator:ad6c804597aafd577c41310cdc986c7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa94340baa5fbbfba0f5467c6ddd32b91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa94340baa5fbbfba0f5467c6ddd32b91"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#aa94340baa5fbbfba0f5467c6ddd32b91">stop</a> ()</td></tr>
-<tr class="memdesc:aa94340baa5fbbfba0f5467c6ddd32b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrête le thread de lecture et d'écriture. <br/></td></tr>
+<tr class="memdesc:aa94340baa5fbbfba0f5467c6ddd32b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the threads. <br/></td></tr>
 <tr class="separator:aa94340baa5fbbfba0f5467c6ddd32b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1feafc63d86a8aa90ef6a78acd7051f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#ac1feafc63d86a8aa90ef6a78acd7051f">addListener</a> (<a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a> *listener)</td></tr>
-<tr class="memdesc:ac1feafc63d86a8aa90ef6a78acd7051f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un listener au serveur.  <a href="#ac1feafc63d86a8aa90ef6a78acd7051f">More...</a><br/></td></tr>
+<tr class="memdesc:ac1feafc63d86a8aa90ef6a78acd7051f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a> to the server.  <a href="#ac1feafc63d86a8aa90ef6a78acd7051f">More...</a><br/></td></tr>
 <tr class="separator:ac1feafc63d86a8aa90ef6a78acd7051f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6627fca52b19ead79e8a7134bade9e1f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6627fca52b19ead79e8a7134bade9e1f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a6627fca52b19ead79e8a7134bade9e1f">sendPendingDatas</a> ()</td></tr>
-<tr class="memdesc:a6627fca52b19ead79e8a7134bade9e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dans le cas ou une socket client contient des données à envoyer, met à jour le thread d'écriture. <br/></td></tr>
+<tr class="memdesc:a6627fca52b19ead79e8a7134bade9e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell the server that there is datas to send. <br/></td></tr>
 <tr class="separator:a6627fca52b19ead79e8a7134bade9e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55e84839aad1572d36a0c7fcbc1fd84d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html">TcpASIOWriter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a55e84839aad1572d36a0c7fcbc1fd84d">getServerWriter</a> () const </td></tr>
-<tr class="memdesc:a55e84839aad1572d36a0c7fcbc1fd84d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le writer <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html" title="Thread d&#39;écriture des sockets en ASIO. ">TcpASIOWriter</a>.  <a href="#a55e84839aad1572d36a0c7fcbc1fd84d">More...</a><br/></td></tr>
+<tr class="memdesc:a55e84839aad1572d36a0c7fcbc1fd84d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html" title="Writing Thread for the TcpASIOServer. ">TcpASIOWriter</a>.  <a href="#a55e84839aad1572d36a0c7fcbc1fd84d">More...</a><br/></td></tr>
 <tr class="separator:a55e84839aad1572d36a0c7fcbc1fd84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb30f505e64de27887abec2e8cfd50ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#afb30f505e64de27887abec2e8cfd50ff">getServerListener</a> () const </td></tr>
-<tr class="memdesc:afb30f505e64de27887abec2e8cfd50ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le listener <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html" title="Permet la gestion de la lecture de données en ASIO. ">TcpASIOListener</a>.  <a href="#afb30f505e64de27887abec2e8cfd50ff">More...</a><br/></td></tr>
+<tr class="memdesc:afb30f505e64de27887abec2e8cfd50ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html" title="Listen and read datas in ASIO mode. ">TcpASIOListener</a>.  <a href="#afb30f505e64de27887abec2e8cfd50ff">More...</a><br/></td></tr>
 <tr class="separator:afb30f505e64de27887abec2e8cfd50ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Gère les threads d'écriture et de lecture en ASIO. </p>
+<div class="textblock"><p>Used to create a ASIO Server simply. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8a201f84e02e478de1de4e0e4d3c029f"></a>
 <div class="memitem">
@@ -143,10 +143,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Constructeur par défaut. </p>
+<p>Default constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>Le port sur lequel le serveur écoute </td></tr>
+    <tr><td class="paramname">port</td><td>The port to be used with the server </td></tr>
   </table>
   </dd>
 </dl>
@@ -176,10 +176,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Ajoute un listener au serveur. </p>
+<p>Add a <a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a> to the server. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">listener</td><td>le listener en question en utilisant <a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">ITcpASIOListenerHandler</a> </td></tr>
+    <tr><td class="paramname">listener</td><td>the listener to add </td></tr>
   </table>
   </dd>
 </dl>
@@ -207,8 +207,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Récupère le listener <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html" title="Permet la gestion de la lecture de données en ASIO. ">TcpASIOListener</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>un pointeur sur le <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html" title="Thread d&#39;écriture des sockets en ASIO. ">TcpASIOWriter</a> </dd></dl>
+<p>Get the <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html" title="Listen and read datas in ASIO mode. ">TcpASIOListener</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>a pointer on the <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html" title="Listen and read datas in ASIO mode. ">TcpASIOListener</a> </dd></dl>
 
 </div>
 </div>
@@ -233,8 +233,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Récupère le writer <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html" title="Thread d&#39;écriture des sockets en ASIO. ">TcpASIOWriter</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>un pointeur sur le <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html" title="Thread d&#39;écriture des sockets en ASIO. ">TcpASIOWriter</a> </dd></dl>
+<p>Get the <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html" title="Writing Thread for the TcpASIOServer. ">TcpASIOWriter</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>a pointer on the <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_writer.html" title="Writing Thread for the TcpASIOServer. ">TcpASIOWriter</a> </dd></dl>
 
 </div>
 </div>
@@ -244,7 +244,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2014 16:58:09 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 15 2014 09:52:13 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

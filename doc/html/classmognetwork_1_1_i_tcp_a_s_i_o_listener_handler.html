@@ -97,13 +97,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa1d6b507fc5adc689698c6bd7f0a8ca0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html#aa1d6b507fc5adc689698c6bd7f0a8ca0">onConnect</a> (<a class="el" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a> &amp;client)=0</td></tr>
-<tr class="memdesc:aa1d6b507fc5adc689698c6bd7f0a8ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelé lors de la connexion d'un nouveau client.  <a href="#aa1d6b507fc5adc689698c6bd7f0a8ca0">More...</a><br/></td></tr>
+<tr class="memdesc:aa1d6b507fc5adc689698c6bd7f0a8ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a new client is connected.  <a href="#aa1d6b507fc5adc689698c6bd7f0a8ca0">More...</a><br/></td></tr>
 <tr class="separator:aa1d6b507fc5adc689698c6bd7f0a8ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cc4a40b4addfc1abdf94ba66a545674"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html#a8cc4a40b4addfc1abdf94ba66a545674">onReceivedData</a> (<a class="el" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a> &amp;client)=0</td></tr>
-<tr class="memdesc:a8cc4a40b4addfc1abdf94ba66a545674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelé lors de la réception totale d'une donnée.  <a href="#a8cc4a40b4addfc1abdf94ba66a545674">More...</a><br/></td></tr>
+<tr class="memdesc:a8cc4a40b4addfc1abdf94ba66a545674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a client send datas, and the datas are fully readed.  <a href="#a8cc4a40b4addfc1abdf94ba66a545674">More...</a><br/></td></tr>
 <tr class="separator:a8cc4a40b4addfc1abdf94ba66a545674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeb615cb2f1e1f543a6282e21e66c543"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html#afeb615cb2f1e1f543a6282e21e66c543">onDisconnect</a> (<a class="el" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a> &amp;client)=0</td></tr>
-<tr class="memdesc:afeb615cb2f1e1f543a6282e21e66c543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelé lors de la déconnexion d'un client.  <a href="#afeb615cb2f1e1f543a6282e21e66c543">More...</a><br/></td></tr>
+<tr class="memdesc:afeb615cb2f1e1f543a6282e21e66c543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a client disconnects.  <a href="#afeb615cb2f1e1f543a6282e21e66c543">More...</a><br/></td></tr>
 <tr class="separator:afeb615cb2f1e1f543a6282e21e66c543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -129,10 +129,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Appelé lors de la connexion d'un nouveau client. </p>
+<p>Called when a new client is connected. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">client</td><td>le client qui c'est connecté </td></tr>
+    <tr><td class="paramname">client</td><td>the connected client </td></tr>
   </table>
   </dd>
 </dl>
@@ -161,10 +161,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Appelé lors de la déconnexion d'un client. </p>
+<p>Called when a client disconnects. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">client</td><td>le client qui c'est déconnecté </td></tr>
+    <tr><td class="paramname">client</td><td>the disconnected client </td></tr>
   </table>
   </dd>
 </dl>
@@ -193,10 +193,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Appelé lors de la réception totale d'une donnée. </p>
+<p>Called when a client send datas, and the datas are fully readed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">client</td><td>le client qui a trigger les données </td></tr>
+    <tr><td class="paramname">client</td><td>the client who sended the datas </td></tr>
   </table>
   </dd>
 </dl>
@@ -209,7 +209,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2014 16:58:09 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 15 2014 09:52:13 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

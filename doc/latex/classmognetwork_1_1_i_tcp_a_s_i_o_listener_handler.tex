@@ -5,11 +5,11 @@
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_aa1d6b507fc5adc689698c6bd7f0a8ca0}{on\-Connect} (\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} \&client)=0
-\begin{DoxyCompactList}\small\item\em Appelé lors de la connexion d'un nouveau client. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Called when a new client is connected. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_a8cc4a40b4addfc1abdf94ba66a545674}{on\-Received\-Data} (\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} \&client)=0
-\begin{DoxyCompactList}\small\item\em Appelé lors de la réception totale d'une donnée. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Called when a client send datas, and the datas are fully readed. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_afeb615cb2f1e1f543a6282e21e66c543}{on\-Disconnect} (\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} \&client)=0
-\begin{DoxyCompactList}\small\item\em Appelé lors de la déconnexion d'un client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Called when a client disconnects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
@@ -22,11 +22,11 @@ virtual void \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_afeb6
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_aa1d6b507fc5adc689698c6bd7f0a8ca0}
 
 
-Appelé lors de la connexion d'un nouveau client. 
+Called when a new client is connected. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em client} & le client qui c'est connecté \\
+{\em client} & the connected client \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_afeb615cb2f1e1f543a6282e21e66c543}{\index{mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler@{mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler}!on\-Disconnect@{on\-Disconnect}}
@@ -38,11 +38,11 @@ Appelé lors de la connexion d'un nouveau client.
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_afeb615cb2f1e1f543a6282e21e66c543}
 
 
-Appelé lors de la déconnexion d'un client. 
+Called when a client disconnects. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em client} & le client qui c'est déconnecté \\
+{\em client} & the disconnected client \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_a8cc4a40b4addfc1abdf94ba66a545674}{\index{mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler@{mognetwork\-::\-I\-Tcp\-A\-S\-I\-O\-Listener\-Handler}!on\-Received\-Data@{on\-Received\-Data}}
@@ -54,11 +54,11 @@ Appelé lors de la déconnexion d'un client.
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_a8cc4a40b4addfc1abdf94ba66a545674}
 
 
-Appelé lors de la réception totale d'une donnée. 
+Called when a client send datas, and the datas are fully readed. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em client} & le client qui a trigger les données \\
+{\em client} & the client who sended the datas \\
 \hline
 \end{DoxyParams}
 

@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>simplifie la gestion des données reçues  
+<p>Simplify the data management of multiple datas.  
  <a href="classmognetwork_1_1_packet.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_packet_8hh_source.html">Packet.hh</a>&gt;</code></p>
@@ -102,47 +102,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad3fd2055862e5dcd730f1ba6131fd51d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#ad3fd2055862e5dcd730f1ba6131fd51d">Packet</a> (std::vector&lt; char &gt; *data)</td></tr>
-<tr class="memdesc:ad3fd2055862e5dcd730f1ba6131fd51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur secondaire.  <a href="#ad3fd2055862e5dcd730f1ba6131fd51d">More...</a><br/></td></tr>
+<tr class="memdesc:ad3fd2055862e5dcd730f1ba6131fd51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Secondary constructor, uses a valid data set.  <a href="#ad3fd2055862e5dcd730f1ba6131fd51d">More...</a><br/></td></tr>
 <tr class="separator:ad3fd2055862e5dcd730f1ba6131fd51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdb587026d9191583a7c71398f3c2535"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#acdb587026d9191583a7c71398f3c2535">Packet</a> (<a class="el" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">TcpSocket::ReadedDatas</a> *data)</td></tr>
-<tr class="memdesc:acdb587026d9191583a7c71398f3c2535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur via TcpSocet::ReadedDatas.  <a href="#acdb587026d9191583a7c71398f3c2535">More...</a><br/></td></tr>
+<tr class="memdesc:acdb587026d9191583a7c71398f3c2535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses a <a class="el" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html" title="Has all the datas to retrive and send process in ASIO. ">TcpSocket::ReadedDatas</a> to set the datas.  <a href="#acdb587026d9191583a7c71398f3c2535">More...</a><br/></td></tr>
 <tr class="separator:acdb587026d9191583a7c71398f3c2535"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83f88dde9175ac8b47ec9a5d28635283"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#a83f88dde9175ac8b47ec9a5d28635283">operator&gt;&gt;</a> (uint32_t &amp;data)</td></tr>
-<tr class="memdesc:a83f88dde9175ac8b47ec9a5d28635283"><td class="mdescLeft">&#160;</td><td class="mdescRight">extrait un uint32_t des données  <a href="#a83f88dde9175ac8b47ec9a5d28635283">More...</a><br/></td></tr>
+<tr class="memdesc:a83f88dde9175ac8b47ec9a5d28635283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract a uint32_t from the packet.  <a href="#a83f88dde9175ac8b47ec9a5d28635283">More...</a><br/></td></tr>
 <tr class="separator:a83f88dde9175ac8b47ec9a5d28635283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ec841b42fafcd48aa4ac2d54fea6177"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#a0ec841b42fafcd48aa4ac2d54fea6177">operator&lt;&lt;</a> (uint32_t data)</td></tr>
-<tr class="memdesc:a0ec841b42fafcd48aa4ac2d54fea6177"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute un uint32_t au packet  <a href="#a0ec841b42fafcd48aa4ac2d54fea6177">More...</a><br/></td></tr>
+<tr class="memdesc:a0ec841b42fafcd48aa4ac2d54fea6177"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a uint32_t to the packet  <a href="#a0ec841b42fafcd48aa4ac2d54fea6177">More...</a><br/></td></tr>
 <tr class="separator:a0ec841b42fafcd48aa4ac2d54fea6177"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f73147d9c2ddab57757a27aa110de0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#a9f73147d9c2ddab57757a27aa110de0f">operator&lt;&lt;</a> (const char *data)</td></tr>
-<tr class="memdesc:a9f73147d9c2ddab57757a27aa110de0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute un char* au packet  <a href="#a9f73147d9c2ddab57757a27aa110de0f">More...</a><br/></td></tr>
+<tr class="memdesc:a9f73147d9c2ddab57757a27aa110de0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a string to the packet  <a href="#a9f73147d9c2ddab57757a27aa110de0f">More...</a><br/></td></tr>
 <tr class="separator:a9f73147d9c2ddab57757a27aa110de0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2a38323cc0a32e79520fdf71ee0d1a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#ab2a38323cc0a32e79520fdf71ee0d1a9">operator&gt;&gt;</a> (char *data)</td></tr>
-<tr class="memdesc:ab2a38323cc0a32e79520fdf71ee0d1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">extrait un char* du packet  <a href="#ab2a38323cc0a32e79520fdf71ee0d1a9">More...</a><br/></td></tr>
+<tr class="memdesc:ab2a38323cc0a32e79520fdf71ee0d1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">extract a string from the packet  <a href="#ab2a38323cc0a32e79520fdf71ee0d1a9">More...</a><br/></td></tr>
 <tr class="separator:ab2a38323cc0a32e79520fdf71ee0d1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdecf105b9afb3c4c499bfffa9cf2fbb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:acdecf105b9afb3c4c499bfffa9cf2fbb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#acdecf105b9afb3c4c499bfffa9cf2fbb">operator&gt;&gt;</a> (T &amp;data)</td></tr>
-<tr class="memdesc:acdecf105b9afb3c4c499bfffa9cf2fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">extrait des données (natives de préférence) du packet  <a href="#acdecf105b9afb3c4c499bfffa9cf2fbb">More...</a><br/></td></tr>
+<tr class="memdesc:acdecf105b9afb3c4c499bfffa9cf2fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">extract native datas from the packet  <a href="#acdecf105b9afb3c4c499bfffa9cf2fbb">More...</a><br/></td></tr>
 <tr class="separator:acdecf105b9afb3c4c499bfffa9cf2fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84ffd95a38d7bca83675a5c932d04735"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a84ffd95a38d7bca83675a5c932d04735"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#a84ffd95a38d7bca83675a5c932d04735">operator&lt;&lt;</a> (const T &amp;data)</td></tr>
-<tr class="memdesc:a84ffd95a38d7bca83675a5c932d04735"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute des données (natives de préférence) au packet  <a href="#a84ffd95a38d7bca83675a5c932d04735">More...</a><br/></td></tr>
+<tr class="memdesc:a84ffd95a38d7bca83675a5c932d04735"><td class="mdescLeft">&#160;</td><td class="mdescRight">add native datas to the packet  <a href="#a84ffd95a38d7bca83675a5c932d04735">More...</a><br/></td></tr>
 <tr class="separator:a84ffd95a38d7bca83675a5c932d04735"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa034856ddb45ebf35dcefd6d58563d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa034856ddb45ebf35dcefd6d58563d9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#aaa034856ddb45ebf35dcefd6d58563d9">clear</a> ()</td></tr>
-<tr class="memdesc:aaa034856ddb45ebf35dcefd6d58563d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de vider le packet. <br/></td></tr>
+<tr class="memdesc:aaa034856ddb45ebf35dcefd6d58563d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the datas. <br/></td></tr>
 <tr class="separator:aaa034856ddb45ebf35dcefd6d58563d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb66469155c26ec3f1a9c77a7c23841b"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#afb66469155c26ec3f1a9c77a7c23841b">getData</a> () const </td></tr>
-<tr class="memdesc:afb66469155c26ec3f1a9c77a7c23841b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de récupérer les données stockées dans le packet sous forme de void*.  <a href="#afb66469155c26ec3f1a9c77a7c23841b">More...</a><br/></td></tr>
+<tr class="memdesc:afb66469155c26ec3f1a9c77a7c23841b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the datas stored in the packet.  <a href="#afb66469155c26ec3f1a9c77a7c23841b">More...</a><br/></td></tr>
 <tr class="separator:afb66469155c26ec3f1a9c77a7c23841b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f27100558a578cea57c0b0502b6e9c9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#a3f27100558a578cea57c0b0502b6e9c9">getDataSize</a> () const </td></tr>
-<tr class="memdesc:a3f27100558a578cea57c0b0502b6e9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de récupérer la taille du packet.  <a href="#a3f27100558a578cea57c0b0502b6e9c9">More...</a><br/></td></tr>
+<tr class="memdesc:a3f27100558a578cea57c0b0502b6e9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the datas stored.  <a href="#a3f27100558a578cea57c0b0502b6e9c9">More...</a><br/></td></tr>
 <tr class="separator:a3f27100558a578cea57c0b0502b6e9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d60777d07c0f1b0e97060a17b9bed43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_packet.html#a2d60777d07c0f1b0e97060a17b9bed43">push</a> (const void *data, unsigned int size)</td></tr>
-<tr class="memdesc:a2d60777d07c0f1b0e97060a17b9bed43"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute des données au packet  <a href="#a2d60777d07c0f1b0e97060a17b9bed43">More...</a><br/></td></tr>
+<tr class="memdesc:a2d60777d07c0f1b0e97060a17b9bed43"><td class="mdescLeft">&#160;</td><td class="mdescRight">add datas to the packet  prefer to use the operator system  <a href="#a2d60777d07c0f1b0e97060a17b9bed43">More...</a><br/></td></tr>
 <tr class="separator:a2d60777d07c0f1b0e97060a17b9bed43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>simplifie la gestion des données reçues </p>
+<div class="textblock"><p>Simplify the data management of multiple datas. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad3fd2055862e5dcd730f1ba6131fd51d"></a>
 <div class="memitem">
@@ -158,10 +158,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Constructeur secondaire. </p>
+<p>Secondary constructor, uses a valid data set. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Un vecteur de données </td></tr>
+    <tr><td class="paramname">data</td><td>The data set </td></tr>
   </table>
   </dd>
 </dl>
@@ -182,10 +182,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Constructeur via TcpSocet::ReadedDatas. </p>
+<p>Uses a <a class="el" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html" title="Has all the datas to retrive and send process in ASIO. ">TcpSocket::ReadedDatas</a> to set the datas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">La</td><td>structure de données à utiliser </td></tr>
+    <tr><td class="paramname">data</td><td>The datas </td></tr>
   </table>
   </dd>
 </dl>
@@ -214,8 +214,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Permet de récupérer les données stockées dans le packet sous forme de void*. </p>
-<dl class="section return"><dt>Returns</dt><dd>les données sous forme de void* </dd></dl>
+<p>Get the datas stored in the packet. </p>
+<dl class="section return"><dt>Returns</dt><dd>the datas stored </dd></dl>
 
 </div>
 </div>
@@ -240,8 +240,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Permet de récupérer la taille du packet. </p>
-<dl class="section return"><dt>Returns</dt><dd>la taille du packet </dd></dl>
+<p>Get the size of the datas stored. </p>
+<dl class="section return"><dt>Returns</dt><dd>the datas size </dd></dl>
 
 </div>
 </div>
@@ -259,10 +259,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>ajoute un uint32_t au packet </p>
+<p>add a uint32_t to the packet </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>l'uint32_t à ajouter </td></tr>
+    <tr><td class="paramname">data</td><td>the uint32_t to add </td></tr>
   </table>
   </dd>
 </dl>
@@ -283,10 +283,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>ajoute un char* au packet </p>
+<p>add a string to the packet </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>le char* à ajouter </td></tr>
+    <tr><td class="paramname">data</td><td>the string to add </td></tr>
   </table>
   </dd>
 </dl>
@@ -298,6 +298,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a>&amp; mognetwork::Packet::operator&lt;&lt; </td>
@@ -307,12 +310,17 @@ template&lt;typename T &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>ajoute des données (natives de préférence) au packet </p>
+<p>add native datas to the packet </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>la donnée à ajouter </td></tr>
+    <tr><td class="paramname">data</td><td>the data to add </td></tr>
   </table>
   </dd>
 </dl>
@@ -333,10 +341,10 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>extrait un uint32_t des données </p>
+<p>Extract a uint32_t from the packet. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>l'uint32_t dans lequel les données sont extraites </td></tr>
+    <tr><td class="paramname">data</td><td>a reference on the uint32_t to set </td></tr>
   </table>
   </dd>
 </dl>
@@ -357,10 +365,10 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>extrait un char* du packet </p>
+<p>extract a string from the packet </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>le char* dans lequel il sera extrait. Doit être alloué à la bonne taille. </td></tr>
+    <tr><td class="paramname">data</td><td>the char* to set (it have to be a buffer with a size to receive the datas) </td></tr>
   </table>
   </dd>
 </dl>
@@ -372,6 +380,9 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a>&amp; mognetwork::Packet::operator&gt;&gt; </td>
@@ -381,12 +392,17 @@ template&lt;typename T &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>extrait des données (natives de préférence) du packet </p>
+<p>extract native datas from the packet </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>la donnée sera ecrite dedans. </td></tr>
+    <tr><td class="paramname">data</td><td>the data to set </td></tr>
   </table>
   </dd>
 </dl>
@@ -417,11 +433,11 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>ajoute des données au packet </p>
+<p>add datas to the packet  prefer to use the operator system </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>Donnée à ajouter </td></tr>
-    <tr><td class="paramname">size</td><td>taille de la donnée </td></tr>
+    <tr><td class="paramname">data</td><td>Data to add </td></tr>
+    <tr><td class="paramname">size</td><td>Size of the data to add </td></tr>
   </table>
   </dd>
 </dl>
@@ -434,7 +450,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2014 16:58:09 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 15 2014 09:52:13 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

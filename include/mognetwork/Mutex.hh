@@ -5,12 +5,12 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:30:25 2014 Moghrabi Alexandre
-// Last update Sat Dec  6 07:00:38 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 09:41:11 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file Mutex.hh
- * \brief Encapsulation des mutex
+ * \brief Mutex encapsulation
  * \author AlexMog
  * \version 1.0
  */
@@ -30,35 +30,35 @@ namespace mognetwork
 {
   /*!
    * \class Mutex
-   * \brief Encapsulation des Mutex
+   * \brief Mutex encapsulation
    */
   class Mutex
   {
   public:
     /*!
-     * \brief Constructeur par défaut
+     * \brief Default constructor
      */
     Mutex();
     virtual ~Mutex();
 
   public:
     /*!
-     * \brief block un mutex
+     * \brief lock a Mutex
      */
     void lock();
     /*!
-     * \brief délock un mutex
+     * \brief Unlock a Mutex
      */
     void unlock();
     /*!
-     * \brief trylock un mutex
+     * \brief Trylock on a Mutex (verify if the mutex can be locked and locks it without blocking
      * \return the trylock response
      */
     int trylock();
 
   protected:
 #ifndef OS_WINDOWS
-    pthread_mutex_t m_mutex; /*!< données de la mutex */
+    pthread_mutex_t m_mutex; /*!< mutex datas */
 #else
     HANDLE m_mutex;
 #endif

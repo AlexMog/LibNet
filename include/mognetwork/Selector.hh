@@ -5,12 +5,12 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Wed Jun 11 15:43:12 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 13:38:35 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:44:24 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file Selector.hh
- * \brief Encapsulation du Select
+ * \brief Select encapsulation
  * \author AlexMog
  * \version 0.1
  * \depreciated Untested
@@ -34,14 +34,14 @@ namespace mognetwork
 {
   /*!
    * \class Selector
-   * \brief Encapsulation du select
+   * \brief Select encapsulation
    */
   class Selector
   {
   public:
     /*!
      * \enum State
-     * \brief Enum définissant les différents états du select
+     * \brief Defines the states of the select
      */
     enum State
       {
@@ -49,63 +49,63 @@ namespace mognetwork
 	Error
       };
     /*!
-     * \brief Constructeur du select
+     * \brief Default constructor
      */
     Selector();
     virtual ~Selector();
     
   public:
     /*!
-     * \brief Attends que le select saute
+     * \brief Wait for a new update of the Selector
      */
     void waitForTrigger();
     
   public:
     /*!
-     * \brief Récupère le timeout
-     * \return Le timeout via une structure timeval
+     * \brief Get the timeout value
+     * \return The timeout value
      */
     Time* getTimeout() const {return m_timeout;}
     /*!
-     * \brief Récupère l'état actuel du select
-     * \return L'état du select
+     * \brief Get the actual state of the Selector
+     * \return State of the Selector
      */
     State getState() const {return m_state;}
     /*!
-     * \brief Récupère les sockets qui sont modifiables en écriture
-     * \reutn Liste contenant les sockets modifiables
+     * \brief Get the socket list that are ready to be edited in writing mode
+     * \reutn The list of the SocketFD
      */
     const std::list<SocketFD>& getWritingTriggeredSockets() const {return m_writeUpdated;}
     /*!
-     * \brief Récupère les sockets qui ont été modifiées en lecture
-     * \return Liste contenant les sockets modifiées
+     * \brief Get the socket list that are ready to be readed
+     * \return List of the SocketFD
      */
     const std::list<SocketFD>& getReadingTriggeredSockets() const {return m_readUpdated;}
     
   public:
     /*!
-     * \brief Définit une valeur pour le timeout
-     * \param timeout le timeout en question
+     * \brief Defines a value for the timeout
+     * \param timeout the timeout value
      */
     void setTimeout(Time* timeout) {m_timeout = timeout;}
     /*!
-     * \brief Ajoute un fd à la surveillance sur l'écriture
-     * \param fd le FD à ajouter
+     * \brief Add a fd to the writing trigger
+     * \param fd the SocketFD to add
      */
     void addFdToWrite(SocketFD fd);
     /*!
-     * \brief Ajoute un fd à la surveillance en lecture
-     * \param fd le FD à ajouter
+     * \brief Add a fd to the reading trigger
+     * \param fd the SocketFD to add
      */
     void addFdToRead(SocketFD fd);
     /*!
-     * \brief Supprime un fd à la surveillance en écriture
-     * \param fd le socket à supprimer
+     * \brief Delete a fd from the writing trigger
+     * \param fd the SocketFD to remove
      */
     void remFdToWrite(SocketFD fd) {m_writeSockets.remove(fd);}
     /*!
-     * \brief supprime un fd à la surveillance en écriture
-     * \param fd le socket à supprimer
+     * \brief Delete a fd from the reading trigger
+     * \param fd the SocketFD to remove
      */
     void remFdToRead(SocketFD fd) {m_readSockets.remove(fd);}
     void clearFdToWrite() {m_writeSockets.clear();}
@@ -113,24 +113,24 @@ namespace mognetwork
     
   private:
     /*!
-     * \brief Définit l'état des fd
+     * \brief Initialize the state Fds
      */
     void setFds();
     /*!
-     * \brief Modifie l'état des fd
+     * \brief Update the Fds
      */
     void updateFds();
     
   private:
-    Time* m_timeout; /*!< Timeout du select */
-    std::list<SocketFD> m_readSockets; /*!< Liste des fd à monitorer en lecture */
-    std::list<SocketFD> m_writeSockets; /*!< Liste des fd à monitorer en écriture */
-    std::list<SocketFD> m_readUpdated; /*!< Liste des fd modifiés en lecture */
-    std::list<SocketFD> m_writeUpdated; /*!< Liste des fd pouvant être modifiés en écriture */
-    State m_state; /*!< Etat du select */
-    fd_set m_rdfs; /*!< Liste des fd en lecture */
-    fd_set m_wdfs; /*!< Liste des fd en écriture */
-    int m_maxFds; /*!< FD max pour le select */
+    Time* m_timeout; /*!< Select Timeout */
+    std::list<SocketFD> m_readSockets; /*!< Fd list to be monitored on reading */
+    std::list<SocketFD> m_writeSockets; /*!< Fd list to be monitored on writing */
+    std::list<SocketFD> m_readUpdated; /*!< Fd list of the triggered reading sockets */
+    std::list<SocketFD> m_writeUpdated; /*!< Fd list of the triggered writing sockets */
+    State m_state; /*!< Selector state */
+    fd_set m_rdfs; /*!< Fd reading set */
+    fd_set m_wdfs; /*!< Fd writing set */
+    int m_maxFds; /*!< FD max for the select */
   };
 } // namespace mognetwork
 

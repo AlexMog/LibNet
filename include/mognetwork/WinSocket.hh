@@ -5,12 +5,12 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:43:05 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 13:07:29 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:03:15 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file WinSocket.hh
- * \brief Socket windows
+ * \brief Windows Socket
  * \author AlexMog
  * \version 1.0
  */
@@ -33,38 +33,38 @@
 
 /*!
  * \namespace mognetwork
- * espace de nommage des différents outils de la lib
+ * namespace used for the libnet classes
  */
 namespace mognetwork
 {
   /*!
    * \class OsSocket
-   * \brief Outils de socket générique de Windows
+   * \brief Implementation of the windows sockets
    */
 class OsSocket
 {
 public:
-  typedef int AddreLength; /*!< Typedef pour la longueur d'une adresse */
+  typedef int AddreLength; /*!< length of an address */
   /*!
-   * \brief Crée un sockaddr_in
-   * \param address : adresse en Uint32
-   * \param port : le port à utiliser
-   * \return sockaddr_in la structure initialisée
+   * \brief create a sockaddr_in
+   * \param address : the address in Uint32
+   * \param port : the port to use
+   * \return sockaddr_in the initialised structure
    */
   static sockaddr_in createAddress(Uint32 address, unsigned short port);
   /*!
-   * \brief Vérifie si la socket est valide
-   * \return SocketFD un fd valide
+   * \brief Get the socket state of an unvalid socket
+   * \return SocketFD a unvalid fd
    */
   static SocketFD notValid();
   /*!
-   * \brief Ferme la socket
-   * \param socket le socketFD à partir duquel on crée la socket
+   * \brief Close the socket
+   * \param socket the SocketFD to close
    */
   static void close(SocketFD socket);
   /*!
-   * \brief Vérifie le status de la socket
-   * \return Socket::Status le status de la socket
+   * \brief Get the error status of the socket
+   * \return Socket::Status the status of the socket
    */
   static Socket::Status getErrorStatus();
 };

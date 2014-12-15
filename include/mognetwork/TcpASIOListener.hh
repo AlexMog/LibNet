@@ -5,15 +5,14 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Sun Dec 14 17:45:44 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:32:20 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file TcpASIOListener.hh
- * \brief Permet la gestion de la lecture de données en ASIO
+ * \brief Listen and read datas in ASIO mode.
  * \author AlexMog
  * \version 0.1
- * \depreciated non terminé
  */
 
 #ifndef MOGNETWORK_TCPASIOLISTENER_HH
@@ -34,49 +33,49 @@ namespace mognetwork
 {
   /*!
    * \class TcpASIOListener
-   * \brief Permet la gestion de la lecture de données en ASIO
+   * \brief Listen and read datas in ASIO mode.
    */
   class TcpASIOListener : private IRunnable
   {
   public:
     /*!
-     * \brief constructeur par défaut
-     * \param serverSocket la socket serveur
+     * \brief default constructor
+     * \param serverSocket The server socket to be used. (must be connected)
      */
     TcpASIOListener(TcpServerSocket& serverSocket);
     virtual ~TcpASIOListener();
 
   public:
     /*!
-     * \brief Démarre le thread d'écoute
+     * \brief Start the listening thread
      */
     void start();
     /*!
-     * \brief Arrête le thread d'écoute
+     * \brief Stop the listening thread
      */
     void stop();
     /*!
-     * \brief Permet d'attendre la fin de l'exécution du thread d'écoute
+     * \brief Wait until the end of the listening thread
      */
     void wait();
 
   public:
     /*!
-     * \brief Ajoute un listener au thread d'écoute
-     * \param listener le listener à ajouter, instance de ITCpASIOListenerHandler
+     * \brief Add a ITcpASIOListenerHandler to the thread
+     * \param listener the listener to add
      */
     void addListener(ITcpASIOListenerHandler* listener) {m_listeners.push_back(listener);}
 
   public:
     /*!
-     * \brief Permet de savoir si le thread est démarré
-     * \return true si démarré, false sinon
+     * \brief Know if the listener is running
+     * \return true if it is listening, false if not
      */
     bool isRunning() const {return m_running;}
 
   public:
     /*!
-     * \brief Utilisé par le thread. IRunnable.
+     * \brief Used by the thread. See IRunnable.
      */
     void run();
 
@@ -85,20 +84,20 @@ namespace mognetwork
 
   public:
     /*!
-     * \brief Permet de récupérer une référence sur le selector du thread
-     * \return la référence sur le Selector
+     * \brief Get the Selector used.
+     * \return The Selector reference.
      */
     Selector& getSelector() {return m_selector;}
 
   private:
-    bool m_running; /*!< etat du thread */
-    std::list<ITcpASIOListenerHandler*> m_listeners; /*!< liste des listeners */
-    Selector m_selector; /*!< le selector du thread */
-    Thread* m_thread; /*!< l'instance du thread */
-    std::list<TcpSocket*>* m_socketList; /*!< un pointeur sur la liste des sockets stockée par TcpASIODatas */
-    int m_pipefd[2]; /*!< un pipe pour déclancher le Selector en cas de besoins */
-    TcpServerSocket& m_serverSocket; /*!< une référence sur la socket serveur */
-    Time m_timeout;
+    bool m_running; /*!< state of the Thread */
+    std::list<ITcpASIOListenerHandler*> m_listeners; /*!< list of the listeners */
+    Selector m_selector; /*!< the Selector used */
+    Thread* m_thread; /*!< Thread instance */
+    std::list<TcpSocket*>* m_socketList; /*!< A pointer on the list, used to not call too many times the Singleton */
+    int m_pipefd[2]; /*!< pipe used to stop the listener */
+    TcpServerSocket& m_serverSocket; /*!< reference on the TcpServerSocket */
+    Time m_timeout; /* Timeout value for the select */
   };
 } // namespace mognetwork
 

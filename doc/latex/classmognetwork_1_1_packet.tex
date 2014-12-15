@@ -3,7 +3,7 @@
 }
 
 
-simplifie la gestion des données reçues  
+Simplify the data management of multiple datas.  
 
 
 
@@ -14,34 +14,34 @@ simplifie la gestion des données reçues
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classmognetwork_1_1_packet_ad3fd2055862e5dcd730f1ba6131fd51d}{Packet} (std\-::vector$<$ char $>$ $\ast$data)
-\begin{DoxyCompactList}\small\item\em Constructeur secondaire. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Secondary constructor, uses a valid data set. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_packet_acdb587026d9191583a7c71398f3c2535}{Packet} (\hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} $\ast$data)
-\begin{DoxyCompactList}\small\item\em Constructeur via Tcp\-Socet\-::\-Readed\-Datas. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Uses a \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} to set the datas. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_packet}{Packet} \& \hyperlink{classmognetwork_1_1_packet_a83f88dde9175ac8b47ec9a5d28635283}{operator$>$$>$} (uint32\-\_\-t \&data)
-\begin{DoxyCompactList}\small\item\em extrait un uint32\-\_\-t des données \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Extract a uint32\-\_\-t from the packet. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_packet}{Packet} \& \hyperlink{classmognetwork_1_1_packet_a0ec841b42fafcd48aa4ac2d54fea6177}{operator$<$$<$} (uint32\-\_\-t data)
-\begin{DoxyCompactList}\small\item\em ajoute un uint32\-\_\-t au packet \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em add a uint32\-\_\-t to the packet \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_packet}{Packet} \& \hyperlink{classmognetwork_1_1_packet_a9f73147d9c2ddab57757a27aa110de0f}{operator$<$$<$} (const char $\ast$data)
-\begin{DoxyCompactList}\small\item\em ajoute un char$\ast$ au packet \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em add a string to the packet \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_packet}{Packet} \& \hyperlink{classmognetwork_1_1_packet_ab2a38323cc0a32e79520fdf71ee0d1a9}{operator$>$$>$} (char $\ast$data)
-\begin{DoxyCompactList}\small\item\em extrait un char$\ast$ du packet \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em extract a string from the packet \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\\hyperlink{classmognetwork_1_1_packet}{Packet} \& \hyperlink{classmognetwork_1_1_packet_acdecf105b9afb3c4c499bfffa9cf2fbb}{operator$>$$>$} (T \&data)
-\begin{DoxyCompactList}\small\item\em extrait des données (natives de préférence) du packet \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em extract native datas from the packet \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\\hyperlink{classmognetwork_1_1_packet}{Packet} \& \hyperlink{classmognetwork_1_1_packet_a84ffd95a38d7bca83675a5c932d04735}{operator$<$$<$} (const T \&data)
-\begin{DoxyCompactList}\small\item\em ajoute des données (natives de préférence) au packet \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em add native datas to the packet \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_packet_aaa034856ddb45ebf35dcefd6d58563d9}{void \hyperlink{classmognetwork_1_1_packet_aaa034856ddb45ebf35dcefd6d58563d9}{clear} ()}\label{classmognetwork_1_1_packet_aaa034856ddb45ebf35dcefd6d58563d9}
 
-\begin{DoxyCompactList}\small\item\em Permet de vider le packet. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Clear the datas. \end{DoxyCompactList}\item 
 const void $\ast$ \hyperlink{classmognetwork_1_1_packet_afb66469155c26ec3f1a9c77a7c23841b}{get\-Data} () const 
-\begin{DoxyCompactList}\small\item\em Permet de récupérer les données stockées dans le packet sous forme de void$\ast$. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the datas stored in the packet. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classmognetwork_1_1_packet_a3f27100558a578cea57c0b0502b6e9c9}{get\-Data\-Size} () const 
-\begin{DoxyCompactList}\small\item\em Permet de récupérer la taille du packet. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the size of the datas stored. \end{DoxyCompactList}\item 
 void \hyperlink{classmognetwork_1_1_packet_a2d60777d07c0f1b0e97060a17b9bed43}{push} (const void $\ast$data, unsigned int size)
-\begin{DoxyCompactList}\small\item\em ajoute des données au packet \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em add datas to the packet  prefer to use the operator system \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-simplifie la gestion des données reçues 
+Simplify the data management of multiple datas. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classmognetwork_1_1_packet_ad3fd2055862e5dcd730f1ba6131fd51d}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!Packet@{Packet}}
@@ -53,11 +53,11 @@ simplifie la gestion des données reçues
 )}}\label{classmognetwork_1_1_packet_ad3fd2055862e5dcd730f1ba6131fd51d}
 
 
-Constructeur secondaire. 
+Secondary constructor, uses a valid data set. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & Un vecteur de données \\
+{\em data} & The data set \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_packet_acdb587026d9191583a7c71398f3c2535}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!Packet@{Packet}}
@@ -69,11 +69,11 @@ Constructeur secondaire.
 )}}\label{classmognetwork_1_1_packet_acdb587026d9191583a7c71398f3c2535}
 
 
-Constructeur via Tcp\-Socet\-::\-Readed\-Datas. 
+Uses a \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} to set the datas. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em La} & structure de données à utiliser \\
+{\em data} & The datas \\
 \hline
 \end{DoxyParams}
 
@@ -88,10 +88,10 @@ Constructeur via Tcp\-Socet\-::\-Readed\-Datas.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_packet_afb66469155c26ec3f1a9c77a7c23841b}
 
 
-Permet de récupérer les données stockées dans le packet sous forme de void$\ast$. 
+Get the datas stored in the packet. 
 
 \begin{DoxyReturn}{Returns}
-les données sous forme de void$\ast$ 
+the datas stored 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_packet_a3f27100558a578cea57c0b0502b6e9c9}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!get\-Data\-Size@{get\-Data\-Size}}
 \index{get\-Data\-Size@{get\-Data\-Size}!mognetwork::Packet@{mognetwork\-::\-Packet}}
@@ -102,10 +102,10 @@ les données sous forme de void$\ast$
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_packet_a3f27100558a578cea57c0b0502b6e9c9}
 
 
-Permet de récupérer la taille du packet. 
+Get the size of the datas stored. 
 
 \begin{DoxyReturn}{Returns}
-la taille du packet 
+the datas size 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_packet_a0ec841b42fafcd48aa4ac2d54fea6177}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!mognetwork::Packet@{mognetwork\-::\-Packet}}
@@ -116,11 +116,11 @@ la taille du packet
 )}}\label{classmognetwork_1_1_packet_a0ec841b42fafcd48aa4ac2d54fea6177}
 
 
-ajoute un uint32\-\_\-t au packet 
+add a uint32\-\_\-t to the packet 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & l'uint32\-\_\-t à ajouter \\
+{\em data} & the uint32\-\_\-t to add \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_packet_a9f73147d9c2ddab57757a27aa110de0f}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
@@ -132,11 +132,11 @@ ajoute un uint32\-\_\-t au packet
 )}}\label{classmognetwork_1_1_packet_a9f73147d9c2ddab57757a27aa110de0f}
 
 
-ajoute un char$\ast$ au packet 
+add a string to the packet 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & le char$\ast$ à ajouter \\
+{\em data} & the string to add \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_packet_a84ffd95a38d7bca83675a5c932d04735}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
@@ -145,14 +145,14 @@ ajoute un char$\ast$ au packet
 \begin{DoxyParamCaption}
 \item[{const T \&}]{data}
 \end{DoxyParamCaption}
-)}}\label{classmognetwork_1_1_packet_a84ffd95a38d7bca83675a5c932d04735}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_packet_a84ffd95a38d7bca83675a5c932d04735}
 
 
-ajoute des données (natives de préférence) au packet 
+add native datas to the packet 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & la donnée à ajouter \\
+{\em data} & the data to add \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_packet_a83f88dde9175ac8b47ec9a5d28635283}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
@@ -164,11 +164,11 @@ ajoute des données (natives de préférence) au packet
 )}}\label{classmognetwork_1_1_packet_a83f88dde9175ac8b47ec9a5d28635283}
 
 
-extrait un uint32\-\_\-t des données 
+Extract a uint32\-\_\-t from the packet. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & l'uint32\-\_\-t dans lequel les données sont extraites \\
+{\em data} & a reference on the uint32\-\_\-t to set \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_packet_ab2a38323cc0a32e79520fdf71ee0d1a9}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
@@ -180,11 +180,11 @@ extrait un uint32\-\_\-t des données
 )}}\label{classmognetwork_1_1_packet_ab2a38323cc0a32e79520fdf71ee0d1a9}
 
 
-extrait un char$\ast$ du packet 
+extract a string from the packet 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & le char$\ast$ dans lequel il sera extrait. Doit être alloué à la bonne taille. \\
+{\em data} & the char$\ast$ to set (it have to be a buffer with a size to receive the datas) \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_packet_acdecf105b9afb3c4c499bfffa9cf2fbb}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
@@ -193,14 +193,14 @@ extrait un char$\ast$ du packet
 \begin{DoxyParamCaption}
 \item[{T \&}]{data}
 \end{DoxyParamCaption}
-)}}\label{classmognetwork_1_1_packet_acdecf105b9afb3c4c499bfffa9cf2fbb}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_packet_acdecf105b9afb3c4c499bfffa9cf2fbb}
 
 
-extrait des données (natives de préférence) du packet 
+extract native datas from the packet 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & la donnée sera ecrite dedans. \\
+{\em data} & the data to set \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_packet_a2d60777d07c0f1b0e97060a17b9bed43}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!push@{push}}
@@ -213,13 +213,13 @@ extrait des données (natives de préférence) du packet
 )}}\label{classmognetwork_1_1_packet_a2d60777d07c0f1b0e97060a17b9bed43}
 
 
-ajoute des données au packet 
+add datas to the packet  prefer to use the operator system 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & Donnée à ajouter \\
+{\em data} & Data to add \\
 \hline
-{\em size} & taille de la donnée \\
+{\em size} & Size of the data to add \\
 \hline
 \end{DoxyParams}
 

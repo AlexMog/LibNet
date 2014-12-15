@@ -5,12 +5,12 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 18:30:59 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:09:40 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:39:02 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file Singleton.hh
- * \brief Simplification de la gestion des Singleton
+ * \brief Simplification of the Singleton usage
  * \author AlexMog
  * \version 0.5
  */
@@ -22,15 +22,15 @@ namespace mognetwork
 {
   /*!
    * \class Singleton
-   * \brief Simplification de la gestion des Singleton
+   * \brief Simplification of the Singleton usage
    */
   template <class T>
   class Singleton
   {
   public:
     /*!
-     * \brief Récupération de l'instance d'un Singleton
-     * \return l'instance du Singleton
+     * \brief Get the instance of a Singleton
+     * \return The Singleton instance
      */
     static T& Instance() {
       static T _instance;

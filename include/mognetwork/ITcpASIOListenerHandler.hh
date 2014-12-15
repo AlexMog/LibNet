@@ -5,12 +5,12 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 00:44:56 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:37:29 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 09:43:51 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file ITcpASIOListenerHandler.hh
- * \brief Handler pour le TcpASIOListener
+ * \brief Handler for the TcpASIOListener
  * \author AlexMog
  * \version 0.1
  */
@@ -24,25 +24,25 @@ namespace mognetwork
 {
   /*!
    * \class ITcpASIOListernerHandler
-   * \brief Handler pour le TcpASIOListener
+   * \brief Handler for the TcpASIOListener
    */
   class ITcpASIOListenerHandler
   {
   public:
     virtual ~ITcpASIOListenerHandler() {}
     /*!
-     * \brief Appelé lors de la connexion d'un nouveau client
-     * \param client le client qui c'est connecté
+     * \brief Called when a new client is connected
+     * \param client the connected client
      */
     virtual void onConnect(TcpSocket& client) = 0;
     /*!
-     * \brief Appelé lors de la réception totale d'une donnée
-     * \param client le client qui a trigger les données
+     * \brief Called when a client send datas, and the datas are fully readed
+     * \param client the client who sended the datas
      */
     virtual void onReceivedData(TcpSocket& client) = 0;
     /*!
-     * \brief Appelé lors de la déconnexion d'un client
-     * \param client le client qui c'est déconnecté
+     * \brief Called when a client disconnects
+     * \param client the disconnected client
      */
     virtual void onDisconnect(TcpSocket& client) = 0;
   };

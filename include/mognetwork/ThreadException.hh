@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 17:48:39 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:12:01 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:06:30 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -25,16 +25,16 @@ namespace mognetwork
 {
   /*!
    * \class ThreadException
-   * \brief Exception des threads
+   * \brief Thread exceptions class
    */
   class ThreadException : public LibNetworkException
   {
   public:
     /*!
-     * \brief Constructeur de l'exception
-     * \param msg Définit le message de l'exception
-     * \param line Définit le numéro de la ligne de l'exception, généralement __LINE__
-     * \param file définit le fichier de l'exception, généralement __FILE__
+     * \brief Default constructor
+     * \param msg Error message
+     * \param line Line of the error
+     * \param file File of the error
      */
     ThreadException(const char* msg, int line, const char *file) : LibNetworkException(msg, line, file) {}
   };

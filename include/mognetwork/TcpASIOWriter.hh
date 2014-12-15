@@ -5,12 +5,12 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:35:53 2014 Moghrabi Alexandre
-// Last update Sat Dec 13 05:12:24 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:24:42 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file TcpASIOWriter.hh
- * \brief Thread d'écriture des sockets en ASIO
+ * \brief Writing Thread for the TcpASIOServer
  * \author AlexMog
  * \version 0.1
  */
@@ -30,32 +30,32 @@ namespace mognetwork
 {
   /*!
    * \class TcpASIOWriter
-   * \brief Thread d'écriture des sockets en ASIO
+   * \brief Writing Thread for the TcpASIOServer
    */
   class TcpASIOWriter : private IRunnable
   {
   public:
     /*!
-     * \brief Constructeur par défaut.
+     * \brief Default constructor
      */
     TcpASIOWriter();
     virtual ~TcpASIOWriter();
 
   public:
     /*!
-     * \brief démarre le thread d'écriture.
+     * \brief Start the thread
      */
     void start();
     /*!
-     * \brief arrête le thread d'écriture.
+     * \brief Stop the thread
      */
     void stop();
     /*!
-     * \brief Attends que le thread termine son exécution
+     * \brief Wait for the thread to end
      */
     void wait();
     /*!
-     * \brief A utiliser lors de l'envois de données sur une ou plusieurs sockets.
+     * \brief Used to tell to the thread that there is datas waiting to be sended!
      */
     void triggerData() {m_condVar.signal();}
 
@@ -64,35 +64,35 @@ namespace mognetwork
 
   public:
     /*!
-     * \brief Permet de connaitre l'état du thread
-     * \return true si le thread d'écriture est lancé
+     * \brief Know the state of the writer
+     * \return true if the it is running
      */
     bool isRunning() const {return m_running;}
 
   public:
     /*!
-     * \brief Utilisé pour le thread
+     * \brief Used for the thread
      */
     void run();
 
   public:
     /*!
-     * \brief Permet de récupérer le selector utilisé.
-     * \return une référence sur le Selector utilisé par le thread.
+     * \brief Used to get the Selector used
+     * \return a reference on the Selector
      */
     Selector& getSelector() {return m_selector;}
     /*!
-     * \brief Permet de récupérer la condVar utilisée par le thread.
-     * \return une référence sur le CondVar utilisé par le thread.
+     * \brief Used to get the CondVar used
+     * \return a reference on the CondVar
      */
     CondVar& getCondVar() {return m_condVar;}
 
   private:
-    Selector m_selector; /*!< Selector utilisé par le thread */
-    CondVar m_condVar; /*!< CondVar utilisée par le thread */
-    Thread* m_thread; /*!< Thread instance */
-    bool m_running; /*!< etat du thread */
-    std::list<TcpSocket*>* m_socketList; /*!< Liste des sockets pour éviter un surplus d'appel au singleton */
+    Selector m_selector; /*!< The Selector used */
+    CondVar m_condVar; /*!< The CondVar used */
+    Thread* m_thread; /*!< The Thread instance */
+    bool m_running; /*!< The writing state */
+    std::list<TcpSocket*>* m_socketList; /*!< A list of sockets to limit the singleton usage */
     Time m_timeout;
   };  
 } // namespace mognetwork

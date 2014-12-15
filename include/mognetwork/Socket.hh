@@ -5,12 +5,12 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:07:37 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 18 13:09:13 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:38:20 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file Socket.hh
- * \brief Définit la base d'une socket
+ * \brief Socket base, used to defines sockets and instanciate sockets (Udp, Tcp)
  * \author AlexMog
  * \version 1.0
  */
@@ -24,63 +24,63 @@ namespace mognetwork
 {
   /*!
    * \class Socket
-   * \brief Définit la base d'une socket
+   * \brief Socket base, used to define sockets and instanciate sockets (Udp, Tcp)
    */
   class Socket
   {
   public:
     /*!
      * \enum Status
-     * \brief Définit les status possibles d'une socket
+     * \brief The possible status of the socket
      */
     enum Status
       {
-	Ok, /*!< Socket prête à la lecture/écriture */
-	Nok, /*!< Socket non prête à la lecture/écriture */
-	Disconnected, /*!< Socket déconnectée */
-	Waiting, /*!< Attente de données */
-	Error /*!< Erreur inconnue */
+	Ok, /*!< Socket ready for reading/writing */
+	Nok, /*!< Socket not ready */
+	Disconnected, /*!< Socket disconnected */
+	Waiting, /*!< Socket waiting for datas */
+	Error /*!< Unknow error */
       };
     
   public:
     virtual ~Socket();
     /*!
-     * \brief récupère le FD de la socket
-     * \return le FD de la socket
+     * \brief Get the SocketFD of a socket
+     * \return the file descriptor of the socket
      */
     SocketFD getSocketFD() const;
     
   protected:
     /*!
      * \enum Type
-     * \brief Définit le type de socket
+     * \brief Defines the socket type
      */
     enum Type
       {
-	Tcp, /*!< Socket TCP */
-	Udp /*!< Socket UDP */
+	Tcp, /*!< TCP */
+	Udp /*!< UDP */
       };
     /*!
-     * \brief Constructeur de la socket
-     * \param type Le type de socket
+     * \brief Default constructor
+     * \param type The socket type to use
      */
     Socket(Type type);
     /*!
-     * \brief crée la socket et crée un FD
+     * \brief Create the socket and instanciate a SocketFD
      */
     void create();
     /*!
-     * \brief crée la socket via un FD déjà ouvert
+     * \brief Create the socket while using an opened SocketFD
      */
     void create(SocketFD fd);
     /*!
-     * \brief ferme la socket
+     * \brief Close the socket
      */
     void close();
     
   private:
-    Type m_type; /*!< Le type de socket */
-    SocketFD m_socket; /*!< FD de la socket */
+    Type m_type; /*!< Type of the socket */
+    SocketFD m_socket; /*!< File descriptor of the socket */
   };
 } // namespace mognetwork
 

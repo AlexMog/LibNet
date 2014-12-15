@@ -3,7 +3,7 @@
 }
 
 
-Permet la gestion des données partagées des différents threads A\-S\-I\-O. Est un \hyperlink{classmognetwork_1_1_singleton}{Singleton}.  
+Used to send datas between the threads. Is a \hyperlink{classmognetwork_1_1_singleton}{Singleton}.  
 
 
 
@@ -13,28 +13,37 @@ Permet la gestion des données partagées des différents threads A\-S\-I\-O. Es
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_datas_aefa4425a076fbfe35ff9420e63aa5a41}{\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_aefa4425a076fbfe35ff9420e63aa5a41}{Tcp\-A\-S\-I\-O\-Datas} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_datas_aefa4425a076fbfe35ff9420e63aa5a41}
-
-\begin{DoxyCompactList}\small\item\em Constructeur par défaut de Tcp\-A\-S\-I\-O\-Data. A ne pas utiliser.  A ne pas utiliser. Utilisée par le \hyperlink{classmognetwork_1_1_singleton}{Singleton}. \end{DoxyCompactList}\item 
+\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_aefa4425a076fbfe35ff9420e63aa5a41}{Tcp\-A\-S\-I\-O\-Datas} ()
+\item 
 \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} $\ast$ \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_a97b9895517d49687c35663ec4de5453e}{get\-Socket\-By\-Fd} (Socket\-F\-D fd)
-\begin{DoxyCompactList}\small\item\em permet de récupérer un \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} via son Socket\-F\-D. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get a \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} via his Socket\-F\-D. \end{DoxyCompactList}\item 
 std\-::list$<$ \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} $\ast$ $>$ $\ast$ \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_a7c5c65122f57d2186fb735416a790763}{get\-Socket\-List} () const 
-\begin{DoxyCompactList}\small\item\em Permet de récupérer la liste des \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} stochée. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} list. \end{DoxyCompactList}\item 
 void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_aa52b9fb9195d372f5b647d7631cf5b72}{add\-Socket} (\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} $\ast$socket)
-\begin{DoxyCompactList}\small\item\em Ajoute une socket à la liste des sockets. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Add a socket to the list. \end{DoxyCompactList}\item 
 void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_a49a15b15392fadb168ae376c72b7f9e0}{rem\-Socket} (\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} $\ast$socket)
-\begin{DoxyCompactList}\small\item\em Supprime une socket déjà ajoutée via son adresse. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Delete an existing socket. \end{DoxyCompactList}\item 
 void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_a4699eb56dd2868e62babcea3d2b6da00}{rem\-Socket} (Socket\-F\-D socket)
-\begin{DoxyCompactList}\small\item\em Supprime une socket déjà ajoutée via son Socket\-F\-D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Delete an existing socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas}{Tcp\-A\-S\-I\-O\-Datas} $\ast$ \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_af07cf0c2b0e71e370d7975a97ba7cc83}{get\-Instance} ()
-\begin{DoxyCompactList}\small\item\em Permet de récupérer l'instance du \hyperlink{classmognetwork_1_1_singleton}{Singleton} de \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas}{Tcp\-A\-S\-I\-O\-Datas}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the instance of the \hyperlink{classmognetwork_1_1_singleton}{Singleton}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Permet la gestion des données partagées des différents threads A\-S\-I\-O. Est un \hyperlink{classmognetwork_1_1_singleton}{Singleton}. 
+Used to send datas between the threads. Is a \hyperlink{classmognetwork_1_1_singleton}{Singleton}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_datas_aefa4425a076fbfe35ff9420e63aa5a41}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}!Tcp\-A\-S\-I\-O\-Datas@{Tcp\-A\-S\-I\-O\-Datas}}
+\index{Tcp\-A\-S\-I\-O\-Datas@{Tcp\-A\-S\-I\-O\-Datas}!mognetwork::TcpASIODatas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}}
+\subsubsection[{Tcp\-A\-S\-I\-O\-Datas}]{\setlength{\rightskip}{0pt plus 5cm}mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas\-::\-Tcp\-A\-S\-I\-O\-Datas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_tcp_a_s_i_o_datas_aefa4425a076fbfe35ff9420e63aa5a41}
+Used only by the \hyperlink{classmognetwork_1_1_singleton}{Singleton}. D\-O N\-O\-T U\-S\-E. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_datas_aa52b9fb9195d372f5b647d7631cf5b72}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}!add\-Socket@{add\-Socket}}
@@ -46,11 +55,11 @@ Permet la gestion des données partagées des différents threads A\-S\-I\-O. Es
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_datas_aa52b9fb9195d372f5b647d7631cf5b72}
 
 
-Ajoute une socket à la liste des sockets. 
+Add a socket to the list. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em socket} & la \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} à ajouter \\
+{\em socket} & a pointer on the \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} to add \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_datas_af07cf0c2b0e71e370d7975a97ba7cc83}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}!get\-Instance@{get\-Instance}}
@@ -62,10 +71,10 @@ Ajoute une socket à la liste des sockets.
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_datas_af07cf0c2b0e71e370d7975a97ba7cc83}
 
 
-Permet de récupérer l'instance du \hyperlink{classmognetwork_1_1_singleton}{Singleton} de \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas}{Tcp\-A\-S\-I\-O\-Datas}. 
+Get the instance of the \hyperlink{classmognetwork_1_1_singleton}{Singleton}. 
 
 \begin{DoxyReturn}{Returns}
-l'instance en question 
+the instance 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_datas_a97b9895517d49687c35663ec4de5453e}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}!get\-Socket\-By\-Fd@{get\-Socket\-By\-Fd}}
 \index{get\-Socket\-By\-Fd@{get\-Socket\-By\-Fd}!mognetwork::TcpASIODatas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}}
@@ -76,15 +85,15 @@ l'instance en question
 )}}\label{classmognetwork_1_1_tcp_a_s_i_o_datas_a97b9895517d49687c35663ec4de5453e}
 
 
-permet de récupérer un \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} via son Socket\-F\-D. 
+Get a \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} via his Socket\-F\-D. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em fd} & le Socket\-F\-D à rechercher \\
+{\em fd} & The Socket\-F\-D to find \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-le \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} stocké 
+the \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} found 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_datas_a7c5c65122f57d2186fb735416a790763}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}!get\-Socket\-List@{get\-Socket\-List}}
 \index{get\-Socket\-List@{get\-Socket\-List}!mognetwork::TcpASIODatas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}}
@@ -95,10 +104,10 @@ le \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} stocké
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_datas_a7c5c65122f57d2186fb735416a790763}
 
 
-Permet de récupérer la liste des \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} stochée. 
+Get the \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} list. 
 
 \begin{DoxyReturn}{Returns}
-la liste des \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} 
+The \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} list 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_datas_a49a15b15392fadb168ae376c72b7f9e0}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}!rem\-Socket@{rem\-Socket}}
 \index{rem\-Socket@{rem\-Socket}!mognetwork::TcpASIODatas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}}
@@ -109,11 +118,11 @@ la liste des \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_datas_a49a15b15392fadb168ae376c72b7f9e0}
 
 
-Supprime une socket déjà ajoutée via son adresse. 
+Delete an existing socket. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em socket} & l'adresse de la \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} à supprimer \\
+{\em socket} & the address of the \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} to remove. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_datas_a4699eb56dd2868e62babcea3d2b6da00}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}!rem\-Socket@{rem\-Socket}}
@@ -125,11 +134,11 @@ Supprime une socket déjà ajoutée via son adresse.
 )}}\label{classmognetwork_1_1_tcp_a_s_i_o_datas_a4699eb56dd2868e62babcea3d2b6da00}
 
 
-Supprime une socket déjà ajoutée via son Socket\-F\-D. 
+Delete an existing socket. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em socket} & la Socket\-F\-D de la socket à supprimer \\
+{\em socket} & the Socket\-F\-D of the existing socket. \\
 \hline
 \end{DoxyParams}
 

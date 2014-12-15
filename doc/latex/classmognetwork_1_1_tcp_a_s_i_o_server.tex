@@ -3,7 +3,7 @@
 }
 
 
-Gère les threads d'écriture et de lecture en A\-S\-I\-O.  
+Used to create a A\-S\-I\-O Server simply.  
 
 
 
@@ -14,26 +14,26 @@ Gère les threads d'écriture et de lecture en A\-S\-I\-O.
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_a8a201f84e02e478de1de4e0e4d3c029f}{Tcp\-A\-S\-I\-O\-Server} (int port)
-\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_ad6c804597aafd577c41310cdc986c7ff}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_ad6c804597aafd577c41310cdc986c7ff}{start} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_server_ad6c804597aafd577c41310cdc986c7ff}
 
-\begin{DoxyCompactList}\small\item\em Démarre les différents threads, et attends qu'ils se terminent. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Start the threads and wait until they are stopped. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_aa94340baa5fbbfba0f5467c6ddd32b91}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_aa94340baa5fbbfba0f5467c6ddd32b91}{stop} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_server_aa94340baa5fbbfba0f5467c6ddd32b91}
 
-\begin{DoxyCompactList}\small\item\em Arrête le thread de lecture et d'écriture. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Stop the threads. \end{DoxyCompactList}\item 
 void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_ac1feafc63d86a8aa90ef6a78acd7051f}{add\-Listener} (\hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler}{I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} $\ast$listener)
-\begin{DoxyCompactList}\small\item\em Ajoute un listener au serveur. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Add a \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler}{I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} to the server. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_a6627fca52b19ead79e8a7134bade9e1f}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_a6627fca52b19ead79e8a7134bade9e1f}{send\-Pending\-Datas} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_server_a6627fca52b19ead79e8a7134bade9e1f}
 
-\begin{DoxyCompactList}\small\item\em Dans le cas ou une socket client contient des données à envoyer, met à jour le thread d'écriture. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Tell the server that there is datas to send. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer} $\ast$ \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_a55e84839aad1572d36a0c7fcbc1fd84d}{get\-Server\-Writer} () const 
-\begin{DoxyCompactList}\small\item\em Récupère le writer \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer}. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener}{Tcp\-A\-S\-I\-O\-Listener} $\ast$ \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_afb30f505e64de27887abec2e8cfd50ff}{get\-Server\-Listener} () const 
-\begin{DoxyCompactList}\small\item\em Récupère le listener \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener}{Tcp\-A\-S\-I\-O\-Listener}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener}{Tcp\-A\-S\-I\-O\-Listener}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Gère les threads d'écriture et de lecture en A\-S\-I\-O. 
+Used to create a A\-S\-I\-O Server simply. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_a8a201f84e02e478de1de4e0e4d3c029f}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}!Tcp\-A\-S\-I\-O\-Server@{Tcp\-A\-S\-I\-O\-Server}}
@@ -45,11 +45,11 @@ Gère les threads d'écriture et de lecture en A\-S\-I\-O.
 )}}\label{classmognetwork_1_1_tcp_a_s_i_o_server_a8a201f84e02e478de1de4e0e4d3c029f}
 
 
-Constructeur par défaut. 
+Default constructor. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em port} & Le port sur lequel le serveur écoute \\
+{\em port} & The port to be used with the server \\
 \hline
 \end{DoxyParams}
 
@@ -64,11 +64,11 @@ Constructeur par défaut.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_server_ac1feafc63d86a8aa90ef6a78acd7051f}
 
 
-Ajoute un listener au serveur. 
+Add a \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler}{I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} to the server. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em listener} & le listener en question en utilisant \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler}{I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} \\
+{\em listener} & the listener to add \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_afb30f505e64de27887abec2e8cfd50ff}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}!get\-Server\-Listener@{get\-Server\-Listener}}
@@ -80,10 +80,10 @@ Ajoute un listener au serveur.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_server_afb30f505e64de27887abec2e8cfd50ff}
 
 
-Récupère le listener \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener}{Tcp\-A\-S\-I\-O\-Listener}. 
+Get the \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener}{Tcp\-A\-S\-I\-O\-Listener}. 
 
 \begin{DoxyReturn}{Returns}
-un pointeur sur le \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer} 
+a pointer on the \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener}{Tcp\-A\-S\-I\-O\-Listener} 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_a55e84839aad1572d36a0c7fcbc1fd84d}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}!get\-Server\-Writer@{get\-Server\-Writer}}
 \index{get\-Server\-Writer@{get\-Server\-Writer}!mognetwork::TcpASIOServer@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}}
@@ -94,10 +94,10 @@ un pointeur sur le \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_server_a55e84839aad1572d36a0c7fcbc1fd84d}
 
 
-Récupère le writer \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer}. 
+Get the \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer}. 
 
 \begin{DoxyReturn}{Returns}
-un pointeur sur le \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer} 
+a pointer on the \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_writer}{Tcp\-A\-S\-I\-O\-Writer} 
 \end{DoxyReturn}
 
 

@@ -95,43 +95,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Tue Nov 11 19:30:25 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Tue Nov 18 13:10:38 2014 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Mon Dec 15 09:41:11 2014 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef MOGNETWORK_MUTEX_HH</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define MOGNETWORK_MUTEX_HH</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"># include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"># include &quot;OS.hh&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_mutex.html">   29</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_mutex.html">Mutex</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classmognetwork_1_1_mutex.html#a281ab0e408b9a388586ee269881d3c26">Mutex</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_mutex.html">Mutex</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_mutex.html#a880c4341ad8d63c9bde15f4a60af2848">lock</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_mutex.html#a9f3e0b542f8e9953eca9df6ae408083e">unlock</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmognetwork_1_1_mutex.html#ae4896f5c96a2088d6de667002c046dee">trylock</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_mutex.html#a571d9d0b9b2be3da94192f34b6157ea9">   54</a></span>&#160;    pthread_mutex_t <a class="code" href="classmognetwork_1_1_mutex.html#a571d9d0b9b2be3da94192f34b6157ea9">m_mutex</a>; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  };</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_MUTEX_HH</span></div>
-<div class="ttc" id="classmognetwork_1_1_mutex_html_a281ab0e408b9a388586ee269881d3c26"><div class="ttname"><a href="classmognetwork_1_1_mutex.html#a281ab0e408b9a388586ee269881d3c26">mognetwork::Mutex::Mutex</a></div><div class="ttdeci">Mutex()</div><div class="ttdoc">Constructeur par défaut. </div></div>
-<div class="ttc" id="classmognetwork_1_1_mutex_html_a9f3e0b542f8e9953eca9df6ae408083e"><div class="ttname"><a href="classmognetwork_1_1_mutex.html#a9f3e0b542f8e9953eca9df6ae408083e">mognetwork::Mutex::unlock</a></div><div class="ttdeci">void unlock()</div><div class="ttdoc">délock un mutex </div></div>
-<div class="ttc" id="classmognetwork_1_1_mutex_html_ae4896f5c96a2088d6de667002c046dee"><div class="ttname"><a href="classmognetwork_1_1_mutex.html#ae4896f5c96a2088d6de667002c046dee">mognetwork::Mutex::trylock</a></div><div class="ttdeci">int trylock()</div><div class="ttdoc">trylock un mutex </div></div>
-<div class="ttc" id="classmognetwork_1_1_mutex_html"><div class="ttname"><a href="classmognetwork_1_1_mutex.html">mognetwork::Mutex</a></div><div class="ttdoc">Encapsulation des Mutex. </div><div class="ttdef"><b>Definition:</b> Mutex.hh:29</div></div>
-<div class="ttc" id="classmognetwork_1_1_mutex_html_a571d9d0b9b2be3da94192f34b6157ea9"><div class="ttname"><a href="classmognetwork_1_1_mutex.html#a571d9d0b9b2be3da94192f34b6157ea9">mognetwork::Mutex::m_mutex</a></div><div class="ttdeci">pthread_mutex_t m_mutex</div><div class="ttdef"><b>Definition:</b> Mutex.hh:54</div></div>
-<div class="ttc" id="classmognetwork_1_1_mutex_html_a880c4341ad8d63c9bde15f4a60af2848"><div class="ttname"><a href="classmognetwork_1_1_mutex.html#a880c4341ad8d63c9bde15f4a60af2848">mognetwork::Mutex::lock</a></div><div class="ttdeci">void lock()</div><div class="ttdoc">block un mutex </div></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef OS_WINDOWS</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># include &lt;windows.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>mognetwork</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_mutex.html">   35</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_mutex.html">Mutex</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classmognetwork_1_1_mutex.html#a281ab0e408b9a388586ee269881d3c26">Mutex</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_mutex.html">Mutex</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_mutex.html#a880c4341ad8d63c9bde15f4a60af2848">lock</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_mutex.html#a9f3e0b542f8e9953eca9df6ae408083e">unlock</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmognetwork_1_1_mutex.html#ae4896f5c96a2088d6de667002c046dee">trylock</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifndef OS_WINDOWS</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_mutex.html#a571d9d0b9b2be3da94192f34b6157ea9">   61</a></span>&#160;<span class="preprocessor"></span>    pthread_mutex_t <a class="code" href="classmognetwork_1_1_mutex.html#a571d9d0b9b2be3da94192f34b6157ea9">m_mutex</a>; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span>    HANDLE <a class="code" href="classmognetwork_1_1_mutex.html#a571d9d0b9b2be3da94192f34b6157ea9">m_mutex</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span>  };</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_MUTEX_HH</span></div>
+<div class="ttc" id="classmognetwork_1_1_mutex_html_a281ab0e408b9a388586ee269881d3c26"><div class="ttname"><a href="classmognetwork_1_1_mutex.html#a281ab0e408b9a388586ee269881d3c26">mognetwork::Mutex::Mutex</a></div><div class="ttdeci">Mutex()</div><div class="ttdoc">Default constructor. </div></div>
+<div class="ttc" id="classmognetwork_1_1_mutex_html_a9f3e0b542f8e9953eca9df6ae408083e"><div class="ttname"><a href="classmognetwork_1_1_mutex.html#a9f3e0b542f8e9953eca9df6ae408083e">mognetwork::Mutex::unlock</a></div><div class="ttdeci">void unlock()</div><div class="ttdoc">Unlock a Mutex. </div></div>
+<div class="ttc" id="classmognetwork_1_1_mutex_html_ae4896f5c96a2088d6de667002c046dee"><div class="ttname"><a href="classmognetwork_1_1_mutex.html#ae4896f5c96a2088d6de667002c046dee">mognetwork::Mutex::trylock</a></div><div class="ttdeci">int trylock()</div><div class="ttdoc">Trylock on a Mutex (verify if the mutex can be locked and locks it without blocking. </div></div>
+<div class="ttc" id="classmognetwork_1_1_mutex_html"><div class="ttname"><a href="classmognetwork_1_1_mutex.html">mognetwork::Mutex</a></div><div class="ttdoc">Mutex encapsulation. </div><div class="ttdef"><b>Definition:</b> Mutex.hh:35</div></div>
+<div class="ttc" id="classmognetwork_1_1_mutex_html_a571d9d0b9b2be3da94192f34b6157ea9"><div class="ttname"><a href="classmognetwork_1_1_mutex.html#a571d9d0b9b2be3da94192f34b6157ea9">mognetwork::Mutex::m_mutex</a></div><div class="ttdeci">pthread_mutex_t m_mutex</div><div class="ttdef"><b>Definition:</b> Mutex.hh:61</div></div>
+<div class="ttc" id="classmognetwork_1_1_mutex_html_a880c4341ad8d63c9bde15f4a60af2848"><div class="ttname"><a href="classmognetwork_1_1_mutex.html#a880c4341ad8d63c9bde15f4a60af2848">mognetwork::Mutex::lock</a></div><div class="ttdeci">void lock()</div><div class="ttdoc">lock a Mutex </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2014 16:58:09 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 15 2014 09:52:13 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

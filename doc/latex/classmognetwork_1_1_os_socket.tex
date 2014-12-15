@@ -3,7 +3,7 @@
 }
 
 
-Outils de socket générique de Windows.  
+Implementation of the windows sockets.  
 
 
 
@@ -34,23 +34,23 @@ typedef int \hyperlink{classmognetwork_1_1_os_socket_a53fd4fa9dc6b02cafdb4b7a2b6
 
 \item 
 static sockaddr\-\_\-in \hyperlink{classmognetwork_1_1_os_socket_ae012b09d94070d07925a03cdc3a8a6ae}{create\-Address} (Uint32 address, unsigned short port)
-\begin{DoxyCompactList}\small\item\em Crée un sockaddr\-\_\-in. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em create a sockaddr\-\_\-in \end{DoxyCompactList}\item 
 static Socket\-F\-D \hyperlink{classmognetwork_1_1_os_socket_a5b2cf6583d7bc3a640a162a6ae3dead7}{not\-Valid} ()
-\begin{DoxyCompactList}\small\item\em Vérifie si la socket est valide. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the socket state of an unvalid socket. \end{DoxyCompactList}\item 
 static void \hyperlink{classmognetwork_1_1_os_socket_afc41f453da34be5cce9fa5470ca3697a}{close} (Socket\-F\-D socket)
-\begin{DoxyCompactList}\small\item\em Ferme la socket. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Close the socket. \end{DoxyCompactList}\item 
 static \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1_os_socket_a331f63335ee89ae3eaa24a59cbada192}{get\-Error\-Status} ()
-\begin{DoxyCompactList}\small\item\em Vérifie le status de la socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the error status of the socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Outils de socket générique de Windows. 
+Implementation of the windows sockets. 
 
 \subsection{Member Typedef Documentation}
 \hypertarget{classmognetwork_1_1_os_socket_a53fd4fa9dc6b02cafdb4b7a2b6d94778}{\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}!Addre\-Length@{Addre\-Length}}
 \index{Addre\-Length@{Addre\-Length}!mognetwork::OsSocket@{mognetwork\-::\-Os\-Socket}}
 \subsubsection[{Addre\-Length}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf mognetwork\-::\-Os\-Socket\-::\-Addre\-Length}}}\label{classmognetwork_1_1_os_socket_a53fd4fa9dc6b02cafdb4b7a2b6d94778}
-Typedef pour la longueur d'une adresse 
+length of an address 
 
 \subsection{Member Function Documentation}
 \hypertarget{classmognetwork_1_1_os_socket_afc41f453da34be5cce9fa5470ca3697a}{\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}!close@{close}}
@@ -62,11 +62,11 @@ Typedef pour la longueur d'une adresse
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classmognetwork_1_1_os_socket_afc41f453da34be5cce9fa5470ca3697a}
 
 
-Ferme la socket. 
+Close the socket. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em socket} & le socket\-F\-D à partir duquel on crée la socket \\
+{\em socket} & the Socket\-F\-D to close \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_os_socket_ae012b09d94070d07925a03cdc3a8a6ae}{\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}!create\-Address@{create\-Address}}
@@ -79,17 +79,17 @@ Ferme la socket.
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classmognetwork_1_1_os_socket_ae012b09d94070d07925a03cdc3a8a6ae}
 
 
-Crée un sockaddr\-\_\-in. 
+create a sockaddr\-\_\-in 
 
 
 \begin{DoxyParams}{Parameters}
-{\em address} & \-: adresse en Uint32 \\
+{\em address} & \-: the address in Uint32 \\
 \hline
-{\em port} & \-: le port à utiliser \\
+{\em port} & \-: the port to use \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-sockaddr\-\_\-in la structure initialisée 
+sockaddr\-\_\-in the initialised structure 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_os_socket_a331f63335ee89ae3eaa24a59cbada192}{\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}!get\-Error\-Status@{get\-Error\-Status}}
 \index{get\-Error\-Status@{get\-Error\-Status}!mognetwork::OsSocket@{mognetwork\-::\-Os\-Socket}}
@@ -100,10 +100,10 @@ sockaddr\-\_\-in la structure initialisée
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classmognetwork_1_1_os_socket_a331f63335ee89ae3eaa24a59cbada192}
 
 
-Vérifie le status de la socket. 
+Get the error status of the socket. 
 
 \begin{DoxyReturn}{Returns}
-\hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} le status de la socket 
+\hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} the status of the socket 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_os_socket_a5b2cf6583d7bc3a640a162a6ae3dead7}{\index{mognetwork\-::\-Os\-Socket@{mognetwork\-::\-Os\-Socket}!not\-Valid@{not\-Valid}}
 \index{not\-Valid@{not\-Valid}!mognetwork::OsSocket@{mognetwork\-::\-Os\-Socket}}
@@ -114,10 +114,10 @@ Vérifie le status de la socket.
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classmognetwork_1_1_os_socket_a5b2cf6583d7bc3a640a162a6ae3dead7}
 
 
-Vérifie si la socket est valide. 
+Get the socket state of an unvalid socket. 
 
 \begin{DoxyReturn}{Returns}
-Socket\-F\-D un fd valide 
+Socket\-F\-D a unvalid fd 
 \end{DoxyReturn}
 
 

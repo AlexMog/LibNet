@@ -5,12 +5,12 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 18:28:09 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:12:42 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:35:15 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file TcpASIODatas.hh
- * \brief Permet la gestion des données partagées des différents threads ASIO. Est un Singleton
+ * \brief Used to send datas between the threads. Is a Singleton.
  * \author AlexMog
  * \version 0.1
  */
@@ -26,57 +26,56 @@ namespace mognetwork
 {
   /*!
    * \class TcpASIODatas
-   * \brief Permet la gestion des données partagées des différents threads ASIO. Est un Singleton
+   * \brief Used to send datas between the threads. Is a Singleton.
    */
   class TcpASIODatas
   {
   public:
     /*!
-     * \brief Permet de récupérer l'instance du Singleton de TcpASIODatas
-     * \return l'instance en question
+     * \brief Get the instance of the Singleton.
+     * \return the instance
      */
     static TcpASIODatas* getInstance() {return (&Singleton<TcpASIODatas>::Instance());}
     virtual ~TcpASIODatas();
 
   public:
     /*!
-     * \brief Constructeur par défaut de TcpASIOData. A ne pas utiliser.
-     * \depreciated A ne pas utiliser. Utilisée par le Singleton.
+     * \depreciated Used only by the Singleton. DO NOT USE.
      */
     TcpASIODatas();
 
   public:
     /*!
-     * \brief permet de récupérer un TcpSocket via son SocketFD.
-     * \param fd le SocketFD à rechercher
-     * \return le TcpSocket stocké
+     * \brief Get a TcpSocket via his SocketFD
+     * \param fd The SocketFD to find
+     * \return the TcpSocket found
      */
     TcpSocket* getSocketByFd(SocketFD fd);
     /*!
-     * \brief Permet de récupérer la liste des TcpSocket stochée
-     * \return la liste des TcpSocket
+     * \brief Get the TcpSocket list
+     * \return The TcpSocket list
      */
     std::list<TcpSocket*>* getSocketList() const {return m_socketList;}
 
   public:
     /*!
-     * \brief Ajoute une socket à la liste des sockets
-     * \param socket la TcpSocket à ajouter
+     * \brief Add a socket to the list
+     * \param socket a pointer on the TcpSocket to add
      */
     void addSocket(TcpSocket* socket) {m_socketList->push_back(socket);}
     /*!
-     * \brief Supprime une socket déjà ajoutée via son adresse
-     * \param socket l'adresse de la TcpSocket à supprimer
+     * \brief Delete an existing socket
+     * \param socket the address of the TcpSocket to remove.
      */
     void remSocket(TcpSocket* socket) {m_socketList->remove(socket);}
     /*!
-     * \brief Supprime une socket déjà ajoutée via son SocketFD
-     * \param socket la SocketFD de la socket à supprimer
+     * \brief Delete an existing socket
+     * \param socket the SocketFD of the existing socket.
      */
     void remSocket(SocketFD socket);
 
   private:
-    std::list<TcpSocket*>* m_socketList; /*!< Liste des sockets partagées entre les threads ASIO */
+    std::list<TcpSocket*>* m_socketList; /*!< List of the sockets connected */
   };
 } // namespace mognetwork
 

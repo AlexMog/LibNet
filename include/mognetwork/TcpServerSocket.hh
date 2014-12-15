@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:41:35 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:12:12 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:20:39 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -25,51 +25,50 @@ namespace mognetwork
 {
   /*!
    * \class TcpServerSocket
-   * \brief Socket pour la gestion simplifiée du serveur
+   * \brief Socket to simplify the server usage
    */
   class TcpServerSocket : public TcpSocket
   {
   public:
     /*!
-     * \brief constructeur par défaut
+     * \brief default constructor
      */
     TcpServerSocket();
     virtual ~TcpServerSocket();
 
   public:
     /*!
-     * \brief Accepte une connexion client
-     * \return un pointeur sur le nouveau client en TCP
+     * \brief Accept a new client connexion
+     * \return a pointer on a new instance of a TcpSocket
      */
     TcpSocket* accept();
     /*!
-     * \brief Bind la socket sur un port
-     * \param port le port à binder
+     * \brief Bind the socket on a port
+     * \param port the port to bind on
      */
     void bind(int port);
-    // TODO:    void bind(const IpAddress& ipAddress, int port);
     /*!
-     * \brief écoute sur la socket
-     * \param maxWaitingList liste d'attente d'écoute maximale
+     * \brief Listen on the socket
+     * \param maxWaitingList the waiting request queue
      */
     void listen(int maxWaitingList);
 
   public:
     /*!
-     * \brief permet de savoir si la socket a bien bind sur le port.
-     * \return true si elle est bind, false sinon
+     * \brief Used to know of a socket is binded
+     * \return true if binded
      */
     bool isBound() const {return m_bound;}
     /*!
-     * \brief permet de savoir si la socket écoute sur le port.
-     * \ return true si oui, false sinon.
+     * \brief Used to know if the socket is actually listening
+     * \ return true if it is listening
      */
     bool isListening() const {return m_listening;}
 
   private:
-    bool m_bound; /*!< Stocke l'état du bind. */
-    bool m_listening; /*!< Stocke l'état du listen. */
-    int m_port; /*!< Stocke le port d'écoute */
+    bool m_bound; /*!< Bind state */
+    bool m_listening; /*!< Listening state */
+    int m_port; /*!< Port */
   };
 } // namespace mognetwork
 

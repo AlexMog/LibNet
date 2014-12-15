@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Outils de socket générique de Windows.  
+<p>Implementation of the windows sockets.  
  <a href="classmognetwork_1_1_os_socket.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_win_socket_8hh_source.html">WinSocket.hh</a>&gt;</code></p>
@@ -123,20 +123,20 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> (Soc
 static <a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Socket::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getErrorStatus</b> ()</td></tr>
 <tr class="separator:a331f63335ee89ae3eaa24a59cbada192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae012b09d94070d07925a03cdc3a8a6ae"><td class="memItemLeft" align="right" valign="top">static sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_os_socket.html#ae012b09d94070d07925a03cdc3a8a6ae">createAddress</a> (Uint32 address, unsigned short port)</td></tr>
-<tr class="memdesc:ae012b09d94070d07925a03cdc3a8a6ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un sockaddr_in.  <a href="#ae012b09d94070d07925a03cdc3a8a6ae">More...</a><br/></td></tr>
+<tr class="memdesc:ae012b09d94070d07925a03cdc3a8a6ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a sockaddr_in  <a href="#ae012b09d94070d07925a03cdc3a8a6ae">More...</a><br/></td></tr>
 <tr class="separator:ae012b09d94070d07925a03cdc3a8a6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b2cf6583d7bc3a640a162a6ae3dead7"><td class="memItemLeft" align="right" valign="top">static SocketFD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_os_socket.html#a5b2cf6583d7bc3a640a162a6ae3dead7">notValid</a> ()</td></tr>
-<tr class="memdesc:a5b2cf6583d7bc3a640a162a6ae3dead7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si la socket est valide.  <a href="#a5b2cf6583d7bc3a640a162a6ae3dead7">More...</a><br/></td></tr>
+<tr class="memdesc:a5b2cf6583d7bc3a640a162a6ae3dead7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the socket state of an unvalid socket.  <a href="#a5b2cf6583d7bc3a640a162a6ae3dead7">More...</a><br/></td></tr>
 <tr class="separator:a5b2cf6583d7bc3a640a162a6ae3dead7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc41f453da34be5cce9fa5470ca3697a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_os_socket.html#afc41f453da34be5cce9fa5470ca3697a">close</a> (SocketFD socket)</td></tr>
-<tr class="memdesc:afc41f453da34be5cce9fa5470ca3697a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ferme la socket.  <a href="#afc41f453da34be5cce9fa5470ca3697a">More...</a><br/></td></tr>
+<tr class="memdesc:afc41f453da34be5cce9fa5470ca3697a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the socket.  <a href="#afc41f453da34be5cce9fa5470ca3697a">More...</a><br/></td></tr>
 <tr class="separator:afc41f453da34be5cce9fa5470ca3697a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a331f63335ee89ae3eaa24a59cbada192"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Socket::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_os_socket.html#a331f63335ee89ae3eaa24a59cbada192">getErrorStatus</a> ()</td></tr>
-<tr class="memdesc:a331f63335ee89ae3eaa24a59cbada192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie le status de la socket.  <a href="#a331f63335ee89ae3eaa24a59cbada192">More...</a><br/></td></tr>
+<tr class="memdesc:a331f63335ee89ae3eaa24a59cbada192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the error status of the socket.  <a href="#a331f63335ee89ae3eaa24a59cbada192">More...</a><br/></td></tr>
 <tr class="separator:a331f63335ee89ae3eaa24a59cbada192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Outils de socket générique de Windows. </p>
+<div class="textblock"><p>Implementation of the windows sockets. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a53fd4fa9dc6b02cafdb4b7a2b6d94778"></a>
 <div class="memitem">
@@ -147,7 +147,7 @@ static <a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Typedef pour la longueur d'une adresse </p>
+<p>length of an address </p>
 
 </div>
 </div>
@@ -174,10 +174,10 @@ static <a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0
 </table>
 </div><div class="memdoc">
 
-<p>Ferme la socket. </p>
+<p>Close the socket. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">socket</td><td>le socketFD à partir duquel on crée la socket </td></tr>
+    <tr><td class="paramname">socket</td><td>the SocketFD to close </td></tr>
   </table>
   </dd>
 </dl>
@@ -216,15 +216,15 @@ static <a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0
 </table>
 </div><div class="memdoc">
 
-<p>Crée un sockaddr_in. </p>
+<p>create a sockaddr_in </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">address</td><td>: adresse en Uint32 </td></tr>
-    <tr><td class="paramname">port</td><td>: le port à utiliser </td></tr>
+    <tr><td class="paramname">address</td><td>: the address in Uint32 </td></tr>
+    <tr><td class="paramname">port</td><td>: the port to use </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>sockaddr_in la structure initialisée </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>sockaddr_in the initialised structure </dd></dl>
 
 </div>
 </div>
@@ -249,8 +249,8 @@ static <a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0
 </table>
 </div><div class="memdoc">
 
-<p>Vérifie le status de la socket. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f" title="Définit les status possibles d&#39;une socket. ">Socket::Status</a> le status de la socket </dd></dl>
+<p>Get the error status of the socket. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f" title="The possible status of the socket. ">Socket::Status</a> the status of the socket </dd></dl>
 
 </div>
 </div>
@@ -275,8 +275,8 @@ static <a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0
 </table>
 </div><div class="memdoc">
 
-<p>Vérifie si la socket est valide. </p>
-<dl class="section return"><dt>Returns</dt><dd>SocketFD un fd valide </dd></dl>
+<p>Get the socket state of an unvalid socket. </p>
+<dl class="section return"><dt>Returns</dt><dd>SocketFD a unvalid fd </dd></dl>
 
 </div>
 </div>
@@ -287,7 +287,7 @@ static <a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2014 16:58:09 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 15 2014 09:52:13 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

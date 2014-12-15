@@ -3,7 +3,7 @@
 }
 
 
-Encapsulation des variables conditionnelles.  
+Conditional Variables encapsulation.  
 
 
 
@@ -21,16 +21,16 @@ Inheritance diagram for mognetwork\-:\-:Cond\-Var\-:\begin{figure}[H]
 \item 
 \hypertarget{classmognetwork_1_1_cond_var_ab7f3756ed998d61f8c4eec3d1f3a984b}{\hyperlink{classmognetwork_1_1_cond_var_ab7f3756ed998d61f8c4eec3d1f3a984b}{Cond\-Var} ()}\label{classmognetwork_1_1_cond_var_ab7f3756ed998d61f8c4eec3d1f3a984b}
 
-\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_cond_var_afaee9fd061be682985bdc15d45e11816}{void \hyperlink{classmognetwork_1_1_cond_var_afaee9fd061be682985bdc15d45e11816}{wait} ()}\label{classmognetwork_1_1_cond_var_afaee9fd061be682985bdc15d45e11816}
 
-\begin{DoxyCompactList}\small\item\em Attend que la cond\-Var soit notifiée. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Wait for a signal on the \hyperlink{classmognetwork_1_1_cond_var}{Cond\-Var}. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_cond_var_aeb5e8e751376a09f36c115e342778d3f}{void \hyperlink{classmognetwork_1_1_cond_var_aeb5e8e751376a09f36c115e342778d3f}{signal} ()}\label{classmognetwork_1_1_cond_var_aeb5e8e751376a09f36c115e342778d3f}
 
-\begin{DoxyCompactList}\small\item\em notifie la cond\-Var \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em send a signal to the \hyperlink{classmognetwork_1_1_cond_var}{Cond\-Var} \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_cond_var_ae407b095e176f8c360d1f03ceaac1ad7}{void \hyperlink{classmognetwork_1_1_cond_var_ae407b095e176f8c360d1f03ceaac1ad7}{broadcast} ()}\label{classmognetwork_1_1_cond_var_ae407b095e176f8c360d1f03ceaac1ad7}
 
-\begin{DoxyCompactList}\small\item\em signal tous les threads contenant cette cond\-Var \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em send a signal to all the Threads that uses the \hyperlink{classmognetwork_1_1_cond_var}{Cond\-Var} \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_cond_var_a75efe016cf3ea093555f302bd980ad34}{void {\bfseries timedwait} (const struct timespec $\ast$abstime)}\label{classmognetwork_1_1_cond_var_a75efe016cf3ea093555f302bd980ad34}
 
 \end{DoxyCompactItemize}
@@ -42,13 +42,13 @@ pthread\-\_\-cond\-\_\-t \hyperlink{classmognetwork_1_1_cond_var_adc18d17b3c2e11
 
 
 \subsection{Detailed Description}
-Encapsulation des variables conditionnelles. 
+Conditional Variables encapsulation. 
 
 \subsection{Member Data Documentation}
 \hypertarget{classmognetwork_1_1_cond_var_adc18d17b3c2e11768b1103b499f49c97}{\index{mognetwork\-::\-Cond\-Var@{mognetwork\-::\-Cond\-Var}!m\-\_\-cond@{m\-\_\-cond}}
 \index{m\-\_\-cond@{m\-\_\-cond}!mognetwork::CondVar@{mognetwork\-::\-Cond\-Var}}
 \subsubsection[{m\-\_\-cond}]{\setlength{\rightskip}{0pt plus 5cm}pthread\-\_\-cond\-\_\-t mognetwork\-::\-Cond\-Var\-::m\-\_\-cond\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmognetwork_1_1_cond_var_adc18d17b3c2e11768b1103b499f49c97}
-Variable conditionnelle 
+\hyperlink{classmognetwork_1_1_cond_var}{Cond\-Var} datas 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

@@ -3,7 +3,7 @@
 }
 
 
-Permet la gestion de la lecture de données en A\-S\-I\-O.  
+Listen and read datas in A\-S\-I\-O mode.  
 
 
 
@@ -20,29 +20,29 @@ Inheritance diagram for mognetwork\-:\-:Tcp\-A\-S\-I\-O\-Listener\-:\begin{figur
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_aae7628471fda37905fab2dc03db11f77}{Tcp\-A\-S\-I\-O\-Listener} (\hyperlink{classmognetwork_1_1_tcp_server_socket}{Tcp\-Server\-Socket} \&server\-Socket)
-\begin{DoxyCompactList}\small\item\em constructeur par défaut \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_afd805699dfe27ceb0541feeefacc13dc}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_afd805699dfe27ceb0541feeefacc13dc}{start} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_afd805699dfe27ceb0541feeefacc13dc}
 
-\begin{DoxyCompactList}\small\item\em Démarre le thread d'écoute. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Start the listening thread. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_ac9952961dce0f44bc720485a4e4e620d}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_ac9952961dce0f44bc720485a4e4e620d}{stop} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_ac9952961dce0f44bc720485a4e4e620d}
 
-\begin{DoxyCompactList}\small\item\em Arrête le thread d'écoute. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Stop the listening thread. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_ae6327f6471291ba5107c0a9c3362b929}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_ae6327f6471291ba5107c0a9c3362b929}{wait} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_ae6327f6471291ba5107c0a9c3362b929}
 
-\begin{DoxyCompactList}\small\item\em Permet d'attendre la fin de l'exécution du thread d'écoute. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Wait until the end of the listening thread. \end{DoxyCompactList}\item 
 void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_a0d0b24852fdd94ad5096a87a40bc7712}{add\-Listener} (\hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler}{I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} $\ast$listener)
-\begin{DoxyCompactList}\small\item\em Ajoute un listener au thread d'écoute. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Add a \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler}{I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} to the thread. \end{DoxyCompactList}\item 
 bool \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_a431eb0fb3fab8042a9ef0b79d706fffc}{is\-Running} () const 
-\begin{DoxyCompactList}\small\item\em Permet de savoir si le thread est démarré \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Know if the listener is running. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_a445dcd4bf6dfe75c7715af0fecf9494d}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_a445dcd4bf6dfe75c7715af0fecf9494d}{run} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_a445dcd4bf6dfe75c7715af0fecf9494d}
 
-\begin{DoxyCompactList}\small\item\em Utilisé par le thread. \hyperlink{classmognetwork_1_1_i_runnable}{I\-Runnable}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Used by the thread. See \hyperlink{classmognetwork_1_1_i_runnable}{I\-Runnable}. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_selector}{Selector} \& \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_listener_aed4473511088d8bc91ce118334eed24d}{get\-Selector} ()
-\begin{DoxyCompactList}\small\item\em Permet de récupérer une référence sur le selector du thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{classmognetwork_1_1_selector}{Selector} used. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Permet la gestion de la lecture de données en A\-S\-I\-O. 
+Listen and read datas in A\-S\-I\-O mode. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_aae7628471fda37905fab2dc03db11f77}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}!Tcp\-A\-S\-I\-O\-Listener@{Tcp\-A\-S\-I\-O\-Listener}}
@@ -54,11 +54,11 @@ Permet la gestion de la lecture de données en A\-S\-I\-O.
 )}}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_aae7628471fda37905fab2dc03db11f77}
 
 
-constructeur par défaut 
+default constructor 
 
 
 \begin{DoxyParams}{Parameters}
-{\em server\-Socket} & la socket serveur \\
+{\em server\-Socket} & The server socket to be used. (must be connected) \\
 \hline
 \end{DoxyParams}
 
@@ -73,11 +73,11 @@ constructeur par défaut
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_a0d0b24852fdd94ad5096a87a40bc7712}
 
 
-Ajoute un listener au thread d'écoute. 
+Add a \hyperlink{classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler}{I\-Tcp\-A\-S\-I\-O\-Listener\-Handler} to the thread. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em listener} & le listener à ajouter, instance de I\-T\-Cp\-A\-S\-I\-O\-Listener\-Handler \\
+{\em listener} & the listener to add \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_aed4473511088d8bc91ce118334eed24d}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}!get\-Selector@{get\-Selector}}
@@ -89,10 +89,10 @@ Ajoute un listener au thread d'écoute.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_aed4473511088d8bc91ce118334eed24d}
 
 
-Permet de récupérer une référence sur le selector du thread. 
+Get the \hyperlink{classmognetwork_1_1_selector}{Selector} used. 
 
 \begin{DoxyReturn}{Returns}
-la référence sur le \hyperlink{classmognetwork_1_1_selector}{Selector} 
+The \hyperlink{classmognetwork_1_1_selector}{Selector} reference. 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_listener_a431eb0fb3fab8042a9ef0b79d706fffc}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}!is\-Running@{is\-Running}}
 \index{is\-Running@{is\-Running}!mognetwork::TcpASIOListener@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Listener}}
@@ -103,10 +103,10 @@ la référence sur le \hyperlink{classmognetwork_1_1_selector}{Selector}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_listener_a431eb0fb3fab8042a9ef0b79d706fffc}
 
 
-Permet de savoir si le thread est démarré 
+Know if the listener is running. 
 
 \begin{DoxyReturn}{Returns}
-true si démarré, false sinon 
+true if it is listening, false if not 
 \end{DoxyReturn}
 
 

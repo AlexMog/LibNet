@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Mon Nov 24 12:36:00 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:17:31 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -30,108 +30,115 @@ namespace mognetwork
   class Packet;
   /*!
    * \class TcpSocket
-   * \brief Classe de création d'une socket TCP
+   * \brief Used to create a Tcp Socket
    */
   class TcpSocket : public Socket
   {
   public:
-    typedef std::vector<char> Data; /*!< Typedef pour définit le typpage d'une Data */
-    typedef std::list<Data*> DataList; /*!< Typedef pour définit une dataList */
+    typedef std::vector<char> Data; /*!< Define data type */
+    typedef std::list<Data*> DataList; /*!< Datas list */
 
   public:
     /*!
-     * \brief Contient toutes les données relatives à la lecture d'une donnée en réseau
+     * \brief Has all the datas to retrive and send process in ASIO
      */
     struct ReadedDatas
     {
-      ReadedDatas(); /*!< Constructeur pour réinitialiser la structure */
-      std::size_t readed; /*!< Nombre d'octets lus */
-      std::size_t totalSize; /*!< Taille totale à lire */
-      Data datas; /*!< Données lues */
+      ReadedDatas(); /*!< Used to init the structure */
+      std::size_t readed; /*!< Bytes readed */
+      std::size_t totalSize; /*!< Total size to read */
+      Data datas; /*!< Readed datas */
     };
 
     /*!
-     * \brief Constructeur d'une socket en TCP par défaut
+     * \brief Default constructor
      */
     TcpSocket();
     /*!
-     * \brief Constructeur d'une socket TCP à partir d'une socket déjà ouverte
-     * \param fd le FD de la socket déjà ouverte
+     * \brief Constructor used to define a TcpSocket with an actual opened FD.
+     * \param fd The socket FD
      */
     TcpSocket(SocketFD fd);
     /*!
-     * \brief Connecte la socket à une adresse
-     * \param address l'adresse où la socket doit se connecter
-     * \param port le port où la socket doit se connecter
+     * \brief Connects the socket to an address
+     * \param address The IpAddress to connect on
+     * \param port the port to connect the socket on
      */
     Socket::Status connect(const IpAddress& address, unsigned short port);
     /*!
-     * \brief Déconnecte la socket
+     * \brief Disconnects the socket
      */
     void disconnect();
     /*!
-     * \brief Envois des données de manière synchrone (blockante)
-     * \return Socket::Status permettant de savoir l'état de l'envois
+     * \brief Send datas in sync mode.
+     * \param data the datas to send (as a char array)
+     * \param the size of the datas to send
+     * \return Socket::Status state of the sended datas
      */
     Socket::Status send(const char* data, std::size_t size);
     /*!
-     * \brief Reçoit des données de manière synchrone (blockante)
-     * \return Socket::Status permettant de savoir l'état de la réception
+     * \brief Receive datas in a defined mode
+     * \param data a buffer to receive datas
+     * \param size the size to read
+     * \param received the received datas size
+     * \param _flags the flags to use with recv
+     * \return Socket::Status state connexion
      */
     Socket::Status receive(char* data, std::size_t size, std::size_t& received, int _flags);
     /*!
-     * \brief Reçoit des données de manière synchrone (blockante)
-     * \return Socket::Status permettant de savoir l'état de la réception
+     * \brief Receive sync datas
+     * \param data a Data object who is used as a buffer
+     * \return Socket::Status connexion state
      */
     Socket::Status receiveAll(Data& data);
     /*!
-     * \brief Ajoute des données à la liste d'envois des données de la socket en Asynchrone
-     * \param data Les données à envoyer
-     * \param size la taille totale des données
-     * \return Socket::Status permettant de savoir l'état de l'envois
+     * \brief Add datas to async send list
+     * \param data The datas to send (as a char array)
+     * \param size Size of the datas to send
+     * \return Socket::Status connexion state
      */
     Socket::Status asyncSend(const char* data, std::size_t size);
     /*!
-     * \brief Envois les données en attente ajoutées par asyncSend
-     * \return Socket::Status permettant de savoir l'état de l'envois
+     * \brief Send pending datas added with asyncSend
+     * \return Socket::Status connexion state
      */
     Socket::Status sendPendingDatas();
     /*!
-     * \brief Permet de savoir si il reste des données à envoyer via sendPendingDatas
-     * \return true si il en reste, false sinon
+     * \brief Let you know if there is pending datas in the send list
+     * \return true if there is data, false if not
      */
     bool havingPendingDatas() const;
     /*!
-     * \brief Définit des données pouvant être récupérées via la socket
-     * \param userData les données en question
+     * \brief Define datas that you can attach to the socket
+     * \param userData the datas you want to attach to the socket
      */
     void setUserData(void* userData);
     /*!
-     * \brief Récupère des données enregistrées sur la socket
-     * \return pointeur contenant les données
+     * \brief Get the userData you added to the socket
+     * \return a pointer with the datas
      */
     void* getUserData() const;
     /*!
-     * \brief Lis les données en attente en Asynchrone
-     * \return Socket::Status permettant de savoir l'état de la lecture
+     * \brief Read waiting datas
+     * \return Socket::Status connexion status
      */
     Socket::Status readPendingDatas();
     /*!
-     * \brief Récupère les données lues via readPendingDatas
-     * \return Les données lues en temps que TcpSocket::ReadedDatas
+     * \brief Get datas that have been readed in async mode
+     * \return The datas as TcpSocket::ReadedDatas
      */
     TcpSocket::ReadedDatas* getDatasReaded() const;
     /*!
-     * \brief Récupère les données lues via readPendingDatas en temps que Packet
-     * \return Les données en format Packet
+     * \brief Get the readed datas as a Packet
+     * \return Datas formatted with the Packet object
      */
     Packet* getPacketReaded();
 
   private:
-    DataList m_pendingDatas; /*!< Données en attente */
-    ReadedDatas m_pendingRDatas; /*!< Données en attente de lecture */
-    ReadedDatas *m_allDataReaded; /*!< Données lues */
-    void* m_userData; /*!< Données supplémentaires optionnelles */
+    DataList m_pendingDatas; /*!< Waiting datas */
+    ReadedDatas m_pendingRDatas; /*!< Waiting for read datas */
+    ReadedDatas *m_allDataReaded; /*!< Readed datas */
+    void* m_userData; /*!< Optional datas */
   };
 } // namespace mognetwork
 

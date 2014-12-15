@@ -5,12 +5,12 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 18:05:43 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:37:41 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 09:45:43 2014 Moghrabi Alexandre
 //
 
 /*!
  * \file IRunnable.hh
- * \brief Interface permettant de créer une fonction d'exécution pour les Threads (java style)
+ * \brief Create an execution function for the Thread class
  * \author AlexMog
  * \version 1.0
  */
@@ -22,14 +22,14 @@ namespace mognetwork
 {
   /*!
    * \class IRunnable
-   * \brief Interface permettant de créer une fonction d'exécution pour les Threads (java style)
+   * \brief Create an execution function for the Thread class
    */
   class IRunnable
   {
   public:
     virtual ~IRunnable() {}
     /*!
-     * \brief fonction utilisée par les threads en temps que pointeur sur fonction
+     * \brief The function to set, executed by the Thread
      */
     virtual void run() = 0;
   };

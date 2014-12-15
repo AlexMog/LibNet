@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Sat Nov 15 18:00:03 2014 Moghrabi Alexandre
-// Last update Tue Nov 18 13:12:27 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 07:27:42 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -27,54 +27,54 @@ namespace mognetwork
 {
   /*!
    * \class TcpASIOServer
-   * \brief Gère les threads d'écriture et de lecture en ASIO
+   * \brief Used to create a ASIO Server simply
    */
   class TcpASIOServer
   {
   public:
     /*!
-     * \brief Constructeur par défaut
-     * \param port Le port sur lequel le serveur écoute
+     * \brief Default constructor
+     * \param port The port to be used with the server
      */
     TcpASIOServer(int port);
     virtual ~TcpASIOServer();
 
   public:
     /*!
-     * \brief Démarre les différents threads, et attends qu'ils se terminent.
+     * \brief Start the threads and wait until they are stopped
      */
     void start();
     /*!
-     * \brief Arrête le thread de lecture et d'écriture.
+     * \brief Stop the threads
      */
     void stop();
     /*!
-     * \brief Ajoute un listener au serveur.
-     * \param listener le listener en question en utilisant ITcpASIOListenerHandler
+     * \brief Add a ITcpASIOListenerHandler to the server
+     * \param listener the listener to add
      */
     void addListener(ITcpASIOListenerHandler* listener) {m_serverListener->addListener(listener);}
     /*!
-     * \brief Dans le cas ou une socket client contient des données à envoyer, met à jour le thread d'écriture
+     * \brief Tell the server that there is datas to send.
      */
     void sendPendingDatas() {m_serverWriter->triggerData();}
 
   public:
     /*!
-     * \brief Récupère le writer TcpASIOWriter
-     * \return un pointeur sur le TcpASIOWriter
+     * \brief Get the TcpASIOWriter
+     * \return a pointer on the TcpASIOWriter
      */
     TcpASIOWriter* getServerWriter() const {return m_serverWriter;}
     /*!
-     * \brief Récupère le listener TcpASIOListener
-     * \return un pointeur sur le TcpASIOWriter
+     * \brief Get the TcpASIOListener
+     * \return a pointer on the TcpASIOListener
      */
     TcpASIOListener* getServerListener() const {return m_serverListener;}
 
   private:
-    TcpASIOListener* m_serverListener; /*!< instance du thread d'écoute */
-    TcpServerSocket m_serverSocket; /*!< socket serveur */
-    TcpASIOWriter* m_serverWriter; /*!< instance du thread d'écriture */
-    int m_port; /*!< port d'écoute du serveur */
+    TcpASIOListener* m_serverListener; /*!< instance of the listening thread */
+    TcpServerSocket m_serverSocket; /*!< server socket */
+    TcpASIOWriter* m_serverWriter; /*!< instance of the writing thread */
+    int m_port; /*!< listening port */
   };
 } // namespace mognetwork
 

@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
-// Last update Thu Dec  4 00:34:18 2014 Moghrabi Alexandre
+// Last update Mon Dec 15 09:39:17 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -30,50 +30,50 @@ namespace mognetwork
 {
   /*!
    * \class Packet
-   * \brief simplifie la gestion des données reçues
+   * \brief Simplify the data management of multiple datas
    */
   class Packet
   {
   public:
     /*/
-     * \brief Constructeur par défaut
+     * \brief Default constructor
      */
     Packet();
     /*!
-     * \brief Constructeur secondaire
-     * \param data Un vecteur de données
+     * \brief Secondary constructor, uses a valid data set
+     * \param data The data set
      */
     Packet(std::vector<char>* data);
     /*!
-     * \brief Constructeur via TcpSocet::ReadedDatas
-     * \param La structure de données à utiliser
+     * \brief Uses a TcpSocket::ReadedDatas to set the datas
+     * \param data The datas
      */
     Packet(TcpSocket::ReadedDatas* data);
     virtual ~Packet();
 
     /*!
-     * \brief extrait un uint32_t des données
-     * \param data l'uint32_t dans lequel les données sont extraites
+     * \brief Extract a uint32_t from the packet
+     * \param data a reference on the uint32_t to set
      */
     Packet& operator>>(uint32_t& data);
     /*!
-     * \brief ajoute un uint32_t au packet
-     * \param data l'uint32_t à ajouter
+     * \brief add a uint32_t to the packet
+     * \param data the uint32_t to add
      */
     Packet& operator<<(uint32_t data);
     /*!
-     * \brief ajoute un char* au packet
-     * \param data le char* à ajouter
+     * \brief add a string to the packet
+     * \param data the string to add
      */
     Packet& operator<<(const char* data);
     /*!
-     * \brief extrait un char* du packet
-     * \param data le char* dans lequel il sera extrait. Doit être alloué à la bonne taille.
+     * \brief extract a string from the packet
+     * \param data the char* to set (it have to be a buffer with a size to receive the datas)
      */
     Packet& operator>>(char* data);
     /*!
-     * \brief extrait des données (natives de préférence) du packet
-     * \param data la donnée sera ecrite dedans.
+     * \brief extract native datas from the packet
+     * \param data the data to set
      */
     template <typename T>
     Packet& operator>>(T& data)
@@ -86,8 +86,8 @@ namespace mognetwork
       return (*this);
     }
     /*!
-     * \brief ajoute des données (natives de préférence) au packet
-     * \param data la donnée à ajouter
+     * \brief add native datas to the packet
+     * \param data the data to add
      */
     template <typename T>
     Packet& operator<<(const T& data)
@@ -96,23 +96,24 @@ namespace mognetwork
       return (*this);
     }
     /*!
-     * \brief Permet de vider le packet
+     * \brief Clear the datas
      */
     void clear() {m_data->clear();m_readerPos = 0;}
     /*!
-     * \brief Permet de récupérer les données stockées dans le packet sous forme de void*
-     * \return les données sous forme de void*
+     * \brief Get the datas stored in the packet
+     * \return the datas stored
      */
     const void* getData() const {return (!m_data->empty() ? &((*m_data)[0]) : NULL);}
     /*!
-     * \brief Permet de récupérer la taille du packet
-     * \return la taille du packet
+     * \brief Get the size of the datas stored
+     * \return the datas size
      */
     unsigned int getDataSize() const {return m_data->size();}
     /*!
-     * \brief ajoute des données au packet
-     * \param data Donnée à ajouter
-     * \param size taille de la donnée
+     * \brief add datas to the packet
+     * \depreciated prefer to use the operator system
+     * \param data Data to add
+     * \param size Size of the data to add
      */
     void push(const void* data, unsigned int size);
 
@@ -120,9 +121,9 @@ namespace mognetwork
     bool verifySize(unsigned int size) {return (m_readerPos + size <= m_data->size());}
 
   private:
-    std::vector<char>* m_data; /*!< Données du packet */
-    unsigned int m_readerPos; /*!< Position du lecteur */
-    TcpSocket::ReadedDatas* m_dataPack; /*!< Structure de données si elle est utilisée */
+    std::vector<char>* m_data; /*!< Datas of the packet */
+    unsigned int m_readerPos; /*!< Actual position reader */
+    TcpSocket::ReadedDatas* m_dataPack; /*!< datas structure if set */
   };
 } // namespace mognetwork
 

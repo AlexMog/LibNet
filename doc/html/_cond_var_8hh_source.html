@@ -95,51 +95,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Tue Nov 11 19:43:06 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Tue Nov 18 13:11:35 2014 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Mon Dec 15 09:52:04 2014 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef MOGNETWORK_CONDVAR_HH</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># define MOGNETWORK_CONDVAR_HH</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"># include &lt;pthread.h&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># include &quot;<a class="code" href="_mutex_8hh.html">Mutex.hh</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacemognetwork.html">   24</a></span>&#160;<span class="keyword">namespace </span>mognetwork</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_cond_var.html">   30</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_cond_var.html">CondVar</a> : <span class="keyword">public</span> <a class="code" href="classmognetwork_1_1_mutex.html">Mutex</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classmognetwork_1_1_cond_var.html#ab7f3756ed998d61f8c4eec3d1f3a984b">CondVar</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_cond_var.html">CondVar</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_cond_var.html#afaee9fd061be682985bdc15d45e11816">wait</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_cond_var.html#aeb5e8e751376a09f36c115e342778d3f">signal</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_cond_var.html#ae407b095e176f8c360d1f03ceaac1ad7">broadcast</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * \brief Attend que la condVar soit notifiée avec un temps limite</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     * \param abstime temps limite</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> timedwait(<span class="keyword">const</span> <span class="keyword">struct</span> timespec* abstime);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_cond_var.html#adc18d17b3c2e11768b1103b499f49c97">   59</a></span>&#160;    pthread_cond_t <a class="code" href="classmognetwork_1_1_cond_var.html#adc18d17b3c2e11768b1103b499f49c97">m_cond</a>; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  };</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_CONDVAR_HH</span></div>
-<div class="ttc" id="classmognetwork_1_1_cond_var_html_afaee9fd061be682985bdc15d45e11816"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#afaee9fd061be682985bdc15d45e11816">mognetwork::CondVar::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdoc">Attend que la condVar soit notifiée. </div></div>
-<div class="ttc" id="classmognetwork_1_1_cond_var_html_aeb5e8e751376a09f36c115e342778d3f"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#aeb5e8e751376a09f36c115e342778d3f">mognetwork::CondVar::signal</a></div><div class="ttdeci">void signal()</div><div class="ttdoc">notifie la condVar </div></div>
-<div class="ttc" id="classmognetwork_1_1_cond_var_html_ae407b095e176f8c360d1f03ceaac1ad7"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#ae407b095e176f8c360d1f03ceaac1ad7">mognetwork::CondVar::broadcast</a></div><div class="ttdeci">void broadcast()</div><div class="ttdoc">signal tous les threads contenant cette condVar </div></div>
-<div class="ttc" id="classmognetwork_1_1_cond_var_html_adc18d17b3c2e11768b1103b499f49c97"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#adc18d17b3c2e11768b1103b499f49c97">mognetwork::CondVar::m_cond</a></div><div class="ttdeci">pthread_cond_t m_cond</div><div class="ttdef"><b>Definition:</b> CondVar.hh:59</div></div>
-<div class="ttc" id="classmognetwork_1_1_cond_var_html_ab7f3756ed998d61f8c4eec3d1f3a984b"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#ab7f3756ed998d61f8c4eec3d1f3a984b">mognetwork::CondVar::CondVar</a></div><div class="ttdeci">CondVar()</div><div class="ttdoc">Constructeur par défaut. </div></div>
-<div class="ttc" id="classmognetwork_1_1_mutex_html"><div class="ttname"><a href="classmognetwork_1_1_mutex.html">mognetwork::Mutex</a></div><div class="ttdoc">Encapsulation des Mutex. </div><div class="ttdef"><b>Definition:</b> Mutex.hh:29</div></div>
-<div class="ttc" id="classmognetwork_1_1_cond_var_html"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html">mognetwork::CondVar</a></div><div class="ttdoc">Encapsulation des variables conditionnelles. </div><div class="ttdef"><b>Definition:</b> CondVar.hh:30</div></div>
-<div class="ttc" id="_mutex_8hh_html"><div class="ttname"><a href="_mutex_8hh.html">Mutex.hh</a></div><div class="ttdoc">Encapsulation des mutex. </div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"># include &quot;OS.hh&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef OS_WINDOWS</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># include &lt;windows.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif // !OS_WINDOWS</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor"></span><span class="preprocessor"># include &quot;<a class="code" href="_mutex_8hh.html">Mutex.hh</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespacemognetwork.html">   30</a></span>&#160;<span class="keyword">namespace </span>mognetwork</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_cond_var.html">   36</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classmognetwork_1_1_cond_var.html">CondVar</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;#ifndef OS_WINDOWS</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    : <span class="keyword">public</span> <a class="code" href="classmognetwork_1_1_mutex.html">Mutex</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span>  {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classmognetwork_1_1_cond_var.html#ab7f3756ed998d61f8c4eec3d1f3a984b">CondVar</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_cond_var.html">CondVar</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_cond_var.html#afaee9fd061be682985bdc15d45e11816">wait</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_cond_var.html#aeb5e8e751376a09f36c115e342778d3f">signal</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_cond_var.html#ae407b095e176f8c360d1f03ceaac1ad7">broadcast</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     * \brief Wait for a signal with a timeout</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">     * \param abstime Timeout value</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> timedwait(<span class="keyword">const</span> <span class="keyword">struct</span> timespec* abstime);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#ifndef OS_WINDOWS</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_cond_var.html#adc18d17b3c2e11768b1103b499f49c97">   69</a></span>&#160;<span class="preprocessor"></span>    pthread_cond_t <a class="code" href="classmognetwork_1_1_cond_var.html#adc18d17b3c2e11768b1103b499f49c97">m_cond</a>; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span>    CONDITION_VARIABLE <a class="code" href="classmognetwork_1_1_cond_var.html#adc18d17b3c2e11768b1103b499f49c97">m_cond</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    PSRWLOCK m_lock;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif // !OS_WINDOWS</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor"></span>  };</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_CONDVAR_HH</span></div>
+<div class="ttc" id="classmognetwork_1_1_cond_var_html_afaee9fd061be682985bdc15d45e11816"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#afaee9fd061be682985bdc15d45e11816">mognetwork::CondVar::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdoc">Wait for a signal on the CondVar. </div></div>
+<div class="ttc" id="classmognetwork_1_1_cond_var_html_aeb5e8e751376a09f36c115e342778d3f"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#aeb5e8e751376a09f36c115e342778d3f">mognetwork::CondVar::signal</a></div><div class="ttdeci">void signal()</div><div class="ttdoc">send a signal to the CondVar </div></div>
+<div class="ttc" id="classmognetwork_1_1_cond_var_html_ae407b095e176f8c360d1f03ceaac1ad7"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#ae407b095e176f8c360d1f03ceaac1ad7">mognetwork::CondVar::broadcast</a></div><div class="ttdeci">void broadcast()</div><div class="ttdoc">send a signal to all the Threads that uses the CondVar </div></div>
+<div class="ttc" id="classmognetwork_1_1_cond_var_html_adc18d17b3c2e11768b1103b499f49c97"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#adc18d17b3c2e11768b1103b499f49c97">mognetwork::CondVar::m_cond</a></div><div class="ttdeci">pthread_cond_t m_cond</div><div class="ttdef"><b>Definition:</b> CondVar.hh:69</div></div>
+<div class="ttc" id="classmognetwork_1_1_cond_var_html_ab7f3756ed998d61f8c4eec3d1f3a984b"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html#ab7f3756ed998d61f8c4eec3d1f3a984b">mognetwork::CondVar::CondVar</a></div><div class="ttdeci">CondVar()</div><div class="ttdoc">Default constructor. </div></div>
+<div class="ttc" id="classmognetwork_1_1_mutex_html"><div class="ttname"><a href="classmognetwork_1_1_mutex.html">mognetwork::Mutex</a></div><div class="ttdoc">Mutex encapsulation. </div><div class="ttdef"><b>Definition:</b> Mutex.hh:35</div></div>
+<div class="ttc" id="classmognetwork_1_1_cond_var_html"><div class="ttname"><a href="classmognetwork_1_1_cond_var.html">mognetwork::CondVar</a></div><div class="ttdoc">Conditional Variables encapsulation. </div><div class="ttdef"><b>Definition:</b> CondVar.hh:36</div></div>
+<div class="ttc" id="_mutex_8hh_html"><div class="ttname"><a href="_mutex_8hh.html">Mutex.hh</a></div><div class="ttdoc">Mutex encapsulation. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 30 2014 16:58:09 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 15 2014 09:52:13 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -3,7 +3,7 @@
 }
 
 
-Classe d'encapsulation des threads.  
+Encapsulation of thread.  
 
 
 
@@ -14,28 +14,28 @@ Classe d'encapsulation des threads.
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classmognetwork_1_1_thread_af62df267bb08a768111b98e46b9d8675}{Thread} (\hyperlink{classmognetwork_1_1_i_runnable}{I\-Runnable} \&runnable, bool detach)
-\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_thread_af50e944ca134178706495a3448a263fc}{virtual void \hyperlink{classmognetwork_1_1_thread_af50e944ca134178706495a3448a263fc}{start} ()}\label{classmognetwork_1_1_thread_af50e944ca134178706495a3448a263fc}
 
-\begin{DoxyCompactList}\small\item\em Lance le thread. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Launch the thread. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_thread_a62e7929cde1edc54df6e4a32bc6dac15}{virtual void \hyperlink{classmognetwork_1_1_thread_a62e7929cde1edc54df6e4a32bc6dac15}{cancel} ()}\label{classmognetwork_1_1_thread_a62e7929cde1edc54df6e4a32bc6dac15}
 
-\begin{DoxyCompactList}\small\item\em Annule le thread. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Cancel the thread. \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_thread_adc557095ab8d062aad0cbd91e5c5e6ea}{virtual void \hyperlink{classmognetwork_1_1_thread_adc557095ab8d062aad0cbd91e5c5e6ea}{join} ()}\label{classmognetwork_1_1_thread_adc557095ab8d062aad0cbd91e5c5e6ea}
 
-\begin{DoxyCompactList}\small\item\em Attend que le thread se termine. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Wait to the end of the thread. \end{DoxyCompactList}\item 
 bool \hyperlink{classmognetwork_1_1_thread_ac980f839f427ef11c0ae74ba5bec9c24}{is\-Started} () const 
-\begin{DoxyCompactList}\small\item\em permet de savoir si le thread est actuellement lancé \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to know if the thread is launched. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{classmognetwork_1_1_thread_add55678bd19ffc48896e36b7ab642113}{static void $\ast$ \hyperlink{classmognetwork_1_1_thread_add55678bd19ffc48896e36b7ab642113}{exec} (void $\ast$)}\label{classmognetwork_1_1_thread_add55678bd19ffc48896e36b7ab642113}
 
-\begin{DoxyCompactList}\small\item\em Utilisée pour passer un pointeur sur fonction au thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to set a function-\/pointer to threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Classe d'encapsulation des threads. 
+Encapsulation of thread. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classmognetwork_1_1_thread_af62df267bb08a768111b98e46b9d8675}{\index{mognetwork\-::\-Thread@{mognetwork\-::\-Thread}!Thread@{Thread}}
@@ -48,13 +48,13 @@ Classe d'encapsulation des threads.
 )}}\label{classmognetwork_1_1_thread_af62df267bb08a768111b98e46b9d8675}
 
 
-Constructeur. 
+Constructor. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em runnable} & Un runnable pour le lancement du thread \\
+{\em runnable} & The runnable to use with the thread \\
 \hline
-{\em detach} & Le thread est il attaché? \\
+{\em detach} & True if you want to detach the thread \\
 \hline
 \end{DoxyParams}
 
@@ -69,10 +69,10 @@ Constructeur.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_thread_ac980f839f427ef11c0ae74ba5bec9c24}
 
 
-permet de savoir si le thread est actuellement lancé 
+Used to know if the thread is launched. 
 
 \begin{DoxyReturn}{Returns}
-true si lancé, sinon false 
+true if launched, false if stopped 
 \end{DoxyReturn}
 
 
