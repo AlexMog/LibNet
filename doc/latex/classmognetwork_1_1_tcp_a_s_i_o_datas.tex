@@ -15,6 +15,8 @@ Used to send datas between the threads. Is a \hyperlink{classmognetwork_1_1_sing
 \item 
 \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_aefa4425a076fbfe35ff9420e63aa5a41}{Tcp\-A\-S\-I\-O\-Datas} ()
 \item 
+\hyperlink{classmognetwork_1_1_mutex}{Mutex} \& \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_a18fc361b81d7cdc4c70209cf24110766}{get\-Mutex} ()
+\begin{DoxyCompactList}\small\item\em Get the partaged mutex. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} $\ast$ \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_a97b9895517d49687c35663ec4de5453e}{get\-Socket\-By\-Fd} (Socket\-F\-D fd)
 \begin{DoxyCompactList}\small\item\em Get a \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} via his Socket\-F\-D. \end{DoxyCompactList}\item 
 std\-::list$<$ \hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} $\ast$ $>$ $\ast$ \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_datas_a7c5c65122f57d2186fb735416a790763}{get\-Socket\-List} () const 
@@ -75,6 +77,20 @@ Get the instance of the \hyperlink{classmognetwork_1_1_singleton}{Singleton}.
 
 \begin{DoxyReturn}{Returns}
 the instance 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_datas_a18fc361b81d7cdc4c70209cf24110766}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}!get\-Mutex@{get\-Mutex}}
+\index{get\-Mutex@{get\-Mutex}!mognetwork::TcpASIODatas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}}
+\subsubsection[{get\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex}\& mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas\-::get\-Mutex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classmognetwork_1_1_tcp_a_s_i_o_datas_a18fc361b81d7cdc4c70209cf24110766}
+
+
+Get the partaged mutex. 
+
+\begin{DoxyReturn}{Returns}
+The partaged mutex 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_datas_a97b9895517d49687c35663ec4de5453e}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}!get\-Socket\-By\-Fd@{get\-Socket\-By\-Fd}}
 \index{get\-Socket\-By\-Fd@{get\-Socket\-By\-Fd}!mognetwork::TcpASIODatas@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Datas}}

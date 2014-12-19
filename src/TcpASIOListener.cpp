@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Sun Dec 14 17:57:24 2014 Moghrabi Alexandre
+// Last update Fri Dec 19 08:30:20 2014 Moghrabi Alexandre
 //
 
 #include "mognetwork/TcpASIODatas.hh"
@@ -28,6 +28,8 @@ namespace mognetwork
 
   TcpASIOListener::~TcpASIOListener()
   {
+    ::close(m_pipefd[0]);
+    ::close(m_pipefd[1]);
     delete m_thread;
   }
 
@@ -78,16 +80,14 @@ namespace mognetwork
 	  {
 	    if (*it == m_serverSocket.getSocketFD())
 	      {
+		TcpASIODatas::getInstance()->getMutex().lock();
 		// NEW CLIENT TO ACCEPT
 		acceptClient();
+		TcpASIODatas::getInstance()->getMutex().unlock();
 	      }
-	    else if (*it == m_pipefd[0])
+	    else if (*it != m_pipefd[0])
 	      {
-		char buffer[42];
-		while (read(m_pipefd[0], buffer, 42) > 0);
-	      }
-	    else
-	      {
+		TcpASIODatas::getInstance()->getMutex().lock();
 		TcpSocket* socket = TcpASIODatas::getInstance()->getSocketByFd(*it);
 		Socket::Status status = socket->readPendingDatas();
 		if (status == Socket::Ok)
@@ -106,6 +106,7 @@ namespace mognetwork
 		    m_selector.remFdToRead(*it);
 		    TcpASIODatas::getInstance()->remSocket(*it);
 		  }
+		TcpASIODatas::getInstance()->getMutex().unlock();
 	      }
 	  }
       }

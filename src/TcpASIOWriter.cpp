@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:45:50 2014 Moghrabi Alexandre
-// Last update Sat Dec 13 05:14:08 2014 Moghrabi Alexandre
+// Last update Fri Dec 19 08:14:15 2014 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -61,13 +61,16 @@ namespace mognetwork
       {
 	if (hasMoreDatasToSend)
 	  {
+	    TcpASIODatas::getInstance()->getMutex().lock();
 	    setFds();
+	    TcpASIODatas::getInstance()->getMutex().unlock();
 	    m_selector.waitForTrigger();
 	    if (m_selector.getState() == Selector::Error)
 	      {
 		std::cerr << "Select error on writing thread." << std::endl;
 		return ;
 	      }
+	    TcpASIODatas::getInstance()->getMutex().lock();
 	    std::list<SocketFD> triggeredList = m_selector.getWritingTriggeredSockets();
 	    hasMoreDatasToSend = false;
 	    for (std::list<SocketFD>::iterator it = triggeredList.begin(); it != triggeredList.end(); ++it)
@@ -78,6 +81,7 @@ namespace mognetwork
 		if (socket->havingPendingDatas())
 		  hasMoreDatasToSend = true;
 	      }
+	    TcpASIODatas::getInstance()->getMutex().unlock();
 	  }
 	else
 	  {

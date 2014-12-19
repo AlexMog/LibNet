@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 18:28:09 2014 Moghrabi Alexandre
-// Last update Mon Dec 15 07:35:15 2014 Moghrabi Alexandre
+// Last update Fri Dec 19 08:18:26 2014 Moghrabi Alexandre
 //
 
 /*!
@@ -21,6 +21,7 @@
 # include <list>
 # include "TcpSocket.hh"
 # include "Singleton.hh"
+# include "Mutex.hh"
 
 namespace mognetwork
 {
@@ -45,6 +46,11 @@ namespace mognetwork
     TcpASIODatas();
 
   public:
+    /*!
+     * \brief Get the partaged mutex
+     * \return The partaged mutex
+     */
+    Mutex& getMutex() {return m_mutex;}
     /*!
      * \brief Get a TcpSocket via his SocketFD
      * \param fd The SocketFD to find
@@ -76,6 +82,7 @@ namespace mognetwork
 
   private:
     std::list<TcpSocket*>* m_socketList; /*!< List of the sockets connected */
+    Mutex m_mutex;
   };
 } // namespace mognetwork
 

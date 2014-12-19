@@ -7,6 +7,7 @@ var searchData=
   ['geterrorstatus',['getErrorStatus',['../classmognetwork_1_1_os_socket.html#a331f63335ee89ae3eaa24a59cbada192',1,'mognetwork::OsSocket']]],
   ['getinstance',['getInstance',['../classmognetwork_1_1_tcp_a_s_i_o_datas.html#af07cf0c2b0e71e370d7975a97ba7cc83',1,'mognetwork::TcpASIODatas']]],
   ['getint',['getInt',['../classmognetwork_1_1_ip_address.html#a56ff31f84eb42a1c8a65a40fc67947d5',1,'mognetwork::IpAddress']]],
+  ['getmutex',['getMutex',['../classmognetwork_1_1_tcp_a_s_i_o_datas.html#a18fc361b81d7cdc4c70209cf24110766',1,'mognetwork::TcpASIODatas']]],
   ['getpacketreaded',['getPacketReaded',['../classmognetwork_1_1_tcp_socket.html#ac8619a5f869abfda7b8c2d32c94870f3',1,'mognetwork::TcpSocket']]],
   ['getreadingtriggeredsockets',['getReadingTriggeredSockets',['../classmognetwork_1_1_selector.html#ae41a4ff4e9281cdd03880f69c0c71a35',1,'mognetwork::Selector']]],
   ['getselector',['getSelector',['../classmognetwork_1_1_tcp_a_s_i_o_listener.html#aed4473511088d8bc91ce118334eed24d',1,'mognetwork::TcpASIOListener::getSelector()'],['../classmognetwork_1_1_tcp_a_s_i_o_writer.html#ab7f6474ccd1082d2fc9f8acd2be87d3c',1,'mognetwork::TcpASIOWriter::getSelector()']]],
