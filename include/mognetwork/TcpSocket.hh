@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Mon Dec 15 07:17:31 2014 Moghrabi Alexandre
+// Last update Fri Feb 27 15:52:05 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -27,6 +27,7 @@
 
 namespace mognetwork
 {
+  class TcpASIOServer;
   class Packet;
   /*!
    * \class TcpSocket
@@ -133,12 +134,23 @@ namespace mognetwork
      * \return Datas formatted with the Packet object
      */
     Packet* getPacketReaded();
+    /*!
+     * \brief Set the server when using TcpASIOServer
+     * \param The TcpASIOServer pointer
+     */
+    void setServer(TcpASIOServer* server);
+    /*!
+     * \brief Get the TcpASIOServer parent of the socket
+     * \return The TcpASIOServer pointer to the parent
+     */
+    TcpASIOServer* getServer() const;
 
   private:
     DataList m_pendingDatas; /*!< Waiting datas */
     ReadedDatas m_pendingRDatas; /*!< Waiting for read datas */
     ReadedDatas *m_allDataReaded; /*!< Readed datas */
     void* m_userData; /*!< Optional datas */
+    TcpASIOServer* m_server;
   };
 } // namespace mognetwork
 

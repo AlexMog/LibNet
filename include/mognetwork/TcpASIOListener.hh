@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Mon Dec 15 07:32:20 2014 Moghrabi Alexandre
+// Last update Fri Feb 27 15:46:04 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -31,6 +31,7 @@
 
 namespace mognetwork
 {
+  class TcpASIOServer;
   /*!
    * \class TcpASIOListener
    * \brief Listen and read datas in ASIO mode.
@@ -43,6 +44,12 @@ namespace mognetwork
      * \param serverSocket The server socket to be used. (must be connected)
      */
     TcpASIOListener(TcpServerSocket& serverSocket);
+    /*!
+     * \brief default constructor
+     * \param serverSocket The server socket to be used. (must be connected)
+     * \param server Used by TcpASIOServer
+     */
+    TcpASIOListener(TcpServerSocket& serverSocket, TcpASIOServer* server);
     virtual ~TcpASIOListener();
 
   public:
@@ -81,6 +88,7 @@ namespace mognetwork
 
   private:
     void acceptClient();
+    void init();
 
   public:
     /*!
@@ -98,6 +106,7 @@ namespace mognetwork
     int m_pipefd[2]; /*!< pipe used to stop the listener */
     TcpServerSocket& m_serverSocket; /*!< reference on the TcpServerSocket */
     Time m_timeout; /* Timeout value for the select */
+    TcpASIOServer* m_server;
   };
 } // namespace mognetwork
 

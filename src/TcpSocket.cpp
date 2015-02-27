@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Wed Dec 10 17:12:54 2014 Moghrabi Alexandre
+// Last update Fri Feb 27 15:51:21 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -253,6 +253,16 @@ namespace mognetwork
   TcpSocket::ReadedDatas* TcpSocket::getDatasReaded() const
   {
     return (m_allDataReaded);
+  }
+
+  void TcpSocket::setServer(TcpASIOServer* server)
+  {
+    m_server = server;
+  }
+
+  TcpASIOServer* TcpSocket::getServer() const
+  {
+    return m_server;
   }
 
   Packet* TcpSocket::getPacketReaded()

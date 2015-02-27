@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:45:50 2014 Moghrabi Alexandre
-// Last update Fri Dec 19 08:14:15 2014 Moghrabi Alexandre
+// Last update Fri Feb 27 15:47:35 2015 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -15,13 +15,26 @@
 namespace mognetwork
 {
   TcpASIOWriter::TcpASIOWriter() :
-    m_running(true)
+    m_running(true),
+    m_server(NULL)
+  {
+    init();
+  }
+
+  void TcpASIOWriter::init()
   {
     m_thread = new Thread(*this, false);
     m_socketList = TcpASIODatas::getInstance()->getSocketList();
     m_timeout.tv_sec = 0;
     m_timeout.tv_usec = 1000;
     m_selector.setTimeout(&m_timeout);
+  }
+
+  TcpASIOWriter::TcpASIOWriter(TcpASIOServer* server) :
+    m_running(true),
+    m_server(server)
+  {
+    init();
   }
 
   TcpASIOWriter::~TcpASIOWriter()

@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Fri Dec 19 08:30:20 2014 Moghrabi Alexandre
+// Last update Fri Feb 27 15:55:18 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/TcpASIODatas.hh"
@@ -15,7 +15,14 @@
 namespace mognetwork
 {
   TcpASIOListener::TcpASIOListener(TcpServerSocket& serverSocket) :
-    m_running(true), m_serverSocket(serverSocket)
+    m_running(true),
+    m_serverSocket(serverSocket),
+    m_server(NULL)
+  {
+    init();
+  }
+
+  void TcpASIOListener::init()
   {
     m_thread = new Thread(*this, false);
     if (pipe(m_pipefd) != 0)
@@ -25,6 +32,15 @@ namespace mognetwork
     m_timeout.tv_usec = 100000;
     m_selector.setTimeout(NULL);
   }
+
+  TcpASIOListener::TcpASIOListener(TcpServerSocket& serverSocket, TcpASIOServer* server) :
+    m_running(true),
+    m_serverSocket(serverSocket),
+    m_server(server)
+  {
+    init();
+  }
+
 
   TcpASIOListener::~TcpASIOListener()
   {
@@ -59,6 +75,7 @@ namespace mognetwork
 	std::cerr << "A client cannot be accepted." << std::endl;
 	return ;
       }
+    cSocket->setServer(m_server);
     m_selector.addFdToRead(cSocket->getSocketFD());
     TcpASIODatas::getInstance()->addSocket(cSocket);
     for (std::list<ITcpASIOListenerHandler*>::iterator it = m_listeners.begin(); it != m_listeners.end(); ++it)
@@ -89,6 +106,7 @@ namespace mognetwork
 	      {
 		TcpASIODatas::getInstance()->getMutex().lock();
 		TcpSocket* socket = TcpASIODatas::getInstance()->getSocketByFd(*it);
+		socket->setServer(m_server);
 		Socket::Status status = socket->readPendingDatas();
 		if (status == Socket::Ok)
 		  {

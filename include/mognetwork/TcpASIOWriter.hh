@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:35:53 2014 Moghrabi Alexandre
-// Last update Mon Dec 15 07:24:42 2014 Moghrabi Alexandre
+// Last update Fri Feb 27 15:47:18 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -28,6 +28,7 @@
 
 namespace mognetwork
 {
+  class TcpASIOServer;
   /*!
    * \class TcpASIOWriter
    * \brief Writing Thread for the TcpASIOServer
@@ -39,6 +40,11 @@ namespace mognetwork
      * \brief Default constructor
      */
     TcpASIOWriter();
+    /*!
+     * \brief This constructor is used with the TcpASIOServer
+     * \param server The TcpASIOServer parent
+     */
+    TcpASIOWriter(TcpASIOServer* server);
     virtual ~TcpASIOWriter();
 
   public:
@@ -88,12 +94,16 @@ namespace mognetwork
     CondVar& getCondVar() {return m_condVar;}
 
   private:
+    void init();
+
+  private:
     Selector m_selector; /*!< The Selector used */
     CondVar m_condVar; /*!< The CondVar used */
     Thread* m_thread; /*!< The Thread instance */
     bool m_running; /*!< The writing state */
     std::list<TcpSocket*>* m_socketList; /*!< A list of sockets to limit the singleton usage */
     Time m_timeout;
+    TcpASIOServer* m_server;
   };  
 } // namespace mognetwork
 

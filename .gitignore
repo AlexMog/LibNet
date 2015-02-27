@@ -30,3 +30,4 @@
 # Special
 generate_doc.sh
 *~
+build/

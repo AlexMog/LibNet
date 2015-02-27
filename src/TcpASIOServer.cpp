@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:38:14 2014 Moghrabi Alexandre
-// Last update Sun Dec 14 17:52:24 2014 Moghrabi Alexandre
+// Last update Fri Feb 27 15:42:11 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/TcpASIOServer.hh"
@@ -14,8 +14,8 @@ namespace mognetwork
 {
   TcpASIOServer::TcpASIOServer(int port)
   {
-    m_serverListener = new TcpASIOListener(m_serverSocket);
-    m_serverWriter = new TcpASIOWriter();
+    m_serverListener = new TcpASIOListener(m_serverSocket, this);
+    m_serverWriter = new TcpASIOWriter(this);
     m_port = port;
   }
 
