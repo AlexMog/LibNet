@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Sat Nov 15 18:00:03 2014 Moghrabi Alexandre
-// Last update Mon Dec 15 07:27:42 2014 Moghrabi Alexandre
+// Last update Sat Feb 28 18:47:41 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -69,6 +69,10 @@ namespace mognetwork
      * \return a pointer on the TcpASIOListener
      */
     TcpASIOListener* getServerListener() const {return m_serverListener;}
+    int getPort() const {return m_port;}
+
+  public:
+    void setPort(int port) {m_port = port;}
 
   private:
     TcpASIOListener* m_serverListener; /*!< instance of the listening thread */
