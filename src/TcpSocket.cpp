@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Fri Feb 27 15:51:21 2015 Moghrabi Alexandre
+// Last update Sun Mar  8 07:08:56 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -139,7 +139,9 @@ namespace mognetwork
     _data->resize(size + sizeof(std::size_t));
     std::memcpy(&_data->front(), &size, sizeof(std::size_t));
     std::memcpy(&_data->front() + sizeof(std::size_t), data, size);
+    m_mutex.lock();
     m_pendingDatas.push_back(_data);
+    m_mutex.unlock();
     return (Ok);
   }
 
@@ -200,7 +202,9 @@ namespace mognetwork
 
   void TcpSocket::setUserData(void* userData)
   {
+    m_mutex.lock();
     m_userData = userData;
+    m_mutex.unlock();
   }
 
   void* TcpSocket::getUserData() const
@@ -257,7 +261,9 @@ namespace mognetwork
 
   void TcpSocket::setServer(TcpASIOServer* server)
   {
+    m_mutex.lock();
     m_server = server;
+    m_mutex.unlock();
   }
 
   TcpASIOServer* TcpSocket::getServer() const

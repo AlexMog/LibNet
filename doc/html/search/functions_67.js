@@ -11,6 +11,7 @@ var searchData=
   ['getpacketreaded',['getPacketReaded',['../classmognetwork_1_1_tcp_socket.html#ac8619a5f869abfda7b8c2d32c94870f3',1,'mognetwork::TcpSocket']]],
   ['getreadingtriggeredsockets',['getReadingTriggeredSockets',['../classmognetwork_1_1_selector.html#ae41a4ff4e9281cdd03880f69c0c71a35',1,'mognetwork::Selector']]],
   ['getselector',['getSelector',['../classmognetwork_1_1_tcp_a_s_i_o_listener.html#aed4473511088d8bc91ce118334eed24d',1,'mognetwork::TcpASIOListener::getSelector()'],['../classmognetwork_1_1_tcp_a_s_i_o_writer.html#ab7f6474ccd1082d2fc9f8acd2be87d3c',1,'mognetwork::TcpASIOWriter::getSelector()']]],
+  ['getserver',['getServer',['../classmognetwork_1_1_tcp_socket.html#ab07f10a9f78168c051e7429e7f45a95f',1,'mognetwork::TcpSocket']]],
   ['getserverlistener',['getServerListener',['../classmognetwork_1_1_tcp_a_s_i_o_server.html#afb30f505e64de27887abec2e8cfd50ff',1,'mognetwork::TcpASIOServer']]],
   ['getserverwriter',['getServerWriter',['../classmognetwork_1_1_tcp_a_s_i_o_server.html#a55e84839aad1572d36a0c7fcbc1fd84d',1,'mognetwork::TcpASIOServer']]],
   ['getsocketbyfd',['getSocketByFd',['../classmognetwork_1_1_tcp_a_s_i_o_datas.html#a97b9895517d49687c35663ec4de5453e',1,'mognetwork::TcpASIODatas']]],

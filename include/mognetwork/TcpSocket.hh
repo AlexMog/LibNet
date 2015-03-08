@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Fri Feb 27 15:52:05 2015 Moghrabi Alexandre
+// Last update Sun Mar  8 07:02:12 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -23,6 +23,7 @@
 # include <string>
 # include "IpAddress.hh"
 # include "Socket.hh"
+# include "Mutex.hh"
 
 
 namespace mognetwork
@@ -151,6 +152,7 @@ namespace mognetwork
     ReadedDatas *m_allDataReaded; /*!< Readed datas */
     void* m_userData; /*!< Optional datas */
     TcpASIOServer* m_server;
+    Mutex m_mutex;
   };
 } // namespace mognetwork
 

@@ -62,7 +62,11 @@ void $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_adef63a929423324fd75888e21
 \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_a6dbe149a276fb24203267762fbd1c276}{get\-Datas\-Readed} () const 
 \begin{DoxyCompactList}\small\item\em Get datas that have been readed in async mode. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_packet}{Packet} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_ac8619a5f869abfda7b8c2d32c94870f3}{get\-Packet\-Readed} ()
-\begin{DoxyCompactList}\small\item\em Get the readed datas as a \hyperlink{classmognetwork_1_1_packet}{Packet}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the readed datas as a \hyperlink{classmognetwork_1_1_packet}{Packet}. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_tcp_socket_ae35e2fd8fbf6f9d3bdb87650b3bedff1}{set\-Server} (\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server} $\ast$server)
+\begin{DoxyCompactList}\small\item\em Set the server when using \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server}. \end{DoxyCompactList}\item 
+\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_ab07f10a9f78168c051e7429e7f45a95f}{get\-Server} () const 
+\begin{DoxyCompactList}\small\item\em Get the \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server} parent of the socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -166,6 +170,20 @@ Get the readed datas as a \hyperlink{classmognetwork_1_1_packet}{Packet}.
 
 \begin{DoxyReturn}{Returns}
 Datas formatted with the \hyperlink{classmognetwork_1_1_packet}{Packet} object 
+\end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_socket_ab07f10a9f78168c051e7429e7f45a95f}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-Server@{get\-Server}}
+\index{get\-Server@{get\-Server}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
+\subsubsection[{get\-Server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tcp\-A\-S\-I\-O\-Server}$\ast$ mognetwork\-::\-Tcp\-Socket\-::get\-Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classmognetwork_1_1_tcp_socket_ab07f10a9f78168c051e7429e7f45a95f}
+
+
+Get the \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server} parent of the socket. 
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server} pointer to the parent 
 \end{DoxyReturn}
 \hypertarget{classmognetwork_1_1_tcp_socket_adef63a929423324fd75888e2195176e0}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-User\-Data@{get\-User\-Data}}
 \index{get\-User\-Data@{get\-User\-Data}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
@@ -292,6 +310,22 @@ Send pending datas added with async\-Send.
 \begin{DoxyReturn}{Returns}
 \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} connexion state 
 \end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_socket_ae35e2fd8fbf6f9d3bdb87650b3bedff1}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!set\-Server@{set\-Server}}
+\index{set\-Server@{set\-Server}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
+\subsubsection[{set\-Server}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Tcp\-Socket\-::set\-Server (
+\begin{DoxyParamCaption}
+\item[{{\bf Tcp\-A\-S\-I\-O\-Server} $\ast$}]{server}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_tcp_socket_ae35e2fd8fbf6f9d3bdb87650b3bedff1}
+
+
+Set the server when using \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server} pointer \\
+\hline
+\end{DoxyParams}
 \hypertarget{classmognetwork_1_1_tcp_socket_a2d7327be349e705c74bdc6b40c1b2520}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!set\-User\-Data@{set\-User\-Data}}
 \index{set\-User\-Data@{set\-User\-Data}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
 \subsubsection[{set\-User\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Tcp\-Socket\-::set\-User\-Data (
