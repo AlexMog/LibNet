@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Mon Mar  9 18:28:24 2015 Moghrabi Alexandre
+// Last update Mon Mar  9 18:50:19 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -155,19 +155,25 @@ namespace mognetwork
 
   Socket::Status TcpSocket::sendPendingDatas()
   {
+    m_mutex.lock();
     if (!m_pendingDatas.empty())
       {
 	int sended;
 	DataList::iterator it = m_pendingDatas.begin();
 	sended = ::send(getSocketFD(), &(*it)->front(), (*it)->size(), flags | MSG_DONTWAIT);
-	if (sended < 0)
+	if (sended < 0) {
+	  m_mutex.unlock();
 	  return (OsSocket::getErrorStatus());
-	if (sended == 0)
+	}
+	if (sended == 0) {
+	  m_mutex.unlock();
 	  return (Disconnected);
+	}
 	if ((std::size_t)sended == (*it)->size())
 	  {
 	    delete *it;
 	    m_pendingDatas.pop_front();
+	    m_mutex.unlock();
 	    return (sendPendingDatas());
 	  }
 	Data temp;
@@ -176,8 +182,10 @@ namespace mognetwork
 	std::size_t waiting = (*it)->size() - sended;
 	(*it)->resize(waiting);
 	std::memcpy(&(*it)->front(), &temp[0], waiting);
+	m_mutex.unlock();
 	return (Ok);
       }
+    m_mutex.unlock();
     return (Nok);
   }
 
