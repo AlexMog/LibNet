@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Sun Mar  8 07:08:56 2015 Moghrabi Alexandre
+// Last update Mon Mar  9 18:28:24 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -145,9 +145,12 @@ namespace mognetwork
     return (Ok);
   }
 
-  bool TcpSocket::havingPendingDatas() const
+  bool TcpSocket::havingPendingDatas()
   {
-    return (!m_pendingDatas.empty());
+    m_mutex.lock();
+    bool status = m_pendingDatas.empty();
+    m_mutex.unlock();
+    return (status);
   }
 
   Socket::Status TcpSocket::sendPendingDatas()

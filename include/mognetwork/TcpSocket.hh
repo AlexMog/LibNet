@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Sun Mar  8 07:02:12 2015 Moghrabi Alexandre
+// Last update Mon Mar  9 18:27:54 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -109,7 +109,7 @@ namespace mognetwork
      * \brief Let you know if there is pending datas in the send list
      * \return true if there is data, false if not
      */
-    bool havingPendingDatas() const;
+    bool havingPendingDatas();
     /*!
      * \brief Define datas that you can attach to the socket
      * \param userData the datas you want to attach to the socket
