@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Mon Mar 23 10:27:39 2015 Moghrabi Alexandre
+// Last update Mon Mar 23 10:31:39 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -139,9 +139,7 @@ namespace mognetwork
     _data->resize(size + sizeof(std::size_t));
     std::memcpy(&_data->front(), &size, sizeof(std::size_t));
     std::memcpy(&_data->front() + sizeof(std::size_t), data, size);
-    m_mutex.lock();
     m_pendingDatas.push_back(_data);
-    m_mutex.unlock();
     return (Ok);
   }
 
