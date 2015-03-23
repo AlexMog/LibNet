@@ -52,6 +52,7 @@ public:
     std::cout << "bool: " << b << std::endl;
     
     client.asyncSend("LOL\0", 4);
+    std::cout << "LAULE"<< std::endl;
     m_writer->triggerData();
     delete packet;
     //delete datas;

@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:45:50 2014 Moghrabi Alexandre
-// Last update Fri Feb 27 15:47:35 2015 Moghrabi Alexandre
+// Last update Mon Mar 23 10:48:32 2015 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -61,9 +61,10 @@ namespace mognetwork
   void TcpASIOWriter::setFds()
   {
     m_selector.clearFdToWrite();
-    for (std::list<TcpSocket*>::iterator it = m_socketList->begin(); it != m_socketList->end(); ++it)
+    for (std::list<TcpSocket*>::iterator it = m_socketList->begin(); it != m_socketList->end(); ++it) {
       if ((*it)->havingPendingDatas())
 	m_selector.addFdToWrite((*it)->getSocketFD());
+    }
   }
 
   void TcpASIOWriter::run()

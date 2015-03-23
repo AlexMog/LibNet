@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Mon Mar 23 10:31:39 2015 Moghrabi Alexandre
+// Last update Mon Mar 23 10:53:32 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -145,9 +145,9 @@ namespace mognetwork
 
   bool TcpSocket::havingPendingDatas()
   {
-    m_mutex.lock();
-    bool status = m_pendingDatas.empty();
-    m_mutex.unlock();
+    //    m_mutex.lock();
+    bool status = !m_pendingDatas.empty();
+    //m_mutex.unlock();
     return (status);
   }
 
@@ -211,9 +211,9 @@ namespace mognetwork
 
   void TcpSocket::setUserData(void* userData)
   {
-    m_mutex.lock();
+    //    m_mutex.lock();
     m_userData = userData;
-    m_mutex.unlock();
+    //m_mutex.unlock();
   }
 
   void* TcpSocket::getUserData() const
@@ -270,9 +270,9 @@ namespace mognetwork
 
   void TcpSocket::setServer(TcpASIOServer* server)
   {
-    m_mutex.lock();
+    //    m_mutex.lock();
     m_server = server;
-    m_mutex.unlock();
+    //m_mutex.unlock();
   }
 
   TcpASIOServer* TcpSocket::getServer() const

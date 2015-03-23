@@ -21,14 +21,15 @@ int main(int ac, char **av)
   int64_t i64 = 64;
   std::string s = "coucou\0";
 
-  packet << b;
+
   packet << c;
   packet << d;
   packet << f;
-  packet << i16;
+  //  packet << i16;
   packet << i32;
-  packet << i64;
+  //  packet << i64;
   packet << s.c_str();
+  packet << b;
 
   std::cout << "Connecting to server..." << std::endl;
   try {
