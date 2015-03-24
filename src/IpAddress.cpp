@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Mon Jun  9 16:05:21 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 25 16:50:42 2014 Moghrabi Alexandre
+// Last update Tue Mar 24 19:40:41 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -24,7 +24,12 @@
 
 namespace mognetwork
 {
-  IpAddress::IpAddress(const std::string& address) : m_sAddress(address), m_address(0) {}
+  IpAddress::IpAddress(const std::string& address) :
+    m_sAddress(address),
+    m_address(0)
+  {
+    resolve();
+  }
   
   IpAddress::~IpAddress() {}
 
