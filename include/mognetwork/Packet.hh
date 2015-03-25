@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
-// Last update Wed Mar 25 15:13:06 2015 Moghrabi Alexandre
+// Last update Wed Mar 25 18:51:36 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -71,6 +71,8 @@ namespace mognetwork
      * \param data the char* to set (it have to be a buffer with a size to receive the datas)
      */
     Packet& operator>>(char* data);
+    Packet& operator>>(std::string& data);
+    Packet& operator<<(const std::string& data);
     /*!
      * \brief extract native datas from the packet
      * \param data the data to set
