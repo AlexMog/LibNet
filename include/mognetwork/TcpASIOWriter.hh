@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:35:53 2014 Moghrabi Alexandre
-// Last update Fri Feb 27 15:47:18 2015 Moghrabi Alexandre
+// Last update Wed Mar 25 15:39:51 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -24,6 +24,7 @@
 # include "CondVar.hh"
 # include "Thread.hh"
 # include "IRunnable.hh"
+# include "Mutex.hh"
 # include <list>
 
 namespace mognetwork
@@ -101,7 +102,8 @@ namespace mognetwork
     CondVar m_condVar; /*!< The CondVar used */
     Thread* m_thread; /*!< The Thread instance */
     bool m_running; /*!< The writing state */
-    std::list<TcpSocket*>* m_socketList; /*!< A list of sockets to limit the singleton usage */
+    Mutex* m_mutex;
+    std::list<TcpSocket*>* m_socketList;
     Time m_timeout;
     TcpASIOServer* m_server;
   };  

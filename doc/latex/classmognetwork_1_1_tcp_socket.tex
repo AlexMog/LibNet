@@ -51,7 +51,7 @@ typedef std\-::list$<$ \hyperlink{classmognetwork_1_1_tcp_socket_aa80d910649a16c
 \begin{DoxyCompactList}\small\item\em Add datas to async send list. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1_tcp_socket_afbb854293f7f8e404bb553e5c5ba1277}{send\-Pending\-Datas} ()
 \begin{DoxyCompactList}\small\item\em Send pending datas added with async\-Send. \end{DoxyCompactList}\item 
-bool \hyperlink{classmognetwork_1_1_tcp_socket_aff17b683f622b017876751d9cbbad3bb}{having\-Pending\-Datas} () const 
+bool \hyperlink{classmognetwork_1_1_tcp_socket_a7269551095b10d859f8710cb5aaed3d6}{having\-Pending\-Datas} ()
 \begin{DoxyCompactList}\small\item\em Let you know if there is pending datas in the send list. \end{DoxyCompactList}\item 
 void \hyperlink{classmognetwork_1_1_tcp_socket_a2d7327be349e705c74bdc6b40c1b2520}{set\-User\-Data} (void $\ast$user\-Data)
 \begin{DoxyCompactList}\small\item\em Define datas that you can attach to the socket. \end{DoxyCompactList}\item 
@@ -199,13 +199,13 @@ Get the user\-Data you added to the socket.
 \begin{DoxyReturn}{Returns}
 a pointer with the datas 
 \end{DoxyReturn}
-\hypertarget{classmognetwork_1_1_tcp_socket_aff17b683f622b017876751d9cbbad3bb}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!having\-Pending\-Datas@{having\-Pending\-Datas}}
+\hypertarget{classmognetwork_1_1_tcp_socket_a7269551095b10d859f8710cb5aaed3d6}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!having\-Pending\-Datas@{having\-Pending\-Datas}}
 \index{having\-Pending\-Datas@{having\-Pending\-Datas}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
 \subsubsection[{having\-Pending\-Datas}]{\setlength{\rightskip}{0pt plus 5cm}bool mognetwork\-::\-Tcp\-Socket\-::having\-Pending\-Datas (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{classmognetwork_1_1_tcp_socket_aff17b683f622b017876751d9cbbad3bb}
+)}}\label{classmognetwork_1_1_tcp_socket_a7269551095b10d859f8710cb5aaed3d6}
 
 
 Let you know if there is pending datas in the send list. 
@@ -290,7 +290,7 @@ Send datas in sync mode.
 \begin{DoxyParams}{Parameters}
 {\em data} & the datas to send (as a char array) \\
 \hline
-{\em the} & size of the datas to send \\
+{\em size} & the size of the datas to send \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -323,7 +323,7 @@ Set the server when using \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp
 
 
 \begin{DoxyParams}{Parameters}
-{\em The} & \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server} pointer \\
+{\em server} & The \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server} pointer \\
 \hline
 \end{DoxyParams}
 \hypertarget{classmognetwork_1_1_tcp_socket_a2d7327be349e705c74bdc6b40c1b2520}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!set\-User\-Data@{set\-User\-Data}}

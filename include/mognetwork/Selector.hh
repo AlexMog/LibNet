@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Wed Jun 11 15:43:12 2014 mognetworkhrabi Alexandre
-// Last update Mon Dec 15 07:44:24 2014 Moghrabi Alexandre
+// Last update Wed Mar 25 15:12:32 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -73,7 +73,7 @@ namespace mognetwork
     State getState() const {return m_state;}
     /*!
      * \brief Get the socket list that are ready to be edited in writing mode
-     * \reutn The list of the SocketFD
+     * \return The list of the SocketFD
      */
     const std::list<SocketFD>& getWritingTriggeredSockets() const {return m_writeUpdated;}
     /*!

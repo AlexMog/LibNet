@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
-// Last update Mon Dec 15 09:39:17 2014 Moghrabi Alexandre
+// Last update Wed Mar 25 15:13:06 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -111,7 +111,6 @@ namespace mognetwork
     unsigned int getDataSize() const {return m_data->size();}
     /*!
      * \brief add datas to the packet
-     * \depreciated prefer to use the operator system
      * \param data Data to add
      * \param size Size of the data to add
      */

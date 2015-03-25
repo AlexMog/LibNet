@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Mon Mar  9 18:27:54 2015 Moghrabi Alexandre
+// Last update Wed Mar 25 15:15:36 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -74,7 +74,7 @@ namespace mognetwork
     /*!
      * \brief Send datas in sync mode.
      * \param data the datas to send (as a char array)
-     * \param the size of the datas to send
+     * \param size the size of the datas to send
      * \return Socket::Status state of the sended datas
      */
     Socket::Status send(const char* data, std::size_t size);
@@ -137,7 +137,7 @@ namespace mognetwork
     Packet* getPacketReaded();
     /*!
      * \brief Set the server when using TcpASIOServer
-     * \param The TcpASIOServer pointer
+     * \param server The TcpASIOServer pointer
      */
     void setServer(TcpASIOServer* server);
     /*!

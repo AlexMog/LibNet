@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Mon Dec 15 09:39:17 2014 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Wed Mar 25 15:13:06 2015 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef MOGNETWORK_PACKET_HH</span></div>
@@ -145,23 +145,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_packet.html#aaa034856ddb45ebf35dcefd6d58563d9">  101</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_packet.html#aaa034856ddb45ebf35dcefd6d58563d9">clear</a>() {m_data-&gt;clear();m_readerPos = 0;}</div>
 <div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_packet.html#afb66469155c26ec3f1a9c77a7c23841b">  106</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span>* <a class="code" href="classmognetwork_1_1_packet.html#afb66469155c26ec3f1a9c77a7c23841b">getData</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> (!m_data-&gt;empty() ? &amp;((*m_data)[0]) : NULL);}</div>
 <div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classmognetwork_1_1_packet.html#a3f27100558a578cea57c0b0502b6e9c9">  111</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmognetwork_1_1_packet.html#a3f27100558a578cea57c0b0502b6e9c9">getDataSize</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_data-&gt;size();}</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_packet.html#a2d60777d07c0f1b0e97060a17b9bed43">push</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* data, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">bool</span> verifySize(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size) {<span class="keywordflow">return</span> (m_readerPos + size &lt;= m_data-&gt;size());}</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    std::vector&lt;char&gt;* m_data; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_readerPos; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    TcpSocket::ReadedDatas* m_dataPack; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  };</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_PACKET_HH</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_packet.html#a2d60777d07c0f1b0e97060a17b9bed43">push</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* data, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">bool</span> verifySize(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size) {<span class="keywordflow">return</span> (m_readerPos + size &lt;= m_data-&gt;size());}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    std::vector&lt;char&gt;* m_data; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_readerPos; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    TcpSocket::ReadedDatas* m_dataPack; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  };</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_PACKET_HH</span></div>
 <div class="ttc" id="classmognetwork_1_1_packet_html_a83f88dde9175ac8b47ec9a5d28635283"><div class="ttname"><a href="classmognetwork_1_1_packet.html#a83f88dde9175ac8b47ec9a5d28635283">mognetwork::Packet::operator&gt;&gt;</a></div><div class="ttdeci">Packet &amp; operator&gt;&gt;(uint32_t &amp;data)</div><div class="ttdoc">Extract a uint32_t from the packet. </div></div>
 <div class="ttc" id="structmognetwork_1_1_tcp_socket_1_1_readed_datas_html"><div class="ttname"><a href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">mognetwork::TcpSocket::ReadedDatas</a></div><div class="ttdoc">Has all the datas to retrive and send process in ASIO. </div><div class="ttdef"><b>Definition:</b> TcpSocket.hh:47</div></div>
 <div class="ttc" id="classmognetwork_1_1_packet_html_afb66469155c26ec3f1a9c77a7c23841b"><div class="ttname"><a href="classmognetwork_1_1_packet.html#afb66469155c26ec3f1a9c77a7c23841b">mognetwork::Packet::getData</a></div><div class="ttdeci">const void * getData() const </div><div class="ttdoc">Get the datas stored in the packet. </div><div class="ttdef"><b>Definition:</b> Packet.hh:106</div></div>
-<div class="ttc" id="classmognetwork_1_1_packet_html_a2d60777d07c0f1b0e97060a17b9bed43"><div class="ttname"><a href="classmognetwork_1_1_packet.html#a2d60777d07c0f1b0e97060a17b9bed43">mognetwork::Packet::push</a></div><div class="ttdeci">void push(const void *data, unsigned int size)</div><div class="ttdoc">add datas to the packet  prefer to use the operator system </div></div>
+<div class="ttc" id="classmognetwork_1_1_packet_html_a2d60777d07c0f1b0e97060a17b9bed43"><div class="ttname"><a href="classmognetwork_1_1_packet.html#a2d60777d07c0f1b0e97060a17b9bed43">mognetwork::Packet::push</a></div><div class="ttdeci">void push(const void *data, unsigned int size)</div><div class="ttdoc">add datas to the packet </div></div>
 <div class="ttc" id="classmognetwork_1_1_packet_html_a0ec841b42fafcd48aa4ac2d54fea6177"><div class="ttname"><a href="classmognetwork_1_1_packet.html#a0ec841b42fafcd48aa4ac2d54fea6177">mognetwork::Packet::operator&lt;&lt;</a></div><div class="ttdeci">Packet &amp; operator&lt;&lt;(uint32_t data)</div><div class="ttdoc">add a uint32_t to the packet </div></div>
 <div class="ttc" id="classmognetwork_1_1_packet_html_aaa034856ddb45ebf35dcefd6d58563d9"><div class="ttname"><a href="classmognetwork_1_1_packet.html#aaa034856ddb45ebf35dcefd6d58563d9">mognetwork::Packet::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clear the datas. </div><div class="ttdef"><b>Definition:</b> Packet.hh:101</div></div>
 <div class="ttc" id="_tcp_socket_8hh_html"><div class="ttname"><a href="_tcp_socket_8hh.html">TcpSocket.hh</a></div><div class="ttdoc">Gestion des sockets en TCP. </div></div>
@@ -172,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 8 2015 07:09:42 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 25 2015 16:31:01 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

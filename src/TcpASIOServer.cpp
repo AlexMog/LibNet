@@ -5,16 +5,17 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:38:14 2014 Moghrabi Alexandre
-// Last update Sat Feb 28 18:46:51 2015 Moghrabi Alexandre
+// Last update Wed Mar 25 16:16:40 2015 Moghrabi Alexandre
 //
 
+#include "mognetwork/Mutex.hh"
 #include "mognetwork/TcpASIOServer.hh"
 
 namespace mognetwork
 {
   TcpASIOServer::TcpASIOServer(int port)
   {
-    m_serverListener = new TcpASIOListener(m_serverSocket, this);
+    m_serverListener = new TcpASIOListener(this);
     m_serverWriter = new TcpASIOWriter(this);
     m_port = port;
   }
@@ -40,5 +41,29 @@ namespace mognetwork
   {
     m_serverWriter->stop();
     m_serverListener->stop();
+  }
+
+  TcpSocket* TcpASIOServer::getSocketByFd(SocketFD fd)
+  {
+    for (std::list<TcpSocket*>::iterator it = m_socketList.begin(); it != m_socketList.end(); ++it)
+      if ((*it)->getSocketFD() == fd)
+	return *it;
+    return NULL;
+  }
+
+  void TcpASIOServer::remSocket(SocketFD socket)
+  {
+    for (std::list<TcpSocket*>::iterator it = m_socketList.begin(); it != m_socketList.end();)
+      {
+	if ((*it)->getSocketFD() == socket)
+	  {
+	    TcpSocket* value = *it;
+	    (*it)->disconnect();
+	    it = m_socketList.erase(it);
+	    delete value;
+	  }
+	else
+	  ++it;
+      }
   }
 } // namespace mognetwork

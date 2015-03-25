@@ -5,17 +5,19 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Mon Mar 23 10:49:20 2015 Moghrabi Alexandre
+// Last update Wed Mar 25 16:16:17 2015 Moghrabi Alexandre
 //
 
-#include "mognetwork/TcpASIODatas.hh"
 #include "mognetwork/LibNetworkException.hh"
 #include "mognetwork/TcpASIOListener.hh"
+#include "mognetwork/TcpASIOServer.hh"
 
 namespace mognetwork
 {
   TcpASIOListener::TcpASIOListener(TcpServerSocket& serverSocket) :
     m_running(true),
+    m_socketList(new std::list<TcpSocket*>),
+    m_mutex(new Mutex()),
     m_serverSocket(serverSocket),
     m_server(NULL)
   {
@@ -27,15 +29,16 @@ namespace mognetwork
     m_thread = new Thread(*this, false);
     if (pipe(m_pipefd) != 0)
       throw LibNetworkException("Pipe creation failed.", __LINE__, __FILE__);
-    m_socketList = TcpASIODatas::getInstance()->getSocketList();
     m_timeout.tv_sec = 0;
     m_timeout.tv_usec = 100000;
     m_selector.setTimeout(NULL);
   }
 
-  TcpASIOListener::TcpASIOListener(TcpServerSocket& serverSocket, TcpASIOServer* server) :
+  TcpASIOListener::TcpASIOListener(TcpASIOServer* server) :
     m_running(true),
-    m_serverSocket(serverSocket),
+    m_socketList(&server->getSocketList()),
+    m_mutex(&server->getMutex()),
+    m_serverSocket(server->getServerSocket()),
     m_server(server)
   {
     init();
@@ -44,6 +47,13 @@ namespace mognetwork
 
   TcpASIOListener::~TcpASIOListener()
   {
+    if (m_server == NULL)
+      {
+	if (m_mutex != NULL)
+	  delete (m_mutex);
+	if (m_socketList != NULL)
+	  delete (m_socketList);
+      }
     ::close(m_pipefd[0]);
     ::close(m_pipefd[1]);
     delete m_thread;
@@ -77,7 +87,7 @@ namespace mognetwork
       }
     cSocket->setServer(m_server);
     m_selector.addFdToRead(cSocket->getSocketFD());
-    TcpASIODatas::getInstance()->addSocket(cSocket);
+    m_server->addSocket(cSocket);
     for (std::list<ITcpASIOListenerHandler*>::iterator it = m_listeners.begin(); it != m_listeners.end(); ++it)
       (*it)->onConnect(*cSocket);
   }
@@ -97,15 +107,15 @@ namespace mognetwork
 	  {
 	    if (*it == m_serverSocket.getSocketFD())
 	      {
-		TcpASIODatas::getInstance()->getMutex().lock();
+		m_mutex->lock();
 		// NEW CLIENT TO ACCEPT
 		acceptClient();
-		TcpASIODatas::getInstance()->getMutex().unlock();
+		m_mutex->unlock();
 	      }
 	    else if (*it != m_pipefd[0])
 	      {
-		TcpASIODatas::getInstance()->getMutex().lock();
-		TcpSocket* socket = TcpASIODatas::getInstance()->getSocketByFd(*it);
+		m_mutex->lock();
+		TcpSocket* socket = m_server->getSocketByFd(*it);
 		socket->setServer(m_server);
 		Socket::Status status = socket->readPendingDatas();
 		if (status == Socket::Ok)
@@ -122,9 +132,9 @@ namespace mognetwork
 			 it2 != m_listeners.end(); ++it2)
 		      (*it2)->onDisconnect(*socket);
 		    m_selector.remFdToRead(*it);
-		    TcpASIODatas::getInstance()->remSocket(*it);
+		    m_server->remSocket(*it);
 		  }
-		TcpASIODatas::getInstance()->getMutex().unlock();
+		m_mutex->unlock();
 	      }
 	  }
       }

@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexandre.moghrabi@epitech.eu&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Fri Feb 27 15:46:04 2015 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Wed Mar 25 16:01:58 2015 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef MOGNETWORK_TCPASIOLISTENER_HH</span></div>
@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#aae7628471fda37905fab2dc03db11f77">TcpASIOListener</a>(<a class="code" href="classmognetwork_1_1_tcp_server_socket.html">TcpServerSocket</a>&amp; serverSocket);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#aae7628471fda37905fab2dc03db11f77">TcpASIOListener</a>(<a class="code" href="classmognetwork_1_1_tcp_server_socket.html">TcpServerSocket</a>&amp; serverSocket, <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a>* server);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#aae7628471fda37905fab2dc03db11f77">TcpASIOListener</a>(<a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a>* server);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_listener.html">TcpASIOListener</a>();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">public</span>:</div>
@@ -149,14 +149,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="classmognetwork_1_1_selector.html">Selector</a> m_selector; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="classmognetwork_1_1_thread.html">Thread</a>* m_thread; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::list&lt;TcpSocket*&gt;* m_socketList; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> m_pipefd[2]; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_server_socket.html">TcpServerSocket</a>&amp; m_serverSocket; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="_selector_8hh.html#af47ac292ef7224cf549b944d138ba4ae">Time</a> m_timeout; <span class="comment">/* Timeout value for the select */</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a>* m_server;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  };</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_TCPASIOLISTENER_HH</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="classmognetwork_1_1_mutex.html">Mutex</a>* m_mutex;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> m_pipefd[2]; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_server_socket.html">TcpServerSocket</a>&amp; m_serverSocket; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="_selector_8hh.html#af47ac292ef7224cf549b944d138ba4ae">Time</a> m_timeout; <span class="comment">/* Timeout value for the select */</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a>* m_server;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  };</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_TCPASIOLISTENER_HH</span></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_listener_html_a445dcd4bf6dfe75c7715af0fecf9494d"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#a445dcd4bf6dfe75c7715af0fecf9494d">mognetwork::TcpASIOListener::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Used by the thread. See IRunnable. </div></div>
 <div class="ttc" id="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler_html"><div class="ttname"><a href="classmognetwork_1_1_i_tcp_a_s_i_o_listener_handler.html">mognetwork::ITcpASIOListenerHandler</a></div><div class="ttdef"><b>Definition:</b> ITcpASIOListenerHandler.hh:29</div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_listener_html_ae6327f6471291ba5107c0a9c3362b929"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#ae6327f6471291ba5107c0a9c3362b929">mognetwork::TcpASIOListener::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdoc">Wait until the end of the listening thread. </div></div>
@@ -174,6 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classmognetwork_1_1_thread_html"><div class="ttname"><a href="classmognetwork_1_1_thread.html">mognetwork::Thread</a></div><div class="ttdoc">Encapsulation of thread. </div><div class="ttdef"><b>Definition:</b> Thread.hh:36</div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_listener_html_aae7628471fda37905fab2dc03db11f77"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#aae7628471fda37905fab2dc03db11f77">mognetwork::TcpASIOListener::TcpASIOListener</a></div><div class="ttdeci">TcpASIOListener(TcpServerSocket &amp;serverSocket)</div><div class="ttdoc">default constructor </div></div>
 <div class="ttc" id="_thread_8hh_html"><div class="ttname"><a href="_thread_8hh.html">Thread.hh</a></div><div class="ttdoc">thread encapsulation </div></div>
+<div class="ttc" id="classmognetwork_1_1_mutex_html"><div class="ttname"><a href="classmognetwork_1_1_mutex.html">mognetwork::Mutex</a></div><div class="ttdoc">Mutex encapsulation. </div><div class="ttdef"><b>Definition:</b> Mutex.hh:35</div></div>
 <div class="ttc" id="_selector_8hh_html"><div class="ttname"><a href="_selector_8hh.html">Selector.hh</a></div><div class="ttdoc">Select encapsulation. </div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_listener_html_ac9952961dce0f44bc720485a4e4e620d"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_listener.html#ac9952961dce0f44bc720485a4e4e620d">mognetwork::TcpASIOListener::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop the listening thread. </div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_a_s_i_o_server_html"><div class="ttname"><a href="classmognetwork_1_1_tcp_a_s_i_o_server.html">mognetwork::TcpASIOServer</a></div><div class="ttdoc">Used to create a ASIO Server simply. </div><div class="ttdef"><b>Definition:</b> TcpASIOServer.hh:32</div></div>
@@ -181,7 +183,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 8 2015 07:09:42 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 25 2015 16:31:01 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
