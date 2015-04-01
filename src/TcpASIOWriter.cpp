@@ -5,17 +5,19 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:45:50 2014 Moghrabi Alexandre
-// Last update Mon Mar 23 10:48:32 2015 Moghrabi Alexandre
+// Last update Wed Mar 25 16:09:06 2015 Moghrabi Alexandre
 //
 
 #include <iostream>
-#include "mognetwork/TcpASIODatas.hh"
 #include "mognetwork/TcpASIOWriter.hh"
+#include "mognetwork/TcpASIOServer.hh"
 
 namespace mognetwork
 {
   TcpASIOWriter::TcpASIOWriter() :
     m_running(true),
+    m_mutex(new Mutex()),
+    m_socketList(new std::list<TcpSocket*>()),
     m_server(NULL)
   {
     init();
@@ -24,7 +26,6 @@ namespace mognetwork
   void TcpASIOWriter::init()
   {
     m_thread = new Thread(*this, false);
-    m_socketList = TcpASIODatas::getInstance()->getSocketList();
     m_timeout.tv_sec = 0;
     m_timeout.tv_usec = 1000;
     m_selector.setTimeout(&m_timeout);
@@ -32,6 +33,8 @@ namespace mognetwork
 
   TcpASIOWriter::TcpASIOWriter(TcpASIOServer* server) :
     m_running(true),
+    m_mutex(&server->getMutex()),
+    m_socketList(&server->getSocketList()),
     m_server(server)
   {
     init();
@@ -39,6 +42,12 @@ namespace mognetwork
 
   TcpASIOWriter::~TcpASIOWriter()
   {
+    if (m_server == NULL) {
+      if (m_mutex != NULL)
+	delete (m_mutex);
+      if (m_socketList != NULL)
+	delete (m_socketList);
+    }
     delete (m_thread);
   }
 
@@ -75,27 +84,27 @@ namespace mognetwork
       {
 	if (hasMoreDatasToSend)
 	  {
-	    TcpASIODatas::getInstance()->getMutex().lock();
+	    m_mutex->lock();
 	    setFds();
-	    TcpASIODatas::getInstance()->getMutex().unlock();
+	    m_mutex->unlock();
 	    m_selector.waitForTrigger();
 	    if (m_selector.getState() == Selector::Error)
 	      {
 		std::cerr << "Select error on writing thread." << std::endl;
 		return ;
 	      }
-	    TcpASIODatas::getInstance()->getMutex().lock();
+	    m_mutex->lock();
 	    std::list<SocketFD> triggeredList = m_selector.getWritingTriggeredSockets();
 	    hasMoreDatasToSend = false;
 	    for (std::list<SocketFD>::iterator it = triggeredList.begin(); it != triggeredList.end(); ++it)
 	      {
-		TcpSocket* socket = TcpASIODatas::getInstance()->getSocketByFd(*it);
+		TcpSocket* socket = m_server->getSocketByFd(*it);
 		if (socket->havingPendingDatas())
-		  socket->sendPendingDatas(); // TODO need to verify the return. needed?
+		  socket->sendPendingDatas();
 		if (socket->havingPendingDatas())
 		  hasMoreDatasToSend = true;
 	      }
-	    TcpASIODatas::getInstance()->getMutex().unlock();
+	    m_mutex->unlock();
 	  }
 	else
 	  {

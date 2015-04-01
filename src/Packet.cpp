@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:52:30 2014 Moghrabi Alexandre
-// Last update Wed Dec 10 19:05:46 2014 Moghrabi Alexandre
+// Last update Wed Mar 25 18:57:41 2015 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -65,6 +65,31 @@ namespace mognetwork
 	data[size] = '\0';
 	m_readerPos += size;
       }
+    return (*this);
+  }
+
+  Packet& Packet::operator>>(std::string& data)
+  {
+    int32_t size = 0;
+    *this >> size;
+
+    if (size > 0 && verifySize(size))
+      {
+	char *buffer = new char[size + 1];
+	memcpy(buffer, &((*m_data)[m_readerPos]), size);
+	buffer[size] = '\0';
+	m_readerPos += size;
+	data.append(buffer);
+	delete buffer;
+      }
+    return (*this);
+  }
+
+  Packet& Packet::operator<<(const std::string& data)
+  {
+    int32_t size = data.size();
+    *this << size;
+    push(data.c_str(), size);
     return (*this);
   }
 

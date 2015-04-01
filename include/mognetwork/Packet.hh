@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
-// Last update Mon Dec 15 09:39:17 2014 Moghrabi Alexandre
+// Last update Wed Mar 25 18:51:36 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -71,6 +71,8 @@ namespace mognetwork
      * \param data the char* to set (it have to be a buffer with a size to receive the datas)
      */
     Packet& operator>>(char* data);
+    Packet& operator>>(std::string& data);
+    Packet& operator<<(const std::string& data);
     /*!
      * \brief extract native datas from the packet
      * \param data the data to set
@@ -111,7 +113,6 @@ namespace mognetwork
     unsigned int getDataSize() const {return m_data->size();}
     /*!
      * \brief add datas to the packet
-     * \depreciated prefer to use the operator system
      * \param data Data to add
      * \param size Size of the data to add
      */

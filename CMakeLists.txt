@@ -17,7 +17,6 @@ add_library(mognetwork SHARED
   src/Packet.cpp
   src/Selector.cpp
   src/Socket.cpp
-  src/TcpASIODatas.cpp
   src/TcpASIOListener.cpp
   src/TcpASIOServer.cpp
   src/TcpASIOWriter.cpp

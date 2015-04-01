@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Sat Nov 15 18:00:03 2014 Moghrabi Alexandre
-// Last update Sat Feb 28 18:47:41 2015 Moghrabi Alexandre
+// Last update Wed Mar 25 16:15:51 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -70,8 +70,15 @@ namespace mognetwork
      */
     TcpASIOListener* getServerListener() const {return m_serverListener;}
     int getPort() const {return m_port;}
+    std::list<TcpSocket*>& getSocketList() {return m_socketList;}
+    Mutex& getMutex() {return m_mutex;}
+    TcpServerSocket& getServerSocket() {return m_serverSocket;}
 
   public:
+    TcpSocket* getSocketByFd(SocketFD fd);
+    void addSocket(TcpSocket* socket) {m_socketList.push_back(socket);}
+    void remSocket(TcpSocket* socket) {m_socketList.remove(socket);}
+    void remSocket(SocketFD socket);
     void setPort(int port) {m_port = port;}
 
   private:
@@ -79,6 +86,8 @@ namespace mognetwork
     TcpServerSocket m_serverSocket; /*!< server socket */
     TcpASIOWriter* m_serverWriter; /*!< instance of the writing thread */
     int m_port; /*!< listening port */
+    Mutex m_mutex;
+    std::list<TcpSocket*> m_socketList;
   };
 } // namespace mognetwork
 
