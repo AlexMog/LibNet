@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Fri Apr 17 12:29:05 2015 Moghrabi Alexandre
+// Last update Fri Apr 17 17:10:08 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -25,9 +25,13 @@
 # include "Socket.hh"
 # include "Mutex.hh"
 
-
 namespace mognetwork
 {
+  namespace protocol
+  {
+    class AProtocolListener;
+  }
+  
   class TcpASIOServer;
   class Packet;
   /*!
@@ -56,6 +60,7 @@ namespace mognetwork
      * \brief Default constructor
      */
     TcpSocket();
+    ~TcpSocket();
     /*!
      * \brief Constructor used to define a TcpSocket with an actual opened FD.
      * \param fd The socket FD
@@ -151,6 +156,7 @@ namespace mognetwork
      * \return The TcpASIOServer pointer to the parent
      */
     TcpASIOServer* getServer() const;
+    void setProtocolListener(protocol::AProtocolListener* protocolListener) {m_protocolListener = protocolListener;}
 
   private:
     DataList m_pendingDatas; /*!< Waiting datas */
@@ -159,6 +165,7 @@ namespace mognetwork
     void* m_userData; /*!< Optional datas */
     TcpASIOServer* m_server;
     Mutex m_mutex;
+    protocol::AProtocolListener* m_protocolListener;
   };
 } // namespace mognetwork
 

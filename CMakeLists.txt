@@ -26,6 +26,7 @@ add_library(mognetwork SHARED
   src/WinThread.cpp
   src/UnixSocket.cpp
   src/WinSocket.cpp
+  src/BinaryProtocol.cpp
   )
 install(TARGETS mognetwork DESTINATION lib)
 install(DIRECTORY include DESTINATION .)

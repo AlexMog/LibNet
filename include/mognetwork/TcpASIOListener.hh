@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Wed Mar 25 16:01:58 2015 Moghrabi Alexandre
+// Last update Fri Apr 17 17:34:23 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -28,6 +28,7 @@
 # include "TcpServerSocket.hh"
 # include "Selector.hh"
 # include "ITcpASIOListenerHandler.hh"
+# include "IProtocolFactory.hh"
 
 namespace mognetwork
 {
@@ -79,6 +80,7 @@ namespace mognetwork
      * \return true if it is listening, false if not
      */
     bool isRunning() const {return m_running;}
+    void setProtocolFactory(IProtocolFactory* protocolFactory);
 
   public:
     /*!
@@ -108,6 +110,7 @@ namespace mognetwork
     TcpServerSocket& m_serverSocket; /*!< reference on the TcpServerSocket */
     Time m_timeout; /* Timeout value for the select */
     TcpASIOServer* m_server;
+    IProtocolFactory* m_protocolFactory;
   };
 } // namespace mognetwork
 

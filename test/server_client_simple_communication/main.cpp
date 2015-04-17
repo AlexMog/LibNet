@@ -6,7 +6,7 @@
 #include <exception>
 #include <signal.h>
 
-mognetwork::TcpASIOServer server(4242);
+mognetwork::TcpASIOServer server(4242, mognetwork::TcpASIOServer::Binary);
 
 void shandler(int)
 {
