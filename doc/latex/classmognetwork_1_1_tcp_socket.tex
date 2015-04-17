@@ -63,6 +63,8 @@ void $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_adef63a929423324fd75888e21
 \begin{DoxyCompactList}\small\item\em Get datas that have been readed in async mode. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_packet}{Packet} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_ac8619a5f869abfda7b8c2d32c94870f3}{get\-Packet\-Readed} ()
 \begin{DoxyCompactList}\small\item\em Get the readed datas as a \hyperlink{classmognetwork_1_1_packet}{Packet}. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_tcp_socket_a59b3b86a8698b3df3a51243d113907a0}{get\-Packet\-Readed} (\hyperlink{classmognetwork_1_1_packet}{Packet} \&packet)
+\begin{DoxyCompactList}\small\item\em Get the readed datas as a \hyperlink{classmognetwork_1_1_packet}{Packet}. \end{DoxyCompactList}\item 
 void \hyperlink{classmognetwork_1_1_tcp_socket_ae35e2fd8fbf6f9d3bdb87650b3bedff1}{set\-Server} (\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server} $\ast$server)
 \begin{DoxyCompactList}\small\item\em Set the server when using \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server}. \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server}{Tcp\-A\-S\-I\-O\-Server} $\ast$ \hyperlink{classmognetwork_1_1_tcp_socket_ab07f10a9f78168c051e7429e7f45a95f}{get\-Server} () const 
@@ -169,8 +171,24 @@ The datas as \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-S
 Get the readed datas as a \hyperlink{classmognetwork_1_1_packet}{Packet}. 
 
 \begin{DoxyReturn}{Returns}
-Datas formatted with the \hyperlink{classmognetwork_1_1_packet}{Packet} object 
+Datas formatted with the \hyperlink{classmognetwork_1_1_packet}{Packet} object  Not optimized, use the new definition of get\-Packet\-Readed 
 \end{DoxyReturn}
+\hypertarget{classmognetwork_1_1_tcp_socket_a59b3b86a8698b3df3a51243d113907a0}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-Packet\-Readed@{get\-Packet\-Readed}}
+\index{get\-Packet\-Readed@{get\-Packet\-Readed}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
+\subsubsection[{get\-Packet\-Readed}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Tcp\-Socket\-::get\-Packet\-Readed (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} \&}]{packet}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_tcp_socket_a59b3b86a8698b3df3a51243d113907a0}
+
+
+Get the readed datas as a \hyperlink{classmognetwork_1_1_packet}{Packet}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & The packet to fill \\
+\hline
+\end{DoxyParams}
 \hypertarget{classmognetwork_1_1_tcp_socket_ab07f10a9f78168c051e7429e7f45a95f}{\index{mognetwork\-::\-Tcp\-Socket@{mognetwork\-::\-Tcp\-Socket}!get\-Server@{get\-Server}}
 \index{get\-Server@{get\-Server}!mognetwork::TcpSocket@{mognetwork\-::\-Tcp\-Socket}}
 \subsubsection[{get\-Server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tcp\-A\-S\-I\-O\-Server}$\ast$ mognetwork\-::\-Tcp\-Socket\-::get\-Server (

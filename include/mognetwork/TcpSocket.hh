@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Wed Mar 25 15:15:36 2015 Moghrabi Alexandre
+// Last update Fri Apr 17 12:29:05 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -133,8 +133,14 @@ namespace mognetwork
     /*!
      * \brief Get the readed datas as a Packet
      * \return Datas formatted with the Packet object
+     * \depreciated Not optimized, use the new definition of getPacketReaded
      */
     Packet* getPacketReaded();
+    /*!
+     * \brief Get the readed datas as a Packet
+     * \param packet The packet to fill
+     */
+    void getPacketReaded(Packet& packet);
     /*!
      * \brief Set the server when using TcpASIOServer
      * \param server The TcpASIOServer pointer

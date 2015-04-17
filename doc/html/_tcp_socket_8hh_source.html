@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Login   &lt;alexmog@epitech.net&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// </span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Wed Mar 25 15:15:36 2015 Moghrabi Alexandre</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Last update Fri Apr 17 12:29:05 2015 Moghrabi Alexandre</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef MOGNETWORK_TCPSOCKET_HH</span></div>
@@ -141,21 +141,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span>* <a class="code" href="classmognetwork_1_1_tcp_socket.html#adef63a929423324fd75888e2195176e0">getUserData</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Socket::Status</a> <a class="code" href="classmognetwork_1_1_tcp_socket.html#af3918374ee41223b77f669367d4b0e22">readPendingDatas</a>();</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">TcpSocket::ReadedDatas</a>* <a class="code" href="classmognetwork_1_1_tcp_socket.html#a6dbe149a276fb24203267762fbd1c276">getDatasReaded</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="classmognetwork_1_1_packet.html">Packet</a>* <a class="code" href="classmognetwork_1_1_tcp_socket.html#ac8619a5f869abfda7b8c2d32c94870f3">getPacketReaded</a>();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_socket.html#ae35e2fd8fbf6f9d3bdb87650b3bedff1">setServer</a>(<a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a>* server);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a>* <a class="code" href="classmognetwork_1_1_tcp_socket.html#ab07f10a9f78168c051e7429e7f45a95f">getServer</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_socket.html#acd1726904d918e617c84eaf198196506">DataList</a> m_pendingDatas; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">ReadedDatas</a> m_pendingRDatas; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">ReadedDatas</a> *m_allDataReaded; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">void</span>* m_userData; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a>* m_server;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="classmognetwork_1_1_mutex.html">Mutex</a> m_mutex;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  };</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_TCPSOCKET_HH</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <a class="code" href="classmognetwork_1_1_packet.html">Packet</a>* <a class="code" href="classmognetwork_1_1_tcp_socket.html#ac8619a5f869abfda7b8c2d32c94870f3">getPacketReaded</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_socket.html#ac8619a5f869abfda7b8c2d32c94870f3">getPacketReaded</a>(<a class="code" href="classmognetwork_1_1_packet.html">Packet</a>&amp; packet);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmognetwork_1_1_tcp_socket.html#ae35e2fd8fbf6f9d3bdb87650b3bedff1">setServer</a>(<a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a>* server);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a>* <a class="code" href="classmognetwork_1_1_tcp_socket.html#ab07f10a9f78168c051e7429e7f45a95f">getServer</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_socket.html#acd1726904d918e617c84eaf198196506">DataList</a> m_pendingDatas; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">ReadedDatas</a> m_pendingRDatas; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">ReadedDatas</a> *m_allDataReaded; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span>* m_userData; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a>* m_server;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="classmognetwork_1_1_mutex.html">Mutex</a> m_mutex;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  };</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;} <span class="comment">// namespace mognetwork</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#endif // !MOGNETWORK_TCPSOCKET_HH</span></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_socket_html_acd1726904d918e617c84eaf198196506"><div class="ttname"><a href="classmognetwork_1_1_tcp_socket.html#acd1726904d918e617c84eaf198196506">mognetwork::TcpSocket::DataList</a></div><div class="ttdeci">std::list&lt; Data * &gt; DataList</div><div class="ttdef"><b>Definition:</b> TcpSocket.hh:41</div></div>
 <div class="ttc" id="classmognetwork_1_1_tcp_socket_html_ab07f10a9f78168c051e7429e7f45a95f"><div class="ttname"><a href="classmognetwork_1_1_tcp_socket.html#ab07f10a9f78168c051e7429e7f45a95f">mognetwork::TcpSocket::getServer</a></div><div class="ttdeci">TcpASIOServer * getServer() const </div><div class="ttdoc">Get the TcpASIOServer parent of the socket. </div></div>
 <div class="ttc" id="structmognetwork_1_1_tcp_socket_1_1_readed_datas_html_a2c633a79efa956f1f59d9429e8584cc0"><div class="ttname"><a href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html#a2c633a79efa956f1f59d9429e8584cc0">mognetwork::TcpSocket::ReadedDatas::readed</a></div><div class="ttdeci">std::size_t readed</div><div class="ttdef"><b>Definition:</b> TcpSocket.hh:50</div></div>
@@ -192,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 25 2015 16:31:01 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 17 2015 12:29:12 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

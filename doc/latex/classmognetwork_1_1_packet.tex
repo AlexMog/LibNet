@@ -25,6 +25,12 @@ Simplify the data management of multiple datas.
 \begin{DoxyCompactList}\small\item\em add a string to the packet \end{DoxyCompactList}\item 
 \hyperlink{classmognetwork_1_1_packet}{Packet} \& \hyperlink{classmognetwork_1_1_packet_ab2a38323cc0a32e79520fdf71ee0d1a9}{operator$>$$>$} (char $\ast$data)
 \begin{DoxyCompactList}\small\item\em extract a string from the packet \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_packet_aaded256ae54c105b17188102a65e9368}{\hyperlink{classmognetwork_1_1_packet}{Packet} \& {\bfseries operator$>$$>$} (std\-::string \&data)}\label{classmognetwork_1_1_packet_aaded256ae54c105b17188102a65e9368}
+
+\item 
+\hypertarget{classmognetwork_1_1_packet_a2bdf5ff2476680c7e6c549bb42ea6856}{\hyperlink{classmognetwork_1_1_packet}{Packet} \& {\bfseries operator$<$$<$} (const std\-::string \&data)}\label{classmognetwork_1_1_packet_a2bdf5ff2476680c7e6c549bb42ea6856}
+
+\item 
 {\footnotesize template$<$typename T $>$ }\\\hyperlink{classmognetwork_1_1_packet}{Packet} \& \hyperlink{classmognetwork_1_1_packet_acdecf105b9afb3c4c499bfffa9cf2fbb}{operator$>$$>$} (T \&data)
 \begin{DoxyCompactList}\small\item\em extract native datas from the packet \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\\hyperlink{classmognetwork_1_1_packet}{Packet} \& \hyperlink{classmognetwork_1_1_packet_a84ffd95a38d7bca83675a5c932d04735}{operator$<$$<$} (const T \&data)
@@ -37,7 +43,11 @@ const void $\ast$ \hyperlink{classmognetwork_1_1_packet_afb66469155c26ec3f1a9c77
 unsigned int \hyperlink{classmognetwork_1_1_packet_a3f27100558a578cea57c0b0502b6e9c9}{get\-Data\-Size} () const 
 \begin{DoxyCompactList}\small\item\em Get the size of the datas stored. \end{DoxyCompactList}\item 
 void \hyperlink{classmognetwork_1_1_packet_a2d60777d07c0f1b0e97060a17b9bed43}{push} (const void $\ast$data, unsigned int size)
-\begin{DoxyCompactList}\small\item\em add datas to the packet \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em add datas to the packet \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_packet_a34feb9cd0a9fc669b6d252d610ba7903}{reinitialize} (\hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Reset datas and initialize new ones. \end{DoxyCompactList}\item 
+void \hyperlink{classmognetwork_1_1_packet_ae6fb04a3e747354996a6d1eeae80e06b}{reinitialize} (std\-::vector$<$ char $>$ $\ast$data)
+\begin{DoxyCompactList}\small\item\em Reset datas and initialize new ones. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -220,6 +230,38 @@ add datas to the packet
 {\em data} & Data to add \\
 \hline
 {\em size} & Size of the data to add \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmognetwork_1_1_packet_a34feb9cd0a9fc669b6d252d610ba7903}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!reinitialize@{reinitialize}}
+\index{reinitialize@{reinitialize}!mognetwork::Packet@{mognetwork\-::\-Packet}}
+\subsubsection[{reinitialize}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Packet\-::reinitialize (
+\begin{DoxyParamCaption}
+\item[{{\bf Tcp\-Socket\-::\-Readed\-Datas} $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_packet_a34feb9cd0a9fc669b6d252d610ba7903}
+
+
+Reset datas and initialize new ones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} object generated \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmognetwork_1_1_packet_ae6fb04a3e747354996a6d1eeae80e06b}{\index{mognetwork\-::\-Packet@{mognetwork\-::\-Packet}!reinitialize@{reinitialize}}
+\index{reinitialize@{reinitialize}!mognetwork::Packet@{mognetwork\-::\-Packet}}
+\subsubsection[{reinitialize}]{\setlength{\rightskip}{0pt plus 5cm}void mognetwork\-::\-Packet\-::reinitialize (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ char $>$ $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classmognetwork_1_1_packet_ae6fb04a3e747354996a6d1eeae80e06b}
+
+
+Reset datas and initialize new ones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The std\-::vector$<$char$>$ containg datas \\
 \hline
 \end{DoxyParams}
 

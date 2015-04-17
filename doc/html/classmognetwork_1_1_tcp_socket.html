@@ -185,6 +185,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:ac8619a5f869abfda7b8c2d32c94870f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#ac8619a5f869abfda7b8c2d32c94870f3">getPacketReaded</a> ()</td></tr>
 <tr class="memdesc:ac8619a5f869abfda7b8c2d32c94870f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the readed datas as a <a class="el" href="classmognetwork_1_1_packet.html" title="Simplify the data management of multiple datas. ">Packet</a>.  <a href="#ac8619a5f869abfda7b8c2d32c94870f3">More...</a><br/></td></tr>
 <tr class="separator:ac8619a5f869abfda7b8c2d32c94870f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59b3b86a8698b3df3a51243d113907a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#a59b3b86a8698b3df3a51243d113907a0">getPacketReaded</a> (<a class="el" href="classmognetwork_1_1_packet.html">Packet</a> &amp;packet)</td></tr>
+<tr class="memdesc:a59b3b86a8698b3df3a51243d113907a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the readed datas as a <a class="el" href="classmognetwork_1_1_packet.html" title="Simplify the data management of multiple datas. ">Packet</a>.  <a href="#a59b3b86a8698b3df3a51243d113907a0">More...</a><br/></td></tr>
+<tr class="separator:a59b3b86a8698b3df3a51243d113907a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae35e2fd8fbf6f9d3bdb87650b3bedff1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#ae35e2fd8fbf6f9d3bdb87650b3bedff1">setServer</a> (<a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html">TcpASIOServer</a> *server)</td></tr>
 <tr class="memdesc:ae35e2fd8fbf6f9d3bdb87650b3bedff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the server when using <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html" title="Used to create a ASIO Server simply. ">TcpASIOServer</a>.  <a href="#ae35e2fd8fbf6f9d3bdb87650b3bedff1">More...</a><br/></td></tr>
 <tr class="separator:ae35e2fd8fbf6f9d3bdb87650b3bedff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -379,7 +382,31 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Get the readed datas as a <a class="el" href="classmognetwork_1_1_packet.html" title="Simplify the data management of multiple datas. ">Packet</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>Datas formatted with the <a class="el" href="classmognetwork_1_1_packet.html" title="Simplify the data management of multiple datas. ">Packet</a> object </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Datas formatted with the <a class="el" href="classmognetwork_1_1_packet.html" title="Simplify the data management of multiple datas. ">Packet</a> object  Not optimized, use the new definition of getPacketReaded </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a59b3b86a8698b3df3a51243d113907a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mognetwork::TcpSocket::getPacketReaded </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmognetwork_1_1_packet.html">Packet</a> &amp;&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the readed datas as a <a class="el" href="classmognetwork_1_1_packet.html" title="Simplify the data management of multiple datas. ">Packet</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>The packet to fill </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -638,7 +665,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 25 2015 16:31:01 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 17 2015 12:29:13 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
