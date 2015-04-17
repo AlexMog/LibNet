@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Mon Mar 23 10:53:32 2015 Moghrabi Alexandre
+// Last update Fri Apr 17 11:29:46 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -158,7 +158,7 @@ namespace mognetwork
       {
 	int sended;
 	DataList::iterator it = m_pendingDatas.begin();
-	sended = ::send(getSocketFD(), &(*it)->front(), (*it)->size(), flags | MSG_DONTWAIT);
+	sended = ::send(getSocketFD(), &(*it)->front(), (*it)->size(), flags);
 	if (sended < 0) {
 	  //	  m_mutex.unlock();
 	  return (OsSocket::getErrorStatus());
@@ -230,7 +230,7 @@ namespace mognetwork
     if (m_pendingRDatas.readed < sizeof(std::size_t))
       {
 	char* data = reinterpret_cast<char*>(&m_pendingRDatas.totalSize) + m_pendingRDatas.readed;
-	Socket::Status status = receive(data, sizeof(std::size_t) - m_pendingRDatas.readed, readed, MSG_DONTWAIT);
+	Socket::Status status = receive(data, sizeof(std::size_t) - m_pendingRDatas.readed, readed, 0);
 	m_pendingRDatas.readed += readed;
 	if (status != Ok)
 	  return (status);
@@ -240,7 +240,7 @@ namespace mognetwork
       {
 	std::size_t toGet = std::min(static_cast<std::size_t>(m_pendingRDatas.totalSize - m_pendingRDatas.datas.size()), sizeof(buffer));
 	
-	Socket::Status status = receive(buffer, toGet, readed, MSG_DONTWAIT);
+	Socket::Status status = receive(buffer, toGet, readed, 0);
 	if (status != Ok)
 	  return (status);
 	m_pendingRDatas.readed += readed;
