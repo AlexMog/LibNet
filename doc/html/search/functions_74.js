@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['tcpasiodatas',['TcpASIODatas',['../classmognetwork_1_1_tcp_a_s_i_o_datas.html#aefa4425a076fbfe35ff9420e63aa5a41',1,'mognetwork::TcpASIODatas']]],
-  ['tcpasiolistener',['TcpASIOListener',['../classmognetwork_1_1_tcp_a_s_i_o_listener.html#aae7628471fda37905fab2dc03db11f77',1,'mognetwork::TcpASIOListener::TcpASIOListener(TcpServerSocket &amp;serverSocket)'],['../classmognetwork_1_1_tcp_a_s_i_o_listener.html#a8bfbba4fd4204b3fb9ff335be8656277',1,'mognetwork::TcpASIOListener::TcpASIOListener(TcpServerSocket &amp;serverSocket, TcpASIOServer *server)']]],
+  ['tcpasiolistener',['TcpASIOListener',['../classmognetwork_1_1_tcp_a_s_i_o_listener.html#aae7628471fda37905fab2dc03db11f77',1,'mognetwork::TcpASIOListener::TcpASIOListener(TcpServerSocket &amp;serverSocket)'],['../classmognetwork_1_1_tcp_a_s_i_o_listener.html#a4c2dde59f70a3cd6d45f530a1c54b56c',1,'mognetwork::TcpASIOListener::TcpASIOListener(TcpASIOServer *server)']]],
   ['tcpasioserver',['TcpASIOServer',['../classmognetwork_1_1_tcp_a_s_i_o_server.html#a8a201f84e02e478de1de4e0e4d3c029f',1,'mognetwork::TcpASIOServer']]],
   ['tcpasiowriter',['TcpASIOWriter',['../classmognetwork_1_1_tcp_a_s_i_o_writer.html#ad9ccc4046f754b839e79263c54baa3d6',1,'mognetwork::TcpASIOWriter::TcpASIOWriter()'],['../classmognetwork_1_1_tcp_a_s_i_o_writer.html#a953bc7b6fa55076b6f5d678272678344',1,'mognetwork::TcpASIOWriter::TcpASIOWriter(TcpASIOServer *server)']]],
   ['tcpserversocket',['TcpServerSocket',['../classmognetwork_1_1_tcp_server_socket.html#a152822e1e60c7085578bc83cdfd00bbf',1,'mognetwork::TcpServerSocket']]],

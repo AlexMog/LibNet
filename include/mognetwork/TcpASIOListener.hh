@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Fri Feb 27 15:46:04 2015 Moghrabi Alexandre
+// Last update Wed Mar 25 16:01:58 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -49,7 +49,7 @@ namespace mognetwork
      * \param serverSocket The server socket to be used. (must be connected)
      * \param server Used by TcpASIOServer
      */
-    TcpASIOListener(TcpServerSocket& serverSocket, TcpASIOServer* server);
+    TcpASIOListener(TcpASIOServer* server);
     virtual ~TcpASIOListener();
 
   public:
@@ -103,6 +103,7 @@ namespace mognetwork
     Selector m_selector; /*!< the Selector used */
     Thread* m_thread; /*!< Thread instance */
     std::list<TcpSocket*>* m_socketList; /*!< A pointer on the list, used to not call too many times the Singleton */
+    Mutex* m_mutex;
     int m_pipefd[2]; /*!< pipe used to stop the listener */
     TcpServerSocket& m_serverSocket; /*!< reference on the TcpServerSocket */
     Time m_timeout; /* Timeout value for the select */

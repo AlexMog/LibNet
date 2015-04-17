@@ -124,9 +124,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aab8261de074ef927dfe62bb9ddaafb93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_selector.html#a51d709c3579bf32265d68d4313df5794">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_selector.html#aab8261de074ef927dfe62bb9ddaafb93">getState</a> () const </td></tr>
 <tr class="memdesc:aab8261de074ef927dfe62bb9ddaafb93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the actual state of the <a class="el" href="classmognetwork_1_1_selector.html" title="Select encapsulation. ">Selector</a>.  <a href="#aab8261de074ef927dfe62bb9ddaafb93">More...</a><br/></td></tr>
 <tr class="separator:aab8261de074ef927dfe62bb9ddaafb93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab35641925422b2082de069f745e0034e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab35641925422b2082de069f745e0034e"></a>
-const std::list&lt; SocketFD &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_selector.html#ab35641925422b2082de069f745e0034e">getWritingTriggeredSockets</a> () const </td></tr>
-<tr class="memdesc:ab35641925422b2082de069f745e0034e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the socket list that are ready to be edited in writing mode  The list of the SocketFD. <br/></td></tr>
+<tr class="memitem:ab35641925422b2082de069f745e0034e"><td class="memItemLeft" align="right" valign="top">const std::list&lt; SocketFD &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_selector.html#ab35641925422b2082de069f745e0034e">getWritingTriggeredSockets</a> () const </td></tr>
+<tr class="memdesc:ab35641925422b2082de069f745e0034e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the socket list that are ready to be edited in writing mode.  <a href="#ab35641925422b2082de069f745e0034e">More...</a><br/></td></tr>
 <tr class="separator:ab35641925422b2082de069f745e0034e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae41a4ff4e9281cdd03880f69c0c71a35"><td class="memItemLeft" align="right" valign="top">const std::list&lt; SocketFD &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_selector.html#ae41a4ff4e9281cdd03880f69c0c71a35">getReadingTriggeredSockets</a> () const </td></tr>
 <tr class="memdesc:ae41a4ff4e9281cdd03880f69c0c71a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the socket list that are ready to be readed.  <a href="#ae41a4ff4e9281cdd03880f69c0c71a35">More...</a><br/></td></tr>
@@ -282,6 +281,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clearFdToRead</b> ()<
 
 </div>
 </div>
+<a class="anchor" id="ab35641925422b2082de069f745e0034e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::list&lt;SocketFD&gt;&amp; mognetwork::Selector::getWritingTriggeredSockets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the socket list that are ready to be edited in writing mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>The list of the SocketFD </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a1ae5d9e72ca6950f82d76e439ce9f74d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -384,7 +409,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clearFdToRead</b> ()<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 8 2015 07:09:42 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 25 2015 16:31:01 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

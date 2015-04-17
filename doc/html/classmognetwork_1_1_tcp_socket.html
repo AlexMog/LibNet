@@ -167,9 +167,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:afbb854293f7f8e404bb553e5c5ba1277"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Socket::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#afbb854293f7f8e404bb553e5c5ba1277">sendPendingDatas</a> ()</td></tr>
 <tr class="memdesc:afbb854293f7f8e404bb553e5c5ba1277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send pending datas added with asyncSend.  <a href="#afbb854293f7f8e404bb553e5c5ba1277">More...</a><br/></td></tr>
 <tr class="separator:afbb854293f7f8e404bb553e5c5ba1277"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff17b683f622b017876751d9cbbad3bb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#aff17b683f622b017876751d9cbbad3bb">havingPendingDatas</a> () const </td></tr>
-<tr class="memdesc:aff17b683f622b017876751d9cbbad3bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Let you know if there is pending datas in the send list.  <a href="#aff17b683f622b017876751d9cbbad3bb">More...</a><br/></td></tr>
-<tr class="separator:aff17b683f622b017876751d9cbbad3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7269551095b10d859f8710cb5aaed3d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#a7269551095b10d859f8710cb5aaed3d6">havingPendingDatas</a> ()</td></tr>
+<tr class="memdesc:a7269551095b10d859f8710cb5aaed3d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Let you know if there is pending datas in the send list.  <a href="#a7269551095b10d859f8710cb5aaed3d6">More...</a><br/></td></tr>
+<tr class="separator:a7269551095b10d859f8710cb5aaed3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d7327be349e705c74bdc6b40c1b2520"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_socket.html#a2d7327be349e705c74bdc6b40c1b2520">setUserData</a> (void *userData)</td></tr>
 <tr class="memdesc:a2d7327be349e705c74bdc6b40c1b2520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define datas that you can attach to the socket.  <a href="#a2d7327be349e705c74bdc6b40c1b2520">More...</a><br/></td></tr>
 <tr class="separator:a2d7327be349e705c74bdc6b40c1b2520"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -419,7 +419,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a class="anchor" id="aff17b683f622b017876751d9cbbad3bb"></a>
+<a class="anchor" id="a7269551095b10d859f8710cb5aaed3d6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -427,7 +427,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">bool mognetwork::TcpSocket::havingPendingDatas </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -558,7 +558,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the datas to send (as a char array) </td></tr>
-    <tr><td class="paramname">the</td><td>size of the datas to send </td></tr>
+    <tr><td class="paramname">size</td><td>the size of the datas to send </td></tr>
   </table>
   </dd>
 </dl>
@@ -601,7 +601,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Set the server when using <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html" title="Used to create a ASIO Server simply. ">TcpASIOServer</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">The</td><td><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html" title="Used to create a ASIO Server simply. ">TcpASIOServer</a> pointer </td></tr>
+    <tr><td class="paramname">server</td><td>The <a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html" title="Used to create a ASIO Server simply. ">TcpASIOServer</a> pointer </td></tr>
   </table>
   </dd>
 </dl>
@@ -638,7 +638,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 8 2015 07:09:42 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 25 2015 16:31:01 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
