@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
-// Last update Wed Mar 25 18:51:36 2015 Moghrabi Alexandre
+// Last update Fri Apr 17 12:06:06 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -100,7 +100,7 @@ namespace mognetwork
     /*!
      * \brief Clear the datas
      */
-    void clear() {m_data->clear();m_readerPos = 0;}
+    void clear();
     /*!
      * \brief Get the datas stored in the packet
      * \return the datas stored
@@ -117,6 +117,17 @@ namespace mognetwork
      * \param size Size of the data to add
      */
     void push(const void* data, unsigned int size);
+
+    /*!
+     * \brief Reset datas and initialize new ones
+     * \param data The TcpSocket::ReadedDatas object generated
+     */
+    void reinitialize(TcpSocket::ReadedDatas* data);
+    /*!
+     * \brief Reset datas and initialize new ones
+     * \param data The std::vector<char> containg datas
+     */
+    void reinitialize(std::vector<char>* data);
 
   private:
     bool verifySize(unsigned int size) {return (m_readerPos + size <= m_data->size());}

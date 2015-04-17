@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Fri Apr 17 11:29:46 2015 Moghrabi Alexandre
+// Last update Fri Apr 17 12:05:04 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -283,6 +283,11 @@ namespace mognetwork
   Packet* TcpSocket::getPacketReaded()
   {
     return new Packet(m_allDataReaded);
+  }
+
+  void TcpSocket::getPacketReaded(Packet& packet)
+  {
+    packet.reinitialize(m_allDataReaded);
   }
 
   TcpSocket::ReadedDatas::ReadedDatas() :

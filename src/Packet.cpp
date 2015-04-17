@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:52:30 2014 Moghrabi Alexandre
-// Last update Wed Mar 25 18:57:41 2015 Moghrabi Alexandre
+// Last update Fri Apr 17 12:04:00 2015 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -111,5 +111,34 @@ namespace mognetwork
 	m_data->resize(actualSize + size);
 	memcpy(&((*m_data)[actualSize]), data, size);
       }
+  }
+
+  void Packet::clear()
+  {
+    if (m_data != NULL)
+      m_data->clear();
+    m_readerPos = 0;
+  }
+
+  void Packet::reinitialize(TcpSocket::ReadedDatas* data)
+  {
+    m_readerPos = 0;
+    if (m_dataPack != NULL)
+      delete m_dataPack;
+    else if (m_data != NULL)
+      delete m_data;
+    m_dataPack = data;
+    m_data = &m_dataPack->datas;
+  }
+
+  void Packet::reinitialize(std::vector<char>* data)
+  {
+    m_readerPos = 0;
+    if (m_dataPack != NULL)
+      delete m_dataPack;
+    else if (m_data != NULL)
+      delete m_data;
+    m_dataPack = NULL;
+    m_data = data;    
   }
 } // namespace mognetwork
