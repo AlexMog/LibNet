@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Fri Apr 17 17:34:23 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 05:15:29 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -73,6 +73,7 @@ namespace mognetwork
      * \param listener the listener to add
      */
     void addListener(ITcpASIOListenerHandler* listener) {m_listeners.push_back(listener);}
+    std::list<ITcpASIOListenerHandler*>& getListeners() {return m_listeners;}
 
   public:
     /*!

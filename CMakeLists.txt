@@ -17,8 +17,8 @@ add_library(mognetwork SHARED
   src/Packet.cpp
   src/Selector.cpp
   src/Socket.cpp
-  src/TcpASIOListener.cpp
   src/TcpASIOServer.cpp
+  src/TcpASIOListener.cpp
   src/TcpASIOWriter.cpp
   src/TcpServerSocket.cpp
   src/TcpSocket.cpp
@@ -27,6 +27,7 @@ add_library(mognetwork SHARED
   src/UnixSocket.cpp
   src/WinSocket.cpp
   src/BinaryProtocol.cpp
+  src/LineProtocol.cpp
   )
 install(TARGETS mognetwork DESTINATION lib)
 install(DIRECTORY include DESTINATION .)

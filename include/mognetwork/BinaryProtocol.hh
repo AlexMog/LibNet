@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:34:03 2015 Moghrabi Alexandre
-// Last update Mon Apr 20 01:59:59 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 04:19:59 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -39,7 +39,6 @@ namespace mognetwork
       virtual bool datasFullyReceived();
       virtual void onSendDatas(const char* data, std::size_t size, TcpSocket::Data& dataToSend);
       virtual Socket::Status onReadAllTrigger(TcpSocket::Data& data);
-      virtual TcpSocket::ReadedDatas& getReadedDatas();
     };
   }
 }

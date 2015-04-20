@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Fri Apr 17 17:10:08 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 05:37:30 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -157,6 +157,7 @@ namespace mognetwork
      */
     TcpASIOServer* getServer() const;
     void setProtocolListener(protocol::AProtocolListener* protocolListener) {m_protocolListener = protocolListener;}
+    void setAllDataReaded(ReadedDatas* d) {m_allDataReaded = d;}
 
   private:
     DataList m_pendingDatas; /*!< Waiting datas */

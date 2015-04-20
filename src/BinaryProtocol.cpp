@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:40:07 2015 Moghrabi Alexandre
-// Last update Fri Apr 17 16:48:26 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 02:45:37 2015 Moghrabi Alexandre
 //
 
 #include <cstring>
@@ -50,11 +50,6 @@ namespace mognetwork
     bool BinaryProtocol::datasFullyReceived()
     {
       return m_pendingDatas.readed >= sizeof(std::size_t) && m_pendingDatas.readed >= m_pendingDatas.totalSize;
-    }
-
-    TcpSocket::ReadedDatas& BinaryProtocol::getReadedDatas()
-    {
-      return m_pendingDatas;
     }
 
     void BinaryProtocol::onSendDatas(const char* data, std::size_t size, TcpSocket::Data& dataToSend)

@@ -5,12 +5,13 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:38:14 2014 Moghrabi Alexandre
-// Last update Fri Apr 17 17:37:55 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 04:19:05 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/Mutex.hh"
 #include "mognetwork/TcpASIOServer.hh"
 #include "mognetwork/BinaryProtocolFactory.hpp"
+#include "mognetwork/LineProtocolFactory.hpp"
 
 namespace mognetwork
 {
@@ -21,6 +22,8 @@ namespace mognetwork
     m_port = port;
     if (protocolType == Binary)
       m_protocolFactory = new BinaryProtocolFactory;
+    else if (protocolType == LinePerLine)
+      m_protocolFactory = new LineProtocolFactory;
     else
       m_protocolFactory = NULL;
     m_serverListener->setProtocolFactory(m_protocolFactory);
