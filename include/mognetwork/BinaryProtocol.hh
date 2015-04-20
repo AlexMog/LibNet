@@ -5,8 +5,15 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:34:03 2015 Moghrabi Alexandre
-// Last update Fri Apr 17 16:48:03 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 01:59:59 2015 Moghrabi Alexandre
 //
+
+/*!
+ * \file BinaryProtocol
+ * \brief Binary Protocol of the library
+ * \author AlexMog
+ * \version 1.2
+ */
 
 #ifndef MOGNETWORK_BINARYPROTOCOL_HH
 # define MOGNETWORK_BINARYPROTOCOL_HH
@@ -17,6 +24,10 @@ namespace mognetwork
 {
   namespace protocol
   {
+    /*!
+     * \class BinaryProtocol
+     * \brief Defines and execute the Binary protocol
+     */
     class BinaryProtocol : public AProtocolListener
     {
     public:

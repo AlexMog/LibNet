@@ -87,6 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classmognetwork_1_1_tcp_a_s_i_o_server-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -99,11 +100,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &lt;<a class="el" href="_tcp_a_s_i_o_server_8hh_source.html">TcpASIOServer.hh</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aca39a3ef3f23618f09f76a5ec9242ebf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>CommunicationProtocolType</b> { <b>Binary</b>, 
+<b>Telnet</b>, 
+<b>LinePerLine</b>
+ }</td></tr>
+<tr class="separator:aca39a3ef3f23618f09f76a5ec9242ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a201f84e02e478de1de4e0e4d3c029f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a8a201f84e02e478de1de4e0e4d3c029f">TcpASIOServer</a> (int port)</td></tr>
-<tr class="memdesc:a8a201f84e02e478de1de4e0e4d3c029f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a8a201f84e02e478de1de4e0e4d3c029f">More...</a><br/></td></tr>
-<tr class="separator:a8a201f84e02e478de1de4e0e4d3c029f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bdf6097cf8931094d8ee7c5f5fbc4bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#a8bdf6097cf8931094d8ee7c5f5fbc4bf">TcpASIOServer</a> (int port, CommunicationProtocolType protocolType)</td></tr>
+<tr class="memdesc:a8bdf6097cf8931094d8ee7c5f5fbc4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a8bdf6097cf8931094d8ee7c5f5fbc4bf">More...</a><br/></td></tr>
+<tr class="separator:a8bdf6097cf8931094d8ee7c5f5fbc4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adea436db7edfd8500d60b4e06c60ea50"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adea436db7edfd8500d60b4e06c60ea50"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TcpASIOServer</b> (int port, <a class="el" href="classmognetwork_1_1_i_protocol_factory.html">IProtocolFactory</a> *protocolFactory)</td></tr>
+<tr class="separator:adea436db7edfd8500d60b4e06c60ea50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6c804597aafd577c41310cdc986c7ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6c804597aafd577c41310cdc986c7ff"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1_tcp_a_s_i_o_server.html#ad6c804597aafd577c41310cdc986c7ff">start</a> ()</td></tr>
 <tr class="memdesc:ad6c804597aafd577c41310cdc986c7ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the threads and wait until they are stopped. <br/></td></tr>
@@ -156,7 +168,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setPort</b> (int port
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Used to create a ASIO Server simply. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a8a201f84e02e478de1de4e0e4d3c029f"></a>
+<a class="anchor" id="a8bdf6097cf8931094d8ee7c5f5fbc4bf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -164,8 +176,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setPort</b> (int port
           <td class="memname">mognetwork::TcpASIOServer::TcpASIOServer </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>port</em></td><td>)</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">CommunicationProtocolType&#160;</td>
+          <td class="paramname"><em>protocolType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -271,7 +293,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setPort</b> (int port
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 17 2015 12:46:09 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 20 2015 02:05:09 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
