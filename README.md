@@ -4,6 +4,9 @@ LibNet is a network Framework-library, that is imagined to simplify the creation
 It was first imagined for the mmo developpement framework "Highlands Framework", and is now opensource and public.
 The library is simple and fast to use, and is adapted for every type of protocol (text, binary, ...)
 
+## Travis status
+[![Build Status](https://travis-ci.org/AlexMog/LibNet.svg?branch=develop)](https://travis-ci.org/AlexMog/LibNet)
+
 ## Features
    - TCP and UDP socket management
    - TCP asynchronous built-in server and client.
