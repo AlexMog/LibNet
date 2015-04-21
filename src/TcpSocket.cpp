@@ -64,9 +64,10 @@ namespace mognetwork
   {
     // Create the sockaddr by the OS
     sockaddr_in address = OsSocket::createAddress(rAddress.getInt(), port);
-
-    // connect the socket to the address
-    return (::connect(getSocketFD(), reinterpret_cast<sockaddr*>(&address), sizeof(address))  == -1 ? OsSocket::getErrorStatus() : Ok);
+	Socket::Status status = ::connect(getSocketFD(), reinterpret_cast<sockaddr*>(&address), sizeof(address)) == -1 ? OsSocket::getErrorStatus() : Ok;
+	if (status != Ok)
+		throw LibNetworkException("Cannot connect to server.", __LINE__, __FILE__);
+	return (status);
   }
 
   void TcpSocket::disconnect()

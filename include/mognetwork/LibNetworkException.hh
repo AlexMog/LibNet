@@ -41,10 +41,11 @@ namespace mognetwork
      */
     LibNetworkException(const char* msg, int line, const char *file)
     {
+		char* err = strerror(errno);
       std::ostringstream oss;
 
       oss << "Error on line " << line << " in file '" << file << "' : " << msg << std::endl
-	  << "\tErrno status: " << strerror(errno) << std::endl;
+	  << "\tErrno status: " << err << std::endl;
       this->msg = oss.str();
     }
     virtual ~LibNetworkException() throw() {}

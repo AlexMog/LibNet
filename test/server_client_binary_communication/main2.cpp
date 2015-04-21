@@ -14,7 +14,7 @@ int main(int ac, char **av)
   mognetwork::Packet packet;
   mognetwork::TcpSocket socket;
   socket.setProtocolListener(new mognetwork::protocol::BinaryProtocol(&socket));
-  mognetwork::IpAddress ip("127.0.0.1");
+  mognetwork::IpAddress ip("labs-epimars.eu");
   std::string str = "LOL ITS A TEST\0";
   int i = NUMBER_OF_PACKET_SEND;
   bool b = true;
@@ -52,7 +52,6 @@ int main(int ac, char **av)
 	gettimeofday(&t1, NULL);
 	if (socket.receiveAll(*datas) != mognetwork::Socket::Ok)
 	  {
-	    std::cout << "ERROR" << std::endl;
 	    perror("WTF?");
 	    return 1;
 	  }
