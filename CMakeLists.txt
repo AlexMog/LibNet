@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS "-g3 -W -Wall -pedantic -ansi")
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-add_library(mognetwork SHARED
+set(SOURCES
   src/UnixCondVar.cpp
   src/WinCondVar.cpp
   src/IpAddress.cpp
@@ -30,8 +30,17 @@ add_library(mognetwork SHARED
   src/LineProtocol.cpp
   )
 
+add_library(mognetwork SHARED
+ ${SOURCES}
+  )
+  
+add_library(mognetwork-static STATIC
+ ${SOURCES}
+  )
+
 if(WIN32)
   target_link_libraries(mognetwork wsock32 ws2_32)
+  target_link_libraries(mognetwork-static wsock32 ws2_32)
 endif()  
 
 install(TARGETS mognetwork DESTINATION lib)
