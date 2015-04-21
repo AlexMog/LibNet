@@ -10,6 +10,7 @@
 
 #include "mognetwork/OS.hh"
 #ifdef OS_WINDOWS
+#include <fcntl.h>
 #include <io.h>
 #endif // OS_WINDOWS
 #include "mognetwork/LibNetworkException.hh"
@@ -32,7 +33,11 @@ namespace mognetwork
   void TcpASIOListener::init()
   {
     m_thread = new Thread(*this, false);
+#ifndef OS_WINDOWS
     if (pipe(m_pipefd) != 0)
+#else
+	if (_pipe(m_pipefd, 42, O_BINARY) != 0)
+#endif // !OS_WINDOWS
       throw LibNetworkException("Pipe creation failed.", __LINE__, __FILE__);
     m_timeout.tv_sec = 0;
     m_timeout.tv_usec = 100000;
@@ -63,8 +68,13 @@ namespace mognetwork
 	if (m_socketList != NULL)
 	  delete (m_socketList);
       }
+#ifndef OS_WINDOWS
     ::close(m_pipefd[0]);
     ::close(m_pipefd[1]);
+#else
+	_close(m_pipefd[0]);
+	_close(m_pipefd[1]);
+#endif // !OS_WINDOWS
     delete m_thread;
   }
 

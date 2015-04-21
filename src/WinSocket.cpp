@@ -8,10 +8,13 @@
 // Last update Tue Nov 25 16:48:25 2014 Moghrabi Alexandre
 //
 
+#include "mognetwork/OS.hh"
+
+#ifdef OS_WINDOWS
+
 #include "mognetwork/OsSocket.hh"
 #include <cstring>
 
-#ifdef OS_WINDOWS
 namespace mognetwork
 {
   sockaddr_in OsSocket::createAddress(UINT32 address, unsigned short port)

@@ -22,6 +22,8 @@
 # include "mognetwork/OS.hh"
 #ifndef OS_WINDOWS
 # include <unistd.h>
+#else
+# include <io.h>
 #endif // !OS_WINDOWS
 # include "IRunnable.hh"
 # include "Thread.hh"

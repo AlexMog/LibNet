@@ -8,10 +8,12 @@
 // Last update Sat Dec  6 06:38:54 2014 Moghrabi Alexandre
 //
 
-#include "mognetwork/ThreadException.hh"
-#include "mognetwork/CondVar.hh"
+#include "mognetwork/OS.hh"
 
 #ifndef OS_WINDOWS
+
+#include "mognetwork/ThreadException.hh"
+#include "mognetwork/CondVar.hh"
 
 namespace mognetwork
 {

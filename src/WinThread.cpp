@@ -32,7 +32,7 @@ namespace mognetwork
   
   void Thread::start()
   {
-    if (!m_started && (m_thread = CreateThread(NULL, 0, Thread::exec, &m_runnable, 0, &m_thread)) == NULL)
+    if (!m_started && (m_thread = CreateThread(NULL, 0, Thread::exec, &m_runnable, 0, NULL)) == NULL)
       throw ThreadException("Thread creation error", __LINE__, __FILE__);
     m_started = true;
   }
