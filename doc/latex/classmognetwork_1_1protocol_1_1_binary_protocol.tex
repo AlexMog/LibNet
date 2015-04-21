@@ -29,9 +29,7 @@ virtual bool \hyperlink{classmognetwork_1_1protocol_1_1_binary_protocol_ab945fba
 virtual void \hyperlink{classmognetwork_1_1protocol_1_1_binary_protocol_a7a3c0fbaa42855d9a79fd943bea94960}{on\-Send\-Datas} (const char $\ast$data, std\-::size\-\_\-t size, \hyperlink{classmognetwork_1_1_tcp_socket_aa80d910649a16cedb6c98297e5893ed1}{Tcp\-Socket\-::\-Data} \&data\-To\-Send)
 \begin{DoxyCompactList}\small\item\em Called when datas are added to the send list. \end{DoxyCompactList}\item 
 virtual \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1protocol_1_1_binary_protocol_a15af1a59b3f53351d562414fc3905575}{on\-Read\-All\-Trigger} (\hyperlink{classmognetwork_1_1_tcp_socket_aa80d910649a16cedb6c98297e5893ed1}{Tcp\-Socket\-::\-Data} \&data)
-\begin{DoxyCompactList}\small\item\em Called when the function \char`\"{}\-Read\-All\char`\"{} (blocking) is called. \end{DoxyCompactList}\item 
-virtual \hyperlink{structmognetwork_1_1_tcp_socket_1_1_readed_datas}{Tcp\-Socket\-::\-Readed\-Datas} \& \hyperlink{classmognetwork_1_1protocol_1_1_binary_protocol_a1033401c77e30598f5a90624156c73e9}{get\-Readed\-Datas} ()
-\begin{DoxyCompactList}\small\item\em Used to get the readed\-Datas when they are completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Called when the function \char`\"{}\-Read\-All\char`\"{} (blocking) is called. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -56,24 +54,6 @@ True if the pending\-Datas are complete
 
 
 Implements \hyperlink{classmognetwork_1_1protocol_1_1_a_protocol_listener_a88fd602dec144a87f69f1848813334da}{mognetwork\-::protocol\-::\-A\-Protocol\-Listener}.
-
-\hypertarget{classmognetwork_1_1protocol_1_1_binary_protocol_a1033401c77e30598f5a90624156c73e9}{\index{mognetwork\-::protocol\-::\-Binary\-Protocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}!get\-Readed\-Datas@{get\-Readed\-Datas}}
-\index{get\-Readed\-Datas@{get\-Readed\-Datas}!mognetwork::protocol::BinaryProtocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}}
-\subsubsection[{get\-Readed\-Datas}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Tcp\-Socket\-::\-Readed\-Datas}\& mognetwork\-::protocol\-::\-Binary\-Protocol\-::get\-Readed\-Datas (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmognetwork_1_1protocol_1_1_binary_protocol_a1033401c77e30598f5a90624156c73e9}
-
-
-Used to get the readed\-Datas when they are completed. 
-
-\begin{DoxyReturn}{Returns}
-The readed datas 
-\end{DoxyReturn}
-
-
-Reimplemented from \hyperlink{classmognetwork_1_1protocol_1_1_a_protocol_listener_a55e8908247b0b93fa71f351e74dd3c2a}{mognetwork\-::protocol\-::\-A\-Protocol\-Listener}.
 
 \hypertarget{classmognetwork_1_1protocol_1_1_binary_protocol_a15af1a59b3f53351d562414fc3905575}{\index{mognetwork\-::protocol\-::\-Binary\-Protocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}!on\-Read\-All\-Trigger@{on\-Read\-All\-Trigger}}
 \index{on\-Read\-All\-Trigger@{on\-Read\-All\-Trigger}!mognetwork::protocol::BinaryProtocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}}

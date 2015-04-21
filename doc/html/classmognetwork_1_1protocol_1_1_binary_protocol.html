@@ -124,13 +124,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a15af1a59b3f53351d562414fc3905575"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classmognetwork_1_1_socket.html#aa187a8394ac0d6203af0ec7f021ca15f">Socket::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1protocol_1_1_binary_protocol.html#a15af1a59b3f53351d562414fc3905575">onReadAllTrigger</a> (<a class="el" href="classmognetwork_1_1_tcp_socket.html#aa80d910649a16cedb6c98297e5893ed1">TcpSocket::Data</a> &amp;data)</td></tr>
 <tr class="memdesc:a15af1a59b3f53351d562414fc3905575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the function "ReadAll" (blocking) is called.  <a href="#a15af1a59b3f53351d562414fc3905575">More...</a><br/></td></tr>
 <tr class="separator:a15af1a59b3f53351d562414fc3905575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1033401c77e30598f5a90624156c73e9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">TcpSocket::ReadedDatas</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1protocol_1_1_binary_protocol.html#a1033401c77e30598f5a90624156c73e9">getReadedDatas</a> ()</td></tr>
-<tr class="memdesc:a1033401c77e30598f5a90624156c73e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to get the readedDatas when they are completed.  <a href="#a1033401c77e30598f5a90624156c73e9">More...</a><br/></td></tr>
-<tr class="separator:a1033401c77e30598f5a90624156c73e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmognetwork_1_1protocol_1_1_a_protocol_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmognetwork_1_1protocol_1_1_a_protocol_listener')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmognetwork_1_1protocol_1_1_a_protocol_listener.html">mognetwork::protocol::AProtocolListener</a></td></tr>
 <tr class="memitem:af67843ac5b9be56fcab208c9ca1b1871 inherit pub_methods_classmognetwork_1_1protocol_1_1_a_protocol_listener"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af67843ac5b9be56fcab208c9ca1b1871"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>AProtocolListener</b> (<a class="el" href="classmognetwork_1_1_tcp_socket.html">TcpSocket</a> *socket)</td></tr>
 <tr class="separator:af67843ac5b9be56fcab208c9ca1b1871 inherit pub_methods_classmognetwork_1_1protocol_1_1_a_protocol_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e8908247b0b93fa71f351e74dd3c2a inherit pub_methods_classmognetwork_1_1protocol_1_1_a_protocol_listener"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">TcpSocket::ReadedDatas</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1protocol_1_1_a_protocol_listener.html#a55e8908247b0b93fa71f351e74dd3c2a">getReadedDatas</a> ()</td></tr>
+<tr class="memdesc:a55e8908247b0b93fa71f351e74dd3c2a inherit pub_methods_classmognetwork_1_1protocol_1_1_a_protocol_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to get the readedDatas when they are completed.  <a href="#a55e8908247b0b93fa71f351e74dd3c2a">More...</a><br/></td></tr>
+<tr class="separator:a55e8908247b0b93fa71f351e74dd3c2a inherit pub_methods_classmognetwork_1_1protocol_1_1_a_protocol_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedfd6ac78d772a01f9ecaebbb1aa9d75 inherit pub_methods_classmognetwork_1_1protocol_1_1_a_protocol_listener"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aedfd6ac78d772a01f9ecaebbb1aa9d75"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmognetwork_1_1protocol_1_1_a_protocol_listener.html#aedfd6ac78d772a01f9ecaebbb1aa9d75">flushReader</a> ()</td></tr>
 <tr class="memdesc:aedfd6ac78d772a01f9ecaebbb1aa9d75 inherit pub_methods_classmognetwork_1_1protocol_1_1_a_protocol_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush the pending datas reader. <br/></td></tr>
@@ -174,34 +174,6 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if the pendingDatas are complete </dd></dl>
 
 <p>Implements <a class="el" href="classmognetwork_1_1protocol_1_1_a_protocol_listener.html#a88fd602dec144a87f69f1848813334da">mognetwork::protocol::AProtocolListener</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1033401c77e30598f5a90624156c73e9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="structmognetwork_1_1_tcp_socket_1_1_readed_datas.html">TcpSocket::ReadedDatas</a>&amp; mognetwork::protocol::BinaryProtocol::getReadedDatas </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Used to get the readedDatas when they are completed. </p>
-<dl class="section return"><dt>Returns</dt><dd>The readed datas </dd></dl>
-
-<p>Reimplemented from <a class="el" href="classmognetwork_1_1protocol_1_1_a_protocol_listener.html#a55e8908247b0b93fa71f351e74dd3c2a">mognetwork::protocol::AProtocolListener</a>.</p>
 
 </div>
 </div>
@@ -325,7 +297,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 20 2015 02:05:09 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 20 2015 16:05:41 for LibNetwork by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

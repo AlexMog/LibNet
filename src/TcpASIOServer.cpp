@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:38:14 2014 Moghrabi Alexandre
-// Last update Mon Apr 20 04:19:05 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 15:47:49 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/Mutex.hh"
@@ -46,10 +46,20 @@ namespace mognetwork
 
   void TcpASIOServer::start()
   {
+    startWithoutJoin();
+    join();
+  }
+
+  void TcpASIOServer::startWithoutJoin()
+  {
     m_serverSocket.bind(m_port);
     m_serverSocket.listen(42);
     m_serverListener->start();
     m_serverWriter->start();
+  }
+
+  void TcpASIOServer::join()
+  {
     m_serverWriter->wait();
     m_serverListener->wait();
     m_serverSocket.disconnect();

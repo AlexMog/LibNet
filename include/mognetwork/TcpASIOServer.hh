@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Sat Nov 15 18:00:03 2014 Moghrabi Alexandre
-// Last update Fri Apr 17 17:27:20 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 15:46:08 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -55,6 +55,14 @@ namespace mognetwork
      * \brief Start the threads and wait until they are stopped
      */
     void start();
+    /*!
+     * \brief Starts the server without joining the threads
+     */
+    void startWithoutJoin();
+    /*!
+     * \brief wait for the threads to join
+     */
+    void join();
     /*!
      * \brief Stop the threads
      */
