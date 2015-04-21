@@ -132,7 +132,7 @@ namespace mognetwork
     State m_state; /*!< Selector state */
     fd_set m_rdfs; /*!< Fd reading set */
     fd_set m_wdfs; /*!< Fd writing set */
-    int m_maxFds; /*!< FD max for the select */
+    SocketFD m_maxFds; /*!< FD max for the select */
   };
 } // namespace mognetwork
 

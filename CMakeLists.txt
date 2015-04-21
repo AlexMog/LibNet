@@ -29,5 +29,10 @@ add_library(mognetwork SHARED
   src/BinaryProtocol.cpp
   src/LineProtocol.cpp
   )
+
+if(WIN32)
+  target_link_libraries(mognetwork wsock32 ws2_32)
+endif()  
+
 install(TARGETS mognetwork DESTINATION lib)
 install(DIRECTORY include DESTINATION .)
