@@ -13,24 +13,28 @@
 #if defined OS_WINDOWS
 #include "mognetwork/ThreadException.hh"
 #include "mognetwork/CondVar.hh"
+#include <iostream>
 
 namespace mognetwork
 {
   CondVar::CondVar()
   {
-    InitializeConditionVariable(&m_cond);
-    InitializeSRWLock(m_lock);
+	InitializeConditionVariable(&m_cond);
+	InitializeCriticalSection(&m_cSection);
   }
 
   CondVar::~CondVar()
   {
     WakeAllConditionVariable(&m_cond);
+	DeleteCriticalSection(&m_cSection);
   }
 
   void CondVar::wait()
   {
-    if (SleepConditionVariableSRW(&m_cond, m_lock, INFINITE, CONDITION_VARIABLE_LOCKMODE_SHARED) == 0)
-      throw ThreadException("pthread_cond_wait error.", __LINE__, __FILE__);
+	  EnterCriticalSection(&m_cSection);
+	  if (SleepConditionVariableCS(&m_cond, &m_cSection, INFINITE) == 0)
+		throw ThreadException("pthread_cond_wait error.", __LINE__, __FILE__);
+	  LeaveCriticalSection(&m_cSection);
   }
 
   void CondVar::signal()

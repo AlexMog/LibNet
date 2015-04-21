@@ -81,7 +81,7 @@ namespace mognetwork
     pthread_cond_t m_cond; /*!< CondVar datas */
 #else
     CONDITION_VARIABLE m_cond;
-    PSRWLOCK m_lock;
+    CRITICAL_SECTION m_cSection;
 #endif // !OS_WINDOWS
   };
 } // namespace mognetwork
