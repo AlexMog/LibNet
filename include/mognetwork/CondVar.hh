@@ -23,6 +23,16 @@
 #ifndef OS_WINDOWS
 # include <pthread.h>
 #else
+#ifdef _WIN32_WINDOWS
+# undef _WIN32_WINDOWS
+#endif
+#ifdef _WIN32_WINNT
+# undef _WIN32_WINNT
+#endif
+#ifdef WINVER
+# undef WINVER
+#endif
+# define _WIN32_WINDOWS 0x0600
 # define _WIN32_WINNT 0x0600
 # define WINVER 0x0600
 # include <windows.h>
