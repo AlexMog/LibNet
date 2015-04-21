@@ -5,9 +5,13 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Fri Apr 17 17:35:56 2015 Moghrabi Alexandre
+// Last update Tue Apr 21 10:27:01 2015 Moghrabi Alexandre
 //
 
+#include "mognetwork/OS.hh"
+#ifdef OS_WINDOWS
+#include <io.h>
+#endif // OS_WINDOWS
 #include "mognetwork/LibNetworkException.hh"
 #include "mognetwork/TcpASIOListener.hh"
 #include "mognetwork/TcpASIOServer.hh"

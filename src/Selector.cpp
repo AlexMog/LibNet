@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun 12 18:06:35 2014 mognetworkhrabi Alexandre
-// Last update Tue Nov 25 16:50:00 2014 Moghrabi Alexandre
+// Last update Tue Apr 21 10:22:12 2015 Moghrabi Alexandre
 //
 
 #include <sys/types.h>
@@ -13,6 +13,8 @@
 #ifndef OS_WINDOWS
 #include <sys/socket.h>
 #include <netinet/in.h>
+#else
+#include <algorithm>
 #endif // !OS_WINDOWS
 #include <algorithm>
 #include <string.h>

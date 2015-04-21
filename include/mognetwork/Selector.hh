@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Wed Jun 11 15:43:12 2014 mognetworkhrabi Alexandre
-// Last update Wed Mar 25 15:12:32 2015 Moghrabi Alexandre
+// Last update Tue Apr 21 10:20:40 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -23,6 +23,8 @@
 #include <sys/select.h>
 #include <sys/time.h>
 #include <unistd.h>
+#else
+#include <windows.h>
 #endif // !OS_WINDOWS
 #include <sys/types.h>
 #include <list>

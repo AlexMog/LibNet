@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 11 19:43:06 2014 Moghrabi Alexandre
-// Last update Mon Dec 15 09:52:04 2014 Moghrabi Alexandre
+// Last update Tue Apr 21 10:33:39 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -23,6 +23,8 @@
 #ifndef OS_WINDOWS
 # include <pthread.h>
 #else
+# define _WIN32_WINNT 0x0600
+# define WINVER 0x0600
 # include <windows.h>
 #endif // !OS_WINDOWS
 # include "Mutex.hh"
