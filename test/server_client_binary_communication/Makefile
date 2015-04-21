@@ -5,7 +5,7 @@
 ## Login   <alexandre.moghrabi@epitech.eu>
 ## 
 ## Started on  Thu Nov 20 20:19:45 2014 Moghrabi Alexandre
-## Last update Thu Nov 20 20:31:15 2014 Moghrabi Alexandre
+## Last update Tue Apr 21 15:17:44 2015 Moghrabi Alexandre
 ##
 
 NAMEC=	client
@@ -26,7 +26,7 @@ RM=	rm -rf
 
 LDFLAGS=	-lmognetwork
 ifneq ($(OS),Windows_NT)
-LDFLAGS= -lpthread
+LDFLAGS += -lpthread
 endif
 
 CXXFLAGS=	
