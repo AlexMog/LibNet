@@ -14,7 +14,7 @@
 #ifdef OS_WINDOWS
 namespace mognetwork
 {
-  sockaddr_in OsSocket::createAddress(uint32_t address, unsigned short port)
+  sockaddr_in OsSocket::createAddress(UINT32 address, unsigned short port)
   {
     sockaddr_in addr;
     std::memset(&addr, 0, sizeof(addr));
@@ -45,7 +45,7 @@ namespace mognetwork
       case WSAETIMEDOUT :    return (Socket::Disconnected);
       case WSAENETRESET :    return (Socket::Disconnected);
       case WSAENOTCONN :     return (Socket::Disconnected);
-      case WSAEISCONN :      return (Socket::Done);
+      case WSAEISCONN :      return (Socket::Ok);
       default :              return (Socket::Error);
       }
   }

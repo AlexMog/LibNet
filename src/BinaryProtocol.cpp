@@ -9,6 +9,10 @@
 //
 
 #include <cstring>
+#include "mognetwork/OS.hh"
+#ifdef OS_WINDOWS
+#include <algorithm>
+#endif // OS_WINDOWS
 #include "mognetwork/BinaryProtocol.hh"
 
 namespace mognetwork
