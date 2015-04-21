@@ -17,8 +17,6 @@ namespace mognetwork
 {
   TcpASIOServer::TcpASIOServer(int port, CommunicationProtocolType protocolType)
   {
-    m_serverListener = new TcpASIOListener(this);
-    m_serverWriter = new TcpASIOWriter(this);
     m_port = port;
     if (protocolType == Binary)
       m_protocolFactory = new BinaryProtocolFactory;
@@ -26,15 +24,21 @@ namespace mognetwork
       m_protocolFactory = new LineProtocolFactory;
     else
       m_protocolFactory = NULL;
-    m_serverListener->setProtocolFactory(m_protocolFactory);
+	init();
+  }
+
+  void TcpASIOServer::init()
+  {
+	  m_serverListener = new TcpASIOListener(this);
+	  m_serverWriter = new TcpASIOWriter(this);
+	  m_serverListener->setProtocolFactory(m_protocolFactory);
   }
 
   TcpASIOServer::TcpASIOServer(int port, IProtocolFactory* protocolFactory)
   {
-    m_serverListener = new TcpASIOListener(this);
-    m_serverWriter = new TcpASIOWriter(this);
     m_port = port;
     m_protocolFactory = protocolFactory;
+	init();
   }
 
   TcpASIOServer::~TcpASIOServer()

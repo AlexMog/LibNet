@@ -50,6 +50,9 @@ namespace mognetwork
     TcpASIOServer(int port, IProtocolFactory* protocolFactory);
     virtual ~TcpASIOServer();
 
+  private:
+	  void init();
+
   public:
     /*!
      * \brief Start the threads and wait until they are stopped

@@ -25,10 +25,10 @@ namespace mognetwork
 
   void TcpASIOWriter::init()
   {
-    m_thread = new Thread(*this, false);
+	m_thread = new Thread(*this, false);
     m_timeout.tv_sec = 0;
     m_timeout.tv_usec = 1000;
-    m_selector.setTimeout(&m_timeout);
+	m_selector.setTimeout(&m_timeout);
   }
 
   TcpASIOWriter::TcpASIOWriter(TcpASIOServer* server) :

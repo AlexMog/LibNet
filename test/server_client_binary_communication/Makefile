@@ -24,17 +24,20 @@ CXX=	g++
 
 RM=	rm -rf
 
-LDFLAGS=	-lmognetwork -lpthread
+LDFLAGS=	-lmognetwork
+ifneq ($(OS),Windows_NT)
+LDFLAGS= -lpthread
+endif
 
 CXXFLAGS=	
 
 all:	$(NAMEC) $(NAMES)
 
 $(NAMEC):	$(OBJC)
-		$(CXX) -o $(NAMEC) $(LDFLAGS) $(OBJC) 
+		$(CXX) -o $(NAMEC) $(OBJC) $(LDFLAGS)
 
 $(NAMES):	$(OBJS)
-		$(CXX) -o $(NAMES) $(LDFLAGS) $(OBJS)
+		$(CXX) -o $(NAMES) $(OBJS) $(LDFLAGS)
 
 debug:		CXXFLAGS += -g3
 debug:		all
@@ -43,7 +46,11 @@ clean:
 		$(RM) $(OBJS) $(OBJC)
 
 fclean:		clean
+ifneq ($(OS),Windows_NT)
 		$(RM) $(NAMES) $(NAMEC)
+else
+		$(RM) $(NAMES).exe $(NAMEC).exe
+endif
 
 re:		fclean all
 
