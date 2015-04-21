@@ -29,19 +29,21 @@ set(SOURCES
   src/BinaryProtocol.cpp
   src/LineProtocol.cpp
   )
+  
+add_library(core OBJECT ${SOURCES})
 
 add_library(mognetwork SHARED
- ${SOURCES}
+ $<TARGET_OBJECTS:core>
   )
   
 add_library(mognetwork-static STATIC
- ${SOURCES}
+ $<TARGET_OBJECTS:core>
   )
 
 if(WIN32)
   target_link_libraries(mognetwork wsock32 ws2_32)
   target_link_libraries(mognetwork-static wsock32 ws2_32)
-endif()  
+endif()
 
 install(TARGETS mognetwork DESTINATION lib)
 install(DIRECTORY include DESTINATION .)
