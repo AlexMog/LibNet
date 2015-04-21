@@ -6,13 +6,13 @@
 #include <exception>
 #include <signal.h>
 
+mognetwork::TcpASIOServer server(4242, mognetwork::TcpASIOServer::Binary);
 
-
-/*void shandler(int)
+void shandler(int)
 {
   std::cout << "Stopping server..." << std::endl;
   server.stop();
-}*/
+}
 
 class Listener : public mognetwork::ITcpASIOListenerHandler
 {
@@ -66,15 +66,11 @@ private:
 
 int main(int ac, char **av)
 {
-	try {
-	std::cout << "Constructing server..." << std::endl;
-	mognetwork::TcpASIOServer server(4242, mognetwork::TcpASIOServer::Binary);
   Listener l(server.getServerWriter());
-
-//  signal(SIGINT, shandler);
-	std::cout << "Starting server..." << std::endl;
-    server.addListener(&l);
-
+  server.addListener(&l);
+  signal(SIGINT, shandler);
+  std::cout << "Starting server..." << std::endl;
+  try {
     server.start();
     std::cout << "Server ended." << std::endl;
   } catch (const std::exception& e) {
