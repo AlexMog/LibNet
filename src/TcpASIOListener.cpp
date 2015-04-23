@@ -40,8 +40,8 @@ namespace mognetwork
 #endif // !OS_WINDOWS
       throw LibNetworkException("Pipe creation failed.", __LINE__, __FILE__);
     m_timeout.tv_sec = 0;
-    m_timeout.tv_usec = 100000;
-    m_selector.setTimeout(NULL);
+    m_timeout.tv_usec = 10000;
+    m_selector.setTimeout(&m_timeout);
   }
 
   TcpASIOListener::TcpASIOListener(TcpASIOServer* server) :
@@ -81,7 +81,10 @@ namespace mognetwork
   void TcpASIOListener::start()
   {
     m_selector.addFdToRead(m_serverSocket.getSocketFD());
-    m_selector.addFdToRead(m_pipefd[0]);
+#ifndef OS_WINDOWS
+	//TODO Find a solution for windows
+	m_selector.addFdToRead(m_pipefd[0]);
+#endif // !OS_WINDOWS
     m_thread->start();
   }
 
@@ -121,7 +124,7 @@ namespace mognetwork
 	  {
 	    std::cerr << "Select error on listening thread." << std::endl;
 	    return ;
-	  }
+	}
 	std::list<SocketFD> triggeredList = m_selector.getReadingTriggeredSockets();
 	for (std::list<SocketFD>::iterator it = triggeredList.begin(); it != triggeredList.end(); ++it)
 	  {

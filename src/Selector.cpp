@@ -30,7 +30,6 @@ namespace mognetwork
   void Selector::addFdToWrite(SocketFD fd)
   {
     m_writeSockets.push_front(fd);
-    m_maxFds = std::max(m_maxFds, fd);
   }
 
   void Selector::addFdToRead(SocketFD fd)
@@ -77,8 +76,15 @@ namespace mognetwork
   {
     m_state = Waiting;
     setFds();
+#ifndef OS_WINDOWS
     if (select(m_maxFds + 1, &m_rdfs, &m_wdfs, NULL, m_timeout) == -1)
-      m_state = Error;
+	{
+#else
+	if (select(m_maxFds + 1, &m_rdfs, &m_wdfs, NULL, m_timeout) == SOCKET_ERROR)
+	{
+#endif // !OS_WINDOWS
+		m_state = Error;
+	}
     else
       updateFds();
   }

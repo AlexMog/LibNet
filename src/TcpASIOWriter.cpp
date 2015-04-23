@@ -79,12 +79,11 @@ namespace mognetwork
   void TcpASIOWriter::run()
   {
     bool hasMoreDatasToSend = false;
-
     while (m_running)
       {
-	if (hasMoreDatasToSend)
+		if (hasMoreDatasToSend)
 	  {
-	    m_mutex->lock();
+			m_mutex->lock();
 	    setFds();
 	    m_mutex->unlock();
 	    m_selector.waitForTrigger();

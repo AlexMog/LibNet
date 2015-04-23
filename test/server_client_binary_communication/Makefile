@@ -29,7 +29,7 @@ ifneq ($(OS),Windows_NT)
 LDFLAGS += -lpthread
 endif
 
-CXXFLAGS=	
+CXXFLAGS=	-g3
 
 all:	$(NAMEC) $(NAMES)
 

@@ -56,10 +56,10 @@ namespace mognetwork
 
   void TcpASIOServer::startWithoutJoin()
   {
-    m_serverSocket.bind(m_port);
-    m_serverSocket.listen(42);
-    m_serverListener->start();
-    m_serverWriter->start();
+	  m_serverSocket.bind(m_port);
+	  m_serverSocket.listen(42);
+	  m_serverListener->start();
+	  m_serverWriter->start();
   }
 
   void TcpASIOServer::join()
