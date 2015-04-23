@@ -8,6 +8,7 @@
 // Last update Wed Oct  8 08:05:50 2014 mognetworkhrabi Alexandre
 //
 
+#include "OS.hh"
 #if defined(OS_WINDOWS)
 #include "WinSocket.hh"
 #else

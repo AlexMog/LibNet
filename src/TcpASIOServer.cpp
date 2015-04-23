@@ -5,33 +5,65 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:38:14 2014 Moghrabi Alexandre
-// Last update Wed Mar 25 16:16:40 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 15:47:49 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/Mutex.hh"
 #include "mognetwork/TcpASIOServer.hh"
+#include "mognetwork/BinaryProtocolFactory.hpp"
+#include "mognetwork/LineProtocolFactory.hpp"
 
 namespace mognetwork
 {
-  TcpASIOServer::TcpASIOServer(int port)
+  TcpASIOServer::TcpASIOServer(int port, CommunicationProtocolType protocolType)
   {
-    m_serverListener = new TcpASIOListener(this);
-    m_serverWriter = new TcpASIOWriter(this);
     m_port = port;
+    if (protocolType == Binary)
+      m_protocolFactory = new BinaryProtocolFactory;
+    else if (protocolType == LinePerLine)
+      m_protocolFactory = new LineProtocolFactory;
+    else
+      m_protocolFactory = NULL;
+	init();
+  }
+
+  void TcpASIOServer::init()
+  {
+	  m_serverListener = new TcpASIOListener(this);
+	  m_serverWriter = new TcpASIOWriter(this);
+	  m_serverListener->setProtocolFactory(m_protocolFactory);
+  }
+
+  TcpASIOServer::TcpASIOServer(int port, IProtocolFactory* protocolFactory)
+  {
+    m_port = port;
+    m_protocolFactory = protocolFactory;
+	init();
   }
 
   TcpASIOServer::~TcpASIOServer()
   {
     delete m_serverListener;
     delete m_serverWriter;
+    delete m_protocolFactory;
   }
 
   void TcpASIOServer::start()
   {
-    m_serverSocket.bind(m_port);
-    m_serverSocket.listen(42);
-    m_serverListener->start();
-    m_serverWriter->start();
+    startWithoutJoin();
+    join();
+  }
+
+  void TcpASIOServer::startWithoutJoin()
+  {
+	  m_serverSocket.bind(m_port);
+	  m_serverSocket.listen(42);
+	  m_serverListener->start();
+	  m_serverWriter->start();
+  }
+
+  void TcpASIOServer::join()
+  {
     m_serverWriter->wait();
     m_serverListener->wait();
     m_serverSocket.disconnect();

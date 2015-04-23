@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Sat Nov 15 18:00:03 2014 Moghrabi Alexandre
-// Last update Wed Mar 25 16:15:51 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 15:46:08 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -22,6 +22,7 @@
 # include "TcpServerSocket.hh"
 # include "TcpASIOListener.hh"
 # include "TcpASIOWriter.hh"
+# include "IProtocolFactory.hh"
 
 namespace mognetwork
 {
@@ -31,19 +32,40 @@ namespace mognetwork
    */
   class TcpASIOServer
   {
+
+  public:
+    enum CommunicationProtocolType
+      {
+	Binary,
+	Telnet,
+	LinePerLine
+      };
+
   public:
     /*!
      * \brief Default constructor
      * \param port The port to be used with the server
      */
-    TcpASIOServer(int port);
+    TcpASIOServer(int port, CommunicationProtocolType protocolType);
+    TcpASIOServer(int port, IProtocolFactory* protocolFactory);
     virtual ~TcpASIOServer();
+
+  private:
+	  void init();
 
   public:
     /*!
      * \brief Start the threads and wait until they are stopped
      */
     void start();
+    /*!
+     * \brief Starts the server without joining the threads
+     */
+    void startWithoutJoin();
+    /*!
+     * \brief wait for the threads to join
+     */
+    void join();
     /*!
      * \brief Stop the threads
      */
@@ -88,6 +110,7 @@ namespace mognetwork
     int m_port; /*!< listening port */
     Mutex m_mutex;
     std::list<TcpSocket*> m_socketList;
+    IProtocolFactory* m_protocolFactory;
   };
 } // namespace mognetwork
 

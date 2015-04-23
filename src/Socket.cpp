@@ -21,6 +21,7 @@
 #include <iostream>
 #include "mognetwork/OsSocket.hh"
 #include "mognetwork/Socket.hh"
+#include "mognetwork/LibNetworkException.hh"
 
 namespace mognetwork
 {
@@ -44,6 +45,8 @@ namespace mognetwork
     if (m_socket == mognetwork::OsSocket::notValid())
       {
 	SocketFD fd = socket(PF_INET, m_type == Tcp ? SOCK_STREAM : SOCK_DGRAM, 0);
+	if (fd == mognetwork::OsSocket::notValid())
+		throw LibNetworkException("Invalid socket created.", __LINE__, __FILE__);
 	create(fd);
       }
   }

@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 20:09:34 2014 mognetworkhrabi Alexandre
-// Last update Fri Apr 17 12:05:04 2015 Moghrabi Alexandre
+// Last update Fri Apr 17 17:10:45 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -24,6 +24,8 @@
 #include "mognetwork/TcpSocket.hh"
 #include "mognetwork/OsSocket.hh"
 #include "mognetwork/Packet.hh"
+#include "mognetwork/AProtocolListener.hh"
+#include "mognetwork/LibNetworkException.hh"
 
 namespace
 {
@@ -52,13 +54,20 @@ namespace mognetwork
     create(fd);
   }
 
+  TcpSocket::~TcpSocket()
+  {
+    if (m_protocolListener != NULL)
+      delete m_protocolListener;
+  }
+
   Socket::Status TcpSocket::connect(const IpAddress& rAddress, unsigned short port)
   {
     // Create the sockaddr by the OS
     sockaddr_in address = OsSocket::createAddress(rAddress.getInt(), port);
-
-    // connect the socket to the address
-    return (::connect(getSocketFD(), reinterpret_cast<sockaddr*>(&address), sizeof(address))  == -1 ? OsSocket::getErrorStatus() : Ok);
+	Socket::Status status = ::connect(getSocketFD(), reinterpret_cast<sockaddr*>(&address), sizeof(address)) == -1 ? OsSocket::getErrorStatus() : Ok;
+	if (status != Ok)
+		throw LibNetworkException("Cannot connect to server.", __LINE__, __FILE__);
+	return (status);
   }
 
   void TcpSocket::disconnect()
@@ -90,42 +99,9 @@ namespace mognetwork
 
   Socket::Status TcpSocket::receiveAll(Data& data)
   {
-    std::size_t readed = 0;
-    char buffer[1024]; // Buffer to get the datas
-    std::size_t numReaded = 0;
-
-    ReadedDatas _data = ReadedDatas();
-    data.clear();
-    // Read the size of the pending packet
-    while (readed < sizeof(std::size_t))
-      {
-	char* d = reinterpret_cast<char*>(&_data.totalSize) + numReaded;
-	Socket::Status status = receive(d, sizeof(std::size_t) - _data.readed, readed, 0);
-	numReaded += readed;
-	if (status != Ok)
-	  return (status);
-      }
-    // Size is set, let's read the content!
-    if (numReaded >= sizeof(std::size_t))
-      {
-	while (_data.readed < _data.totalSize)
-	  {
-	    std::size_t toGet = std::min(static_cast<std::size_t>(_data.totalSize - _data.readed), sizeof(buffer));
-	    Socket::Status status = receive(buffer, toGet, readed, 0);
-	    if (status != Ok)
-	      return (status);
-	    _data.readed += readed;
-	    if (readed > 0)
-	      {
-		data.resize(data.size() + readed);
-		char* begin = &data[0] + data.size() - readed;
-		std::memcpy(begin, buffer, readed);
-	      }
-	    if (_data.readed >= _data.totalSize)
-	      return (Ok);
-	  }
-      }
-    return (Error);
+    if (m_protocolListener == NULL)
+      throw LibNetworkException("No protocol listener found.", __LINE__, __FILE__);
+    return m_protocolListener->onReadAllTrigger(data);
   }
 
   Socket::Status TcpSocket::asyncSend(const char* data, std::size_t size)
@@ -135,19 +111,19 @@ namespace mognetwork
 	std::cerr << "Cannot send null data" << std::endl;
 	return (Error);
       }
+    if (m_protocolListener == NULL)
+      throw LibNetworkException("No protocol listener found.", __LINE__, __FILE__);
     Data* _data = new Data;
-    _data->resize(size + sizeof(std::size_t));
-    std::memcpy(&_data->front(), &size, sizeof(std::size_t));
-    std::memcpy(&_data->front() + sizeof(std::size_t), data, size);
+    m_protocolListener->onSendDatas(data, size, *_data);
     m_pendingDatas.push_back(_data);
     return (Ok);
   }
 
   bool TcpSocket::havingPendingDatas()
   {
-    //    m_mutex.lock();
+    m_mutex.lock();
     bool status = !m_pendingDatas.empty();
-    //m_mutex.unlock();
+    m_mutex.unlock();
     return (status);
   }
 
@@ -197,10 +173,10 @@ namespace mognetwork
 	std::cerr << "Cannot send null data" << std::endl;
 	return (Error);
       }
+    if (m_protocolListener == NULL)
+      throw LibNetworkException("No protocol listener found.", __LINE__, __FILE__);
     Data dat;
-    dat.resize(size + sizeof(std::size_t));
-    std::memcpy(&dat[0], &size, sizeof(std::size_t));
-    std::memcpy(&dat[0] + sizeof(std::size_t), data, size);
+    m_protocolListener->onSendDatas(data, size, dat);
     sent = ::send(getSocketFD(), &dat[0], dat.size(), 0);
     if (sent < 0)
       return (OsSocket::getErrorStatus());
@@ -211,9 +187,9 @@ namespace mognetwork
 
   void TcpSocket::setUserData(void* userData)
   {
-    //    m_mutex.lock();
+    m_mutex.lock();
     m_userData = userData;
-    //m_mutex.unlock();
+    m_mutex.unlock();
   }
 
   void* TcpSocket::getUserData() const
@@ -223,44 +199,21 @@ namespace mognetwork
 
   Socket::Status TcpSocket::readPendingDatas()
   {
-    std::size_t readed;
-    char buffer[1024]; // Buffer to get the datas
+    if (m_protocolListener == NULL)
+      throw LibNetworkException("No protocol listener found.", __LINE__, __FILE__);
 
-    // Read the size of the pending packet
-    if (m_pendingRDatas.readed < sizeof(std::size_t))
+    Socket::Status status = m_protocolListener->onReadTrigger();
+
+    if (m_protocolListener->datasFullyReceived())
       {
-	char* data = reinterpret_cast<char*>(&m_pendingRDatas.totalSize) + m_pendingRDatas.readed;
-	Socket::Status status = receive(data, sizeof(std::size_t) - m_pendingRDatas.readed, readed, 0);
-	m_pendingRDatas.readed += readed;
-	if (status != Ok)
-	  return (status);
+	m_allDataReaded = new ReadedDatas();
+	m_allDataReaded->datas = m_protocolListener->getReadedDatas().datas;
+	m_allDataReaded->readed = m_protocolListener->getReadedDatas().readed;
+	m_allDataReaded->totalSize = m_protocolListener->getReadedDatas().totalSize;
+	m_protocolListener->flushReader();
+	return (Ok);
       }
-    // Size is set, let's read the content!
-    if (m_pendingRDatas.readed >= sizeof(std::size_t))
-      {
-	std::size_t toGet = std::min(static_cast<std::size_t>(m_pendingRDatas.totalSize - m_pendingRDatas.datas.size()), sizeof(buffer));
-	
-	Socket::Status status = receive(buffer, toGet, readed, 0);
-	if (status != Ok)
-	  return (status);
-	m_pendingRDatas.readed += readed;
-	if (readed > 0)
-	  {
-	    m_pendingRDatas.datas.resize(m_pendingRDatas.datas.size() + readed);
-	    char* begin = &m_pendingRDatas.datas[0] + m_pendingRDatas.datas.size() - readed;
-	    std::memcpy(begin, buffer, readed);
-	  }
-	if (m_pendingRDatas.readed >= m_pendingRDatas.totalSize)
-	  {
-	    m_allDataReaded = new ReadedDatas();
-	    m_allDataReaded->datas = m_pendingRDatas.datas;
-	    m_allDataReaded->readed = m_pendingRDatas.readed;
-	    m_allDataReaded->totalSize = m_pendingRDatas.totalSize;
-	    m_pendingRDatas = ReadedDatas();
-	    return (Ok);
-	  }
-      }
-    return (Waiting);
+    return status;
   }
 
   TcpSocket::ReadedDatas* TcpSocket::getDatasReaded() const
@@ -270,9 +223,9 @@ namespace mognetwork
 
   void TcpSocket::setServer(TcpASIOServer* server)
   {
-    //    m_mutex.lock();
+    m_mutex.lock();
     m_server = server;
-    //m_mutex.unlock();
+    m_mutex.unlock();
   }
 
   TcpASIOServer* TcpSocket::getServer() const

@@ -5,12 +5,18 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Wed Mar 25 16:16:17 2015 Moghrabi Alexandre
+// Last update Tue Apr 21 10:27:01 2015 Moghrabi Alexandre
 //
 
+#include "mognetwork/OS.hh"
+#ifdef OS_WINDOWS
+#include <fcntl.h>
+#include <io.h>
+#endif // OS_WINDOWS
 #include "mognetwork/LibNetworkException.hh"
 #include "mognetwork/TcpASIOListener.hh"
 #include "mognetwork/TcpASIOServer.hh"
+#include "mognetwork/IProtocolFactory.hh"
 
 namespace mognetwork
 {
@@ -27,11 +33,15 @@ namespace mognetwork
   void TcpASIOListener::init()
   {
     m_thread = new Thread(*this, false);
+#ifndef OS_WINDOWS
     if (pipe(m_pipefd) != 0)
+#else
+	if (_pipe(m_pipefd, 42, O_BINARY) != 0)
+#endif // !OS_WINDOWS
       throw LibNetworkException("Pipe creation failed.", __LINE__, __FILE__);
     m_timeout.tv_sec = 0;
-    m_timeout.tv_usec = 100000;
-    m_selector.setTimeout(NULL);
+    m_timeout.tv_usec = 10000;
+    m_selector.setTimeout(&m_timeout);
   }
 
   TcpASIOListener::TcpASIOListener(TcpASIOServer* server) :
@@ -44,6 +54,10 @@ namespace mognetwork
     init();
   }
 
+  void TcpASIOListener::setProtocolFactory(IProtocolFactory* protocolFactory)
+  {
+    m_protocolFactory = protocolFactory;
+  }
 
   TcpASIOListener::~TcpASIOListener()
   {
@@ -54,15 +68,23 @@ namespace mognetwork
 	if (m_socketList != NULL)
 	  delete (m_socketList);
       }
+#ifndef OS_WINDOWS
     ::close(m_pipefd[0]);
     ::close(m_pipefd[1]);
+#else
+	_close(m_pipefd[0]);
+	_close(m_pipefd[1]);
+#endif // !OS_WINDOWS
     delete m_thread;
   }
 
   void TcpASIOListener::start()
   {
     m_selector.addFdToRead(m_serverSocket.getSocketFD());
-    m_selector.addFdToRead(m_pipefd[0]);
+#ifndef OS_WINDOWS
+	//TODO Find a solution for windows
+	m_selector.addFdToRead(m_pipefd[0]);
+#endif // !OS_WINDOWS
     m_thread->start();
   }
 
@@ -85,6 +107,7 @@ namespace mognetwork
 	std::cerr << "A client cannot be accepted." << std::endl;
 	return ;
       }
+    cSocket->setProtocolListener(m_protocolFactory->getNewObject(cSocket));
     cSocket->setServer(m_server);
     m_selector.addFdToRead(cSocket->getSocketFD());
     m_server->addSocket(cSocket);
@@ -101,7 +124,7 @@ namespace mognetwork
 	  {
 	    std::cerr << "Select error on listening thread." << std::endl;
 	    return ;
-	  }
+	}
 	std::list<SocketFD> triggeredList = m_selector.getReadingTriggeredSockets();
 	for (std::list<SocketFD>::iterator it = triggeredList.begin(); it != triggeredList.end(); ++it)
 	  {

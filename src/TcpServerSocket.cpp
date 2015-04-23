@@ -41,7 +41,11 @@ namespace mognetwork
   void TcpServerSocket::bind(int port)
   {
     sockaddr_in sin;
+#ifndef OS_WINDOWS
     int y = 1;
+#else
+	const char y = 1;
+#endif // !OS_WINDOWS
     memset(&sin, 0, sizeof(sin));
     if (setsockopt(getSocketFD(), SOL_SOCKET, SO_REUSEADDR, &y, sizeof(int)) == -1)
       throw LibNetworkException("setsockopt() error.", __LINE__, __FILE__);

@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Mon Jun  9 16:05:21 2014 mognetworkhrabi Alexandre
-// Last update Tue Mar 24 19:40:41 2015 Moghrabi Alexandre
+// Last update Tue Apr 21 15:46:08 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -15,6 +15,14 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #else
+#ifdef _WIN32_WINDOWS
+  #undef _WIN32_WINDOWS
+#endif
+#ifdef _WIN32_WINNT
+  #undef _WIN32_WINNT
+#endif
+#define _WIN32_WINDOWS 0x0501
+#define _WIN32_WINNT 0x0501
 #include <winsock2.h>
 #include <Ws2tcpip.h>
 #endif // !OS_WINDOWS

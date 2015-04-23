@@ -8,6 +8,8 @@
 // Last update Tue Nov 25 16:48:39 2014 Moghrabi Alexandre
 //
 
+#include "mognetwork/OS.hh"
+#ifndef OS_WINDOWS
 #include "mognetwork/UnixSocket.hh"
 #include <errno.h>
 #include <fcntl.h>
@@ -55,3 +57,4 @@ namespace mognetwork
       }
   }
 } // namespace mognetwork
+#endif // !OS_WINDOWS

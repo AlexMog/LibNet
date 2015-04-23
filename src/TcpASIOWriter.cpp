@@ -25,10 +25,10 @@ namespace mognetwork
 
   void TcpASIOWriter::init()
   {
-    m_thread = new Thread(*this, false);
+	m_thread = new Thread(*this, false);
     m_timeout.tv_sec = 0;
     m_timeout.tv_usec = 1000;
-    m_selector.setTimeout(&m_timeout);
+	m_selector.setTimeout(&m_timeout);
   }
 
   TcpASIOWriter::TcpASIOWriter(TcpASIOServer* server) :
@@ -79,12 +79,11 @@ namespace mognetwork
   void TcpASIOWriter::run()
   {
     bool hasMoreDatasToSend = false;
-
     while (m_running)
       {
-	if (hasMoreDatasToSend)
+		if (hasMoreDatasToSend)
 	  {
-	    m_mutex->lock();
+			m_mutex->lock();
 	    setFds();
 	    m_mutex->unlock();
 	    m_selector.waitForTrigger();

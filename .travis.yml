@@ -1,0 +1,7 @@
+language: c++
+compiler:
+  - g++
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq g++
+script: mkdir build && cd build && cmake .. && make

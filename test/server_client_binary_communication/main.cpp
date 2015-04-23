@@ -6,7 +6,7 @@
 #include <exception>
 #include <signal.h>
 
-mognetwork::TcpASIOServer server(4242);
+mognetwork::TcpASIOServer server(4242, mognetwork::TcpASIOServer::Binary);
 
 void shandler(int)
 {
@@ -67,11 +67,10 @@ private:
 int main(int ac, char **av)
 {
   Listener l(server.getServerWriter());
-
+  server.addListener(&l);
   signal(SIGINT, shandler);
   std::cout << "Starting server..." << std::endl;
   try {
-    server.addListener(&l);
     server.start();
     std::cout << "Server ended." << std::endl;
   } catch (const std::exception& e) {

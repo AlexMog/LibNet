@@ -8,10 +8,10 @@
 // Last update Sat Dec  6 06:18:06 2014 Moghrabi Alexandre
 //
 
+#include "mognetwork/OS.hh"
+#ifndef OS_WINDOWS
 #include "mognetwork/ThreadException.hh"
 #include "mognetwork/Mutex.hh"
-
-#ifndef OS_WINDOWS
 
 namespace mognetwork
 {

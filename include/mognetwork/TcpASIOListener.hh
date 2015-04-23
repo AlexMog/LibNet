@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 10 18:10:20 2014 Moghrabi Alexandre
-// Last update Wed Mar 25 16:01:58 2015 Moghrabi Alexandre
+// Last update Mon Apr 20 05:15:29 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -22,12 +22,15 @@
 # include "mognetwork/OS.hh"
 #ifndef OS_WINDOWS
 # include <unistd.h>
+#else
+# include <io.h>
 #endif // !OS_WINDOWS
 # include "IRunnable.hh"
 # include "Thread.hh"
 # include "TcpServerSocket.hh"
 # include "Selector.hh"
 # include "ITcpASIOListenerHandler.hh"
+# include "IProtocolFactory.hh"
 
 namespace mognetwork
 {
@@ -72,6 +75,7 @@ namespace mognetwork
      * \param listener the listener to add
      */
     void addListener(ITcpASIOListenerHandler* listener) {m_listeners.push_back(listener);}
+    std::list<ITcpASIOListenerHandler*>& getListeners() {return m_listeners;}
 
   public:
     /*!
@@ -79,6 +83,7 @@ namespace mognetwork
      * \return true if it is listening, false if not
      */
     bool isRunning() const {return m_running;}
+    void setProtocolFactory(IProtocolFactory* protocolFactory);
 
   public:
     /*!
@@ -108,6 +113,7 @@ namespace mognetwork
     TcpServerSocket& m_serverSocket; /*!< reference on the TcpServerSocket */
     Time m_timeout; /* Timeout value for the select */
     TcpASIOServer* m_server;
+    IProtocolFactory* m_protocolFactory;
   };
 } // namespace mognetwork
 

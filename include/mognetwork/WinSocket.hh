@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:43:05 2014 mognetworkhrabi Alexandre
-// Last update Mon Dec 15 07:03:15 2014 Moghrabi Alexandre
+// Last update Tue Apr 21 10:36:58 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -26,10 +26,11 @@
 #endif
 #define _WIN32_WINDOWS 0x0501
 #define _WIN32_WINNT 0x0501
-#include "SocketFD.hh"
-#include "Socket.hh"
 #include <winsock2.h>
 #include <ws2tcpip.h>
+#include <windows.h>
+#include "SocketFD.hh"
+#include "Socket.hh"
 
 /*!
  * \namespace mognetwork
@@ -51,7 +52,7 @@ public:
    * \param port : the port to use
    * \return sockaddr_in the initialised structure
    */
-  static sockaddr_in createAddress(Uint32 address, unsigned short port);
+  static sockaddr_in createAddress(UINT32 address, unsigned short port);
   /*!
    * \brief Get the socket state of an unvalid socket
    * \return SocketFD a unvalid fd

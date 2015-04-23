@@ -2,10 +2,41 @@
 
 LibNet is a network Framework-library, that is imagined to simplify the creation of networking programs.
 It was first imagined for the mmo developpement framework "Highlands Framework", and is now opensource and public.
+The library is simple and fast to use, and is adapted for every type of protocol (text, binary, ...)
+
+## Travis status
+[![Build Status](https://travis-ci.org/AlexMog/LibNet.svg?branch=develop)](https://travis-ci.org/AlexMog/LibNet)
+
+## Features
+   - TCP and UDP socket management
+   - TCP asynchronous built-in server and client.
+   - Multiple protocol type support.
+   - Multiple languages supported (currently, we are working on a C# version and a java version).
+   - A Packet object to manage multiple datas packet.
+   - Encapsulated functions turned to Java-Like Objects (Mutex, CondVar, Thread, Selector, ...).
+   - A complete documentation.
+   - Simple to use.
+   - Trying to be very optimized.
+   - Simple to install (using CMake).
+   - Windows (not yet), Mac and Linux compatible.
 
 ## Code Example
+Here is an example of the creation of a server.
 
-You can find few examples in the "test" directory.
+```C++
+#include <mognetwork/TcpASIOServer.hh>
+
+int main(void)
+{
+	mognetwork::TcpASIOServer server(4242, Binary);
+
+	server.start();
+
+	return 0;
+}
+```
+
+You can find more examples in the [test directory](https://github.com/AlexMog/LibNet/tree/master/test/)
 
 ## Motivation
 
@@ -16,9 +47,14 @@ The library is going to be adapted to C#, Java, and mabe more languages.
 
 You can find an installation guide in the wiki!
 
+## Getting support
+
+You can get support by simply contacting me (moghra_a [ @ ] epitech.eu).
+If you find an issue, please use the [issues tracker](https://github.com/AlexMog/LibNet/issues)
+
 ## API Reference
 
-The documentation can be found there (in french for the moment): http://alexmog.labs-epimars.eu/projets/mognetwork-doc/doc/html/
+The documentation can be found [there.](http://alexmog.labs-epimars.eu/projets/mognetwork-doc/doc/html/index.html)
 
 
 ## Contribute

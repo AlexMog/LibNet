@@ -1,0 +1,125 @@
+\hypertarget{classmognetwork_1_1protocol_1_1_binary_protocol}{\section{mognetwork\-:\-:protocol\-:\-:Binary\-Protocol Class Reference}
+\label{classmognetwork_1_1protocol_1_1_binary_protocol}\index{mognetwork\-::protocol\-::\-Binary\-Protocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}}
+}
+
+
+Defines and execute the Binary protocol.  
+
+
+
+
+{\ttfamily \#include $<$Binary\-Protocol.\-hh$>$}
+
+Inheritance diagram for mognetwork\-:\-:protocol\-:\-:Binary\-Protocol\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmognetwork_1_1protocol_1_1_binary_protocol}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmognetwork_1_1protocol_1_1_binary_protocol_a2338021e2845389a21e15cd8d7075dc8}{{\bfseries Binary\-Protocol} (\hyperlink{classmognetwork_1_1_tcp_socket}{Tcp\-Socket} $\ast$socket)}\label{classmognetwork_1_1protocol_1_1_binary_protocol_a2338021e2845389a21e15cd8d7075dc8}
+
+\item 
+virtual \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1protocol_1_1_binary_protocol_af397288f27924ce552f23f35defb8770}{on\-Read\-Trigger} ()
+\item 
+virtual bool \hyperlink{classmognetwork_1_1protocol_1_1_binary_protocol_ab945fba1fc99c61de881af2f8e082f9b}{datas\-Fully\-Received} ()
+\begin{DoxyCompactList}\small\item\em Used to know if the pending\-Datas are ready. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmognetwork_1_1protocol_1_1_binary_protocol_a7a3c0fbaa42855d9a79fd943bea94960}{on\-Send\-Datas} (const char $\ast$data, std\-::size\-\_\-t size, \hyperlink{classmognetwork_1_1_tcp_socket_aa80d910649a16cedb6c98297e5893ed1}{Tcp\-Socket\-::\-Data} \&data\-To\-Send)
+\begin{DoxyCompactList}\small\item\em Called when datas are added to the send list. \end{DoxyCompactList}\item 
+virtual \hyperlink{classmognetwork_1_1_socket_aa187a8394ac0d6203af0ec7f021ca15f}{Socket\-::\-Status} \hyperlink{classmognetwork_1_1protocol_1_1_binary_protocol_a15af1a59b3f53351d562414fc3905575}{on\-Read\-All\-Trigger} (\hyperlink{classmognetwork_1_1_tcp_socket_aa80d910649a16cedb6c98297e5893ed1}{Tcp\-Socket\-::\-Data} \&data)
+\begin{DoxyCompactList}\small\item\em Called when the function \char`\"{}\-Read\-All\char`\"{} (blocking) is called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Defines and execute the Binary protocol. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmognetwork_1_1protocol_1_1_binary_protocol_ab945fba1fc99c61de881af2f8e082f9b}{\index{mognetwork\-::protocol\-::\-Binary\-Protocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}!datas\-Fully\-Received@{datas\-Fully\-Received}}
+\index{datas\-Fully\-Received@{datas\-Fully\-Received}!mognetwork::protocol::BinaryProtocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}}
+\subsubsection[{datas\-Fully\-Received}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool mognetwork\-::protocol\-::\-Binary\-Protocol\-::datas\-Fully\-Received (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmognetwork_1_1protocol_1_1_binary_protocol_ab945fba1fc99c61de881af2f8e082f9b}
+
+
+Used to know if the pending\-Datas are ready. 
+
+\begin{DoxyReturn}{Returns}
+True if the pending\-Datas are complete 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmognetwork_1_1protocol_1_1_a_protocol_listener_a88fd602dec144a87f69f1848813334da}{mognetwork\-::protocol\-::\-A\-Protocol\-Listener}.
+
+\hypertarget{classmognetwork_1_1protocol_1_1_binary_protocol_a15af1a59b3f53351d562414fc3905575}{\index{mognetwork\-::protocol\-::\-Binary\-Protocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}!on\-Read\-All\-Trigger@{on\-Read\-All\-Trigger}}
+\index{on\-Read\-All\-Trigger@{on\-Read\-All\-Trigger}!mognetwork::protocol::BinaryProtocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}}
+\subsubsection[{on\-Read\-All\-Trigger}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Socket\-::\-Status} mognetwork\-::protocol\-::\-Binary\-Protocol\-::on\-Read\-All\-Trigger (
+\begin{DoxyParamCaption}
+\item[{{\bf Tcp\-Socket\-::\-Data} \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmognetwork_1_1protocol_1_1_binary_protocol_a15af1a59b3f53351d562414fc3905575}
+
+
+Called when the function \char`\"{}\-Read\-All\char`\"{} (blocking) is called. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The datas to be send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The connection status 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmognetwork_1_1protocol_1_1_a_protocol_listener_a6baf7866e7401feb84dcb1aeaa93c33b}{mognetwork\-::protocol\-::\-A\-Protocol\-Listener}.
+
+\hypertarget{classmognetwork_1_1protocol_1_1_binary_protocol_af397288f27924ce552f23f35defb8770}{\index{mognetwork\-::protocol\-::\-Binary\-Protocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}!on\-Read\-Trigger@{on\-Read\-Trigger}}
+\index{on\-Read\-Trigger@{on\-Read\-Trigger}!mognetwork::protocol::BinaryProtocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}}
+\subsubsection[{on\-Read\-Trigger}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Socket\-::\-Status} mognetwork\-::protocol\-::\-Binary\-Protocol\-::on\-Read\-Trigger (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmognetwork_1_1protocol_1_1_binary_protocol_af397288f27924ce552f23f35defb8770}
+Called when a socket has datas to be readed \begin{DoxyReturn}{Returns}
+The connection status 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classmognetwork_1_1protocol_1_1_a_protocol_listener_a09fe5b96d8b2257cc86575a443918628}{mognetwork\-::protocol\-::\-A\-Protocol\-Listener}.
+
+\hypertarget{classmognetwork_1_1protocol_1_1_binary_protocol_a7a3c0fbaa42855d9a79fd943bea94960}{\index{mognetwork\-::protocol\-::\-Binary\-Protocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}!on\-Send\-Datas@{on\-Send\-Datas}}
+\index{on\-Send\-Datas@{on\-Send\-Datas}!mognetwork::protocol::BinaryProtocol@{mognetwork\-::protocol\-::\-Binary\-Protocol}}
+\subsubsection[{on\-Send\-Datas}]{\setlength{\rightskip}{0pt plus 5cm}virtual void mognetwork\-::protocol\-::\-Binary\-Protocol\-::on\-Send\-Datas (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{data, }
+\item[{std\-::size\-\_\-t}]{size, }
+\item[{{\bf Tcp\-Socket\-::\-Data} \&}]{data\-To\-Send}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmognetwork_1_1protocol_1_1_binary_protocol_a7a3c0fbaa42855d9a79fd943bea94960}
+
+
+Called when datas are added to the send list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The datas to be send \\
+\hline
+{\em size} & The size of the datas to send \\
+\hline
+{\em data\-To\-Send} & a std\-::vector$<$char$>$ will be sended after this call \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classmognetwork_1_1protocol_1_1_a_protocol_listener_a9d079815b8de552c7b2f67ee50935422}{mognetwork\-::protocol\-::\-A\-Protocol\-Listener}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+include/mognetwork/Binary\-Protocol.\-hh\end{DoxyCompactItemize}

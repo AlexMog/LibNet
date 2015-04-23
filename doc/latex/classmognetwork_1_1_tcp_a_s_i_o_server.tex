@@ -10,14 +10,31 @@ Used to create a A\-S\-I\-O Server simply.
 
 {\ttfamily \#include $<$Tcp\-A\-S\-I\-O\-Server.\-hh$>$}
 
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Communication\-Protocol\-Type} \{ {\bfseries Binary}, 
+{\bfseries Telnet}, 
+{\bfseries Line\-Per\-Line}
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_a8a201f84e02e478de1de4e0e4d3c029f}{Tcp\-A\-S\-I\-O\-Server} (int port)
+\hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_a8bdf6097cf8931094d8ee7c5f5fbc4bf}{Tcp\-A\-S\-I\-O\-Server} (int port, Communication\-Protocol\-Type protocol\-Type)
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_adea436db7edfd8500d60b4e06c60ea50}{{\bfseries Tcp\-A\-S\-I\-O\-Server} (int port, \hyperlink{classmognetwork_1_1_i_protocol_factory}{I\-Protocol\-Factory} $\ast$protocol\-Factory)}\label{classmognetwork_1_1_tcp_a_s_i_o_server_adea436db7edfd8500d60b4e06c60ea50}
+
+\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_ad6c804597aafd577c41310cdc986c7ff}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_ad6c804597aafd577c41310cdc986c7ff}{start} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_server_ad6c804597aafd577c41310cdc986c7ff}
 
 \begin{DoxyCompactList}\small\item\em Start the threads and wait until they are stopped. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_a6fdaedf488704a3c62ab0a2ada618b9a}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_a6fdaedf488704a3c62ab0a2ada618b9a}{start\-Without\-Join} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_server_a6fdaedf488704a3c62ab0a2ada618b9a}
+
+\begin{DoxyCompactList}\small\item\em Starts the server without joining the threads. \end{DoxyCompactList}\item 
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_a10dce29ca785a4f641df52b23402f76c}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_a10dce29ca785a4f641df52b23402f76c}{join} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_server_a10dce29ca785a4f641df52b23402f76c}
+
+\begin{DoxyCompactList}\small\item\em wait for the threads to join \end{DoxyCompactList}\item 
 \hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_aa94340baa5fbbfba0f5467c6ddd32b91}{void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_aa94340baa5fbbfba0f5467c6ddd32b91}{stop} ()}\label{classmognetwork_1_1_tcp_a_s_i_o_server_aa94340baa5fbbfba0f5467c6ddd32b91}
 
 \begin{DoxyCompactList}\small\item\em Stop the threads. \end{DoxyCompactList}\item 
@@ -63,13 +80,14 @@ void \hyperlink{classmognetwork_1_1_tcp_a_s_i_o_server_ac1feafc63d86a8aa90ef6a78
 Used to create a A\-S\-I\-O Server simply. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_a8a201f84e02e478de1de4e0e4d3c029f}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}!Tcp\-A\-S\-I\-O\-Server@{Tcp\-A\-S\-I\-O\-Server}}
+\hypertarget{classmognetwork_1_1_tcp_a_s_i_o_server_a8bdf6097cf8931094d8ee7c5f5fbc4bf}{\index{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}!Tcp\-A\-S\-I\-O\-Server@{Tcp\-A\-S\-I\-O\-Server}}
 \index{Tcp\-A\-S\-I\-O\-Server@{Tcp\-A\-S\-I\-O\-Server}!mognetwork::TcpASIOServer@{mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server}}
 \subsubsection[{Tcp\-A\-S\-I\-O\-Server}]{\setlength{\rightskip}{0pt plus 5cm}mognetwork\-::\-Tcp\-A\-S\-I\-O\-Server\-::\-Tcp\-A\-S\-I\-O\-Server (
 \begin{DoxyParamCaption}
-\item[{int}]{port}
+\item[{int}]{port, }
+\item[{Communication\-Protocol\-Type}]{protocol\-Type}
 \end{DoxyParamCaption}
-)}}\label{classmognetwork_1_1_tcp_a_s_i_o_server_a8a201f84e02e478de1de4e0e4d3c029f}
+)}}\label{classmognetwork_1_1_tcp_a_s_i_o_server_a8bdf6097cf8931094d8ee7c5f5fbc4bf}
 
 
 Default constructor. 
