@@ -38,6 +38,16 @@ int main(void)
 
 You can find more examples in the [test directory](https://github.com/AlexMog/LibNet/tree/master/test/)
 
+## How do it works?
+
+This is a normal use of the library (Using TcpASIOServer):
+
+![Schema1](http://up.sur-la-toile.com/i1fCb)
+
+This is an optimized way of using the library (Using TcpASIOServer):
+
+![Schema2](http://up.sur-la-toile.com/i1fCc)
+
 ## Motivation
 
 We created this project at first to our project "Highlands Framework". Then, because we really like the OpenSource community and world, we decided to set that library as an OpenSource project.
