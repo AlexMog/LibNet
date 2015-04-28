@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Apr 20 02:40:36 2015 Moghrabi Alexandre
-// Last update Mon Apr 20 06:17:02 2015 Moghrabi Alexandre
+// Last update Tue Apr 28 10:53:32 2015 Moghrabi Alexandre
 //
 
 #include <cstring>
@@ -18,6 +18,11 @@ namespace mognetwork
 {
   namespace protocol
   {
+    LineProtocol::LineProtocol(TcpSocket* socket) :
+      AProtocolListener(socket), m_fullDatas(NULL) {}
+
+    LineProtocol::~LineProtocol() {}
+
     Socket::Status LineProtocol::onReadTrigger()
     {
       std::size_t readed;
