@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:05:31 2015 Moghrabi Alexandre
-// Last update Mon Apr 20 01:58:14 2015 Moghrabi Alexandre
+// Last update Tue Apr 28 10:59:56 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -35,8 +35,8 @@ namespace mognetwork
     class AProtocolListener
     {
     public:
-      AProtocolListener(TcpSocket* socket) : m_socket(socket) {}
-      virtual ~AProtocolListener() {}
+      AProtocolListener(TcpSocket* socket);
+      virtual ~AProtocolListener();
       
     public:
       /*!
@@ -66,11 +66,11 @@ namespace mognetwork
        * \brief Used to get the readedDatas when they are completed.
        * \return The readed datas
        */
-      virtual TcpSocket::ReadedDatas& getReadedDatas() {return m_pendingDatas;}
+      virtual TcpSocket::ReadedDatas& getReadedDatas();
       /*!
        * \brief Flush the pending datas reader.
        */
-      virtual void flushReader() {m_pendingDatas = TcpSocket::ReadedDatas();}
+      virtual void flushReader();
       
     protected:
       TcpSocket* m_socket;

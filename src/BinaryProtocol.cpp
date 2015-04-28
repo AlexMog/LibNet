@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:40:07 2015 Moghrabi Alexandre
-// Last update Mon Apr 20 02:45:37 2015 Moghrabi Alexandre
+// Last update Tue Apr 28 10:52:25 2015 Moghrabi Alexandre
 //
 
 #include <cstring>
@@ -19,6 +19,11 @@ namespace mognetwork
 {
   namespace protocol
   {
+    BinaryProtocol::BinaryProtocol(TcpSocket* socket) :
+      AProtocolListener(socket) {}
+
+    BinaryProtocol::~BinaryProtocol() {}
+
     Socket::Status BinaryProtocol::onReadTrigger()
     {
       std::size_t readed;
