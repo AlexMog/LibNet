@@ -9,6 +9,7 @@ set(CMAKE_CXX_FLAGS "-g3 -W -Wall -pedantic -ansi -fPIC")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 set(SOURCES
+  src/AProtocolListener.cpp
   src/BinaryProtocol.cpp
   src/LineProtocol.cpp
   src/UnixCondVar.cpp
@@ -30,14 +31,12 @@ set(SOURCES
   src/WinSocket.cpp
   )
   
-add_library(core OBJECT ${SOURCES})
-
 add_library(mognetwork SHARED
- $<TARGET_OBJECTS:core>
+ ${SOURCES}
   )
   
 add_library(mognetwork-static STATIC
- $<TARGET_OBJECTS:core>
+ ${SOURCES}
   )
 
 if(WIN32)

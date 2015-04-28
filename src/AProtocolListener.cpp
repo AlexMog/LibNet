@@ -5,8 +5,10 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Apr 28 10:55:53 2015 Moghrabi Alexandre
-// Last update Tue Apr 28 10:59:49 2015 Moghrabi Alexandre
+// Last update Tue Apr 28 11:24:09 2015 Moghrabi Alexandre
 //
+
+#include "mognetwork/AProtocolListener.hh"
 
 namespace mognetwork
 {
