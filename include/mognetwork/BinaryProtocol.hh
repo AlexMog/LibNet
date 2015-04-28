@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:34:03 2015 Moghrabi Alexandre
-// Last update Mon Apr 20 04:19:59 2015 Moghrabi Alexandre
+// Last update Tue Apr 28 10:52:33 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -31,8 +31,8 @@ namespace mognetwork
     class BinaryProtocol : public AProtocolListener
     {
     public:
-      BinaryProtocol(TcpSocket* socket) : AProtocolListener(socket) {}
-      virtual ~BinaryProtocol() {}
+      BinaryProtocol(TcpSocket* socket);
+      virtual ~BinaryProtocol();
 
     public:
       virtual Socket::Status onReadTrigger();

@@ -9,6 +9,8 @@ set(CMAKE_CXX_FLAGS "-g3 -W -Wall -pedantic -ansi -fPIC")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 set(SOURCES
+  src/BinaryProtocol.cpp
+  src/LineProtocol.cpp
   src/UnixCondVar.cpp
   src/WinCondVar.cpp
   src/IpAddress.cpp
@@ -26,8 +28,6 @@ set(SOURCES
   src/WinThread.cpp
   src/UnixSocket.cpp
   src/WinSocket.cpp
-  src/BinaryProtocol.cpp
-  src/LineProtocol.cpp
   )
   
 add_library(core OBJECT ${SOURCES})

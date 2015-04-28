@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:34:03 2015 Moghrabi Alexandre
-// Last update Mon Apr 20 06:01:29 2015 Moghrabi Alexandre
+// Last update Tue Apr 28 10:53:49 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -32,8 +32,8 @@ namespace mognetwork
     class LineProtocol : public AProtocolListener
     {
     public:
-      LineProtocol(TcpSocket* socket) : AProtocolListener(socket), m_fullDatas(NULL) {}
-      virtual ~LineProtocol() {}
+      LineProtocol(TcpSocket* socket);
+      virtual ~LineProtocol();
 
     public:
       virtual Socket::Status onReadTrigger();
