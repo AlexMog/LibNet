@@ -4,14 +4,14 @@ project(MogNetwork)
 
 set(CMAKE_BUILD_TYPE Release)
 
-set(CMAKE_CXX_FLAGS "-g3 -W -Wall -pedantic -ansi -fPIC -m32")
+set(CMAKE_CXX_FLAGS "-g3 -W -Wall -pedantic -ansi -fPIC")
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 set(SOURCES
   src/AProtocolListener.cpp
   src/BinaryProtocol.cpp
-  src/LineProtocol.cpp
+  src/TextProtocol.cpp
   src/UnixCondVar.cpp
   src/WinCondVar.cpp
   src/IpAddress.cpp

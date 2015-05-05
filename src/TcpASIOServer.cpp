@@ -5,13 +5,13 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Nov 17 17:38:14 2014 Moghrabi Alexandre
-// Last update Mon Apr 20 15:47:49 2015 Moghrabi Alexandre
+// Last update Tue May  5 12:36:22 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/Mutex.hh"
 #include "mognetwork/TcpASIOServer.hh"
 #include "mognetwork/BinaryProtocolFactory.hpp"
-#include "mognetwork/LineProtocolFactory.hpp"
+#include "mognetwork/TextProtocolFactory.hpp"
 
 namespace mognetwork
 {
@@ -21,10 +21,12 @@ namespace mognetwork
     if (protocolType == Binary)
       m_protocolFactory = new BinaryProtocolFactory;
     else if (protocolType == LinePerLine)
-      m_protocolFactory = new LineProtocolFactory;
+      m_protocolFactory = new TextProtocolFactory((char*)"\n");
+    else if (protocolType == Telnet)
+      m_protocolFactory = new TextProtocolFactory((char*)"\r\n");
     else
       m_protocolFactory = NULL;
-	init();
+    init();
   }
 
   void TcpASIOServer::init()
