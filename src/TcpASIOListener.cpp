@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Thu Nov 13 13:19:05 2014 Moghrabi Alexandre
-// Last update Tue Apr 21 10:27:01 2015 Moghrabi Alexandre
+// Last update Tue May  5 14:14:32 2015 Moghrabi Alexandre
 //
 
 #include "mognetwork/OS.hh"
@@ -40,8 +40,8 @@ namespace mognetwork
 #endif // !OS_WINDOWS
       throw LibNetworkException("Pipe creation failed.", __LINE__, __FILE__);
     m_timeout.tv_sec = 0;
-    m_timeout.tv_usec = 10000;
-    m_selector.setTimeout(&m_timeout);
+    m_timeout.tv_usec = 10000000;
+    //    m_selector.setTimeout(NULL);
   }
 
   TcpASIOListener::TcpASIOListener(TcpASIOServer* server) :

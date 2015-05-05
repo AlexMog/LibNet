@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:41:30 2014 Moghrabi Alexandre
-// Last update Fri Apr 17 12:06:06 2015 Moghrabi Alexandre
+// Last update Tue May  5 13:54:19 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -18,6 +18,7 @@
 #ifndef MOGNETWORK_PACKET_HH
 # define MOGNETWORK_PACKET_HH
 
+# include "intfix.hh"
 # include <vector>
 # include <string.h>
 # include "OS.hh"
@@ -61,6 +62,16 @@ namespace mognetwork
      * \param data the uint32_t to add
      */
     Packet& operator<<(uint32_t data);
+    /*!
+     * \brief Extract a uint16_t from the packet
+     * \param data a reference on the uint16_t to set
+     */
+    Packet& operator>>(uint16_t& data);
+    /*!
+     * \brief add a uint16_t to the packet
+     * \param data the uint16_t to add
+     */
+    Packet& operator<<(uint16_t data);
     /*!
      * \brief add a string to the packet
      * \param data the string to add

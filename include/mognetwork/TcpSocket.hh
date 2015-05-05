@@ -5,7 +5,7 @@
 // Login   <alexmog@epitech.net>
 // 
 // Started on  Thu Jun  5 19:59:35 2014 mognetworkhrabi Alexandre
-// Last update Mon Apr 20 05:37:30 2015 Moghrabi Alexandre
+// Last update Tue May  5 13:35:02 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -18,6 +18,7 @@
 #ifndef MOGNETWORK_TCPSOCKET_HH
 # define MOGNETWORK_TCPSOCKET_HH
 
+# include "intfix.hh"
 # include <list>
 # include <vector>
 # include <string>
@@ -52,7 +53,7 @@ namespace mognetwork
     {
       ReadedDatas(); /*!< Used to init the structure */
       std::size_t readed; /*!< Bytes readed */
-      std::size_t totalSize; /*!< Total size to read */
+      uint32_t totalSize; /*!< Total size to read */
       Data datas; /*!< Readed datas */
     };
 

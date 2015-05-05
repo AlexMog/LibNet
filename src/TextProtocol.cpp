@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Mon Apr 20 02:40:36 2015 Moghrabi Alexandre
-// Last update Tue May  5 13:07:10 2015 Moghrabi Alexandre
+// Last update Tue May  5 13:37:05 2015 Moghrabi Alexandre
 //
 
 #include <cstring>
@@ -82,7 +82,7 @@ namespace mognetwork
 	&& std::strstr(&m_fullDatas->datas[0], "\n") != NULL;
     }
 
-    void TextProtocol::onSendDatas(const char* data, std::size_t size, TcpSocket::Data& dataToSend)
+    void TextProtocol::onSendDatas(const char* data, uint32_t size, TcpSocket::Data& dataToSend)
     {
       dataToSend.resize(size + 1);
       std::memcpy(&dataToSend.front(), data, size);
