@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Wed Nov 12 17:45:50 2014 Moghrabi Alexandre
-// Last update Wed Mar 25 16:09:06 2015 Moghrabi Alexandre
+// Last update Tue May  5 14:12:13 2015 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -27,7 +27,7 @@ namespace mognetwork
   {
 	m_thread = new Thread(*this, false);
     m_timeout.tv_sec = 0;
-    m_timeout.tv_usec = 1000;
+    m_timeout.tv_usec = 10000000;
 	m_selector.setTimeout(&m_timeout);
   }
 

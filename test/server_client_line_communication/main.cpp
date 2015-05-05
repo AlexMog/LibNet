@@ -19,8 +19,7 @@ public:
   Listener(mognetwork::TcpASIOWriter* writer) : m_writer(writer) {}
   void onConnect(mognetwork::TcpSocket& client)
   {
-    std::cout << "New client connected." << std::endl;client.asyncSend("LOL\n", 4);
-    m_writer->triggerData();
+    std::cout << "New client connected." << std::endl;
   }
 
   void onReceivedData(mognetwork::TcpSocket& client)
@@ -28,8 +27,9 @@ public:
     mognetwork::TcpSocket::ReadedDatas* datas = client.getDatasReaded();
 
     std::cout << "Received: " << &datas->datas[0] << std::endl;
+    client.asyncSend("LOL\n\0", 5);
+    m_writer->triggerData();
     delete datas;
-    //delete datas;
   }
 
   void onDisconnect(mognetwork::TcpSocket& client) {std::cout << "Client disconnected." << std::endl;}

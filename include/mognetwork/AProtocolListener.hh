@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:05:31 2015 Moghrabi Alexandre
-// Last update Tue Apr 28 10:59:56 2015 Moghrabi Alexandre
+// Last update Tue May  5 13:37:26 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -18,6 +18,7 @@
 #ifndef MOGNETWORK_APROTOCOLLISTENER_HH
 # define MOGNETWORK_APROTOCOLLISTENER_HH
 
+# include "intfix.hh"
 # include "TcpSocket.hh"
 
 namespace mognetwork
@@ -55,7 +56,7 @@ namespace mognetwork
        * \param size The size of the datas to send
        * \param dataToSend a std::vector<char> will be sended after this call
        */
-      virtual void onSendDatas(const char* data, std::size_t size, TcpSocket::Data& dataToSend) = 0;
+      virtual void onSendDatas(const char* data, uint32_t size, TcpSocket::Data& dataToSend) = 0;
       /*!
        * \brief Called when the function "ReadAll" (blocking) is called
        * \param data The datas to be send

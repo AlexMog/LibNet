@@ -1,6 +1,6 @@
 #include <mognetwork/Packet.hh>
 #include <mognetwork/TcpSocket.hh>
-#include <mognetwork/LineProtocol.hh>
+#include <mognetwork/TextProtocol.hh>
 #include <stdio.h>
 #include <iostream>
 #include <exception>
@@ -12,7 +12,7 @@
 int main(int ac, char **av)
 {
   mognetwork::TcpSocket socket;
-  socket.setProtocolListener(new mognetwork::protocol::LineProtocol(&socket));
+  socket.setProtocolListener(new mognetwork::protocol::TextProtocol(&socket, (char*)"\n"));
   mognetwork::IpAddress ip("127.0.0.1");
   int i = NUMBER_OF_PACKET_SEND;
   struct timeval t1, t2;
@@ -30,19 +30,18 @@ int main(int ac, char **av)
 	memset(buffer, 0, sizeof(buffer));
 	socket.send("c\nb", 4);
 	gettimeofday(&t1, NULL);
-	/*	if (socket.receiveAll(*datas) != mognetwork::Socket::Ok)
+	if (socket.receiveAll(*datas) != mognetwork::Socket::Ok)
 	  {
 	    std::cout << "ERROR" << std::endl;
 	    perror("WTF?");
 	    return 1;
-	    }*/
+	  }
 	gettimeofday(&t2, NULL);
 	latency = ((double) (t2.tv_usec - t1.tv_usec) / 1000 +
 		   (double) (t2.tv_sec - t1.tv_sec));
+	std::cout << "RECEIVED: S: '" << datas->size() << "' D: '" << (&(*datas)[0]) << "'" << std::endl;
 	std::cout << "Lattency: " << latency << "ms" << std::endl;
 	totalTime += latency;
-	//	mognetwork::Packet p(datas);
-	//	std::cout << "RECEIVED: S: '" << datas->size() << "' D: '" << (&(*datas)[0]) << "'" << std::endl;
 	i--;
 	delete datas;
 	sleep(1);

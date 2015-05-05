@@ -11,7 +11,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(SOURCES
   src/AProtocolListener.cpp
   src/BinaryProtocol.cpp
-  src/LineProtocol.cpp
+  src/TextProtocol.cpp
   src/UnixCondVar.cpp
   src/WinCondVar.cpp
   src/IpAddress.cpp

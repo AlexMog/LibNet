@@ -5,13 +5,17 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:40:07 2015 Moghrabi Alexandre
-// Last update Tue Apr 28 10:52:25 2015 Moghrabi Alexandre
+// Last update Tue May  5 14:16:42 2015 Moghrabi Alexandre
 //
 
+#include <iostream>
 #include <cstring>
 #include "mognetwork/OS.hh"
 #ifdef OS_WINDOWS
-#include <algorithm>
+# include <winsock2.h>
+# include <algorithm>
+#else
+#include <arpa/inet.h>
 #endif // OS_WINDOWS
 #include "mognetwork/BinaryProtocol.hh"
 
@@ -30,16 +34,18 @@ namespace mognetwork
       char buffer[1024];
 
       // Get the size of the packet
-      if (m_pendingDatas.readed < sizeof(std::size_t))
+      if (m_pendingDatas.readed < sizeof(uint32_t))
 	{
 	  char* data = reinterpret_cast<char*>(&m_pendingDatas.totalSize) + m_pendingDatas.readed;
-	  Socket::Status status = m_socket->receive(data, sizeof(std::size_t) - m_pendingDatas.readed, readed, 0);
+	  Socket::Status status = m_socket->receive(data, sizeof(uint32_t) - m_pendingDatas.readed, readed, 0);
 	  m_pendingDatas.readed += readed;
 	  if (status != Socket::Ok)
 	    return status;
+	  if (m_pendingDatas.readed >= sizeof(uint32_t))
+	    m_pendingDatas.totalSize = ntohl(m_pendingDatas.totalSize);
 	}
       // Read the packet
-      if (m_pendingDatas.readed >= sizeof(std::size_t))
+      if (m_pendingDatas.readed >= sizeof(uint32_t))
 	{
 	  std::size_t toGet = std::min(static_cast<std::size_t>(m_pendingDatas.totalSize - m_pendingDatas.datas.size()), sizeof(buffer));
 	  Socket::Status status = m_socket->receive(buffer, toGet, readed, 0);
@@ -58,14 +64,15 @@ namespace mognetwork
 
     bool BinaryProtocol::datasFullyReceived()
     {
-      return m_pendingDatas.readed >= sizeof(std::size_t) && m_pendingDatas.readed >= m_pendingDatas.totalSize;
+      return m_pendingDatas.readed >= sizeof(uint32_t) && m_pendingDatas.readed >= m_pendingDatas.totalSize;
     }
 
-    void BinaryProtocol::onSendDatas(const char* data, std::size_t size, TcpSocket::Data& dataToSend)
+    void BinaryProtocol::onSendDatas(const char* data, uint32_t size, TcpSocket::Data& dataToSend)
     {
-      dataToSend.resize(size + sizeof(std::size_t));
-      std::memcpy(&dataToSend.front(), &size, sizeof(std::size_t));
-      std::memcpy(&dataToSend.front() + sizeof(std::size_t), data, size);
+      uint32_t sizeToWrite = htonl(size);
+      dataToSend.resize(size + sizeof(uint32_t));
+      std::memcpy(&dataToSend.front(), &sizeToWrite, sizeof(uint32_t));
+      std::memcpy(&dataToSend.front() + sizeof(uint32_t), data, size);
     }
 
     Socket::Status BinaryProtocol::onReadAllTrigger(TcpSocket::Data& data)
@@ -76,15 +83,17 @@ namespace mognetwork
 
       TcpSocket::ReadedDatas _data = TcpSocket::ReadedDatas();
       data.clear();
-      while (readed < sizeof(std::size_t))
+      while (readed < sizeof(uint32_t))
 	{
 	  char* d = reinterpret_cast<char*>(&_data.totalSize) + numReaded;
-	  Socket::Status status = m_socket->receive(d, sizeof(std::size_t) - _data.readed, readed, 0);
+	  Socket::Status status = m_socket->receive(d, sizeof(uint32_t) - _data.readed, readed, 0);
 	  numReaded += readed;
 	  if (status != Socket::Ok)
 	    return status;
+	  if (numReaded >= sizeof(uint32_t))
+	    _data.totalSize = ntohl(_data.totalSize);
 	}
-      if (numReaded >= sizeof(std::size_t))
+      if (numReaded >= sizeof(uint32_t))
 	{
 	  while (_data.readed < _data.totalSize)
 	    {

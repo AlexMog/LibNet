@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Tue Nov 18 09:52:30 2014 Moghrabi Alexandre
-// Last update Fri Apr 17 12:04:00 2015 Moghrabi Alexandre
+// Last update Tue May  5 13:53:13 2015 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -41,10 +41,20 @@ namespace mognetwork
   {
     if (verifySize(sizeof(data)))
       {
-	data = htonl(*reinterpret_cast<const uint32_t*>(&((*m_data)[m_readerPos])));
+	data = ntohl(*reinterpret_cast<const uint32_t*>(&((*m_data)[m_readerPos])));
 	m_readerPos += sizeof(data);
       }
     return (*this);
+  }
+
+  Packet& Packet::operator>>(uint16_t& data)
+  {
+    if (verifySize(sizeof(data)))
+      {
+	data = ntohs(*reinterpret_cast<const uint16_t*>(&((*m_data)[m_readerPos])));
+	m_readerPos += sizeof(data);
+      }
+    return *this;
   }
 
   Packet& Packet::operator<<(uint32_t data)
@@ -52,6 +62,13 @@ namespace mognetwork
     uint32_t write = htonl(data);
     push(&write, sizeof(write));
     return (*this);
+  }
+
+  Packet& Packet::operator<<(uint16_t data)
+  {
+    uint16_t write = htons(data);
+    push(&write, sizeof(write));
+    return *this;
   }
 
   Packet& Packet::operator>>(char* data)
