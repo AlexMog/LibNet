@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:40:07 2015 Moghrabi Alexandre
-// Last update Tue Jul  7 14:27:15 2015 Moghrabi Alexandre
+// Last update Tue Jul  7 14:51:12 2015 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -30,6 +30,7 @@ namespace mognetwork
 
     Socket::Status WebsocketProtocol::onReadTrigger()
     {
+      
       return Socket::Error;
     }
 
