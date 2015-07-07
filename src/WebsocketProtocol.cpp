@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:40:07 2015 Moghrabi Alexandre
-// Last update Tue Jul  7 14:51:12 2015 Moghrabi Alexandre
+// Last update Tue Jul  7 16:32:53 2015 Moghrabi Alexandre
 //
 
 #include <iostream>
@@ -18,6 +18,7 @@
 #include <arpa/inet.h>
 #endif // OS_WINDOWS
 #include "mognetwork/WebsocketProtocol.hh"
+#include "mognetwork/ProtocolException.hpp"
 
 namespace mognetwork
 {
@@ -34,12 +35,79 @@ namespace mognetwork
       return Socket::Error;
     }
 
+    int WebsocketProtocol::setHeader(Frame& frame)
+    {
+      int i, new_size;
+      Frame::State state;
+
+      state = frame.state;
+      switch (state)
+	{
+	case STARTED:
+	  if (frame.rawdata_idx < 2)
+	    return 0;
+	  frame.state = GOT_TWO;
+	case GOT_TWO:
+	  frame.mask_offset = 2;
+	  frame.fin = (*(&frame.rawdata[0]) & 0x80) == 0x80 ? 1 : 0;
+	  frame.opcode = *(&frame.rawdata[0]) & 0xf;
+	  frame.payload_len_short = *(&frame.rawdata[0] + 1) & 0x7f;
+	  frame.state = GOT_SHORT_LEN;
+	case GOT_SHORT_LEN:
+	  if (frame.payload_len_short == 126)
+	    {
+	      if (frame.rawdata_idx < 4)
+		return 0;
+	      frame.mask_offset += 2;
+	      frame.payload_offset = frame.mask_offset + MASK_LENGTH;
+	      frame.payload_len = ntohs(*((unsigned short int*) (&frame.rawdata[0] + 2)));
+	    }
+	  else if (frame.payload_len_short == 127)
+	    {
+	      if (frame.raxdata_idx < 10)
+		return 0;
+	      frame.mask_offset += 8;
+	      frame.payload_offset = frame.mask_offset + MASK_LENGTH;
+	      frame.payload_len = ntohl(*((unsinged short int*) (&frame.rawdata[0] + 6)));
+	    }
+	  else
+	    {
+	      frame.payload_len = frame.payload_len_short;
+	      frame.payload_offset = frame.mask_offset + MASK_LENGTH;
+	    }
+	  frame.state = GOT_FULL_LEN;
+	case GOT_FULL_LEN:
+	  if (frame.rawdata_idx < frame.payload_offset)
+	    return 0;
+	  for (i = 0; i < MASK_LENGTH; ++i)
+	    frame.mask[i] = *(&frame.rawdata[0] + frame.mask_offset + i) & 0xff;
+	  frame.state = GOT_MASK;
+	  frame.size = frame.payload_offset + frame.payload_len;
+	  if (frame.size > frame.rawdata_sz)
+	    {
+	      new_size = frame.size - 1;
+	      new_size |= new_size >> 1;
+	      new_size |= new_size >> 2;
+	      new_size |= new_size >> 4;
+	      new_size |= new_size >> 8;
+	      new_size |= new_size >> 16;
+	      new_size++;
+	      frame.rawdata_sz = new_size;
+	      frame.rawdata.resize(new_size);
+	    }
+	  return 1;
+	case GOT_MASK:
+	  return 1;
+	}
+      return 0;
+    }
+
     bool WebsocketProtocol::datasFullyReceived()
     {
       return false;
     }
 
-    char* WebsocketProtocol::construct_frame(const char* data, uint32_t& size)
+    char* WebsocketProtocol::constructFrame(const char* data, uint32_t& size)
     {
       uint32_t* payload_len;
       unsigned short int* payload_len_short;
@@ -67,11 +135,10 @@ namespace mognetwork
 	  payload_offset += 8;
 	}
       else
-	{
-	  // TODO protocolexception
-	  //	  throw ProtocolException("LibNet does not support frame payload size too big.");
-	}
+	throw ProtocolException("LibNet does not support frame payload size too big.",
+				__LINE__, __FILE__, __FUNC__);
       frame = new char[frame_size];
+      m_frame.set(frame);
       payload_len_small &= 0x7f;
       *frame = finNopcode;
       *(frame + 1) = payload_len_small;
@@ -93,10 +160,11 @@ namespace mognetwork
 
     void WebsocketProtocol::onSendDatas(const char* data, uint32_t size, TcpSocket::Data& dataToSend)
     {
-      char* frame = construct_frame(data, size);
+      char* frame = constructFrame(data, size);
       dataToSend.resize(size);
       std::memcpy(&dataToSend.front(), frame, size);
       delete frame;
+      m_frame.set(NULL);
     }
 
     Socket::Status WebsocketProtocol::onReadAllTrigger(TcpSocket::Data& data)

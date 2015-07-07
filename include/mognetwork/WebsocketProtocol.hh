@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:34:03 2015 Moghrabi Alexandre
-// Last update Tue Jul  7 14:40:57 2015 Moghrabi Alexandre
+// Last update Tue Jul  7 16:22:06 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -20,8 +20,11 @@
 
 # include <iostream>
 # include "AProtocolListener.hh"
+# include "SmartPtr.hpp"
+# include <vector>
 
 # define FRAME_CHUNK_LENGTH 1024
+# define MASK_LENGTH 4
 
 namespace mognetwork
 {
@@ -33,8 +36,31 @@ namespace mognetwork
      */
     class WebsocketProtocol : public AProtocolListener
     {
+    private:
+      struct Frame {
+	enum State {
+	  STARTED = 0,
+	  GOT_TWO,
+	  GOT_SHORT_LEN,
+	  GOT_FULL_LEN,
+	  GOT_MASK
+	};
+	uint32_t fin;
+	uint32_t opcode;
+	uint32_t mast_offset;
+	uint32_t pauload_offset;
+	uint32_t rawdata_idx;
+	uint32_t rawdata_sz;
+	uint32_t size;
+	uint32_t payload_len_short;
+	uint32_t payload_len;
+	std::vector<char> rawdata;
+	unsigned char mask[MASK_LENGTH];
+	State state;
+      };
+
     public:
-      WebsocketProtocol(TcpSocket* socket, char* separator);
+      WebsocketProtocol(TcpSocket* socket);
       virtual ~WebsocketProtocol();
 
     public:
@@ -46,20 +72,12 @@ namespace mognetwork
       virtual void flushReader();
 
     private:
-      char* construct_frame(const char* data, uint32_t size);
-      struct frame {
-	uint32_t fin;
-	uint32_t opcode;
-	uint32_t mast_offset;
-	uint32_t pauload_offset;
-	uint32_t rawdata_idx;
-	uint32_t rawdata_sz;
-	uint32_t size;
-	uint32_t payload_len_short;
-	uint32_t payload_len;
-	char* rawdata;
-	unsigned char mask[4];
-      };
+      char* constructFrame(const char* data, uint32_t size);
+      int setHeader(Frame& frame);
+      
+    private:
+      SmartPtr<char*> m_frame;
+
     };
   }
 }

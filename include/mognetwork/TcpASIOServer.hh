@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Sat Nov 15 18:00:03 2014 Moghrabi Alexandre
-// Last update Mon Apr 20 15:46:08 2015 Moghrabi Alexandre
+// Last update Tue Jul  7 14:59:32 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -38,7 +38,8 @@ namespace mognetwork
       {
 	Binary,
 	Telnet,
-	LinePerLine
+	LinePerLine,
+	Websocket
       };
 
   public:
