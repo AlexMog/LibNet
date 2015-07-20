@@ -5,7 +5,7 @@
 // Login   <alexandre.moghrabi@epitech.eu>
 // 
 // Started on  Fri Apr 17 15:34:03 2015 Moghrabi Alexandre
-// Last update Tue Jul  7 16:22:06 2015 Moghrabi Alexandre
+// Last update Tue Jul  7 20:35:16 2015 Moghrabi Alexandre
 //
 
 /*!
@@ -36,8 +36,9 @@ namespace mognetwork
      */
     class WebsocketProtocol : public AProtocolListener
     {
-    private:
+    public:
       struct Frame {
+	Frame();
 	enum State {
 	  STARTED = 0,
 	  GOT_TWO,
@@ -47,8 +48,8 @@ namespace mognetwork
 	};
 	uint32_t fin;
 	uint32_t opcode;
-	uint32_t mast_offset;
-	uint32_t pauload_offset;
+	uint32_t mask_offset;
+	uint32_t payload_offset;
 	uint32_t rawdata_idx;
 	uint32_t rawdata_sz;
 	uint32_t size;
@@ -68,16 +69,15 @@ namespace mognetwork
       virtual bool datasFullyReceived();
       virtual void onSendDatas(const char* data, uint32_t size, TcpSocket::Data& dataToSend);
       virtual Socket::Status onReadAllTrigger(TcpSocket::Data& data);
-      virtual TcpSocket::ReadedDatas& getReadedDatas();
       virtual void flushReader();
 
     private:
-      char* constructFrame(const char* data, uint32_t size);
+      char* constructFrame(const char* data, uint32_t& size);
       int setHeader(Frame& frame);
       
     private:
-      SmartPtr<char*> m_frame;
-
+      SmartPtr<char> m_frame;
+      Frame m_pendingFrame;
     };
   }
 }

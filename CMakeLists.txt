@@ -12,6 +12,7 @@ set(SOURCES
   src/AProtocolListener.cpp
   src/BinaryProtocol.cpp
   src/TextProtocol.cpp
+  src/WebsocketProtocol.cpp
   src/UnixCondVar.cpp
   src/WinCondVar.cpp
   src/IpAddress.cpp
